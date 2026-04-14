@@ -1,0 +1,15 @@
+node_modules
+dist
+build
+.env
+.env.local
+*.log
+.DS_Store
+coverage
+.vite
+__pycache__
+*.pyc
+.venv
+rag-api/.venv
+rag-api/data/chroma
+rag-api/fixtures/_uploads

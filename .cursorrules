@@ -1,0 +1,24 @@
+# Employee Handbook Q&A — global Cursor rules
+
+## Source of truth
+
+- Read **`CLAUDE.md`** at the repository root for goals, commands (`npm run dev`, `npm test`, `npm run build`), RAG/MCP scope, and environment variables.
+
+## TypeScript
+
+- **Strict mode** everywhere applicable; **never use `any`**. Prefer `unknown`, generics, and Zod-inferred types (`z.infer`).
+- Fix type errors properly; avoid `@ts-ignore` except with a short, justified comment.
+
+## Programming style
+
+- Prefer **functional** style: pure functions where possible, immutable updates, explicit data flow.
+- **React**: functional components and hooks only; prefer arrow functions for components/handlers unless a hoisted `function` is required.
+- **FastAPI (`rag-api`)**: thin route handlers; orchestration in services/graph modules; validate with Pydantic.
+
+## Scope of change
+
+- Match project layout: **`client`**, **`shared`**, **`rag-api`**, **`fixtures`**, **`mcp-hr-server`**. Do not reintroduce the legacy Express doc-gen server or `test-samples` unless explicitly requested.
+
+## File-specific rules
+
+- Additional rules live under **`.cursor/rules/*.mdc`** (React/Tailwind/Query, handbook RAG, MCP server). Prefer those for path-specific details.

@@ -1,0 +1,40 @@
+name: CI
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+
+jobs:
+  build-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: rag-api/requirements.txt
+
+      - name: Python deps + pytest (rag-api)
+        working-directory: rag-api
+        run: |
+          python -m venv .venv
+          .venv/bin/pip install -r requirements.txt
+          .venv/bin/python -m pytest -q
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+
+      - name: Install (workspaces)
+        run: npm ci
+
+      - name: Test (JS + rag-api pytest script)
+        run: npm test
+
+      - name: Build
+        run: npm run build

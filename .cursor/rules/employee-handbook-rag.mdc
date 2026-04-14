@@ -1,0 +1,27 @@
+---
+description: Employee handbook RAG — FastAPI, Chroma, LangGraph, client, shared contracts
+globs: rag-api/**/*.py,shared/**/*.ts,client/src/**/*.tsx,fixtures/**/*,CLAUDE.md,scripts/*.cjs
+alwaysApply: false
+---
+
+# Handbook Q&A — RAG, client, and contracts
+
+## Goals
+
+- **Ingest** handbook text into **Chroma** with **OpenAI** embeddings; persist under `rag-api/data/chroma` (or `CHROMA_PERSIST_DIR`).
+- **Answer** via **LangGraph** in `rag_graph.py`: guardrails → retrieval → optional employee/leave context → generation → **citations** + **escalation** metadata.
+- Keep **FastAPI** response shapes aligned with **`@employee-handbook/shared`** Zod types (`AskRequest`, `AskResponse`, ingest, health).
+
+## Implementation guidance
+
+- **Python:** Prefer explicit types; avoid swallowing errors silently — map to HTTP 4xx/5xx with clear `detail`.
+- **Client:** TanStack Query for `/api/health`, ingest, and ask; show loading and error states; render citations and escalation UI.
+- **Fixtures:** `fixtures/handbook.md` and `fixtures/employees.json` are demo sources; uploads go to `rag-api/fixtures/_uploads` (gitignored).
+
+## MCP (related)
+
+- **`mcp-hr-server`** exposes **`get_leave_balance`**; env **`EMPLOYEES_JSON_PATH`** overrides JSON path. Keep tool output JSON-stable for agents.
+
+## Product context
+
+- Follow **`CLAUDE.md`** for commands, ports (**5173** client, **3001** API), and env vars when adding features.

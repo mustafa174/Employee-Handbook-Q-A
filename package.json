@@ -1,0 +1,24 @@
+{
+  "name": "employee-handbook-qa",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Employee Handbook Q&A — RAG (Chroma + OpenAI) + LangGraph + MCP demo",
+  "workspaces": [
+    "client",
+    "shared"
+  ],
+  "scripts": {
+    "dev": "concurrently -n rag,client -c green,blue \"node scripts/uvicorn-rag.cjs\" \"wait-on -t 120000 tcp:127.0.0.1:3001 && npm run dev -w client\"",
+    "build": "npm run build -w shared && npm run build -w client",
+    "test": "npm run test -w shared && npm run test -w client && node scripts/pytest-rag.cjs",
+    "test:js": "npm run test -w shared && npm run test -w client"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2",
+    "dotenv": "^16.4.7",
+    "wait-on": "^8.0.1"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}

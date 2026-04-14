@@ -1,0 +1,21 @@
+---
+description: MCP HR server — TypeScript, MCP SDK, Zod tool inputs
+globs: mcp-hr-server/**/*.ts
+alwaysApply: false
+---
+
+# MCP HR server (`mcp-hr-server`)
+
+## Runtime
+
+- **Node.js 20+**, **ESM** (`"type": "module"`), **tsx** for local runs.
+- Use **`@modelcontextprotocol/sdk`** patterns: `McpServer`, `StdioServerTransport`, `registerTool`.
+
+## Tools
+
+- Validate tool arguments with **Zod**; return **`content`** arrays with `type: "text"` and JSON strings for structured data.
+- Read employee data from **`fixtures/employees.json`** by default; respect **`EMPLOYEES_JSON_PATH`**.
+
+## Style
+
+- **Strict TypeScript**; no `any`. Narrow file I/O errors and return clear tool responses (e.g. `employee_not_found`).

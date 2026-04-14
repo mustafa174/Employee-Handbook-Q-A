@@ -1,0 +1,30 @@
+---
+description: React 19, Tailwind v4, and TanStack Query standards for the client app
+globs: client/**/*.tsx,client/**/*.ts,client/**/*.css
+alwaysApply: false
+---
+
+# Client — React, styling, and data fetching
+
+## React 19
+
+- Use **functional components** only; prefer **arrow functions** for components and event handlers.
+- Prefer `use()` / concurrent patterns where they simplify async UI; avoid legacy patterns deprecated in React 19.
+- Keep components small; extract hooks for reusable state and side effects.
+
+## Tailwind CSS v4
+
+- Use the **Vite plugin** (`@tailwindcss/vite`); in CSS use `@import "tailwindcss"` (no v3 `@tailwind` directives).
+- Prefer utilities and `@theme` tokens in `index.css` over ad-hoc inline styles.
+- Keep layout accessible: semantic HTML, labels for inputs, sufficient contrast.
+
+## TanStack Query
+
+- Put **server state** in Query (`useQuery`, `useMutation`); avoid duplicating fetch + `useEffect` for the same resource.
+- Use stable `queryKey` arrays; invalidate or update cache after mutations instead of manual refetch spaghetti.
+- Surface errors in UI; do not swallow failed requests silently.
+
+## TypeScript
+
+- **Strict types**; no `any`. Use `unknown` at boundaries and narrow with Zod or type guards.
+- Prefer types from `@employee-handbook/shared` for API DTOs when available.

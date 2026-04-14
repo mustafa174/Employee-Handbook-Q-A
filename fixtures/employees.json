@@ -1,0 +1,18 @@
+{
+  "employees": [
+    {
+      "employee_id": "E001",
+      "name": "Alex Chen",
+      "pto_days_remaining": 14,
+      "sick_days_remaining": 6,
+      "language_pref": "en"
+    },
+    {
+      "employee_id": "E002",
+      "name": "Sara Khan",
+      "pto_days_remaining": 9,
+      "sick_days_remaining": 4,
+      "language_pref": "ur"
+    }
+  ]
+}
