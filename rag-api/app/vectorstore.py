@@ -10,6 +10,8 @@ from app.config import CHROMA_COLLECTION, CHROMA_DIR, FIXTURES_DIR, OPENAI_EMBED
 KB_SUFFIXES = {".md", ".markdown", ".txt", ".pdf"}
 KB_CHUNK_SIZE = 400
 KB_CHUNK_OVERLAP = 50
+_EMBEDDINGS_CACHE: OpenAIEmbeddings | None = None
+_VECTORSTORE_CACHE: dict[str, Chroma] = {}
 
 
 def discover_knowledge_files(fixtures_dir: Path | None = None) -> list[Path]:
@@ -30,22 +32,33 @@ def discover_knowledge_files(fixtures_dir: Path | None = None) -> list[Path]:
 
 
 def get_embeddings() -> OpenAIEmbeddings:
-    return OpenAIEmbeddings(model=OPENAI_EMBEDDING_MODEL)
+    global _EMBEDDINGS_CACHE
+    if _EMBEDDINGS_CACHE is None:
+        _EMBEDDINGS_CACHE = OpenAIEmbeddings(model=OPENAI_EMBEDDING_MODEL)
+    return _EMBEDDINGS_CACHE
 
 
 def get_vectorstore(persist_dir: Path | None = None) -> Chroma:
     CHROMA_DIR.mkdir(parents=True, exist_ok=True)
     d = persist_dir or CHROMA_DIR
-    return Chroma(
+    cache_key = str(d.resolve())
+    cached = _VECTORSTORE_CACHE.get(cache_key)
+    if cached is not None:
+        return cached
+    instance = Chroma(
         collection_name=CHROMA_COLLECTION,
         embedding_function=get_embeddings(),
-        persist_directory=str(d),
+        persist_directory=cache_key,
     )
+    _VECTORSTORE_CACHE[cache_key] = instance
+    return instance
 
 
 def clear_collection(persist_dir: Path | None = None) -> None:
     """Remove persisted DB directory (for tests)."""
     d = persist_dir or CHROMA_DIR
+    cache_key = str(d.resolve())
+    _VECTORSTORE_CACHE.pop(cache_key, None)
     if d.exists():
         import shutil
 

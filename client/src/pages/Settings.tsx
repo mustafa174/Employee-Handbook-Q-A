@@ -56,6 +56,7 @@ const fetchAskProbe = async (): Promise<AskResponse> => {
       question: "How many PTO days do I have?",
       employee_id: "E001",
       use_rag: true,
+      skip_cache: true,
     }),
   });
   if (!res.ok) throw new Error("RAG pipeline probe failed");
@@ -91,6 +92,14 @@ export const SettingsPage = () => {
       setSelectedEmployeeId("E001");
       globalThis.dispatchEvent(new Event("handbook:clear-site-storage"));
     },
+    onSuccess: () => {
+      void queryClient.invalidateQueries({ queryKey: ["status", "cache-db"] });
+      void queryClient.invalidateQueries({ queryKey: ["status", "rag-probe"] });
+      void queryClient.invalidateQueries({ queryKey: ["health"] });
+    },
+  });
+  const purgeCacheOnly = useMutation({
+    mutationFn: purgeSemanticCache,
     onSuccess: () => {
       void queryClient.invalidateQueries({ queryKey: ["status", "cache-db"] });
       void queryClient.invalidateQueries({ queryKey: ["status", "rag-probe"] });
@@ -206,7 +215,7 @@ export const SettingsPage = () => {
           <p className="mt-1 text-xs text-zinc-500 dark:text-zinc-400">
             Clears persisted chat history and semantic cache.
           </p>
-          <div className="mt-3">
+          <div className="mt-3 flex flex-wrap items-center gap-2">
             <button
               type="button"
               onClick={() => clearSiteStorage.mutate()}
@@ -220,12 +229,28 @@ export const SettingsPage = () => {
               )}
               Clear Site Storage
             </button>
+            <button
+              type="button"
+              onClick={() => purgeCacheOnly.mutate()}
+              disabled={purgeCacheOnly.isPending}
+              className="inline-flex items-center gap-2 rounded-lg border border-amber-300 px-3 py-2 text-sm text-amber-700 transition-colors hover:bg-amber-50 disabled:opacity-50 dark:border-amber-700 dark:text-amber-300 dark:hover:bg-amber-950/40"
+            >
+              {purgeCacheOnly.isPending ? (
+                <Loader2 className="size-4 animate-spin" aria-hidden />
+              ) : (
+                <RefreshCw className="size-4" aria-hidden />
+              )}
+              Purge Cache
+            </button>
             {clearSiteStorage.isError ? (
               <p className="mt-2 text-sm text-rose-600 dark:text-rose-400">{getErrorMessage(clearSiteStorage.error)}</p>
             ) : null}
+            {purgeCacheOnly.isError ? (
+              <p className="mt-2 text-sm text-rose-600 dark:text-rose-400">{getErrorMessage(purgeCacheOnly.error)}</p>
+            ) : null}
           </div>
         </div>
-        <h2 className="text-base font-semibold text-zinc-900 dark:text-zinc-100">Enterprise AI Knowledge Base</h2>
+        <h2 className="text-base font-semibold text-zinc-900 dark:text-zinc-100">Employee Handbook Knowledge Base</h2>
         <p className="mt-1 text-sm text-zinc-500 dark:text-zinc-400">
           Ingest all supported files in `fixtures/` (.md/.txt/.pdf) into one Chroma collection.
         </p>

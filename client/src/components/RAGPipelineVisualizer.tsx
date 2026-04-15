@@ -111,12 +111,12 @@ const nodeTypesFull = {
 
 const stateForNode = (
   nodeId: string,
-  pipelineComplete: boolean,
+  _pipelineComplete: boolean,
   activeNodeIds: Set<string>,
   doneNodeIds: Set<string>,
 ): StageState => {
   if (activeNodeIds.has(nodeId)) return "active";
-  if (doneNodeIds.has(nodeId) || pipelineComplete) return "done";
+  if (doneNodeIds.has(nodeId)) return "done";
   return "idle";
 };
 

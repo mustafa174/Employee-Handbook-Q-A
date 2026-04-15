@@ -20,8 +20,9 @@ from app.config import (
     OPENAI_EMBEDDING_MODEL,
     cors_origins,
 )
+from app.employee_service import load_employees
 from app.handbook_ingest import ingest_handbook_file
-from app.rag_graph import run_ask
+from app.rag_graph import build_ask_response_from_state, build_initial_state, get_compiled_graph, run_ask
 from app.semantic_cache import (
     add_query,
     get_cached_answer,
@@ -82,6 +83,7 @@ class AskRequest(BaseModel):
     employee_id: str | None = None
     chat_history: list[dict[str, str]] | None = None
     use_rag: bool = True
+    skip_cache: bool = False
 
 
 class PipelineStepModel(BaseModel):
@@ -145,20 +147,31 @@ class CacheVizResponse(BaseModel):
     points: list[CacheVizPointModel]
 
 
+class EmployeeOptionModel(BaseModel):
+    employee_id: str
+    name: str
+
+
 def _sse_data(payload: dict) -> str:
     return f"data: {json.dumps(payload, ensure_ascii=False)}\n\n"
 
 
-def _emit_node_sequence_for_steps(steps: list[dict]) -> list[str]:
-    sequence = ["query", "guardrail", "router"]
-    has_retrieve = any(str(step.get("id")) == "retrieve" for step in steps)
-    has_mcp = any(str(step.get("id")) == "mcp_hr" for step in steps)
-    if has_retrieve:
-        sequence.append("chroma")
-    if has_mcp:
-        sequence.append("mcp")
-    sequence.extend(["synthesis", "judge", "output"])
-    return sequence
+def _flow_nodes_for_graph_node(graph_node: str) -> list[str]:
+    if graph_node == "query_refiner":
+        return ["query"]
+    if graph_node == "guardrail":
+        return ["guardrail"]
+    if graph_node == "router":
+        return ["router"]
+    if graph_node == "clarify":
+        return ["router", "output"]
+    if graph_node in {"retrieve", "grade_documents"}:
+        return ["chroma"]
+    if graph_node == "balance":
+        return ["mcp"]
+    if graph_node == "generate":
+        return ["synthesis", "judge", "output"]
+    return []
 
 
 @app.get("/api/health", response_model=HealthResponse)
@@ -167,6 +180,27 @@ def health() -> HealthResponse:
         chat_model=OPENAI_CHAT_MODEL,
         embedding_model=OPENAI_EMBEDDING_MODEL,
     )
+
+
+@app.get("/api/employees", response_model=list[EmployeeOptionModel])
+def employees() -> list[EmployeeOptionModel]:
+    try:
+        data = load_employees()
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Employees load failed: {e}") from e
+    raw_rows = data.get("employees", [])
+    if not isinstance(raw_rows, list):
+        return []
+    rows: list[EmployeeOptionModel] = []
+    for row in raw_rows:
+        if not isinstance(row, dict):
+            continue
+        employee_id = str(row.get("employee_id", "")).strip()
+        name = str(row.get("name", "")).strip()
+        if not employee_id or not name:
+            continue
+        rows.append(EmployeeOptionModel(employee_id=employee_id, name=name))
+    return rows
 
 
 @app.post("/api/ingest", response_model=IngestResponseModel)
@@ -205,12 +239,14 @@ async def ingest_upload(
 @app.post("/api/ask", response_model=AskResponseModel)
 def ask(body: AskRequest) -> AskResponseModel:
     kb_signature = get_kb_signature()
-    cached = get_cached_answer(
-        body.question,
-        body.employee_id,
-        body.use_rag,
-        kb_signature=kb_signature,
-    )
+    cached = None
+    if not body.skip_cache:
+        cached = get_cached_answer(
+            body.question,
+            body.employee_id,
+            body.use_rag,
+            kb_signature=kb_signature,
+        )
     cache_hit = False
     cache_reason = "miss"
     if cached:
@@ -228,7 +264,7 @@ def ask(body: AskRequest) -> AskResponseModel:
         cached["pipeline_steps"] = cached_steps
         raw = cached
     else:
-        if has_stale_cached_answer(
+        if not body.skip_cache and has_stale_cached_answer(
             body.question,
             body.employee_id,
             body.use_rag,
@@ -244,16 +280,18 @@ def ask(body: AskRequest) -> AskResponseModel:
             )
         except Exception as e:
             raise HTTPException(status_code=500, detail=f"Ask failed: {e}") from e
-        put_cached_answer(body.question, body.employee_id, body.use_rag, raw)
+        if not body.skip_cache:
+            put_cached_answer(body.question, body.employee_id, body.use_rag, raw)
     raw["cache_hit"] = cache_hit
-    raw["cache_reason"] = cache_reason
+    raw["cache_reason"] = "miss" if body.skip_cache else cache_reason
     raw["cache_kb_signature"] = kb_signature
 
-    try:
-        add_query(body.question, created_at=datetime.now(timezone.utc).isoformat())
-    except Exception:
-        # Telemetry writes must not break user answers.
-        pass
+    if not body.skip_cache:
+        try:
+            add_query(body.question, created_at=datetime.now(timezone.utc).isoformat())
+        except Exception:
+            # Telemetry writes must not break user answers.
+            pass
     cites = [CitationModel(**c) for c in raw.get("citations", [])]
     attempts = [RetrievalAttemptModel(**a) for a in raw.get("retrieval_attempts", [])]
     steps = [PipelineStepModel(**s) for s in raw.get("pipeline_steps", [])]
@@ -275,12 +313,14 @@ async def ask_stream(body: AskRequest) -> StreamingResponse:
         run_id = str(uuid.uuid4())
         yield _sse_data({"type": "run_start", "run_id": run_id})
         kb_signature = get_kb_signature()
-        cached = get_cached_answer(
-            body.question,
-            body.employee_id,
-            body.use_rag,
-            kb_signature=kb_signature,
-        )
+        cached = None
+        if not body.skip_cache:
+            cached = get_cached_answer(
+                body.question,
+                body.employee_id,
+                body.use_rag,
+                kb_signature=kb_signature,
+            )
         cache_hit = False
         cache_reason = "miss"
         if cached:
@@ -288,7 +328,7 @@ async def ask_stream(body: AskRequest) -> StreamingResponse:
             cache_reason = "hit"
             raw = cached
         else:
-            if has_stale_cached_answer(
+            if not body.skip_cache and has_stale_cached_answer(
                 body.question,
                 body.employee_id,
                 body.use_rag,
@@ -296,27 +336,45 @@ async def ask_stream(body: AskRequest) -> StreamingResponse:
             ):
                 cache_reason = "kb_changed"
             try:
-                raw = await asyncio.to_thread(
-                    run_ask,
+                graph = get_compiled_graph()
+                initial = build_initial_state(
                     body.question,
                     employee_id=body.employee_id,
                     chat_history=body.chat_history,
                     use_rag=body.use_rag,
                 )
+                final_state = dict(initial)
+                async for update in graph.astream(initial, stream_mode="updates"):
+                    for graph_node, node_delta in update.items():
+                        flow_nodes = _flow_nodes_for_graph_node(str(graph_node))
+                        status = "ok"
+                        if graph_node == "guardrail" and isinstance(node_delta, dict) and node_delta.get("escalate"):
+                            status = "triggered"
+                        for node in flow_nodes:
+                            yield _sse_data({"type": "node_start", "run_id": run_id, "node": node})
+                        await asyncio.sleep(0.005)
+                        for node in flow_nodes:
+                            yield _sse_data(
+                                {"type": "node_end", "run_id": run_id, "node": node, "status": status}
+                            )
+                        if isinstance(node_delta, dict):
+                            final_state.update(node_delta)
+                raw = build_ask_response_from_state(final_state, use_rag=body.use_rag)
             except Exception as e:
                 yield _sse_data({"type": "error", "run_id": run_id, "message": f"Ask failed: {e}"})
                 return
-            put_cached_answer(body.question, body.employee_id, body.use_rag, raw)
+            if not body.skip_cache:
+                put_cached_answer(body.question, body.employee_id, body.use_rag, raw)
 
         raw["cache_hit"] = cache_hit
-        raw["cache_reason"] = cache_reason
+        raw["cache_reason"] = "miss" if body.skip_cache else cache_reason
         raw["cache_kb_signature"] = kb_signature
 
-        sequence = _emit_node_sequence_for_steps(list(raw.get("pipeline_steps", [])))
-        for node_id in sequence:
-            yield _sse_data({"type": "node_start", "run_id": run_id, "node": node_id})
-            await asyncio.sleep(0.02)
-            yield _sse_data({"type": "node_end", "run_id": run_id, "node": node_id, "status": "ok"})
+        if cache_hit:
+            for node_id in ("query", "output"):
+                yield _sse_data({"type": "node_start", "run_id": run_id, "node": node_id})
+                await asyncio.sleep(0.01)
+                yield _sse_data({"type": "node_end", "run_id": run_id, "node": node_id, "status": "ok"})
 
         answer_text = str(raw.get("answer", ""))
         if answer_text:
@@ -326,10 +384,11 @@ async def ask_stream(body: AskRequest) -> StreamingResponse:
                 yield _sse_data({"type": "text", "run_id": run_id, "content": f"{chunk} "})
                 await asyncio.sleep(0.01)
 
-        try:
-            add_query(body.question, created_at=datetime.now(timezone.utc).isoformat())
-        except Exception:
-            pass
+        if not body.skip_cache:
+            try:
+                add_query(body.question, created_at=datetime.now(timezone.utc).isoformat())
+            except Exception:
+                pass
 
         yield _sse_data({"type": "done", "run_id": run_id, "final": raw})
 

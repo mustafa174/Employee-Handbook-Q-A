@@ -1,34 +1,148 @@
 {
   "entries": [
     {
-      "query": "How many PTO days do I have?",
+      "query": "How far in advance should I request PTO?",
       "category": "PTO",
-      "created_at": "2026-04-14T15:29:15.293072+00:00"
+      "created_at": "2026-04-15T10:49:40.939682+00:00"
     },
     {
-      "query": "How many PTO days do I have?",
+      "query": "How far in advance should I request PTO?",
       "category": "PTO",
-      "created_at": "2026-04-14T15:29:18.357171+00:00"
+      "created_at": "2026-04-15T10:49:42.619659+00:00"
     },
     {
-      "query": "How many PTO days do I have?",
+      "query": "Recommend best consumer VPN for streaming.\nWhat\u2019s legal notice period in Germany?\nCan I work from Mars?\nCan I bring my lion to office?\nExpected: Not Found + Next Steps; no fabricated legal/policy facts.\nWhat is my employee ID and name?\nHow many sick + PTO days do I have?\nCan I take time off next week and what\u2019s the rule?\nHow many days do I have left and what is medical certification rule?\n\nWhat is the PTO advance notice requirement?\nHow many PTO days can roll over?\nWhen is medical certification required for sick leave?\nWhat VPN is required for internal servers?\nWhat is the VPN gateway?\nHow often are laptops upgraded?\nExpected: grounded answer + specific section citation.\nWhat is PTO rollover? What is salary band in Dubai?\nWhat VPN gateway do we use? Can I use VPN for Netflix?\nHow many sick days do I have? What is moon remote-work policy?\nWhat is laptop upgrade cycle? What is Germany labor-law notice period?\n\nleave\ntime off policy\nhardware help\nremote access\nExpected: options list with section references, no dead-end.",
       "category": "PTO",
-      "created_at": "2026-04-14T15:29:25.947292+00:00"
+      "created_at": "2026-04-15T10:50:09.704774+00:00"
+    },
+    {
+      "query": "Recommend best consumer VPN for streaming.\nWhat\u2019s legal notice period in Germany?\nCan I work from Mars?\nCan I bring my lion to office?\nExpected: Not Found + Next Steps; no fabricated legal/policy facts.\nWhat is my employee ID and name?\nHow many sick + PTO days do I have?\nCan I take time off next week and what\u2019s the rule?\nHow many days do I have left and what is medical certification rule?\n\nWhat is the PTO advance notice requirement?\nHow many PTO days can roll over?\nWhen is medical certification required for sick leave?\nWhat VPN is required for internal servers?\nWhat is the VPN gateway?\nHow often are laptops upgraded?\nExpected: grounded answer + specific section citation.\nWhat is PTO rollover? What is salary band in Dubai?\nWhat VPN gateway do we use? Can I use VPN for Netflix?\nHow many sick days do I have? What is moon remote-work policy?\nWhat is laptop upgrade cycle? What is Germany labor-law notice period?\n\nleave\ntime off policy\nhardware help\nremote access\nExpected: options list with section references, no dead-end.",
+      "category": "PTO",
+      "created_at": "2026-04-15T10:50:37.258146+00:00"
+    },
+    {
+      "query": "how to contact hr",
+      "category": "General",
+      "created_at": "2026-04-15T10:50:47.747181+00:00"
+    },
+    {
+      "query": "how to contact hr",
+      "category": "General",
+      "created_at": "2026-04-15T10:50:47.957822+00:00"
+    },
+    {
+      "query": "i want to put resign",
+      "category": "General",
+      "created_at": "2026-04-15T10:50:54.803508+00:00"
+    },
+    {
+      "query": "i want to put resign",
+      "category": "General",
+      "created_at": "2026-04-15T10:50:55.252584+00:00"
+    },
+    {
+      "query": "i want to replace my laptop",
+      "category": "Personal",
+      "created_at": "2026-04-15T10:51:14.830965+00:00"
+    },
+    {
+      "query": "i want to replace my laptop",
+      "category": "Personal",
+      "created_at": "2026-04-15T10:51:26.489683+00:00"
+    },
+    {
+      "query": "Do unused vacation days carry over to next year?",
+      "category": "PTO",
+      "created_at": "2026-04-15T10:55:18.983132+00:00"
+    },
+    {
+      "query": "Do unused vacation days carry over to next year?",
+      "category": "PTO",
+      "created_at": "2026-04-15T10:55:22.441070+00:00"
+    },
+    {
+      "query": "What is the probation period duration",
+      "category": "General",
+      "created_at": "2026-04-15T10:55:37.030382+00:00"
+    },
+    {
+      "query": "What is the probation period duration",
+      "category": "General",
+      "created_at": "2026-04-15T10:55:37.699845+00:00"
+    },
+    {
+      "query": "I want to report a harassment incident involving my lead.",
+      "category": "Personal",
+      "created_at": "2026-04-15T11:09:27.277270+00:00"
+    },
+    {
+      "query": "I want to report a harassment incident involving my lead.",
+      "category": "Personal",
+      "created_at": "2026-04-15T11:09:27.931469+00:00"
     }
   ],
   "answers": [
     {
-      "key": "how many pto days do i have?::emp=E001::rag=1",
-      "question_norm": "how many pto days do i have?",
+      "key": "v6::how far in advance should i request pto?::emp=E001::rag=0",
+      "question_norm": "how far in advance should i request pto?",
+      "employee_id": "E001",
+      "use_rag": false,
+      "kb_signature": "42f3bf1712dce280a46d49e42e837ce030ccc621341347bd2c21ba4a6a97ccf8",
+      "response": {
+        "answer": "I cannot see internal policy documents, including specific guidelines on requesting PTO. I recommend contacting your HR department for accurate information regarding how far in advance you should request PTO.",
+        "citations": [],
+        "retrieval_attempts": [],
+        "isEscalated": false,
+        "escalation_reason": null,
+        "pipeline_steps": [
+          {
+            "id": "guardrail",
+            "label": "Guardrail",
+            "status": "ok",
+            "detail": "No sensitive pattern matched"
+          },
+          {
+            "id": "router",
+            "label": "Semantic Intent Router",
+            "status": "ok",
+            "detail": "INTENT_POLICY (domain=POLICY, conf=0.90) \u2014 process-policy guardrail: contact/procedure query forced to policy"
+          },
+          {
+            "id": "retrieve",
+            "label": "Chroma retrieval",
+            "status": "skipped",
+            "detail": "Direct LLM mode (no handbook vectors)"
+          },
+          {
+            "id": "mcp_hr",
+            "label": "Employee profile data (MCP-style)",
+            "status": "skipped",
+            "detail": "Disabled in direct LLM mode"
+          },
+          {
+            "id": "llm",
+            "label": "OpenAI chat \u2014 gpt-4o-mini",
+            "status": "ok",
+            "detail": "Embeddings: text-embedding-3-small; structured JSON answer"
+          }
+        ],
+        "use_rag": false,
+        "chat_model": "gpt-4o-mini"
+      },
+      "created_at": "2026-04-15T10:49:40.937239+00:00"
+    },
+    {
+      "key": "v6::how far in advance should i request pto?::emp=E001::rag=1",
+      "question_norm": "how far in advance should i request pto?",
       "employee_id": "E001",
       "use_rag": true,
-      "kb_signature": "051e9c84a0954ffa5b800d20e263bd892ed1115f59a16c44dd5cad9077cb50d4",
+      "kb_signature": "42f3bf1712dce280a46d49e42e837ce030ccc621341347bd2c21ba4a6a97ccf8",
       "response": {
-        "answer": "You currently have 6 sick days and 14 PTO days remaining.",
+        "answer": "You currently have 14 PTO days and 6 sick days remaining.",
         "citations": [
           {
             "text": "## Time off and leave\n\n### Paid time off (PTO)\n\nFull-time employees accrue **PTO** according to the accrual schedule published on the internal HR portal. PTO requests must be submitted **at least 10 business days** in advance unless your manager approves an exception for emergencies.\n\nUnused PTO may roll over up to **5 days** into the next calendar year unless local policy states otherwise.",
-            "score": 0.6361,
+            "score": 0.7375,
             "source": "handbook.md",
             "section_title": "Paid time off (PTO)"
           }
@@ -36,44 +150,14 @@
         "retrieval_attempts": [
           {
             "attempt": 1,
-            "query": "How many PTO days do I have?",
-            "top_score": 0.6361,
-            "verdict": "re-search",
-            "reason": "The retrieved chunk provides information about the accrual and rollover of PTO but does not specify the exact number of PTO days an employee has.",
+            "query": "How far in advance should I request PTO?",
+            "top_score": 0.7375,
+            "verdict": "answerable",
+            "reason": "The retrieved chunk clearly states that PTO requests must be submitted at least 10 business days in advance, which directly answers the question.",
             "citations": [
               {
                 "text": "## Time off and leave\n\n### Paid time off (PTO)\n\nFull-time employees accrue **PTO** according to the accrual schedule published on the internal HR portal. PTO requests must be submitted **at least 10 business days** in advance unless your manager approves an exception for emergencies.\n\nUnused PTO may roll over up to **5 days** into the next calendar year unless local policy states otherwise.",
-                "score": 0.6361,
-                "source": "handbook.md",
-                "section_title": "Paid time off (PTO)"
-              }
-            ]
-          },
-          {
-            "attempt": 2,
-            "query": "What is the total number of Paid Time Off (PTO) days that I am entitled to, including any accrued, unused, or rolled over days, and are there any specific eligibility criteria or exceptions that apply to my situation?",
-            "top_score": 0.6361,
-            "verdict": "re-search",
-            "reason": "The retrieved chunk provides information about the accrual and rollover of PTO but does not specify the exact number of PTO days available to the employee.",
-            "citations": [
-              {
-                "text": "## Time off and leave\n\n### Paid time off (PTO)\n\nFull-time employees accrue **PTO** according to the accrual schedule published on the internal HR portal. PTO requests must be submitted **at least 10 business days** in advance unless your manager approves an exception for emergencies.\n\nUnused PTO may roll over up to **5 days** into the next calendar year unless local policy states otherwise.",
-                "score": 0.6361,
-                "source": "handbook.md",
-                "section_title": "Paid time off (PTO)"
-              }
-            ]
-          },
-          {
-            "attempt": 3,
-            "query": "What is the total number of Paid Time Off (PTO) days that I am entitled to, including any accrued, unused, or rolled over days? Additionally, what are the specific eligibility criteria for earning PTO, and are there any exceptions or special circumstances that might affect my total PTO balance?",
-            "top_score": 0.6361,
-            "verdict": "re-search",
-            "reason": "The retrieved chunk provides information about the accrual of PTO and rollover policies but does not specify the exact number of PTO days available to the employee.",
-            "citations": [
-              {
-                "text": "## Time off and leave\n\n### Paid time off (PTO)\n\nFull-time employees accrue **PTO** according to the accrual schedule published on the internal HR portal. PTO requests must be submitted **at least 10 business days** in advance unless your manager approves an exception for emergencies.\n\nUnused PTO may roll over up to **5 days** into the next calendar year unless local policy states otherwise.",
-                "score": 0.6361,
+                "score": 0.7375,
                 "source": "handbook.md",
                 "section_title": "Paid time off (PTO)"
               }
@@ -93,13 +177,13 @@
             "id": "router",
             "label": "Semantic Intent Router",
             "status": "ok",
-            "detail": "INTENT_PERSONAL \u2014 User is inquiring about their own personal PTO days."
+            "detail": "INTENT_POLICY (domain=POLICY, conf=0.90) \u2014 process-policy guardrail: contact/procedure query forced to policy"
           },
           {
             "id": "retrieve",
             "label": "Chroma retrieval (embeddings + similarity)",
-            "status": "skipped",
-            "detail": "Intent is personal data lookup"
+            "status": "ok",
+            "detail": "1 chunk(s), 1 retrieval attempt(s)"
           },
           {
             "id": "mcp_hr",
@@ -117,7 +201,820 @@
         "use_rag": true,
         "chat_model": "gpt-4o-mini"
       },
-      "created_at": "2026-04-14T15:29:25.945220+00:00"
+      "created_at": "2026-04-15T10:49:42.447427+00:00"
+    },
+    {
+      "key": "v6::recommend best consumer vpn for streaming. what\u2019s legal notice period in germany? can i work from mars? can i bring my lion to office? expected: not found + next steps; no fabricated legal/policy facts. what is my employee id and name? how many sick + pto days do i have? can i take time off next week and what\u2019s the rule? how many days do i have left and what is medical certification rule? what is the pto advance notice requirement? how many pto days can roll over? when is medical certification required for sick leave? what vpn is required for internal servers? what is the vpn gateway? how often are laptops upgraded? expected: grounded answer + specific section citation. what is pto rollover? what is salary band in dubai? what vpn gateway do we use? can i use vpn for netflix? how many sick days do i have? what is moon remote-work policy? what is laptop upgrade cycle? what is germany labor-law notice period? leave time off policy hardware help remote access expected: options list with section references, no dead-end.::emp=E001::rag=0",
+      "question_norm": "recommend best consumer vpn for streaming. what\u2019s legal notice period in germany? can i work from mars? can i bring my lion to office? expected: not found + next steps; no fabricated legal/policy facts. what is my employee id and name? how many sick + pto days do i have? can i take time off next week and what\u2019s the rule? how many days do i have left and what is medical certification rule? what is the pto advance notice requirement? how many pto days can roll over? when is medical certification required for sick leave? what vpn is required for internal servers? what is the vpn gateway? how often are laptops upgraded? expected: grounded answer + specific section citation. what is pto rollover? what is salary band in dubai? what vpn gateway do we use? can i use vpn for netflix? how many sick days do i have? what is moon remote-work policy? what is laptop upgrade cycle? what is germany labor-law notice period? leave time off policy hardware help remote access expected: options list with section references, no dead-end.",
+      "employee_id": "E001",
+      "use_rag": false,
+      "kb_signature": "42f3bf1712dce280a46d49e42e837ce030ccc621341347bd2c21ba4a6a97ccf8",
+      "response": {
+        "answer": "1. **Best Consumer VPN for Streaming**: Popular options include ExpressVPN, NordVPN, and Surfshark, known for their speed and ability to bypass geo-restrictions.\n\n2. **Legal Notice Period in Germany**: The legal notice period varies based on the length of employment, typically ranging from 2 weeks to 7 months.\n\n3. **Working from Mars**: No, working from Mars is not feasible with current technology.\n\n4. **Bringing a Lion to the Office**: Generally, bringing a lion to the office is not allowed due to safety and legal regulations.\n\n5. **Employee ID and Name**: I cannot access internal employee information. Please contact HR for assistance.\n\n6. **Sick and PTO Days**: I cannot access your specific leave balances. Please check with HR.\n\n7. **Time Off Next Week**: I cannot provide specific rules regarding time off. Please refer to your company's time off policy or contact HR.\n\n8. **Days Left and Medical Certification Rule**: I cannot access your leave balances or specific rules. Please check with HR.\n\n9. **PTO Advance Notice Requirement**: Typically, companies require advance notice for PTO, often ranging from 1 to 4 weeks, but please check your specific policy.\n\n10. **PTO Days Roll Over**: Many companies allow a certain number of PTO days to roll over, often up to a year. Check your company's policy for specifics.\n\n11. **Medical Certification for Sick Leave**: Medical certification is usually required after a certain number of sick days, often 3 consecutive days, but this can vary.\n\n12. **VPN for Internal Servers**: The specific VPN required for internal servers is determined by your company's IT policy. Please consult your IT department.\n\n13. **VPN Gateway**: The VPN gateway used by your company should be provided by your IT department. Please check with them.\n\n14. **Laptop Upgrade Frequency**: Laptop upgrade cycles vary by company policy, often every 2-4 years. Please refer to your company's hardware policy.\n\n15. **PTO Rollover**: PTO rollover refers to the practice of carrying over unused PTO days into the next year, subject to company policy.\n\n16. **Salary Band in Dubai**: Salary bands vary by company and industry in Dubai. Please refer to your HR department for specific information.\n\n17. **VPN Gateway for Use**: The specific VPN gateway should be confirmed with your IT department.\n\n18. **Using VPN for Netflix**: Using a VPN for Netflix may violate their terms of service, and access can be blocked.\n\n19. **Sick Days**: I cannot access your sick day balance. Please check with HR.\n\n20. **Moon Remote-Work Policy**: I cannot provide information on a moon remote-work policy. Please refer to your company's remote work policy.\n\n21. **Laptop Upgrade Cycle**: The laptop upgrade cycle is typically defined in your company's hardware policy. Please check with IT.\n\n22. **Germany Labor-Law Notice Period**: The notice period under German labor law varies based on the length of employment, generally from 2 weeks to 7 months.",
+        "citations": [],
+        "retrieval_attempts": [],
+        "isEscalated": false,
+        "escalation_reason": null,
+        "pipeline_steps": [
+          {
+            "id": "guardrail",
+            "label": "Guardrail",
+            "status": "ok",
+            "detail": "No sensitive pattern matched"
+          },
+          {
+            "id": "router",
+            "label": "Semantic Intent Router",
+            "status": "ok",
+            "detail": "INTENT_POLICY (domain=POLICY, conf=0.90) \u2014 process-policy guardrail: contact/procedure query forced to policy"
+          },
+          {
+            "id": "retrieve",
+            "label": "Chroma retrieval",
+            "status": "skipped",
+            "detail": "Direct LLM mode (no handbook vectors)"
+          },
+          {
+            "id": "mcp_hr",
+            "label": "Employee profile data (MCP-style)",
+            "status": "skipped",
+            "detail": "Disabled in direct LLM mode"
+          },
+          {
+            "id": "llm",
+            "label": "OpenAI chat \u2014 gpt-4o-mini",
+            "status": "ok",
+            "detail": "Embeddings: text-embedding-3-small; structured JSON answer"
+          }
+        ],
+        "use_rag": false,
+        "chat_model": "gpt-4o-mini"
+      },
+      "created_at": "2026-04-15T10:50:09.701015+00:00"
+    },
+    {
+      "key": "v6::recommend best consumer vpn for streaming. what\u2019s legal notice period in germany? can i work from mars? can i bring my lion to office? expected: not found + next steps; no fabricated legal/policy facts. what is my employee id and name? how many sick + pto days do i have? can i take time off next week and what\u2019s the rule? how many days do i have left and what is medical certification rule? what is the pto advance notice requirement? how many pto days can roll over? when is medical certification required for sick leave? what vpn is required for internal servers? what is the vpn gateway? how often are laptops upgraded? expected: grounded answer + specific section citation. what is pto rollover? what is salary band in dubai? what vpn gateway do we use? can i use vpn for netflix? how many sick days do i have? what is moon remote-work policy? what is laptop upgrade cycle? what is germany labor-law notice period? leave time off policy hardware help remote access expected: options list with section references, no dead-end.::emp=E001::rag=1",
+      "question_norm": "recommend best consumer vpn for streaming. what\u2019s legal notice period in germany? can i work from mars? can i bring my lion to office? expected: not found + next steps; no fabricated legal/policy facts. what is my employee id and name? how many sick + pto days do i have? can i take time off next week and what\u2019s the rule? how many days do i have left and what is medical certification rule? what is the pto advance notice requirement? how many pto days can roll over? when is medical certification required for sick leave? what vpn is required for internal servers? what is the vpn gateway? how often are laptops upgraded? expected: grounded answer + specific section citation. what is pto rollover? what is salary band in dubai? what vpn gateway do we use? can i use vpn for netflix? how many sick days do i have? what is moon remote-work policy? what is laptop upgrade cycle? what is germany labor-law notice period? leave time off policy hardware help remote access expected: options list with section references, no dead-end.",
+      "employee_id": "E001",
+      "use_rag": true,
+      "kb_signature": "42f3bf1712dce280a46d49e42e837ce030ccc621341347bd2c21ba4a6a97ccf8",
+      "response": {
+        "answer": "- **Recommend best consumer VPN for streaming.**: # IT Support & Infrastructure Guide\n\n### VPN Access\nTo access internal servers from a remote location, you must use the **GlobalProtect VPN**. (Section: VPN Access)\n- **What\u2019s legal notice period in Germany?**: I can help with company handbook, HR, and IT policy questions only. I couldn't find a grounded policy source for this request.\n\nNext Steps:\n- Ask a company policy question (for example: PTO, sick leave, VPN, hardware).\n- Or share the policy area and I will search that section directly.\n- **Can I work from Mars?**: I can help with company handbook, HR, and IT policy questions only. I couldn't find a grounded policy source for this request.\n\nNext Steps:\n- Ask a company policy question (for example: PTO, sick leave, VPN, hardware).\n- Or share the policy area and I will search that section directly.\n- **Can I bring my lion to office?**: Your location is Lahore.\n- **What is my employee ID and name?**: I see you're asking about your profile. Are you looking for your leave balance or your loan eligibility?\n- **How many sick + PTO days do I have?**: You currently have 14 PTO days and 6 sick days remaining.\n- **Can I take time off next week and what\u2019s the rule?**: ## Time off and leave\n\n### Paid time off (PTO)\n\nFull-time employees accrue **PTO** according to the accrual schedule published on the internal HR portal. (Section: Paid time off (PTO))\n- **How many days do I have left**: I can help with company handbook, HR, and IT policy questions only. I couldn't find a grounded policy source for this request.\n\nNext Steps:\n- Ask a company policy question (for example: PTO, sick leave, VPN, hardware).\n- Or share the policy area and I will search that section directly.\n- **what is medical certification rule?**: ### Sick leave\n\nSick leave is for illness or medical appointments. (Section: Sick leave)\n- **What is the PTO advance notice requirement?**: ## Time off and leave\n\n### Paid time off (PTO)\n\nFull-time employees accrue **PTO** according to the accrual schedule published on the internal HR portal. (Section: Paid time off (PTO))\n- **How many PTO days can roll over?**: You currently have 14 PTO days and 6 sick days remaining.\n- **When is medical certification required for sick leave?**: ### Sick leave\n\nSick leave is for illness or medical appointments. (Section: Sick leave)\n- **What VPN is required for internal servers?**: # IT Support & Infrastructure Guide\n\n### VPN Access\nTo access internal servers from a remote location, you must use the **GlobalProtect VPN**. (Section: VPN Access)\n- **What is the VPN gateway?**: # IT Support & Infrastructure Guide\n\n### VPN Access\nTo access internal servers from a remote location, you must use the **GlobalProtect VPN**. (Section: VPN Access)\n- **How often are laptops upgraded?**: I can help with company handbook, HR, and IT policy questions only. I couldn't find a grounded policy source for this request.\n\nNext Steps:\n- Ask a company policy question (for example: PTO, sick leave, VPN, hardware).\n- Or share the policy area and I will search that section directly.\n- **What is PTO rollover?**: ## Time off and leave\n\n### Paid time off (PTO)\n\nFull-time employees accrue **PTO** according to the accrual schedule published on the internal HR portal. (Section: Paid time off (PTO))\n- **What is salary band in Dubai?**: I can help with company handbook, HR, and IT policy questions only. I couldn't find a grounded policy source for this request.\n\nNext Steps:\n- Ask a company policy question (for example: PTO, sick leave, VPN, hardware).\n- Or share the policy area and I will search that section directly.\n- **What VPN gateway do we use?**: # IT Support & Infrastructure Guide\n\n### VPN Access\nTo access internal servers from a remote location, you must use the **GlobalProtect VPN**. (Section: VPN Access)\n- **Can I use VPN for Netflix?**: # IT Support & Infrastructure Guide\n\n### VPN Access\nTo access internal servers from a remote location, you must use the **GlobalProtect VPN**. (Section: VPN Access)\n- **How many sick days do I have?**: You currently have 14 PTO days and 6 sick days remaining.\n- **What is moon remote-work policy?**: I can help with company handbook, HR, and IT policy questions only. I couldn't find a grounded policy source for this request.\n\nNext Steps:\n- Ask a company policy question (for example: PTO, sick leave, VPN, hardware).\n- Or share the policy area and I will search that section directly.\n- **What is laptop upgrade cycle?**: ### Hardware Requests\nStandard laptop upgrades occur every **3 years**. (Section: Hardware Requests)\n- **What is Germany labor-law notice period?**: I can help with company handbook, HR, and IT policy questions only. I couldn't find a grounded policy source for this request.\n\nNext Steps:\n- Ask a company policy question (for example: PTO, sick leave, VPN, hardware).\n- Or share the policy area and I will search that section directly.\n- **leave**: ### Sick leave\n\nSick leave is for illness or medical appointments. (Section: Sick leave)\n\nSource: IT Support & Infrastructure Guide > Section: VPN Access; Employee Handbook > Section: Paid time off (PTO)",
+        "citations": [
+          {
+            "text": "# IT Support & Infrastructure Guide\n\n### VPN Access\nTo access internal servers from a remote location, you must use the **GlobalProtect VPN**. \n* **Gateway:** `vpn.company.com` \n* **Credentials:** Use your standard SSO (Single Sign-On) credentials.\n* **MFA:** Multi-factor authentication via the Duo app is required for every login.",
+            "score": 0.7089,
+            "source": "it_guide.md",
+            "section_title": "VPN Access"
+          },
+          {
+            "text": "# Demo Employee Handbook (Synthetic)\n\nThis is **synthetic** content for demos only \u2014 not legal or HR advice.\n\n---",
+            "score": 0.6477,
+            "source": "handbook.md",
+            "section_title": "Demo Employee Handbook (Synthetic)"
+          },
+          {
+            "text": "## Time off and leave\n\n### Paid time off (PTO)\n\nFull-time employees accrue **PTO** according to the accrual schedule published on the internal HR portal. PTO requests must be submitted **at least 10 business days** in advance unless your manager approves an exception for emergencies.\n\nUnused PTO may roll over up to **5 days** into the next calendar year unless local policy states otherwise.",
+            "score": 0.5961,
+            "source": "handbook.md",
+            "section_title": "Paid time off (PTO)"
+          }
+        ],
+        "retrieval_attempts": [
+          {
+            "attempt": 1,
+            "query": "Recommend best consumer VPN for streaming.",
+            "top_score": 0.7089,
+            "verdict": "answerable",
+            "reason": "Fast-path accept: top score 0.71 with 3 citation(s)",
+            "citations": [
+              {
+                "text": "# IT Support & Infrastructure Guide\n\n### VPN Access\nTo access internal servers from a remote location, you must use the **GlobalProtect VPN**. \n* **Gateway:** `vpn.company.com` \n* **Credentials:** Use your standard SSO (Single Sign-On) credentials.\n* **MFA:** Multi-factor authentication via the Duo app is required for every login.",
+                "score": 0.7089,
+                "source": "it_guide.md",
+                "section_title": "VPN Access"
+              },
+              {
+                "text": "# Demo Employee Handbook (Synthetic)\n\nThis is **synthetic** content for demos only \u2014 not legal or HR advice.\n\n---",
+                "score": 0.6477,
+                "source": "handbook.md",
+                "section_title": "Demo Employee Handbook (Synthetic)"
+              },
+              {
+                "text": "## Time off and leave\n\n### Paid time off (PTO)\n\nFull-time employees accrue **PTO** according to the accrual schedule published on the internal HR portal. PTO requests must be submitted **at least 10 business days** in advance unless your manager approves an exception for emergencies.\n\nUnused PTO may roll over up to **5 days** into the next calendar year unless local policy states otherwise.",
+                "score": 0.5961,
+                "source": "handbook.md",
+                "section_title": "Paid time off (PTO)"
+              }
+            ]
+          }
+        ],
+        "isEscalated": false,
+        "escalation_reason": null,
+        "pipeline_steps": [
+          {
+            "id": "guardrail",
+            "label": "Guardrail",
+            "status": "ok",
+            "detail": "No sensitive pattern matched"
+          },
+          {
+            "id": "router",
+            "label": "Semantic Intent Router",
+            "status": "ok",
+            "detail": "INTENT_POLICY (domain=POLICY, conf=0.90) \u2014 process-policy guardrail: contact/procedure query forced to policy"
+          },
+          {
+            "id": "retrieve",
+            "label": "Chroma retrieval (embeddings + similarity)",
+            "status": "ok",
+            "detail": "3 chunk(s), 1 retrieval attempt(s)"
+          },
+          {
+            "id": "mcp_hr",
+            "label": "Employee tool (MCP-style)",
+            "status": "ok",
+            "detail": "\u2705 Active: Securely retrieved data for E001"
+          },
+          {
+            "id": "llm",
+            "label": "OpenAI chat \u2014 gpt-4o-mini",
+            "status": "ok",
+            "detail": "Embeddings: text-embedding-3-small; structured JSON answer"
+          }
+        ],
+        "use_rag": true,
+        "chat_model": "gpt-4o-mini"
+      },
+      "created_at": "2026-04-15T10:50:24.626576+00:00"
+    },
+    {
+      "key": "v6::how to contact hr::emp=E001::rag=1",
+      "question_norm": "how to contact hr",
+      "employee_id": "E001",
+      "use_rag": true,
+      "kb_signature": "42f3bf1712dce280a46d49e42e837ce030ccc621341347bd2c21ba4a6a97ccf8",
+      "response": {
+        "answer": "You can contact HR through the HR Intake Team at hr-support@company.com or through the internal HR portal.",
+        "citations": [
+          {
+            "text": "## Conduct and escalation\n\n### Respectful workplace\n\nWe are committed to a workplace free of harassment and discrimination. Concerns should be reported through the **HR intake channel** or your people partner. **Do not use this chatbot for harassment, discrimination, or legal claims** \u2014 contact HR directly.",
+            "score": 0.7093,
+            "source": "handbook.md",
+            "section_title": "Respectful workplace"
+          }
+        ],
+        "retrieval_attempts": [
+          {
+            "attempt": 1,
+            "query": "how to contact hr",
+            "top_score": 0.7093,
+            "verdict": "answerable",
+            "reason": "The retrieved chunk provides information on how to contact HR through the HR intake channel or a people partner, which directly answers the question.",
+            "citations": [
+              {
+                "text": "## Conduct and escalation\n\n### Respectful workplace\n\nWe are committed to a workplace free of harassment and discrimination. Concerns should be reported through the **HR intake channel** or your people partner. **Do not use this chatbot for harassment, discrimination, or legal claims** \u2014 contact HR directly.",
+                "score": 0.7093,
+                "source": "handbook.md",
+                "section_title": "Respectful workplace"
+              }
+            ]
+          }
+        ],
+        "isEscalated": false,
+        "escalation_reason": null,
+        "pipeline_steps": [
+          {
+            "id": "guardrail",
+            "label": "Guardrail",
+            "status": "ok",
+            "detail": "No sensitive pattern matched"
+          },
+          {
+            "id": "router",
+            "label": "Semantic Intent Router",
+            "status": "ok",
+            "detail": "INTENT_POLICY (domain=POLICY, conf=0.90) \u2014 process-policy guardrail: contact/procedure query forced to policy"
+          },
+          {
+            "id": "retrieve",
+            "label": "Chroma retrieval (embeddings + similarity)",
+            "status": "ok",
+            "detail": "1 chunk(s), 1 retrieval attempt(s)"
+          },
+          {
+            "id": "mcp_hr",
+            "label": "Employee tool (MCP-style)",
+            "status": "ok",
+            "detail": "\u2705 Active: Securely retrieved data for E001"
+          },
+          {
+            "id": "llm",
+            "label": "OpenAI chat \u2014 gpt-4o-mini",
+            "status": "ok",
+            "detail": "Embeddings: text-embedding-3-small; structured JSON answer"
+          }
+        ],
+        "use_rag": true,
+        "chat_model": "gpt-4o-mini"
+      },
+      "created_at": "2026-04-15T10:50:47.694580+00:00"
+    },
+    {
+      "key": "v6::how to contact hr::emp=E001::rag=0",
+      "question_norm": "how to contact hr",
+      "employee_id": "E001",
+      "use_rag": false,
+      "kb_signature": "42f3bf1712dce280a46d49e42e837ce030ccc621341347bd2c21ba4a6a97ccf8",
+      "response": {
+        "answer": "To contact HR, you typically can do so via the following methods:\n\n1. **Email**: Look for the HR department's email address on your company's intranet or employee directory.\n2. **Phone**: Call the HR department using the phone number provided in your company resources.\n3. **In-Person**: Visit the HR office if your company has a physical location.\n4. **Company Intranet**: Check your company's intranet for a contact form or additional contact information.\n\nIf you are unsure, please refer to your company's internal resources or ask your manager for guidance.",
+        "citations": [],
+        "retrieval_attempts": [],
+        "isEscalated": false,
+        "escalation_reason": null,
+        "pipeline_steps": [
+          {
+            "id": "guardrail",
+            "label": "Guardrail",
+            "status": "ok",
+            "detail": "No sensitive pattern matched"
+          },
+          {
+            "id": "router",
+            "label": "Semantic Intent Router",
+            "status": "ok",
+            "detail": "INTENT_POLICY (domain=POLICY, conf=0.90) \u2014 process-policy guardrail: contact/procedure query forced to policy"
+          },
+          {
+            "id": "retrieve",
+            "label": "Chroma retrieval",
+            "status": "skipped",
+            "detail": "Direct LLM mode (no handbook vectors)"
+          },
+          {
+            "id": "mcp_hr",
+            "label": "Employee profile data (MCP-style)",
+            "status": "skipped",
+            "detail": "Disabled in direct LLM mode"
+          },
+          {
+            "id": "llm",
+            "label": "OpenAI chat \u2014 gpt-4o-mini",
+            "status": "ok",
+            "detail": "Embeddings: text-embedding-3-small; structured JSON answer"
+          }
+        ],
+        "use_rag": false,
+        "chat_model": "gpt-4o-mini"
+      },
+      "created_at": "2026-04-15T10:50:47.742974+00:00"
+    },
+    {
+      "key": "v6::i want to put resign::emp=E001::rag=1",
+      "question_norm": "i want to put resign",
+      "employee_id": "E001",
+      "use_rag": true,
+      "kb_signature": "42f3bf1712dce280a46d49e42e837ce030ccc621341347bd2c21ba4a6a97ccf8",
+      "response": {
+        "answer": "I am an Enterprise Assistant restricted to HR, IT, and company policy questions. I cannot answer general knowledge questions or queries outside this scope.",
+        "citations": [],
+        "retrieval_attempts": [],
+        "isEscalated": false,
+        "escalation_reason": null,
+        "pipeline_steps": [
+          {
+            "id": "guardrail",
+            "label": "Guardrail",
+            "status": "ok",
+            "detail": "No sensitive pattern matched"
+          },
+          {
+            "id": "router",
+            "label": "Semantic Intent Router",
+            "status": "ok",
+            "detail": "INTENT_OUT_OF_DOMAIN (domain=OOS, conf=0.00) \u2014 intent_policy domain=OOS conf=0.00; scores={'PROFILE': 0.0, 'POLICY': 0.0, 'IT': 0.0, 'OOS': 0.0}; primary=POLICY; scope in=False ratio=0.00"
+          },
+          {
+            "id": "retrieve",
+            "label": "Chroma retrieval (embeddings + similarity)",
+            "status": "skipped",
+            "detail": "Intent is out of domain"
+          },
+          {
+            "id": "mcp_hr",
+            "label": "Employee tool (MCP-style)",
+            "status": "ok",
+            "detail": "\u2705 Active: Securely retrieved data for E001"
+          },
+          {
+            "id": "llm",
+            "label": "OpenAI chat \u2014 gpt-4o-mini",
+            "status": "ok",
+            "detail": "Embeddings: text-embedding-3-small; structured JSON answer"
+          }
+        ],
+        "use_rag": true,
+        "chat_model": "gpt-4o-mini"
+      },
+      "created_at": "2026-04-15T10:50:54.425331+00:00"
+    },
+    {
+      "key": "v6::i want to put resign::emp=E001::rag=0",
+      "question_norm": "i want to put resign",
+      "employee_id": "E001",
+      "use_rag": false,
+      "kb_signature": "42f3bf1712dce280a46d49e42e837ce030ccc621341347bd2c21ba4a6a97ccf8",
+      "response": {
+        "answer": "I cannot see internal policy or handbook excerpts. Please contact your HR department for guidance on the resignation process.",
+        "citations": [],
+        "retrieval_attempts": [],
+        "isEscalated": false,
+        "escalation_reason": null,
+        "pipeline_steps": [
+          {
+            "id": "guardrail",
+            "label": "Guardrail",
+            "status": "ok",
+            "detail": "No sensitive pattern matched"
+          },
+          {
+            "id": "router",
+            "label": "Semantic Intent Router",
+            "status": "ok",
+            "detail": "INTENT_OUT_OF_DOMAIN (domain=OOS, conf=0.00) \u2014 intent_policy domain=OOS conf=0.00; scores={'PROFILE': 0.0, 'POLICY': 0.0, 'IT': 0.0, 'OOS': 0.0}; primary=POLICY; scope in=False ratio=0.00"
+          },
+          {
+            "id": "retrieve",
+            "label": "Chroma retrieval",
+            "status": "skipped",
+            "detail": "Direct LLM mode (no handbook vectors)"
+          },
+          {
+            "id": "mcp_hr",
+            "label": "Employee profile data (MCP-style)",
+            "status": "skipped",
+            "detail": "Disabled in direct LLM mode"
+          },
+          {
+            "id": "llm",
+            "label": "OpenAI chat \u2014 gpt-4o-mini",
+            "status": "ok",
+            "detail": "Embeddings: text-embedding-3-small; structured JSON answer"
+          }
+        ],
+        "use_rag": false,
+        "chat_model": "gpt-4o-mini"
+      },
+      "created_at": "2026-04-15T10:50:55.248683+00:00"
+    },
+    {
+      "key": "v6::i want to replace my laptop::emp=E001::rag=0",
+      "question_norm": "i want to replace my laptop",
+      "employee_id": "E001",
+      "use_rag": false,
+      "kb_signature": "42f3bf1712dce280a46d49e42e837ce030ccc621341347bd2c21ba4a6a97ccf8",
+      "response": {
+        "answer": "I cannot see internal policy regarding laptop replacement. Please contact your HR department for guidance on this matter.",
+        "citations": [],
+        "retrieval_attempts": [],
+        "isEscalated": false,
+        "escalation_reason": null,
+        "pipeline_steps": [
+          {
+            "id": "guardrail",
+            "label": "Guardrail",
+            "status": "ok",
+            "detail": "No sensitive pattern matched"
+          },
+          {
+            "id": "router",
+            "label": "Semantic Intent Router",
+            "status": "ok",
+            "detail": "INTENT_POLICY (domain=IT, conf=1.00) \u2014 intent_policy domain=IT conf=1.00; scores={'PROFILE': 0.0, 'POLICY': 0.0, 'IT': 1.8, 'OOS': 0.0}; primary=IT"
+          },
+          {
+            "id": "retrieve",
+            "label": "Chroma retrieval",
+            "status": "skipped",
+            "detail": "Direct LLM mode (no handbook vectors)"
+          },
+          {
+            "id": "mcp_hr",
+            "label": "Employee profile data (MCP-style)",
+            "status": "skipped",
+            "detail": "Disabled in direct LLM mode"
+          },
+          {
+            "id": "llm",
+            "label": "OpenAI chat \u2014 gpt-4o-mini",
+            "status": "ok",
+            "detail": "Embeddings: text-embedding-3-small; structured JSON answer"
+          }
+        ],
+        "use_rag": false,
+        "chat_model": "gpt-4o-mini"
+      },
+      "created_at": "2026-04-15T10:51:14.827021+00:00"
+    },
+    {
+      "key": "v6::i want to replace my laptop::emp=E001::rag=1",
+      "question_norm": "i want to replace my laptop",
+      "employee_id": "E001",
+      "use_rag": true,
+      "kb_signature": "42f3bf1712dce280a46d49e42e837ce030ccc621341347bd2c21ba4a6a97ccf8",
+      "response": {
+        "answer": "I couldn't find a grounded IT troubleshooting policy excerpt for this exact issue.\n\nNext Steps:\n- Open a ticket in Jira Service Desk (or your internal IT portal).\n- Include device type, error message, and when the failure started.\n- If you are blocked from work, mark the ticket as high priority.",
+        "citations": [],
+        "retrieval_attempts": [
+          {
+            "attempt": 1,
+            "query": "I want to replace my laptop.",
+            "top_score": 0.6342,
+            "verdict": "re-search",
+            "reason": "The retrieved chunks do not provide relevant information about replacing a laptop; they only discuss hardware requests and upgrades without addressing the process or options for replacement.",
+            "citations": [
+              {
+                "text": "### Hardware Requests\nStandard laptop upgrades occur every **3 years**. \n* **Broken Hardware:** If your device is damaged, submit a ticket via the 'Jira Service Desk' immediately.\n* **Peripherals:** Keyboards, mice, and monitors can be requested through the IT portal with manager approval.",
+                "score": 0.6342,
+                "source": "it_guide.md",
+                "section_title": "Hardware Requests"
+              }
+            ]
+          },
+          {
+            "attempt": 2,
+            "query": "What is the process for replacing my laptop within the company, including eligibility criteria, any exceptions to the policy, and the steps I need to follow?",
+            "top_score": 0.6341,
+            "verdict": "re-search",
+            "reason": "The retrieved chunks do not provide relevant information about replacing a laptop; they only discuss hardware requests and upgrade timelines without addressing the process or options for replacement.",
+            "citations": [
+              {
+                "text": "### Hardware Requests\nStandard laptop upgrades occur every **3 years**. \n* **Broken Hardware:** If your device is damaged, submit a ticket via the 'Jira Service Desk' immediately.\n* **Peripherals:** Keyboards, mice, and monitors can be requested through the IT portal with manager approval.",
+                "score": 0.6341,
+                "source": "it_guide.md",
+                "section_title": "Hardware Requests"
+              }
+            ]
+          },
+          {
+            "attempt": 3,
+            "query": "What is the official procedure for replacing my company-issued laptop? Please include details on eligibility requirements, any exceptions to the replacement policy, and a step-by-step guide on how to initiate the replacement process.",
+            "top_score": 0.6342,
+            "verdict": "re-search",
+            "reason": "The retrieved chunks do not provide relevant information about replacing a laptop; they only discuss hardware requests and upgrades without addressing the process or options for replacement.",
+            "citations": [
+              {
+                "text": "### Hardware Requests\nStandard laptop upgrades occur every **3 years**. \n* **Broken Hardware:** If your device is damaged, submit a ticket via the 'Jira Service Desk' immediately.\n* **Peripherals:** Keyboards, mice, and monitors can be requested through the IT portal with manager approval.",
+                "score": 0.6342,
+                "source": "it_guide.md",
+                "section_title": "Hardware Requests"
+              }
+            ]
+          }
+        ],
+        "isEscalated": false,
+        "escalation_reason": null,
+        "pipeline_steps": [
+          {
+            "id": "guardrail",
+            "label": "Guardrail",
+            "status": "ok",
+            "detail": "No sensitive pattern matched"
+          },
+          {
+            "id": "router",
+            "label": "Semantic Intent Router",
+            "status": "ok",
+            "detail": "INTENT_POLICY (domain=IT, conf=1.00) \u2014 intent_policy domain=IT conf=1.00; scores={'PROFILE': 0.0, 'POLICY': 0.0, 'IT': 1.8, 'OOS': 0.0}; primary=IT"
+          },
+          {
+            "id": "retrieve",
+            "label": "Chroma retrieval (embeddings + similarity)",
+            "status": "empty",
+            "detail": "Re-search failed after 3 attempt(s): The retrieved chunks do not provide relevant information about replacing a laptop; they only discuss hardware requests and upgrades without addressing the process or options for replacement."
+          },
+          {
+            "id": "mcp_hr",
+            "label": "Employee tool (MCP-style)",
+            "status": "ok",
+            "detail": "\u2705 Active: Securely retrieved data for E001"
+          },
+          {
+            "id": "llm",
+            "label": "OpenAI chat \u2014 gpt-4o-mini",
+            "status": "ok",
+            "detail": "Embeddings: text-embedding-3-small; structured JSON answer"
+          }
+        ],
+        "use_rag": true,
+        "chat_model": "gpt-4o-mini"
+      },
+      "created_at": "2026-04-15T10:51:25.723931+00:00"
+    },
+    {
+      "key": "v6::do unused vacation days carry over to next year?::emp=E001::rag=0",
+      "question_norm": "do unused vacation days carry over to next year?",
+      "employee_id": "E001",
+      "use_rag": false,
+      "kb_signature": "42f3bf1712dce280a46d49e42e837ce030ccc621341347bd2c21ba4a6a97ccf8",
+      "response": {
+        "answer": "I cannot see internal policy documents, including your company's employee handbook. Please contact your HR department for specific information regarding unused vacation days and their carryover policy.",
+        "citations": [],
+        "retrieval_attempts": [],
+        "isEscalated": false,
+        "escalation_reason": null,
+        "pipeline_steps": [
+          {
+            "id": "guardrail",
+            "label": "Guardrail",
+            "status": "ok",
+            "detail": "No sensitive pattern matched"
+          },
+          {
+            "id": "router",
+            "label": "Semantic Intent Router",
+            "status": "ok",
+            "detail": "INTENT_POLICY (domain=POLICY, conf=1.00) \u2014 intent_policy domain=POLICY conf=1.00; scores={'PROFILE': 0.0, 'POLICY': 3.5, 'IT': 0.0, 'OOS': 0.0}; primary=POLICY; scope in=False ratio=0.14"
+          },
+          {
+            "id": "retrieve",
+            "label": "Chroma retrieval",
+            "status": "skipped",
+            "detail": "Direct LLM mode (no handbook vectors)"
+          },
+          {
+            "id": "mcp_hr",
+            "label": "Employee profile data (MCP-style)",
+            "status": "skipped",
+            "detail": "Disabled in direct LLM mode"
+          },
+          {
+            "id": "llm",
+            "label": "OpenAI chat \u2014 gpt-4o-mini",
+            "status": "ok",
+            "detail": "Embeddings: text-embedding-3-small; structured JSON answer"
+          }
+        ],
+        "use_rag": false,
+        "chat_model": "gpt-4o-mini"
+      },
+      "created_at": "2026-04-15T10:55:18.977967+00:00"
+    },
+    {
+      "key": "v6::do unused vacation days carry over to next year?::emp=E001::rag=1",
+      "question_norm": "do unused vacation days carry over to next year?",
+      "employee_id": "E001",
+      "use_rag": true,
+      "kb_signature": "42f3bf1712dce280a46d49e42e837ce030ccc621341347bd2c21ba4a6a97ccf8",
+      "response": {
+        "answer": "You currently have 14 PTO days remaining. According to the policy, unused PTO may roll over up to 5 days into the next calendar year unless local policy states otherwise. This means that while you can carry over 5 days, the remaining 9 days will not carry over and will expire at the end of the year. \n\nIf you have any further questions about your PTO or need assistance with planning your time off, feel free to ask!\n\nSource: Employee Handbook > Section: Paid time off (PTO)",
+        "citations": [
+          {
+            "text": "## Time off and leave\n\n### Paid time off (PTO)\n\nFull-time employees accrue **PTO** according to the accrual schedule published on the internal HR portal. PTO requests must be submitted **at least 10 business days** in advance unless your manager approves an exception for emergencies.\n\nUnused PTO may roll over up to **5 days** into the next calendar year unless local policy states otherwise.",
+            "score": 0.7273,
+            "source": "handbook.md",
+            "section_title": "Paid time off (PTO)"
+          }
+        ],
+        "retrieval_attempts": [
+          {
+            "attempt": 1,
+            "query": "Do unused vacation days carry over to next year?",
+            "top_score": 0.7273,
+            "verdict": "answerable",
+            "reason": "The retrieved chunk clearly states that unused PTO may roll over up to 5 days into the next calendar year, directly answering the question about whether unused vacation days carry over.",
+            "citations": [
+              {
+                "text": "## Time off and leave\n\n### Paid time off (PTO)\n\nFull-time employees accrue **PTO** according to the accrual schedule published on the internal HR portal. PTO requests must be submitted **at least 10 business days** in advance unless your manager approves an exception for emergencies.\n\nUnused PTO may roll over up to **5 days** into the next calendar year unless local policy states otherwise.",
+                "score": 0.7273,
+                "source": "handbook.md",
+                "section_title": "Paid time off (PTO)"
+              }
+            ]
+          }
+        ],
+        "isEscalated": false,
+        "escalation_reason": null,
+        "pipeline_steps": [
+          {
+            "id": "guardrail",
+            "label": "Guardrail",
+            "status": "ok",
+            "detail": "No sensitive pattern matched"
+          },
+          {
+            "id": "router",
+            "label": "Semantic Intent Router",
+            "status": "ok",
+            "detail": "INTENT_POLICY (domain=POLICY, conf=1.00) \u2014 intent_policy domain=POLICY conf=1.00; scores={'PROFILE': 0.0, 'POLICY': 3.5, 'IT': 0.0, 'OOS': 0.0}; primary=POLICY; scope in=False ratio=0.14"
+          },
+          {
+            "id": "retrieve",
+            "label": "Chroma retrieval (embeddings + similarity)",
+            "status": "ok",
+            "detail": "1 chunk(s), 1 retrieval attempt(s)"
+          },
+          {
+            "id": "mcp_hr",
+            "label": "Employee tool (MCP-style)",
+            "status": "ok",
+            "detail": "\u2705 Active: Securely retrieved data for E001"
+          },
+          {
+            "id": "llm",
+            "label": "OpenAI chat \u2014 gpt-4o-mini",
+            "status": "ok",
+            "detail": "Embeddings: text-embedding-3-small; structured JSON answer"
+          }
+        ],
+        "use_rag": true,
+        "chat_model": "gpt-4o-mini"
+      },
+      "created_at": "2026-04-15T10:55:21.099683+00:00"
+    },
+    {
+      "key": "v6::what is the probation period duration::emp=E001::rag=1",
+      "question_norm": "what is the probation period duration",
+      "employee_id": "E001",
+      "use_rag": true,
+      "kb_signature": "42f3bf1712dce280a46d49e42e837ce030ccc621341347bd2c21ba4a6a97ccf8",
+      "response": {
+        "answer": "I am an Enterprise Assistant restricted to HR, IT, and company policy questions. I cannot answer general knowledge questions or queries outside this scope.",
+        "citations": [],
+        "retrieval_attempts": [],
+        "isEscalated": false,
+        "escalation_reason": null,
+        "pipeline_steps": [
+          {
+            "id": "guardrail",
+            "label": "Guardrail",
+            "status": "ok",
+            "detail": "No sensitive pattern matched"
+          },
+          {
+            "id": "router",
+            "label": "Semantic Intent Router",
+            "status": "ok",
+            "detail": "INTENT_OUT_OF_DOMAIN (domain=OOS, conf=0.00) \u2014 intent_policy domain=OOS conf=0.00; scores={'PROFILE': 0.0, 'POLICY': 0.0, 'IT': 0.0, 'OOS': 0.0}; primary=POLICY; scope in=False ratio=0.00"
+          },
+          {
+            "id": "retrieve",
+            "label": "Chroma retrieval (embeddings + similarity)",
+            "status": "skipped",
+            "detail": "Intent is out of domain"
+          },
+          {
+            "id": "mcp_hr",
+            "label": "Employee tool (MCP-style)",
+            "status": "ok",
+            "detail": "\u2705 Active: Securely retrieved data for E001"
+          },
+          {
+            "id": "llm",
+            "label": "OpenAI chat \u2014 gpt-4o-mini",
+            "status": "ok",
+            "detail": "Embeddings: text-embedding-3-small; structured JSON answer"
+          }
+        ],
+        "use_rag": true,
+        "chat_model": "gpt-4o-mini"
+      },
+      "created_at": "2026-04-15T10:55:36.639060+00:00"
+    },
+    {
+      "key": "v6::what is the probation period duration::emp=E001::rag=0",
+      "question_norm": "what is the probation period duration",
+      "employee_id": "E001",
+      "use_rag": false,
+      "kb_signature": "42f3bf1712dce280a46d49e42e837ce030ccc621341347bd2c21ba4a6a97ccf8",
+      "response": {
+        "answer": "I cannot see internal policy documents or specific company information. Please contact your HR department for details regarding the probation period duration.",
+        "citations": [],
+        "retrieval_attempts": [],
+        "isEscalated": false,
+        "escalation_reason": null,
+        "pipeline_steps": [
+          {
+            "id": "guardrail",
+            "label": "Guardrail",
+            "status": "ok",
+            "detail": "No sensitive pattern matched"
+          },
+          {
+            "id": "router",
+            "label": "Semantic Intent Router",
+            "status": "ok",
+            "detail": "INTENT_OUT_OF_DOMAIN (domain=OOS, conf=0.00) \u2014 intent_policy domain=OOS conf=0.00; scores={'PROFILE': 0.0, 'POLICY': 0.0, 'IT': 0.0, 'OOS': 0.0}; primary=POLICY; scope in=False ratio=0.00"
+          },
+          {
+            "id": "retrieve",
+            "label": "Chroma retrieval",
+            "status": "skipped",
+            "detail": "Direct LLM mode (no handbook vectors)"
+          },
+          {
+            "id": "mcp_hr",
+            "label": "Employee profile data (MCP-style)",
+            "status": "skipped",
+            "detail": "Disabled in direct LLM mode"
+          },
+          {
+            "id": "llm",
+            "label": "OpenAI chat \u2014 gpt-4o-mini",
+            "status": "ok",
+            "detail": "Embeddings: text-embedding-3-small; structured JSON answer"
+          }
+        ],
+        "use_rag": false,
+        "chat_model": "gpt-4o-mini"
+      },
+      "created_at": "2026-04-15T10:55:37.694028+00:00"
+    },
+    {
+      "key": "v7::i want to report a harassment incident involving my lead.::emp=E001::rag=0",
+      "question_norm": "i want to report a harassment incident involving my lead.",
+      "employee_id": "E001",
+      "use_rag": false,
+      "kb_signature": "42f3bf1712dce280a46d49e42e837ce030ccc621341347bd2c21ba4a6a97ccf8",
+      "response": {
+        "answer": "I have detected that this is a sensitive matter. For your protection and to ensure proper handling, I cannot provide policy details on this topic. Please contact the HR Intake Team directly at hr-support@company.com or via the internal portal link below.",
+        "citations": [],
+        "retrieval_attempts": [],
+        "isEscalated": true,
+        "escalation_reason": "Sensitive HR/legal matter detected.",
+        "pipeline_steps": [
+          {
+            "id": "guardrail",
+            "label": "Guardrail (sensitive topics)",
+            "status": "triggered",
+            "detail": "Sensitive HR/legal matter detected."
+          },
+          {
+            "id": "retrieve",
+            "label": "Chroma vector retrieval",
+            "status": "skipped",
+            "detail": "Pipeline stopped after guardrail"
+          },
+          {
+            "id": "mcp_hr",
+            "label": "Employee profile data (MCP-style)",
+            "status": "skipped",
+            "detail": "Not run"
+          },
+          {
+            "id": "llm",
+            "label": "OpenAI chat \u2014 gpt-4o-mini",
+            "status": "skipped",
+            "detail": "Escalation message returned"
+          }
+        ],
+        "use_rag": false,
+        "chat_model": "gpt-4o-mini"
+      },
+      "created_at": "2026-04-15T11:09:27.270455+00:00"
+    },
+    {
+      "key": "v7::i want to report a harassment incident involving my lead.::emp=E001::rag=1",
+      "question_norm": "i want to report a harassment incident involving my lead.",
+      "employee_id": "E001",
+      "use_rag": true,
+      "kb_signature": "42f3bf1712dce280a46d49e42e837ce030ccc621341347bd2c21ba4a6a97ccf8",
+      "response": {
+        "answer": "I have detected that this is a sensitive matter. For your protection and to ensure proper handling, I cannot provide policy details on this topic. Please contact the HR Intake Team directly at hr-support@company.com or via the internal portal link below.",
+        "citations": [],
+        "retrieval_attempts": [],
+        "isEscalated": true,
+        "escalation_reason": "Sensitive HR/legal matter detected.",
+        "pipeline_steps": [
+          {
+            "id": "guardrail",
+            "label": "Guardrail (sensitive topics)",
+            "status": "triggered",
+            "detail": "Sensitive HR/legal matter detected."
+          },
+          {
+            "id": "retrieve",
+            "label": "Chroma vector retrieval",
+            "status": "skipped",
+            "detail": "Pipeline stopped after guardrail"
+          },
+          {
+            "id": "mcp_hr",
+            "label": "Employee profile data (MCP-style)",
+            "status": "skipped",
+            "detail": "Not run"
+          },
+          {
+            "id": "llm",
+            "label": "OpenAI chat \u2014 gpt-4o-mini",
+            "status": "skipped",
+            "detail": "Escalation message returned"
+          }
+        ],
+        "use_rag": true,
+        "chat_model": "gpt-4o-mini"
+      },
+      "created_at": "2026-04-15T11:09:27.282134+00:00"
     }
   ]
 }

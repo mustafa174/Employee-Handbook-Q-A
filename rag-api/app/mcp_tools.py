@@ -33,11 +33,17 @@ def get_employee_details(employee_id: str) -> dict | None:
     emp = get_employee_record(employee_id)
     if not emp:
         return None
+    profile: dict[str, str] = {}
+    for key, value in emp.items():
+        if value is None:
+            continue
+        profile[str(key)] = str(value)
     return {
         "employee_id": str(emp.get("employee_id", "")),
         "name": str(emp.get("name", "Unknown Employee")),
         "pto_balance": float(emp.get("pto_days_remaining", 0)),
         "sick_balance": float(emp.get("sick_days_remaining", 0)),
         "language_pref": str(emp.get("language_pref", "")),
+        "profile": profile,
     }
 

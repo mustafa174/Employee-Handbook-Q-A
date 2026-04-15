@@ -53,7 +53,7 @@ const postAskStream = async (
   body: AskRequestWithHistory,
   handlers: {
     onNodeStart: (node: string) => void;
-    onNodeEnd: (node: string) => void;
+    onNodeEnd: (node: string, status?: string) => void;
     onText: (chunk: string) => void;
   },
 ): Promise<AskResponse> => {
@@ -100,7 +100,7 @@ const postAskStream = async (
         continue;
       }
       if (event.type === "node_start") handlers.onNodeStart(event.node);
-      if (event.type === "node_end") handlers.onNodeEnd(event.node);
+      if (event.type === "node_end") handlers.onNodeEnd(event.node, event.status);
       if (event.type === "text") handlers.onText(event.content);
       if (event.type === "error") throw new Error(event.message);
       if (event.type === "done") finalResponse = event.final;
@@ -442,9 +442,11 @@ export const HandbookQA = ({ chatHistory, onChatHistoryChange, selectedEmployeeI
             onNodeStart: (node) => {
               setActiveNodes((prev) => (prev.includes(node) ? prev : [...prev, node]));
             },
-            onNodeEnd: (node) => {
+            onNodeEnd: (node, status) => {
               setActiveNodes((prev) => prev.filter((id2) => id2 !== node));
-              setDoneNodes((prev) => (prev.includes(node) ? prev : [...prev, node]));
+              if (status !== "skipped") {
+                setDoneNodes((prev) => (prev.includes(node) ? prev : [...prev, node]));
+              }
             },
             onText: (chunk) => {
               setRagTurns((prev) =>
@@ -494,7 +496,6 @@ export const HandbookQA = ({ chatHistory, onChatHistoryChange, selectedEmployeeI
         setLastAnswer(ragSettled.value);
         setLastRagTurnId(id);
         setActiveNodes([]);
-        setDoneNodes(["query", "guardrail", "router", "chroma", "mcp", "synthesis", "judge", "output"]);
         const nextHistory: ChatHistoryItem[] = [
           ...outgoingHistory,
           { role: "user", content: q },
@@ -577,8 +578,7 @@ export const HandbookQA = ({ chatHistory, onChatHistoryChange, selectedEmployeeI
     const el = inputRef.current;
     if (!el) return;
     el.style.height = "auto";
-    const next = Math.min(el.scrollHeight, 220);
-    el.style.height = `${Math.max(64, next)}px`;
+    el.style.height = `${Math.max(el.scrollHeight, 52)}px`;
   }, [question]);
 
   const latestNaiveCompletedKey = useMemo(() => latestCompletedTurnKey(naiveTurns), [naiveTurns]);
@@ -692,10 +692,14 @@ export const HandbookQA = ({ chatHistory, onChatHistoryChange, selectedEmployeeI
             <label className="relative block">
               <textarea
                 ref={inputRef}
-                className="mt-2 min-h-[4rem] w-full resize-none overflow-y-auto rounded-[1.75rem] border border-zinc-300 bg-zinc-50 px-5 py-3 pr-16 text-sm leading-6 text-zinc-900 shadow-sm outline-none transition-all focus:border-sky-400 focus:bg-white focus:ring-2 focus:ring-sky-400/30 dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-100 dark:focus:border-sky-500 dark:focus:bg-zinc-950"
-                rows={2}
+                className="mt-2 min-h-[3.35rem] w-full resize-none overflow-hidden rounded-[1.75rem] border
+                 border-zinc-300 bg-zinc-50 px-5 py-3 pr-16 text-sm leading-6
+                  text-zinc-900 shadow-sm outline-none transition-all focus:border-sky-400
+                   focus:bg-white focus:ring-2 focus:ring-sky-400/30 
+                   dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-100 dark:focus:border-sky-500 dark:focus:bg-zinc-950"
+                rows={1}
                 value={question}
-                onChange={(e) => setQuestion(limitToWords(e.target.value, 100))}
+                onChange={(e) => setQuestion(limitToWords(e.target.value, 200))}
                 onKeyDown={(e) => {
                   if (e.key !== "Enter") return;
                   if (e.shiftKey) return;
@@ -708,7 +712,7 @@ export const HandbookQA = ({ chatHistory, onChatHistoryChange, selectedEmployeeI
                 type="button"
                 onClick={runAsk}
                 disabled={isSending || !question.trim()}
-                className="absolute right-3 top-1/2 inline-flex size-10 -translate-y-1/2 items-center justify-center rounded-full bg-sky-600 text-white shadow-sm transition-all hover:scale-[1.03] hover:bg-sky-500 disabled:cursor-not-allowed disabled:opacity-50"
+                className="absolute right-3 top-1/2 inline-flex size-10 -translate-y-1/2 mt-0.5 items-center justify-center rounded-full bg-sky-600 text-white shadow-sm transition-all hover:scale-[1.03] hover:bg-sky-500 disabled:cursor-not-allowed disabled:opacity-50"
                 aria-label="Send message"
               >
                 {isSending ? (

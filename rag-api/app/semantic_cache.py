@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+import re
 import threading
 from datetime import datetime, timezone
 from pathlib import Path
@@ -41,6 +42,7 @@ class VizPoint(TypedDict):
 
 _CACHE_PATH = RAG_API_ROOT / "data" / "semantic_cache.json"
 _LOCK = threading.Lock()
+_CACHE_KEY_VERSION = 7
 
 
 def _ensure_store() -> None:
@@ -56,7 +58,7 @@ def _normalize_question(question: str) -> str:
 def _ask_key(question: str, employee_id: str | None, use_rag: bool) -> str:
     norm_q = _normalize_question(question)
     emp = (employee_id or "").strip().upper()
-    return f"{norm_q}::emp={emp or '-'}::rag={int(use_rag)}"
+    return f"v{_CACHE_KEY_VERSION}::{norm_q}::emp={emp or '-'}::rag={int(use_rag)}"
 
 
 def _fixtures_signature() -> str:
@@ -146,11 +148,27 @@ def _write_store(entries: list[CacheEntry], answers: list[CachedAskEntry]) -> No
 
 def _infer_category(text: str) -> str:
     q = text.lower()
-    if any(t in q for t in ("pto", "vacation", "leave", "sick day")):
+    if (
+        re.search(r"\bpto\b", q)
+        or re.search(r"\bvacation\b", q)
+        or re.search(r"\bleave\b", q)
+        or re.search(r"\bsick\s+day(s)?\b", q)
+    ):
         return "PTO"
-    if any(t in q for t in ("vpn", "globalprotect", "gateway", "it")):
+    if (
+        re.search(r"\bvpn\b", q)
+        or re.search(r"\bglobalprotect\b", q)
+        or re.search(r"\bgateway\b", q)
+        or re.search(r"\bit\b", q)
+    ):
         return "VPN"
-    if any(t in q for t in ("my", "employee", "balance", "remaining", "days do i have")):
+    if (
+        re.search(r"\bmy\b", q)
+        or re.search(r"\bemployee\b", q)
+        or re.search(r"\bbalance\b", q)
+        or re.search(r"\bremaining\b", q)
+        or re.search(r"\bdays do i have\b", q)
+    ):
         return "Personal"
     return "General"
 
