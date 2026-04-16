@@ -1,18 +1,126 @@
-# Employee Handbook Q&A
+# Hybrid RAG HR Assistant — Handbook Q&A
 
-AI-powered handbook assistant for employees and HR teams. It ingests policy documents into **Chroma**, runs a **LangGraph** `StateGraph` in **FastAPI** (`rag-api/`) with guardrails, **intent-based routing** (policy vs personal vs mixed), optional **employee profile** context from fixtures, and returns grounded answers with citations, escalation signals, **semantic cache** metadata, and live pipeline visualization in the **Vite/React** client.
+**Intent routing and structured employee context** on **FastAPI**, **LangGraph**, and **Chroma**: policy answers stay grounded in retrieval, personal balances come from fixture/MCP-aligned data, and **response contracts** in `main.py` enforce invariants after the graph runs.
 
-## Architecture
+## Overview
 
-- **Backend:** FastAPI + LangGraph-style graph (`rag_graph.py`)
-- **Frontend:** React + Vite + Tailwind + TanStack Query
-- **Shared contracts:** Zod schemas in `shared/`
-- **LLM + embeddings:** OpenAI chat + embedding models
-- **Vector DB:** ChromaDB
-- **Intent:** `intent_policy.py` (domain classification); **semantic rescue** optional via `semantic_router.py` (sentence-transformers)
-- **Cache:** Semantic answer cache keyed by question + route bucket + `employee_id` + `use_rag`, invalidated by fixture **signature** when the knowledge base changes
-- **Streaming:** SSE `POST /api/ask/stream` via `StreamingResponse`
-- **MCP demo:** `mcp-hr-server` (`get_leave_balance`) over `fixtures/employees.json` (aligns with `EMPLOYEES_JSON_PATH` in the API)
+Classic **“retrieve chunks → one LLM call”** setups break down as soon as users mix **handbook policy** with **personal facts** (“How many PTO days do *I* have?” vs “What is the PTO policy?”). Plain RAG also has no first-class notion of **structured** HR data (balances, loan flags, tenure), cannot **prove** it separated policy text from profile numbers, and struggles with **ambiguous** phrasing that should map to tools instead of documents.
+
+This repository implements a **LangGraph** orchestration layer on top of **Chroma** and **OpenAI**: questions are **classified and routed**, optionally **rescued** by an embedding similarity router, executed on **policy**, **personal**, or **mixed** paths, then **post-processed** under explicit API **contracts** so policy answers do not silently leak personal numbers and profile flows behave correctly when no employee is selected.
+
+## Why not plain RAG alone?
+
+| Limitation of “RAG only” | What this project adds |
+|--------------------------|-------------------------|
+| One retrieval + one prompt for everything | **Intent policy** + heuristics choose **policy** vs **personal** vs **mixed** execution |
+| No authoritative source for “my” balances | **`balance`** node loads **structured** fixture/MCP-aligned profile data |
+| Ambiguous queries fall through to wrong retrieval | Optional **semantic rescue** (`semantic_router.py`) nudges borderline routes |
+| LLM can blend handbook prose with invented personal detail | **Response contract** in `main.py` after the graph strips unsafe mixes |
+| No visibility into failures | **Pipeline steps**, **SSE** stream, cache **stats/viz**, escalation paths |
+
+## What makes this system different
+
+- **Deterministic intent policy** (`intent_policy.py`) with confidence and domain labels, layered with **router safety nets** (e.g. leave/PTO balance + `employee_id` must not be overwritten by a bare “policy” classification).
+- **Semantic rescue routing** for weak “general” classifications when RAG is enabled — embedding similarity vs fixed label passages, configurable model and threshold.
+- **Hybrid execution**: **Chroma** retrieval and grading for policy/mixed; **fixture-backed profile** path for personal (demo **MCP** server mirrors the same employee JSON).
+- **Mixed-intent** decomposition: one user turn can drive both profile-grounded numbers and handbook-grounded policy in a controlled way.
+- **Semantic cache** with keys that include **route bucket**, **`employee_id`**, and **`use_rag`**, plus **fixture signature** invalidation when the knowledge base changes.
+- **Contract enforcement** after the graph — see [Response contracts](#response-contracts) below.
+
+## Response contracts
+
+API-level **invariants** after the graph: `build_ask_response_from_state` then **`_enforce_response_contract`** in `rag-api/app/main.py` before JSON/SSE responses:
+
+- **No personal balance leakage on policy-only answers** — if the model echoes PTO/sick numbers on a question that did not ask for a personal balance, the contract strips or replaces with a deterministic policy-safe fallback.
+- **No silent “profile” without data** — when the route is **PROFILE** but there is no `employee_profile` payload, the generic “couldn’t retrieve personal data” replacement runs **only if the client sent a non-empty `employee_id`** (so “select an employee profile” guidance for balance questions without an ID is not clobbered).
+- **Grounding pressure on policy** — policy routes without usable citations are forced to handbook-safe fallbacks instead of invented section text.
+- **Cache hygiene** — `_sanitize_cached_policy_leak` reduces stale personal phrases in cached policy rows when the question is policy-scoped.
+
+Together with router invariants inside `rag_graph.py`, this is what makes the stack behave like a **product** rather than a single unstructured LLM call.
+
+## Request path (high level)
+
+```text
+                         User query (+ optional employee_id, history)
+                                        |
+                                        v
++--------------------------- query_refiner (normalize, optional splits) ----+
+|                                                                          |
++-------------------------------- guardrail -------------------------------+
+|                         (sensitive / escalate?)                          |
++-------------------------------- router ----------------------------------+
+|   intent_policy (deterministic)  +  heuristics / safety nets             |
+|   optional: semantic_router (embedding rescue)                           |
++--------------------------+---------------------------+------------------+
+                           |                           |
+              +------------+------------+   +---------+---------+
+              |                         |   |                   |
+              v                         v   v                   v
+        route: POLICY            route: PERSONAL          route: MIXED
+              |                         |                   |
+              v                         v                   v
+     retrieve + grade_documents    balance (profile)   retrieve + balance
+     (Chroma vectors)              (structured data)   (both paths)
+              |                         |                   |
+              +------------+------------+-------------------+
+                           |
+                           v
+                    generate (+ clarify if routed)
+                           |
+                           v
+              FastAPI: _enforce_response_contract, cache, response
+```
+
+## Example walkthrough: mixed policy + personal balance
+
+**Query (with `employee_id: "E001"`):**  
+`"how many leaves i have and what is leave policy"` — regression-tested in `test_run_ask_mixed_leave_and_policy_combines_personal_and_policy`.
+
+1. **`query_refiner`** — Normalizes phrasing; may split into sub-questions for retrieval and generation.
+2. **`router`** — Classifies as a **mixed** style turn: personal balance intent plus explicit policy ask (see `router_node` and the test above).
+3. **`retrieve` + `grade_documents`** — Chroma returns handbook chunks (e.g. PTO request lead time, rollover language); grader accepts or triggers a bounded re-search.
+4. **`balance`** — Loads structured profile (e.g. **14** PTO days, **6** sick days) from `fixtures/employees.json` / `EMPLOYEES_JSON_PATH`.
+5. **`generate`** — Emits a **combined** answer: profile-grounded numbers plus policy-grounded prose with citations where applicable.
+6. **`_enforce_response_contract`** — Ensures policy sub-answers do not incorrectly carry personal numbers, and mixed payloads remain internally consistent.
+
+**What you should see in the UI:** pipeline steps show **router → retrieve → balance → generate** (and grading), final text cites handbook-style content for the policy portion and states balances for the personal portion.
+
+## Example walkthrough: failure mode and mitigation
+
+**Query:** `"What type of loans are there?"` (ambiguous: HR **services loan** product vs generic “employment type”.)
+
+**What went wrong historically:** the personal route’s field resolver could match **`employment_type`** (“full-time”, etc.) before loan-specific logic, producing an answer that looked like a **loan catalog** but was actually **employment** — with little or no policy retrieval.
+
+**Mitigation in this repo (regression-tested):**
+
+- **Composite loan handling** runs **before** single-field profile resolution on the personal path (`_composite_services_loan_answer` ordering in `rag_graph.py`).
+- **Router / catalog guards** (`profile_field_resolver`, intent heuristics) steer loan+“type” style asks toward the **services loan** interpretation when context matches.
+- **Tests** — `rag-api/tests/test_personal_route_behavior.py` and related suites lock the intended behavior.
+
+This is the kind of edge case called out in [Known limitations](#known-limitations); the README documents it to show **how** the system fails closed and **what** was changed to address it.
+
+## Observability (what you can inspect without reading code)
+
+| Signal | Where |
+|--------|--------|
+| **Semantic cache hit / miss** | API fields `cache_hit`, `cache_reason`; **Settings** / `GET /api/cache/stats`, `GET /api/cache/viz` |
+| **Router decision** | `pipeline_steps` entry for **Semantic Intent Router** — intent, domain, confidence, free-text `intent_reason` |
+| **Retrieval quality** | `retrieval_attempts[]`: query, **top_score**, **verdict** (`answerable` / `re-search`), grader reason; retrieve step `status` `ok` vs `empty` in steps |
+| **Profile / MCP path** | Pipeline step for employee tool — active vs skipped, detail string (e.g. no `employee_id`) |
+| **Streaming progress** | `POST /api/ask/stream` — `node_start` / `node_end` per logical node; client visualizer mirrors graph activity |
+| **Stdout trace** | `rag_graph.trace()` emits JSON lines (`trace_id`, `step`, `route`, …) when running the API from a terminal |
+
+There is no separate “accuracy dashboard” product — but the **same** signals you would use in an incident review are already exposed on the wire and in the UI.
+
+## Stack at a glance
+
+- **Backend:** FastAPI + LangGraph `StateGraph` (`rag_graph.py`)
+- **Frontend:** React + Vite + Tailwind + TanStack Query (SSE consumer for `/api/ask/stream`)
+- **Shared contracts:** Zod in `shared/`
+- **Models:** OpenAI chat + embeddings
+- **Vectors:** ChromaDB
+- **Streaming:** `StreamingResponse` SSE
+- **MCP demo:** `mcp-hr-server` — `get_leave_balance` over `fixtures/employees.json`
 
 ## Core capabilities
 
@@ -183,6 +291,14 @@ Registers **`get_leave_balance`** using **`fixtures/employees.json`** (override 
 - [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) — components and data flow
 - [docs/BUILD_LOG.md](docs/BUILD_LOG.md) — progress log template
 - [docs/DEMO_SCRIPT.md](docs/DEMO_SCRIPT.md) — demo outline
+
+## Known limitations
+
+- **Ambiguous or overloaded phrases** (e.g. “loan” + “type”) can still stress the router and field resolvers; disambiguation often depends on **catalog ordering** and **tests** rather than a single universal rule.
+- **Profile field resolvers** can over-prioritize a structured field when the user’s wording matches multiple catalog entries; composite answers (e.g. loan package) are handled with explicit ordering in the graph.
+- **Retrieval quality** depends on handbook coverage, chunking, and grading thresholds; empty or weak chunks produce policy fallbacks or escalation, not fabricated policy text.
+- **Semantic rescue** quality depends on the **embedding model** and threshold; it is a safety net, not a guarantee of correct business intent.
+- **Semantic cache** can mask routing changes until purged — use **Settings** or `DELETE /api/cache/purge` during development.
 
 ## Notes
 
