@@ -1,0 +1,6 @@
+{
+  "name": "Handbook AI Landing Page",
+  "description": "Landing page for an agentic HR chatbot that answers employee handbook questions using RAG and MCP.",
+  "requestFramePermissions": [],
+  "majorCapabilities": []
+}

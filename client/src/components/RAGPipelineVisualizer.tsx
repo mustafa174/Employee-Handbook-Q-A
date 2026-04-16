@@ -26,12 +26,12 @@ const RAGStageNode = memo(function RAGStageNode({ data }: NodeProps<RagStageType
   return (
     <div
       className={[
-        "min-w-[132px] max-w-[168px] rounded-xl border px-2.5 py-2 text-center text-[10px] font-semibold leading-tight shadow-sm transition-all duration-300 dark:shadow-none sm:text-[11px]",
+        "min-w-[156px] max-w-[196px] rounded-2xl border px-3 py-2.5 text-center text-[10px] font-semibold leading-tight shadow-sm transition-all duration-300 dark:shadow-none sm:text-[11px]",
         state === "active" &&
           "scale-[1.02] border-sky-500 bg-sky-50 ring-2 ring-sky-400/70 dark:border-sky-500 dark:bg-sky-950/50 dark:ring-sky-400/40",
         state === "done" &&
           "border-emerald-500/70 bg-emerald-50/90 dark:border-emerald-600/60 dark:bg-emerald-950/35",
-        state === "idle" && "border-zinc-200 bg-white dark:border-zinc-700 dark:bg-zinc-900/80",
+        state === "idle" && "border-zinc-200 bg-white/95 dark:border-zinc-700 dark:bg-zinc-900/85",
       ]
         .filter(Boolean)
         .join(" ")}
@@ -42,10 +42,24 @@ const RAGStageNode = memo(function RAGStageNode({ data }: NodeProps<RagStageType
         className="!h-2 !w-2 !border-0 !bg-zinc-400 dark:!bg-zinc-500"
         isConnectable={false}
       />
+      <Handle
+        id="top"
+        type="target"
+        position={Position.Top}
+        className="!h-2 !w-2 !border-0 !bg-zinc-400 dark:!bg-zinc-500"
+        isConnectable={false}
+      />
       {label}
       <Handle
         type="source"
         position={Position.Right}
+        className="!h-2 !w-2 !border-0 !bg-zinc-400 dark:!bg-zinc-500"
+        isConnectable={false}
+      />
+      <Handle
+        id="bottom"
+        type="source"
+        position={Position.Bottom}
         className="!h-2 !w-2 !border-0 !bg-zinc-400 dark:!bg-zinc-500"
         isConnectable={false}
       />
@@ -57,12 +71,12 @@ function QueryOnlyNode({ data }: NodeProps<QueryOnlyType>) {
   return (
     <div
       className={[
-        "min-w-[132px] max-w-[168px] rounded-xl border px-2.5 py-2 text-center text-[10px] font-semibold leading-tight shadow-sm transition-all duration-300 dark:shadow-none sm:text-[11px]",
+        "min-w-[156px] max-w-[196px] rounded-2xl border px-3 py-2.5 text-center text-[10px] font-semibold leading-tight shadow-sm transition-all duration-300 dark:shadow-none sm:text-[11px]",
         data.state === "active" &&
           "scale-[1.02] border-sky-500 bg-sky-50 ring-2 ring-sky-400/70 dark:border-sky-500 dark:bg-sky-950/50",
         data.state === "done" &&
           "border-emerald-500/70 bg-emerald-50/90 dark:border-emerald-600/60 dark:bg-emerald-950/35",
-        data.state === "idle" && "border-zinc-200 bg-white dark:border-zinc-700 dark:bg-zinc-900/80",
+        data.state === "idle" && "border-zinc-200 bg-white/95 dark:border-zinc-700 dark:bg-zinc-900/85",
       ]
         .filter(Boolean)
         .join(" ")}
@@ -82,12 +96,12 @@ function LLMOnlyNode({ data }: NodeProps<LlmOnlyType>) {
   return (
     <div
       className={[
-        "min-w-[132px] max-w-[168px] rounded-xl border px-2.5 py-2 text-center text-[10px] font-semibold leading-tight shadow-sm transition-all duration-300 dark:shadow-none sm:text-[11px]",
+        "min-w-[170px] max-w-[210px] rounded-2xl border px-3 py-2.5 text-center text-[10px] font-semibold leading-tight shadow-sm transition-all duration-300 dark:shadow-none sm:text-[11px]",
         data.state === "active" &&
           "scale-[1.02] border-sky-500 bg-sky-50 ring-2 ring-sky-400/70 dark:border-sky-500 dark:bg-sky-950/50",
         data.state === "done" &&
           "border-emerald-500/70 bg-emerald-50/90 dark:border-emerald-600/60 dark:bg-emerald-950/35",
-        data.state === "idle" && "border-zinc-200 bg-white dark:border-zinc-700 dark:bg-zinc-900/80",
+        data.state === "idle" && "border-zinc-200 bg-white/95 dark:border-zinc-700 dark:bg-zinc-900/85",
       ]
         .filter(Boolean)
         .join(" ")}
@@ -95,6 +109,13 @@ function LLMOnlyNode({ data }: NodeProps<LlmOnlyType>) {
       <Handle
         type="target"
         position={Position.Left}
+        className="!h-2 !w-2 !border-0 !bg-zinc-400 dark:!bg-zinc-500"
+        isConnectable={false}
+      />
+      <Handle
+        id="bottom"
+        type="target"
+        position={Position.Bottom}
         className="!h-2 !w-2 !border-0 !bg-zinc-400 dark:!bg-zinc-500"
         isConnectable={false}
       />
@@ -111,12 +132,12 @@ const nodeTypesFull = {
 
 const stateForNode = (
   nodeId: string,
-  pipelineComplete: boolean,
+  _pipelineComplete: boolean,
   activeNodeIds: Set<string>,
   doneNodeIds: Set<string>,
 ): StageState => {
   if (activeNodeIds.has(nodeId)) return "active";
-  if (doneNodeIds.has(nodeId) || pipelineComplete) return "done";
+  if (doneNodeIds.has(nodeId)) return "done";
   return "idle";
 };
 
@@ -127,72 +148,112 @@ function buildNodes(
   doneNodeIds: Set<string>,
 ): Node[] {
   const s = (id: string) => stateForNode(id, pipelineComplete, activeNodeIds, doneNodeIds);
+  let mixedState: StageState = "idle";
+  if (s("chroma") === "active" || s("mcp") === "active") {
+    mixedState = "active";
+  } else if (s("chroma") === "done" || s("mcp") === "done") {
+    mixedState = "done";
+  }
   return [
     {
       id: "query",
       type: "queryOnly",
-      position: { x: 0, y: 100 },
-      data: { label: "Query", state: s("query") },
+      position: { x: 0, y: 120 },
+      data: { label: "User Query", state: s("query") },
     },
     {
       id: "guardrail",
       type: "ragStage",
-      position: { x: 150, y: 100 },
-      data: { label: "Safety Guardrail", state: s("guardrail") },
+      position: { x: 185, y: 120 },
+      data: { label: "Safety Guardrail\nHard Override", state: s("guardrail") },
     },
     {
       id: "router",
       type: "ragStage",
-      position: { x: 300, y: 100 },
-      data: { label: "Intent Router", state: s("router") },
+      position: { x: 410, y: 120 },
+      data: { label: "Intent Router\nHard Route Lock", state: s("router") },
+    },
+    {
+      id: "clarify",
+      type: "ragStage",
+      position: { x: 635, y: 250 },
+      data: { label: "Clarification Gate\nAmbiguous Queries", state: s("clarify") },
     },
     {
       id: "chroma",
       type: "ragStage",
-      position: { x: 500, y: 40 },
-      data: { label: "ChromaDB (Policy)", state: s("chroma") },
+      position: { x: 635, y: 20 },
+      data: { label: "Policy Retrieval\nChromaDB + Citations", state: s("chroma") },
     },
     {
       id: "mcp",
       type: "ragStage",
-      position: { x: 500, y: 160 },
-      data: { label: "Employee Tool (MCP)", state: s("mcp") },
+      position: { x: 635, y: 138 },
+      data: { label: "Personal Tool\nEmployee Data Only", state: s("mcp") },
+    },
+    {
+      id: "mixed",
+      type: "ragStage",
+      position: { x: 635, y: 78 },
+      data: { label: "Mixed Resolver\nPersonal + Policy", state: mixedState },
+    },
+    {
+      id: "scoring",
+      type: "ragStage",
+      position: { x: 845, y: 20 },
+      data: { label: "Retrieval Scoring\nConfidence Check", state: s("judge") },
     },
     {
       id: "synthesis",
       type: "ragStage",
-      position: { x: 700, y: 100 },
-      data: { label: "Synthesis & Grounding", state: s("synthesis") },
+      position: { x: 845, y: 138 },
+      data: { label: "Answer Builder\nGrounded Only", state: s("synthesis") },
     },
     {
       id: "judge",
       type: "ragStage",
-      position: { x: 850, y: 100 },
-      data: { label: "Atomic Judge", state: s("judge") },
+      position: { x: 1045, y: 138 },
+      data: { label: "Atomic Judge\nVerify Response", state: s("judge") },
     },
     {
       id: "output",
       type: "llmOnly",
-      position: { x: 1000, y: 100 },
+      position: { x: 1245, y: 138 },
       data: { label: `Verified Response\n${llmNodeLabel}`, state: s("output") },
     },
   ];
 }
 
 function buildEdges(isLoading: boolean, isDark: boolean): Edge[] {
-  const stroke = isDark ? "#71717a" : "#a1a1aa";
-  const blueStroke = isDark ? "#38bdf8" : "#0284c7";
+  const stroke = isDark ? "#71717a" : "#94a3b8";
+  const blueStroke = isDark ? "#38bdf8" : "#2563eb";
   const greenStroke = isDark ? "#4ade80" : "#16a34a";
+  const amberStroke = isDark ? "#fbbf24" : "#d97706";
   const animated = isLoading;
   return [
-    { id: "e-q-g", source: "query", target: "guardrail", type: "smoothstep", animated, style: { stroke } },
-    { id: "e-g-r", source: "guardrail", target: "router", type: "smoothstep", animated, style: { stroke } },
-    { id: "e-r-c", source: "router", target: "chroma", type: "smoothstep", animated, style: { stroke: blueStroke } },
-    { id: "e-r-m", source: "router", target: "mcp", type: "smoothstep", animated, style: { stroke: greenStroke } },
-    { id: "e-c-s", source: "chroma", target: "synthesis", type: "smoothstep", animated, style: { stroke: blueStroke } },
-    { id: "e-m-s", source: "mcp", target: "synthesis", type: "smoothstep", animated, style: { stroke: greenStroke } },
-    { id: "e-s-j", source: "synthesis", target: "judge", type: "smoothstep", animated, style: { stroke } },
-    { id: "e-j-o", source: "judge", target: "output", type: "smoothstep", animated, style: { stroke } },
+    { id: "e-q-g", source: "query", target: "guardrail", type: "smoothstep", animated, style: { stroke, strokeWidth: 2 } },
+    { id: "e-g-r", source: "guardrail", target: "router", type: "smoothstep", animated, style: { stroke, strokeWidth: 2 } },
+    { id: "e-r-c", source: "router", target: "chroma", type: "smoothstep", animated, style: { stroke: blueStroke, strokeWidth: 2.4 } },
+    { id: "e-r-m", source: "router", target: "mcp", type: "smoothstep", animated, style: { stroke: greenStroke, strokeWidth: 2.4 } },
+    { id: "e-r-mx-c", source: "router", target: "mixed", type: "smoothstep", animated, style: { stroke: blueStroke, strokeWidth: 1.8, strokeDasharray: "5 4" } },
+    { id: "e-r-mx-m", source: "router", target: "mixed", type: "smoothstep", animated, style: { stroke: greenStroke, strokeWidth: 1.8, strokeDasharray: "5 4" } },
+    { id: "e-r-cl", source: "router", target: "clarify", type: "smoothstep", animated, style: { stroke: amberStroke, strokeWidth: 2 } },
+    { id: "e-c-sc", source: "chroma", target: "scoring", type: "smoothstep", animated, style: { stroke: blueStroke, strokeWidth: 2.2 } },
+    { id: "e-sc-s", source: "scoring", target: "synthesis", type: "smoothstep", animated, style: { stroke: blueStroke, strokeWidth: 2.2 } },
+    { id: "e-m-s", source: "mcp", target: "synthesis", type: "smoothstep", animated, style: { stroke: greenStroke, strokeWidth: 2.2 } },
+    { id: "e-mx-s", source: "mixed", target: "synthesis", type: "smoothstep", animated, style: { stroke, strokeWidth: 1.8, strokeDasharray: "5 4" } },
+    {
+      id: "e-cl-o",
+      source: "clarify",
+      sourceHandle: "bottom",
+      target: "output",
+      targetHandle: "bottom",
+      type: "smoothstep",
+      animated,
+      style: { stroke: amberStroke, strokeWidth: 2 },
+    },
+    { id: "e-s-j", source: "synthesis", target: "judge", type: "smoothstep", animated, style: { stroke, strokeWidth: 2 } },
+    { id: "e-j-o", source: "judge", target: "output", type: "smoothstep", animated, style: { stroke, strokeWidth: 2 } },
   ];
 }
 
@@ -225,13 +286,13 @@ function RAGPipelineFlow({
   const edges = useMemo(() => buildEdges(isLoading, isDark), [isLoading, isDark]);
 
   return (
-    <div className="h-[300px] w-full overflow-hidden rounded-xl border border-zinc-200 bg-zinc-50 dark:border-zinc-800 dark:bg-zinc-950/50">
+    <div className="h-[360px] w-full overflow-hidden rounded-2xl border border-zinc-200 bg-gradient-to-b from-white to-zinc-50 dark:border-zinc-800 dark:bg-zinc-950/50">
       <ReactFlow
         nodes={nodes}
         edges={edges}
         nodeTypes={nodeTypesFull}
         fitView
-        fitViewOptions={{ padding: 0.16, maxZoom: 1.05, minZoom: 0.4 }}
+        fitViewOptions={{ padding: 0.14, maxZoom: 1.05, minZoom: 0.35 }}
         nodesDraggable={false}
         nodesConnectable={false}
         elementsSelectable={false}
@@ -243,7 +304,7 @@ function RAGPipelineFlow({
         colorMode={isDark ? "dark" : "light"}
         proOptions={{ hideAttribution: true }}
       >
-        <Background variant={BackgroundVariant.Dots} gap={14} size={1} className="opacity-40" />
+        <Background variant={BackgroundVariant.Dots} gap={16} size={1} className="opacity-35" />
       </ReactFlow>
     </div>
   );
@@ -256,6 +317,20 @@ export function RAGPipelineVisualizer(props: Readonly<InnerProps>) {
         <p className="text-xs font-medium uppercase tracking-wide text-zinc-500 dark:text-zinc-500">
           RAG logic flow
         </p>
+        <div className="flex flex-wrap gap-2 text-[11px] text-zinc-600 dark:text-zinc-400">
+          <span className="rounded-full border border-sky-200 bg-sky-50 px-2 py-1 dark:border-sky-900 dark:bg-sky-950/30">
+            Policy routes force retrieval
+          </span>
+          <span className="rounded-full border border-emerald-200 bg-emerald-50 px-2 py-1 dark:border-emerald-900 dark:bg-emerald-950/30">
+            Personal routes use employee data only
+          </span>
+          <span className="rounded-full border border-amber-200 bg-amber-50 px-2 py-1 dark:border-amber-900 dark:bg-amber-950/30">
+            Sensitive matters hard-override to HR
+          </span>
+          <span className="rounded-full border border-zinc-200 bg-zinc-50 px-2 py-1 dark:border-zinc-700 dark:bg-zinc-900/60">
+            Personal answers bypass retrieval
+          </span>
+        </div>
         <RAGPipelineFlow {...props} />
       </div>
     </ReactFlowProvider>

@@ -4,12 +4,14 @@ from __future__ import annotations
 
 import hashlib
 import json
+import re
 import threading
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import TypedDict
 
 from app.config import FIXTURES_DIR, RAG_API_ROOT
+from app.intent_policy import classify_query
 from app.vectorstore import get_vectorstore
 
 
@@ -41,6 +43,7 @@ class VizPoint(TypedDict):
 
 _CACHE_PATH = RAG_API_ROOT / "data" / "semantic_cache.json"
 _LOCK = threading.Lock()
+_CACHE_KEY_VERSION = 9
 
 
 def _ensure_store() -> None:
@@ -53,10 +56,18 @@ def _normalize_question(question: str) -> str:
     return " ".join(question.lower().strip().split())
 
 
+def _route_bucket(question: str) -> str:
+    domain = str(classify_query(question).get("domain_class", "POLICY")).upper()
+    if domain not in {"PROFILE", "POLICY", "IT", "OOS"}:
+        return "POLICY"
+    return domain
+
+
 def _ask_key(question: str, employee_id: str | None, use_rag: bool) -> str:
     norm_q = _normalize_question(question)
     emp = (employee_id or "").strip().upper()
-    return f"{norm_q}::emp={emp or '-'}::rag={int(use_rag)}"
+    route = _route_bucket(question)
+    return f"v{_CACHE_KEY_VERSION}::{norm_q}::route={route}::emp={emp or '-'}::rag={int(use_rag)}"
 
 
 def _fixtures_signature() -> str:
@@ -146,13 +157,45 @@ def _write_store(entries: list[CacheEntry], answers: list[CachedAskEntry]) -> No
 
 def _infer_category(text: str) -> str:
     q = text.lower()
-    if any(t in q for t in ("pto", "vacation", "leave", "sick day")):
-        return "PTO"
-    if any(t in q for t in ("vpn", "globalprotect", "gateway", "it")):
-        return "VPN"
-    if any(t in q for t in ("my", "employee", "balance", "remaining", "days do i have")):
+    if (
+        re.search(r"\bharass", q)
+        or re.search(r"\bharrass", q)
+        or re.search(r"\bbully|bullied|bullying\b", q)
+        or re.search(r"\babuse|abused|abusing\b", q)
+        or re.search(r"\btermination|terminated|fired|dismissed\b", q)
+        or re.search(r"\baccommodation\b", q)
+    ):
+        return "Sensitive"
+    if (
+        re.search(r"\bmy\b", q)
+        or re.search(r"\bemployee\b", q)
+        or re.search(r"\bbalance\b", q)
+        or re.search(r"\bremaining\b", q)
+        or re.search(r"\bdays do i have\b", q)
+        or re.search(r"\bloan\b", q)
+        or re.search(r"\beligible\b", q)
+    ):
         return "Personal"
-    return "General"
+    if (
+        re.search(r"\bvpn\b", q)
+        or re.search(r"\blaptop\b", q)
+        or re.search(r"\bhardware\b", q)
+        or re.search(r"\bdevice\b", q)
+        or re.search(r"\bglobalprotect\b", q)
+        or re.search(r"\bgateway\b", q)
+        or re.search(r"\bit\b", q)
+    ):
+        return "IT"
+    if (
+        re.search(r"\bpto\b", q)
+        or re.search(r"\bvacation\b", q)
+        or re.search(r"\bleave\b", q)
+        or re.search(r"\bsick\s+day(s)?\b", q)
+        or re.search(r"\bpolicy\b", q)
+        or re.search(r"\bhandbook\b", q)
+    ):
+        return "Policy"
+    return "Out of Scope"
 
 
 def _project_text(text: str) -> tuple[float, float]:

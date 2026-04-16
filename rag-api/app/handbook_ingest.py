@@ -14,6 +14,7 @@ from app.vectorstore import (
     discover_knowledge_files,
     get_vectorstore,
 )
+from app.scope_index import invalidate_scope_index
 
 
 def _infer_section_title(chunk: str) -> str:
@@ -85,4 +86,5 @@ def ingest_handbook_file(_file_path: Path, *, replace: bool = True) -> int:
         return 0
     vs = get_vectorstore()
     vs.add_documents(docs)
+    invalidate_scope_index()
     return len(docs)

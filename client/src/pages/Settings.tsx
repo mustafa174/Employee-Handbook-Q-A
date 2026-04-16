@@ -49,6 +49,21 @@ const fetchCacheStatsProbe = async (): Promise<boolean> => {
 };
 
 const fetchAskProbe = async (): Promise<AskResponse> => {
+  // #region agent log
+  fetch("http://127.0.0.1:7340/ingest/caf36bdf-b3aa-457a-8a14-e9c51eb4cc1d", {
+    method: "POST",
+    headers: { "Content-Type": "application/json", "X-Debug-Session-Id": "0b08b0" },
+    body: JSON.stringify({
+      sessionId: "0b08b0",
+      runId: "pre-fix",
+      hypothesisId: "H1",
+      location: "Settings.tsx:fetchAskProbe",
+      message: "Settings ask probe fired",
+      data: { question: "How many PTO days do I have?" },
+      timestamp: Date.now(),
+    }),
+  }).catch(() => {});
+  // #endregion
   const res = await fetch(apiUrl("/api/ask"), {
     method: "POST",
     headers: { "Content-Type": "application/json" },
@@ -56,6 +71,7 @@ const fetchAskProbe = async (): Promise<AskResponse> => {
       question: "How many PTO days do I have?",
       employee_id: "E001",
       use_rag: true,
+      skip_cache: true,
     }),
   });
   if (!res.ok) throw new Error("RAG pipeline probe failed");
@@ -70,10 +86,93 @@ const toneClass: Record<StatusTone, string> = {
   down: "border-rose-300 bg-rose-50 text-rose-800 dark:border-rose-700 dark:bg-rose-950/40 dark:text-rose-200",
 };
 
+const CACHE_PREF_STORAGE_KEY = "handbook-enable-semantic-cache-v1";
+const CACHE_PREF_EVENT = "handbook:cache-preference-changed";
+
+const clearBrowserStorage = async (): Promise<void> => {
+  try {
+    globalThis.localStorage.clear();
+  } catch {
+    // Ignore storage failures; other clearing steps may still succeed.
+  }
+
+  try {
+    globalThis.sessionStorage.clear();
+  } catch {
+    // Ignore storage failures; other clearing steps may still succeed.
+  }
+
+  if ("caches" in globalThis) {
+    try {
+      const keys = await globalThis.caches.keys();
+      await Promise.all(keys.map((key) => globalThis.caches.delete(key)));
+    } catch {
+      // Ignore Cache Storage failures.
+    }
+  }
+
+  const indexedDbApi = globalThis.indexedDB;
+  if (!indexedDbApi) return;
+
+  const deleteDatabase = (name: string): Promise<void> =>
+    new Promise((resolve) => {
+      try {
+        const request = indexedDbApi.deleteDatabase(name);
+        request.onsuccess = () => resolve();
+        request.onerror = () => resolve();
+        request.onblocked = () => resolve();
+      } catch {
+        resolve();
+      }
+    });
+
+  const factoryWithDatabases = indexedDbApi as IDBFactory & {
+    databases?: () => Promise<Array<{ name?: string }>>;
+  };
+
+  if (typeof factoryWithDatabases.databases === "function") {
+    try {
+      const databases = await factoryWithDatabases.databases();
+      const names = databases
+        .map((entry) => entry.name)
+        .filter((name): name is string => typeof name === "string" && name.length > 0);
+      await Promise.all(names.map((name) => deleteDatabase(name)));
+      return;
+    } catch {
+      // Fall back to deleting known app database names below.
+    }
+  }
+
+  await Promise.all([
+    deleteDatabase("handbook-chat-history-v1"),
+    deleteDatabase("handbook-naive-turns-v1"),
+    deleteDatabase("handbook-enable-semantic-cache-v1"),
+  ]);
+};
+
 export const SettingsPage = () => {
   const queryClient = useQueryClient();
   const { setChatHistory, setSelectedEmployeeId } = useChatHistory();
   const [handbookPath, setHandbookPath] = useState("fixtures/handbook.md");
+  const [enableSemanticCache, setEnableSemanticCache] = useState<boolean>(() => {
+    try {
+      const raw = globalThis.localStorage.getItem(CACHE_PREF_STORAGE_KEY);
+      if (raw === null) return true;
+      return raw !== "false";
+    } catch {
+      return true;
+    }
+  });
+
+  const onToggleSemanticCache = (next: boolean) => {
+    setEnableSemanticCache(next);
+    try {
+      globalThis.localStorage.setItem(CACHE_PREF_STORAGE_KEY, String(next));
+      globalThis.dispatchEvent(new Event(CACHE_PREF_EVENT));
+    } catch {
+      // Ignore storage failures; session state still applies.
+    }
+  };
   const health = useQuery({
     queryKey: ["health"],
     queryFn: fetchHealth,
@@ -91,6 +190,44 @@ export const SettingsPage = () => {
       setSelectedEmployeeId("E001");
       globalThis.dispatchEvent(new Event("handbook:clear-site-storage"));
     },
+    onSuccess: () => {
+      void queryClient.invalidateQueries({ queryKey: ["status", "cache-db"] });
+      void queryClient.invalidateQueries({ queryKey: ["status", "rag-probe"] });
+      void queryClient.invalidateQueries({ queryKey: ["health"] });
+    },
+  });
+  const atomicClear = useMutation({
+    mutationFn: async () => {
+      // #region agent log
+      fetch("http://127.0.0.1:7340/ingest/caf36bdf-b3aa-457a-8a14-e9c51eb4cc1d", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", "X-Debug-Session-Id": "0b08b0" },
+        body: JSON.stringify({
+          sessionId: "0b08b0",
+          runId: "pre-fix",
+          hypothesisId: "H4",
+          location: "Settings.tsx:atomicClear",
+          message: "Atomic clear started",
+          data: {},
+          timestamp: Date.now(),
+        }),
+      }).catch(() => {});
+      // #endregion
+      await purgeSemanticCache();
+      await clearBrowserStorage();
+      await queryClient.cancelQueries();
+      queryClient.clear();
+      setChatHistory([]);
+      setSelectedEmployeeId("E001");
+      globalThis.dispatchEvent(new Event(CACHE_PREF_EVENT));
+      globalThis.dispatchEvent(new Event("handbook:clear-site-storage"));
+    },
+    onSuccess: () => {
+      globalThis.location.assign("/assistant");
+    },
+  });
+  const purgeCacheOnly = useMutation({
+    mutationFn: purgeSemanticCache,
     onSuccess: () => {
       void queryClient.invalidateQueries({ queryKey: ["status", "cache-db"] });
       void queryClient.invalidateQueries({ queryKey: ["status", "rag-probe"] });
@@ -202,11 +339,42 @@ export const SettingsPage = () => {
 
       <section className="rounded-2xl border border-zinc-200 bg-white p-5 shadow-sm transition-all duration-300 dark:border-zinc-800 dark:bg-zinc-900">
         <div className="mb-5 rounded-xl border border-zinc-200 bg-zinc-50 p-4 dark:border-zinc-700 dark:bg-zinc-800/40">
+          <h3 className="text-sm font-semibold text-zinc-900 dark:text-zinc-100">Semantic Cache</h3>
+          <p className="mt-1 text-xs text-zinc-500 dark:text-zinc-400">
+            Toggle whether RAG chat requests read/write semantic cache records.
+          </p>
+          <label className="mt-3 inline-flex cursor-pointer items-center gap-3 text-sm text-zinc-700 dark:text-zinc-300">
+            <input
+              type="checkbox"
+              checked={enableSemanticCache}
+              onChange={(e) => onToggleSemanticCache(e.target.checked)}
+              className="size-4 rounded border-zinc-300 text-emerald-600 focus:ring-emerald-500 dark:border-zinc-600 dark:bg-zinc-900"
+            />
+            Enable semantic cache for chat requests
+          </label>
+          <p className="mt-2 text-xs text-zinc-500 dark:text-zinc-400">
+            Current mode: {enableSemanticCache ? "Cache ON" : "Cache OFF (skip_cache=true)"}
+          </p>
+        </div>
+        <div className="mb-5 rounded-xl border border-zinc-200 bg-zinc-50 p-4 dark:border-zinc-700 dark:bg-zinc-800/40">
           <h3 className="text-sm font-semibold text-zinc-900 dark:text-zinc-100">Site Storage</h3>
           <p className="mt-1 text-xs text-zinc-500 dark:text-zinc-400">
             Clears persisted chat history and semantic cache.
           </p>
-          <div className="mt-3">
+          <div className="mt-3 flex flex-wrap items-center gap-2">
+            <button
+              type="button"
+              onClick={() => atomicClear.mutate()}
+              disabled={atomicClear.isPending}
+              className="inline-flex items-center gap-2 rounded-lg border border-zinc-900 bg-zinc-900 px-3 py-2 text-sm text-white transition-colors hover:bg-zinc-800 disabled:opacity-50 dark:border-zinc-100 dark:bg-zinc-100 dark:text-zinc-900 dark:hover:bg-zinc-200"
+            >
+              {atomicClear.isPending ? (
+                <Loader2 className="size-4 animate-spin" aria-hidden />
+              ) : (
+                <RefreshCw className="size-4" aria-hidden />
+              )}
+              Atomic Clear and Restart
+            </button>
             <button
               type="button"
               onClick={() => clearSiteStorage.mutate()}
@@ -220,12 +388,31 @@ export const SettingsPage = () => {
               )}
               Clear Site Storage
             </button>
+            <button
+              type="button"
+              onClick={() => purgeCacheOnly.mutate()}
+              disabled={purgeCacheOnly.isPending}
+              className="inline-flex items-center gap-2 rounded-lg border border-amber-300 px-3 py-2 text-sm text-amber-700 transition-colors hover:bg-amber-50 disabled:opacity-50 dark:border-amber-700 dark:text-amber-300 dark:hover:bg-amber-950/40"
+            >
+              {purgeCacheOnly.isPending ? (
+                <Loader2 className="size-4 animate-spin" aria-hidden />
+              ) : (
+                <RefreshCw className="size-4" aria-hidden />
+              )}
+              Purge Cache
+            </button>
             {clearSiteStorage.isError ? (
               <p className="mt-2 text-sm text-rose-600 dark:text-rose-400">{getErrorMessage(clearSiteStorage.error)}</p>
             ) : null}
+            {atomicClear.isError ? (
+              <p className="mt-2 text-sm text-rose-600 dark:text-rose-400">{getErrorMessage(atomicClear.error)}</p>
+            ) : null}
+            {purgeCacheOnly.isError ? (
+              <p className="mt-2 text-sm text-rose-600 dark:text-rose-400">{getErrorMessage(purgeCacheOnly.error)}</p>
+            ) : null}
           </div>
         </div>
-        <h2 className="text-base font-semibold text-zinc-900 dark:text-zinc-100">Enterprise AI Knowledge Base</h2>
+        <h2 className="text-base font-semibold text-zinc-900 dark:text-zinc-100">Employee Handbook Knowledge Base</h2>
         <p className="mt-1 text-sm text-zinc-500 dark:text-zinc-400">
           Ingest all supported files in `fixtures/` (.md/.txt/.pdf) into one Chroma collection.
         </p>

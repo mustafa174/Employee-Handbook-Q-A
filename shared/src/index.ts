@@ -42,6 +42,8 @@ export const askRequestSchema = z.object({
     .optional(),
   /** When false, skip Chroma retrieval and HR context — pure LLM for comparison UI. Default true on server. */
   use_rag: z.boolean().optional(),
+  /** When true, bypass semantic cache read/write and query telemetry logging. */
+  skip_cache: z.boolean().optional(),
 });
 
 export type AskRequest = z.infer<typeof askRequestSchema>;
