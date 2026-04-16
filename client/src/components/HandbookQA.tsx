@@ -34,6 +34,7 @@ const postAsk = async (body: AskRequestWithHistory): Promise<AskResponse> => {
       employee_id: body.employee_id || undefined,
       chat_history: body.chat_history,
       use_rag: body.use_rag ?? true,
+      skip_cache: body.skip_cache ?? false,
     }),
   });
   if (!res.ok) {
@@ -65,6 +66,7 @@ const postAskStream = async (
       employee_id: body.employee_id || undefined,
       chat_history: body.chat_history,
       use_rag: body.use_rag ?? true,
+      skip_cache: body.skip_cache ?? false,
     }),
   });
   if (!res.ok || !res.body) {
@@ -323,6 +325,8 @@ const latestCompletedTurnKey = (turns: ChatTurn[]): string | null => {
 const NAIVE_TURNS_STORAGE_KEY = "handbook-naive-turns-v1";
 const NAIVE_TURNS_MAX_AGE_MS = 24 * 60 * 60 * 1000;
 const CLEAR_SITE_STORAGE_EVENT = "handbook:clear-site-storage";
+const CACHE_PREF_STORAGE_KEY = "handbook-enable-semantic-cache-v1";
+const CACHE_PREF_EVENT = "handbook:cache-preference-changed";
 
 type StoredNaiveTurns = {
   savedAt: number;
@@ -363,6 +367,15 @@ export const HandbookQA = ({ chatHistory, onChatHistoryChange, selectedEmployeeI
   const [ragTurns, setRagTurns] = useState<ChatTurn[]>([]);
   const [isSending, setIsSending] = useState(false);
   const [sendError, setSendError] = useState<string | null>(null);
+  const [enableSemanticCache, setEnableSemanticCache] = useState<boolean>(() => {
+    try {
+      const raw = globalThis.localStorage.getItem(CACHE_PREF_STORAGE_KEY);
+      if (raw === null) return true;
+      return raw !== "false";
+    } catch {
+      return true;
+    }
+  });
   const [hoveredChunkIndex, setHoveredChunkIndex] = useState<number | null>(null);
   const [lastRagTurnId, setLastRagTurnId] = useState<string | null>(null);
   const [activeNodes, setActiveNodes] = useState<string[]>([]);
@@ -406,10 +419,40 @@ export const HandbookQA = ({ chatHistory, onChatHistoryChange, selectedEmployeeI
     };
   }, []);
 
+  useEffect(() => {
+    const onCachePreferenceChanged = () => {
+      try {
+        const raw = globalThis.localStorage.getItem(CACHE_PREF_STORAGE_KEY);
+        setEnableSemanticCache(raw !== "false");
+      } catch {
+        setEnableSemanticCache(true);
+      }
+    };
+    globalThis.addEventListener(CACHE_PREF_EVENT, onCachePreferenceChanged);
+    return () => {
+      globalThis.removeEventListener(CACHE_PREF_EVENT, onCachePreferenceChanged);
+    };
+  }, []);
+
   const runAsk = () => {
     const q = question.trim();
     const contextValue = selectedEmployeeId.trim() || undefined;
     if (!q || isSending) return;
+    // #region agent log
+    fetch("http://127.0.0.1:7340/ingest/caf36bdf-b3aa-457a-8a14-e9c51eb4cc1d", {
+      method: "POST",
+      headers: { "Content-Type": "application/json", "X-Debug-Session-Id": "0b08b0" },
+      body: JSON.stringify({
+        sessionId: "0b08b0",
+        runId: "pre-fix",
+        hypothesisId: "H2",
+        location: "HandbookQA.tsx:runAsk",
+        message: "Assistant runAsk invoked",
+        data: { question: q, selectedEmployeeId: contextValue ?? null },
+        timestamp: Date.now(),
+      }),
+    }).catch(() => {});
+    // #endregion
     setQuestion("");
     const outgoingHistory = chatHistory ?? buildHistoryFromTurns(ragTurns);
 
@@ -431,6 +474,7 @@ export const HandbookQA = ({ chatHistory, onChatHistoryChange, selectedEmployeeI
       question: q,
       employee_id: contextValue,
       chat_history: outgoingHistory,
+      skip_cache: !enableSemanticCache,
     } satisfies AskRequestWithHistory;
 
     void (async () => {
@@ -542,6 +586,7 @@ export const HandbookQA = ({ chatHistory, onChatHistoryChange, selectedEmployeeI
     );
   }, [lastAnswer]);
   const mcpStep = lastAnswer?.pipeline_steps.find((s) => s.id === "mcp_hr");
+  const retrieveStep = lastAnswer?.pipeline_steps.find((s) => s.id === "retrieve");
   const mcpMeta = mcpStatusMeta(mcpStep);
   const cachePill = useMemo(() => {
     const hit = lastAnswer?.cache_hit ?? false;
@@ -573,6 +618,38 @@ export const HandbookQA = ({ chatHistory, onChatHistoryChange, selectedEmployeeI
     const mcp = mcpStep?.detail ? `\n\nMCP context:\n${mcpStep.detail}` : "";
     return `Conversation history:\n${history || "<none>"}\n\nCurrent question:\n${lastQuery || "<none>"}\n\nHandbook excerpts:\n${context || "<none>"}${mcp}`;
   }, [chatHistory, lastAnswer?.citations, lastQuery, mcpStep?.detail, ragTurns]);
+  const shouldWarnNoPolicySource = useMemo(() => {
+    if (!lastAnswer) return false;
+    if ((lastAnswer.citations?.length ?? 0) > 0) return false;
+    if (!lastAnswer.use_rag) return false;
+    // Show "no policy source" only when retrieval actually attempted policy grounding.
+    return retrieveStep?.status === "empty";
+  }, [lastAnswer, retrieveStep?.status]);
+
+  useEffect(() => {
+    if (!lastAnswer) return;
+    // #region agent log
+    fetch("http://127.0.0.1:7340/ingest/caf36bdf-b3aa-457a-8a14-e9c51eb4cc1d", {
+      method: "POST",
+      headers: { "Content-Type": "application/json", "X-Debug-Session-Id": "0b08b0" },
+      body: JSON.stringify({
+        sessionId: "0b08b0",
+        runId: "repro-warning-1",
+        hypothesisId: "H1",
+        location: "HandbookQA.tsx:source-warning",
+        message: "No-policy warning decision snapshot",
+        data: {
+          citations: lastAnswer.citations?.length ?? 0,
+          use_rag: Boolean(lastAnswer.use_rag),
+          retrieve_status: retrieveStep?.status ?? null,
+          should_warn: shouldWarnNoPolicySource,
+          last_query: lastQuery,
+        },
+        timestamp: Date.now(),
+      }),
+    }).catch(() => {});
+    // #endregion
+  }, [lastAnswer, lastQuery, retrieveStep?.status, shouldWarnNoPolicySource]);
 
   useEffect(() => {
     const el = inputRef.current;
@@ -675,7 +752,7 @@ export const HandbookQA = ({ chatHistory, onChatHistoryChange, selectedEmployeeI
                       {formatTurnTime(turn.answerAt)}
                     </p>
                   ) : null} */}
-                  {turn.id === lastRagTurnId && (lastAnswer?.citations.length ?? 0) === 0 ? (
+                  {turn.id === lastRagTurnId && shouldWarnNoPolicySource ? (
                     <p className="mt-2 inline-block rounded border border-amber-300 bg-amber-50 px-2 py-1 text-xs text-amber-800 dark:border-amber-700 dark:bg-amber-950/50 dark:text-amber-200">
                       ⚠️ No policy source found
                     </p>

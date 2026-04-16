@@ -7,6 +7,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { SettingsPage } from "./pages/Settings";
 import { useChatHistory } from "./state/ChatHistoryContext";
 import { apiUrl } from "./apiBase";
+import { LandingPage } from "./pages/LandingPage";
 
 const EMPLOYEE_OPTIONS = [
   { employee_id: "E001", name: "Alex Chen" },
@@ -62,11 +63,16 @@ const App = () => {
   }, [employeeOptions, selectedEmployeeId, setSelectedEmployeeId]);
 
   const isSettings = location.pathname === "/settings";
-  const isAssistantPage = isSettings === false;
+  const isLanding = location.pathname === "/";
+  const isAssistantPage = !isLanding && !isSettings;
   const pageTitle = useMemo(
-    () => (isSettings ? "Settings" : "Employee Handbook Q&A"),
-    [isSettings],
+    () => (isSettings ? "Settings" : "Employee Handbook Q&A Assistant"),
+    [isSettings]
   );
+
+  if (isLanding) {
+    return <LandingPage />;
+  }
 
   return (
     <div className="min-h-screen bg-zinc-50 text-zinc-900 transition-colors dark:bg-zinc-950 dark:text-zinc-100">
@@ -79,7 +85,7 @@ const App = () => {
             <nav className="flex items-center gap-1 rounded-lg border border-zinc-200 bg-zinc-100/80 p-1 dark:border-zinc-700 dark:bg-zinc-800/80">
               <button
                 type="button"
-                onClick={() => navigate("/")}
+                onClick={() => navigate("/assistant")}
                 className={[
                   "rounded-md px-3 py-1.5 text-xs font-medium transition-all duration-200",
                   isAssistantPage
@@ -141,7 +147,7 @@ const App = () => {
         </div>
       </header>
       <main className="mx-auto px-6 py-2 max-w-7xl">
-        <section className={isSettings ? "hidden" : "block"}>
+        <section className={isAssistantPage ? "block" : "hidden"}>
           <HandbookQA
             chatHistory={chatHistory}
             onChatHistoryChange={setChatHistory}

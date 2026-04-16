@@ -1,95 +1,170 @@
 {
   "entries": [
     {
-      "query": "How far in advance should I request PTO?",
-      "category": "PTO",
-      "created_at": "2026-04-15T10:49:40.939682+00:00"
-    },
-    {
-      "query": "How far in advance should I request PTO?",
-      "category": "PTO",
-      "created_at": "2026-04-15T10:49:42.619659+00:00"
-    },
-    {
-      "query": "Recommend best consumer VPN for streaming.\nWhat\u2019s legal notice period in Germany?\nCan I work from Mars?\nCan I bring my lion to office?\nExpected: Not Found + Next Steps; no fabricated legal/policy facts.\nWhat is my employee ID and name?\nHow many sick + PTO days do I have?\nCan I take time off next week and what\u2019s the rule?\nHow many days do I have left and what is medical certification rule?\n\nWhat is the PTO advance notice requirement?\nHow many PTO days can roll over?\nWhen is medical certification required for sick leave?\nWhat VPN is required for internal servers?\nWhat is the VPN gateway?\nHow often are laptops upgraded?\nExpected: grounded answer + specific section citation.\nWhat is PTO rollover? What is salary band in Dubai?\nWhat VPN gateway do we use? Can I use VPN for Netflix?\nHow many sick days do I have? What is moon remote-work policy?\nWhat is laptop upgrade cycle? What is Germany labor-law notice period?\n\nleave\ntime off policy\nhardware help\nremote access\nExpected: options list with section references, no dead-end.",
-      "category": "PTO",
-      "created_at": "2026-04-15T10:50:09.704774+00:00"
-    },
-    {
-      "query": "Recommend best consumer VPN for streaming.\nWhat\u2019s legal notice period in Germany?\nCan I work from Mars?\nCan I bring my lion to office?\nExpected: Not Found + Next Steps; no fabricated legal/policy facts.\nWhat is my employee ID and name?\nHow many sick + PTO days do I have?\nCan I take time off next week and what\u2019s the rule?\nHow many days do I have left and what is medical certification rule?\n\nWhat is the PTO advance notice requirement?\nHow many PTO days can roll over?\nWhen is medical certification required for sick leave?\nWhat VPN is required for internal servers?\nWhat is the VPN gateway?\nHow often are laptops upgraded?\nExpected: grounded answer + specific section citation.\nWhat is PTO rollover? What is salary band in Dubai?\nWhat VPN gateway do we use? Can I use VPN for Netflix?\nHow many sick days do I have? What is moon remote-work policy?\nWhat is laptop upgrade cycle? What is Germany labor-law notice period?\n\nleave\ntime off policy\nhardware help\nremote access\nExpected: options list with section references, no dead-end.",
-      "category": "PTO",
-      "created_at": "2026-04-15T10:50:37.258146+00:00"
-    },
-    {
-      "query": "how to contact hr",
-      "category": "General",
-      "created_at": "2026-04-15T10:50:47.747181+00:00"
-    },
-    {
-      "query": "how to contact hr",
-      "category": "General",
-      "created_at": "2026-04-15T10:50:47.957822+00:00"
-    },
-    {
-      "query": "i want to put resign",
-      "category": "General",
-      "created_at": "2026-04-15T10:50:54.803508+00:00"
-    },
-    {
-      "query": "i want to put resign",
-      "category": "General",
-      "created_at": "2026-04-15T10:50:55.252584+00:00"
-    },
-    {
-      "query": "i want to replace my laptop",
+      "query": "How many PTO days do I have?",
       "category": "Personal",
-      "created_at": "2026-04-15T10:51:14.830965+00:00"
+      "created_at": "2026-04-16T16:12:04.115560+00:00"
     },
     {
-      "query": "i want to replace my laptop",
+      "query": "How many vacation days do I get?",
+      "category": "Policy",
+      "created_at": "2026-04-16T16:12:06.914677+00:00"
+    },
+    {
+      "query": "How many vacation days do I get?",
+      "category": "Policy",
+      "created_at": "2026-04-16T16:12:07.110694+00:00"
+    },
+    {
+      "query": "how much loan i can avail",
       "category": "Personal",
-      "created_at": "2026-04-15T10:51:26.489683+00:00"
+      "created_at": "2026-04-16T16:12:43.521059+00:00"
     },
     {
-      "query": "Do unused vacation days carry over to next year?",
-      "category": "PTO",
-      "created_at": "2026-04-15T10:55:18.983132+00:00"
-    },
-    {
-      "query": "Do unused vacation days carry over to next year?",
-      "category": "PTO",
-      "created_at": "2026-04-15T10:55:22.441070+00:00"
-    },
-    {
-      "query": "What is the probation period duration",
-      "category": "General",
-      "created_at": "2026-04-15T10:55:37.030382+00:00"
-    },
-    {
-      "query": "What is the probation period duration",
-      "category": "General",
-      "created_at": "2026-04-15T10:55:37.699845+00:00"
-    },
-    {
-      "query": "I want to report a harassment incident involving my lead.",
+      "query": "how much loan i can avail",
       "category": "Personal",
-      "created_at": "2026-04-15T11:09:27.277270+00:00"
+      "created_at": "2026-04-16T16:12:44.606721+00:00"
     },
     {
-      "query": "I want to report a harassment incident involving my lead.",
+      "query": "how much loan i can have",
       "category": "Personal",
-      "created_at": "2026-04-15T11:09:27.931469+00:00"
+      "created_at": "2026-04-16T16:12:57.435844+00:00"
+    },
+    {
+      "query": "how much loan i can have",
+      "category": "Personal",
+      "created_at": "2026-04-16T16:12:57.592006+00:00"
+    },
+    {
+      "query": "what is loan limit for me",
+      "category": "Personal",
+      "created_at": "2026-04-16T16:13:00.525356+00:00"
+    },
+    {
+      "query": "what is loan limit for me",
+      "category": "Personal",
+      "created_at": "2026-04-16T16:13:01.694858+00:00"
+    },
+    {
+      "query": "what is my name",
+      "category": "Personal",
+      "created_at": "2026-04-16T16:13:10.565810+00:00"
+    },
+    {
+      "query": "what is my name",
+      "category": "Personal",
+      "created_at": "2026-04-16T16:13:10.723519+00:00"
+    },
+    {
+      "query": "what is my name",
+      "category": "Personal",
+      "created_at": "2026-04-16T16:13:17.960399+00:00"
+    },
+    {
+      "query": "what is my name",
+      "category": "Personal",
+      "created_at": "2026-04-16T16:13:18.428042+00:00"
+    },
+    {
+      "query": "tell me my loan limit and eligibility",
+      "category": "Personal",
+      "created_at": "2026-04-16T16:13:27.473346+00:00"
+    },
+    {
+      "query": "tell me my loan limit and eligibility",
+      "category": "Personal",
+      "created_at": "2026-04-16T16:13:27.686411+00:00"
+    },
+    {
+      "query": "am i eligible for loan?",
+      "category": "Personal",
+      "created_at": "2026-04-16T16:13:38.080079+00:00"
+    },
+    {
+      "query": "am i eligible for loan?",
+      "category": "Personal",
+      "created_at": "2026-04-16T16:13:38.688957+00:00"
+    },
+    {
+      "query": "I want to report harassment by my manager.",
+      "category": "Sensitive",
+      "created_at": "2026-04-16T16:13:58.415490+00:00"
+    },
+    {
+      "query": "I want to report harassment by my manager.",
+      "category": "Sensitive",
+      "created_at": "2026-04-16T16:13:59.076327+00:00"
+    },
+    {
+      "query": "I want to report harassment. then What is PTO rollover?\nI want to report harassment. then Which VPN do we use?",
+      "category": "Sensitive",
+      "created_at": "2026-04-16T16:14:07.263473+00:00"
+    },
+    {
+      "query": "I want to report harassment. then What is PTO rollover?\nI want to report harassment. then Which VPN do we use?",
+      "category": "Sensitive",
+      "created_at": "2026-04-16T16:14:08.232767+00:00"
+    },
+    {
+      "query": "is there any von for company server",
+      "category": "Out of Scope",
+      "created_at": "2026-04-16T16:14:20.803541+00:00"
+    },
+    {
+      "query": "is there any von for company server",
+      "category": "Out of Scope",
+      "created_at": "2026-04-16T16:14:27.472842+00:00"
+    },
+    {
+      "query": "Can I take time off next week and what\u2019s the rule?",
+      "category": "Out of Scope",
+      "created_at": "2026-04-16T16:14:33.767922+00:00"
+    },
+    {
+      "query": "Can I take time off next week and what\u2019s the rule?",
+      "category": "Out of Scope",
+      "created_at": "2026-04-16T16:14:40.281296+00:00"
+    },
+    {
+      "query": "Can I bring my lion to office?",
+      "category": "Personal",
+      "created_at": "2026-04-16T16:14:51.995317+00:00"
+    },
+    {
+      "query": "Can I bring my lion to office?",
+      "category": "Personal",
+      "created_at": "2026-04-16T16:14:55.866348+00:00"
+    },
+    {
+      "query": "What VPN is required for internal servers?",
+      "category": "IT",
+      "created_at": "2026-04-16T16:15:03.958282+00:00"
+    },
+    {
+      "query": "What VPN is required for internal servers?",
+      "category": "IT",
+      "created_at": "2026-04-16T16:15:05.247279+00:00"
+    },
+    {
+      "query": "What is the VPN gateway?",
+      "category": "IT",
+      "created_at": "2026-04-16T16:15:15.234661+00:00"
+    },
+    {
+      "query": "What is the VPN gateway?",
+      "category": "IT",
+      "created_at": "2026-04-16T16:15:16.414020+00:00"
     }
   ],
   "answers": [
     {
-      "key": "v6::how far in advance should i request pto?::emp=E001::rag=0",
-      "question_norm": "how far in advance should i request pto?",
+      "key": "v9::how many vacation days do i get?::route=POLICY::emp=E001::rag=0",
+      "question_norm": "how many vacation days do i get?",
       "employee_id": "E001",
       "use_rag": false,
-      "kb_signature": "42f3bf1712dce280a46d49e42e837ce030ccc621341347bd2c21ba4a6a97ccf8",
+      "kb_signature": "a4b66c063f6d6ff9da8f85dd53fd237924ed969f921fc56d8993ffa8ba1f2391",
       "response": {
-        "answer": "I cannot see internal policy documents, including specific guidelines on requesting PTO. I recommend contacting your HR department for accurate information regarding how far in advance you should request PTO.",
+        "answer": "You currently have 14 PTO days remaining.",
         "citations": [],
         "retrieval_attempts": [],
         "isEscalated": false,
@@ -105,7 +180,7 @@
             "id": "router",
             "label": "Semantic Intent Router",
             "status": "ok",
-            "detail": "INTENT_POLICY (domain=POLICY, conf=0.90) \u2014 process-policy guardrail: contact/procedure query forced to policy"
+            "detail": "INTENT_POLICY (domain=POLICY, conf=0.50) \u2014 intent_policy domain=POLICY conf=0.50; scores={'PROFILE': 1.0, 'POLICY': 1.0, 'IT': 0.0, 'OOS': 0.0}; primary=POLICY; scope in=True ratio=0.33"
           },
           {
             "id": "retrieve",
@@ -127,39 +202,157 @@
           }
         ],
         "use_rag": false,
-        "chat_model": "gpt-4o-mini"
+        "chat_model": "gpt-4o-mini",
+        "route": "PROFILE",
+        "router_version": "v2.1",
+        "context_presence": {
+          "has_policy": false,
+          "has_profile": true,
+          "has_it": false
+        },
+        "clarification_triggered": false,
+        "employee_profile": {
+          "employee_id": "E001",
+          "name": "Alex Chen",
+          "department": "Engineering",
+          "title": "Senior Software Engineer",
+          "employment_type": "full-time",
+          "location": "Lahore",
+          "manager": "Nadia Rahman",
+          "pto_days_remaining": "14",
+          "sick_days_remaining": "6",
+          "services_loan_available": "True",
+          "services_loan_limit_pkr": "250000",
+          "services_loan_eligible_after_months": "12",
+          "language_pref": "en",
+          "pto_days": "14",
+          "sick_days": "6"
+        },
+        "tool_called": true,
+        "recovery_applied": false
       },
-      "created_at": "2026-04-15T10:49:40.937239+00:00"
+      "created_at": "2026-04-16T16:12:06.910993+00:00"
     },
     {
-      "key": "v6::how far in advance should i request pto?::emp=E001::rag=1",
-      "question_norm": "how far in advance should i request pto?",
+      "key": "v9::how many vacation days do i get?::route=POLICY::emp=E001::rag=1",
+      "question_norm": "how many vacation days do i get?",
       "employee_id": "E001",
       "use_rag": true,
-      "kb_signature": "42f3bf1712dce280a46d49e42e837ce030ccc621341347bd2c21ba4a6a97ccf8",
+      "kb_signature": "a4b66c063f6d6ff9da8f85dd53fd237924ed969f921fc56d8993ffa8ba1f2391",
       "response": {
-        "answer": "You currently have 14 PTO days and 6 sick days remaining.",
+        "answer": "You currently have 14 PTO days remaining.",
+        "citations": [],
+        "retrieval_attempts": [],
+        "isEscalated": false,
+        "escalation_reason": null,
+        "pipeline_steps": [
+          {
+            "id": "guardrail",
+            "label": "Guardrail",
+            "status": "ok",
+            "detail": "No sensitive pattern matched"
+          },
+          {
+            "id": "router",
+            "label": "Semantic Intent Router",
+            "status": "ok",
+            "detail": "INTENT_POLICY (domain=POLICY, conf=0.50) \u2014 intent_policy domain=POLICY conf=0.50; scores={'PROFILE': 1.0, 'POLICY': 1.0, 'IT': 0.0, 'OOS': 0.0}; primary=POLICY; scope in=True ratio=0.33"
+          },
+          {
+            "id": "retrieve",
+            "label": "Chroma retrieval (embeddings + similarity)",
+            "status": "skipped",
+            "detail": "Route is personal data lookup"
+          },
+          {
+            "id": "mcp_hr",
+            "label": "Employee tool (MCP-style)",
+            "status": "ok",
+            "detail": "\u2705 Active: Securely retrieved data for E001"
+          },
+          {
+            "id": "llm",
+            "label": "OpenAI chat \u2014 gpt-4o-mini",
+            "status": "ok",
+            "detail": "Embeddings: text-embedding-3-small; structured JSON answer"
+          }
+        ],
+        "use_rag": true,
+        "chat_model": "gpt-4o-mini",
+        "route": "PROFILE",
+        "router_version": "v2.1",
+        "context_presence": {
+          "has_policy": false,
+          "has_profile": true,
+          "has_it": false
+        },
+        "clarification_triggered": false,
+        "employee_profile": {
+          "employee_id": "E001",
+          "name": "Alex Chen",
+          "department": "Engineering",
+          "title": "Senior Software Engineer",
+          "employment_type": "full-time",
+          "location": "Lahore",
+          "manager": "Nadia Rahman",
+          "pto_days_remaining": "14",
+          "sick_days_remaining": "6",
+          "services_loan_available": "True",
+          "services_loan_limit_pkr": "250000",
+          "services_loan_eligible_after_months": "12",
+          "language_pref": "en",
+          "pto_days": "14",
+          "sick_days": "6"
+        },
+        "tool_called": true,
+        "recovery_applied": false
+      },
+      "created_at": "2026-04-16T16:12:06.987158+00:00"
+    },
+    {
+      "key": "v9::how much loan i can avail::route=POLICY::emp=E001::rag=0",
+      "question_norm": "how much loan i can avail",
+      "employee_id": "E001",
+      "use_rag": false,
+      "kb_signature": "a4b66c063f6d6ff9da8f85dd53fd237924ed969f921fc56d8993ffa8ba1f2391",
+      "response": {
+        "answer": "I couldn't find the specific policy text in the handbook.",
         "citations": [
           {
-            "text": "## Time off and leave\n\n### Paid time off (PTO)\n\nFull-time employees accrue **PTO** according to the accrual schedule published on the internal HR portal. PTO requests must be submitted **at least 10 business days** in advance unless your manager approves an exception for emergencies.\n\nUnused PTO may roll over up to **5 days** into the next calendar year unless local policy states otherwise.",
-            "score": 0.7375,
-            "source": "handbook.md",
-            "section_title": "Paid time off (PTO)"
+            "text": "### Hardware Requests\nStandard laptop upgrades occur every **3 years**. \n* **Broken Hardware:** If your device is damaged, submit a ticket via the 'Jira Service Desk' immediately.\n* **Peripherals:** Keyboards, mice, and monitors can be requested through the IT portal with manager approval.",
+            "score": 0.4564,
+            "source": "it_guide.md",
+            "section_title": "Hardware Requests"
           }
         ],
         "retrieval_attempts": [
           {
             "attempt": 1,
-            "query": "How far in advance should I request PTO?",
-            "top_score": 0.7375,
-            "verdict": "answerable",
-            "reason": "The retrieved chunk clearly states that PTO requests must be submitted at least 10 business days in advance, which directly answers the question.",
+            "query": "how much loan i can avail",
+            "top_score": 0.4564,
+            "verdict": "re-search",
+            "reason": "The retrieved chunks do not provide any information related to loan availability or how much loan one can avail. They are focused on hardware requests and IT support, which is irrelevant to the question.",
             "citations": [
               {
-                "text": "## Time off and leave\n\n### Paid time off (PTO)\n\nFull-time employees accrue **PTO** according to the accrual schedule published on the internal HR portal. PTO requests must be submitted **at least 10 business days** in advance unless your manager approves an exception for emergencies.\n\nUnused PTO may roll over up to **5 days** into the next calendar year unless local policy states otherwise.",
-                "score": 0.7375,
-                "source": "handbook.md",
-                "section_title": "Paid time off (PTO)"
+                "text": "### Hardware Requests\nStandard laptop upgrades occur every **3 years**. \n* **Broken Hardware:** If your device is damaged, submit a ticket via the 'Jira Service Desk' immediately.\n* **Peripherals:** Keyboards, mice, and monitors can be requested through the IT portal with manager approval.",
+                "score": 0.4564,
+                "source": "it_guide.md",
+                "section_title": "Hardware Requests"
+              }
+            ]
+          },
+          {
+            "attempt": 2,
+            "query": "what is the maximum loan amount i am eligible to receive, and what are the eligibility criteria and exceptions for loan applications?",
+            "top_score": 0.4564,
+            "verdict": "re-search",
+            "reason": "The retrieved chunks do not provide any information related to loan availability or how much loan one can avail. They are focused on hardware requests and IT support, which is irrelevant to the question.",
+            "citations": [
+              {
+                "text": "### Hardware Requests\nStandard laptop upgrades occur every **3 years**. \n* **Broken Hardware:** If your device is damaged, submit a ticket via the 'Jira Service Desk' immediately.\n* **Peripherals:** Keyboards, mice, and monitors can be requested through the IT portal with manager approval.",
+                "score": 0.4564,
+                "source": "it_guide.md",
+                "section_title": "Hardware Requests"
               }
             ]
           }
@@ -177,56 +370,7 @@
             "id": "router",
             "label": "Semantic Intent Router",
             "status": "ok",
-            "detail": "INTENT_POLICY (domain=POLICY, conf=0.90) \u2014 process-policy guardrail: contact/procedure query forced to policy"
-          },
-          {
-            "id": "retrieve",
-            "label": "Chroma retrieval (embeddings + similarity)",
-            "status": "ok",
-            "detail": "1 chunk(s), 1 retrieval attempt(s)"
-          },
-          {
-            "id": "mcp_hr",
-            "label": "Employee tool (MCP-style)",
-            "status": "ok",
-            "detail": "\u2705 Active: Securely retrieved data for E001"
-          },
-          {
-            "id": "llm",
-            "label": "OpenAI chat \u2014 gpt-4o-mini",
-            "status": "ok",
-            "detail": "Embeddings: text-embedding-3-small; structured JSON answer"
-          }
-        ],
-        "use_rag": true,
-        "chat_model": "gpt-4o-mini"
-      },
-      "created_at": "2026-04-15T10:49:42.447427+00:00"
-    },
-    {
-      "key": "v6::recommend best consumer vpn for streaming. what\u2019s legal notice period in germany? can i work from mars? can i bring my lion to office? expected: not found + next steps; no fabricated legal/policy facts. what is my employee id and name? how many sick + pto days do i have? can i take time off next week and what\u2019s the rule? how many days do i have left and what is medical certification rule? what is the pto advance notice requirement? how many pto days can roll over? when is medical certification required for sick leave? what vpn is required for internal servers? what is the vpn gateway? how often are laptops upgraded? expected: grounded answer + specific section citation. what is pto rollover? what is salary band in dubai? what vpn gateway do we use? can i use vpn for netflix? how many sick days do i have? what is moon remote-work policy? what is laptop upgrade cycle? what is germany labor-law notice period? leave time off policy hardware help remote access expected: options list with section references, no dead-end.::emp=E001::rag=0",
-      "question_norm": "recommend best consumer vpn for streaming. what\u2019s legal notice period in germany? can i work from mars? can i bring my lion to office? expected: not found + next steps; no fabricated legal/policy facts. what is my employee id and name? how many sick + pto days do i have? can i take time off next week and what\u2019s the rule? how many days do i have left and what is medical certification rule? what is the pto advance notice requirement? how many pto days can roll over? when is medical certification required for sick leave? what vpn is required for internal servers? what is the vpn gateway? how often are laptops upgraded? expected: grounded answer + specific section citation. what is pto rollover? what is salary band in dubai? what vpn gateway do we use? can i use vpn for netflix? how many sick days do i have? what is moon remote-work policy? what is laptop upgrade cycle? what is germany labor-law notice period? leave time off policy hardware help remote access expected: options list with section references, no dead-end.",
-      "employee_id": "E001",
-      "use_rag": false,
-      "kb_signature": "42f3bf1712dce280a46d49e42e837ce030ccc621341347bd2c21ba4a6a97ccf8",
-      "response": {
-        "answer": "1. **Best Consumer VPN for Streaming**: Popular options include ExpressVPN, NordVPN, and Surfshark, known for their speed and ability to bypass geo-restrictions.\n\n2. **Legal Notice Period in Germany**: The legal notice period varies based on the length of employment, typically ranging from 2 weeks to 7 months.\n\n3. **Working from Mars**: No, working from Mars is not feasible with current technology.\n\n4. **Bringing a Lion to the Office**: Generally, bringing a lion to the office is not allowed due to safety and legal regulations.\n\n5. **Employee ID and Name**: I cannot access internal employee information. Please contact HR for assistance.\n\n6. **Sick and PTO Days**: I cannot access your specific leave balances. Please check with HR.\n\n7. **Time Off Next Week**: I cannot provide specific rules regarding time off. Please refer to your company's time off policy or contact HR.\n\n8. **Days Left and Medical Certification Rule**: I cannot access your leave balances or specific rules. Please check with HR.\n\n9. **PTO Advance Notice Requirement**: Typically, companies require advance notice for PTO, often ranging from 1 to 4 weeks, but please check your specific policy.\n\n10. **PTO Days Roll Over**: Many companies allow a certain number of PTO days to roll over, often up to a year. Check your company's policy for specifics.\n\n11. **Medical Certification for Sick Leave**: Medical certification is usually required after a certain number of sick days, often 3 consecutive days, but this can vary.\n\n12. **VPN for Internal Servers**: The specific VPN required for internal servers is determined by your company's IT policy. Please consult your IT department.\n\n13. **VPN Gateway**: The VPN gateway used by your company should be provided by your IT department. Please check with them.\n\n14. **Laptop Upgrade Frequency**: Laptop upgrade cycles vary by company policy, often every 2-4 years. Please refer to your company's hardware policy.\n\n15. **PTO Rollover**: PTO rollover refers to the practice of carrying over unused PTO days into the next year, subject to company policy.\n\n16. **Salary Band in Dubai**: Salary bands vary by company and industry in Dubai. Please refer to your HR department for specific information.\n\n17. **VPN Gateway for Use**: The specific VPN gateway should be confirmed with your IT department.\n\n18. **Using VPN for Netflix**: Using a VPN for Netflix may violate their terms of service, and access can be blocked.\n\n19. **Sick Days**: I cannot access your sick day balance. Please check with HR.\n\n20. **Moon Remote-Work Policy**: I cannot provide information on a moon remote-work policy. Please refer to your company's remote work policy.\n\n21. **Laptop Upgrade Cycle**: The laptop upgrade cycle is typically defined in your company's hardware policy. Please check with IT.\n\n22. **Germany Labor-Law Notice Period**: The notice period under German labor law varies based on the length of employment, generally from 2 weeks to 7 months.",
-        "citations": [],
-        "retrieval_attempts": [],
-        "isEscalated": false,
-        "escalation_reason": null,
-        "pipeline_steps": [
-          {
-            "id": "guardrail",
-            "label": "Guardrail",
-            "status": "ok",
-            "detail": "No sensitive pattern matched"
-          },
-          {
-            "id": "router",
-            "label": "Semantic Intent Router",
-            "status": "ok",
-            "detail": "INTENT_POLICY (domain=POLICY, conf=0.90) \u2014 process-policy guardrail: contact/procedure query forced to policy"
+            "detail": "INTENT_POLICY (domain=POLICY, conf=0.00) \u2014 intent_policy domain=POLICY conf=0.00; scores={'PROFILE': 1.0, 'POLICY': 0.0, 'IT': 0.0, 'OOS': 0.0}; primary=POLICY; scope in=True ratio=0.33"
           },
           {
             "id": "retrieve",
@@ -248,34 +392,1245 @@
           }
         ],
         "use_rag": false,
-        "chat_model": "gpt-4o-mini"
+        "chat_model": "gpt-4o-mini",
+        "route": "POLICY",
+        "router_version": "v2.1",
+        "context_presence": {
+          "has_policy": true,
+          "has_profile": false,
+          "has_it": false
+        },
+        "clarification_triggered": false,
+        "employee_profile": null,
+        "tool_called": false,
+        "recovery_applied": false
       },
-      "created_at": "2026-04-15T10:50:09.701015+00:00"
+      "created_at": "2026-04-16T16:12:43.516206+00:00"
     },
     {
-      "key": "v6::recommend best consumer vpn for streaming. what\u2019s legal notice period in germany? can i work from mars? can i bring my lion to office? expected: not found + next steps; no fabricated legal/policy facts. what is my employee id and name? how many sick + pto days do i have? can i take time off next week and what\u2019s the rule? how many days do i have left and what is medical certification rule? what is the pto advance notice requirement? how many pto days can roll over? when is medical certification required for sick leave? what vpn is required for internal servers? what is the vpn gateway? how often are laptops upgraded? expected: grounded answer + specific section citation. what is pto rollover? what is salary band in dubai? what vpn gateway do we use? can i use vpn for netflix? how many sick days do i have? what is moon remote-work policy? what is laptop upgrade cycle? what is germany labor-law notice period? leave time off policy hardware help remote access expected: options list with section references, no dead-end.::emp=E001::rag=1",
-      "question_norm": "recommend best consumer vpn for streaming. what\u2019s legal notice period in germany? can i work from mars? can i bring my lion to office? expected: not found + next steps; no fabricated legal/policy facts. what is my employee id and name? how many sick + pto days do i have? can i take time off next week and what\u2019s the rule? how many days do i have left and what is medical certification rule? what is the pto advance notice requirement? how many pto days can roll over? when is medical certification required for sick leave? what vpn is required for internal servers? what is the vpn gateway? how often are laptops upgraded? expected: grounded answer + specific section citation. what is pto rollover? what is salary band in dubai? what vpn gateway do we use? can i use vpn for netflix? how many sick days do i have? what is moon remote-work policy? what is laptop upgrade cycle? what is germany labor-law notice period? leave time off policy hardware help remote access expected: options list with section references, no dead-end.",
+      "key": "v9::how much loan i can avail::route=POLICY::emp=E001::rag=1",
+      "question_norm": "how much loan i can avail",
       "employee_id": "E001",
       "use_rag": true,
-      "kb_signature": "42f3bf1712dce280a46d49e42e837ce030ccc621341347bd2c21ba4a6a97ccf8",
+      "kb_signature": "a4b66c063f6d6ff9da8f85dd53fd237924ed969f921fc56d8993ffa8ba1f2391",
       "response": {
-        "answer": "- **Recommend best consumer VPN for streaming.**: # IT Support & Infrastructure Guide\n\n### VPN Access\nTo access internal servers from a remote location, you must use the **GlobalProtect VPN**. (Section: VPN Access)\n- **What\u2019s legal notice period in Germany?**: I can help with company handbook, HR, and IT policy questions only. I couldn't find a grounded policy source for this request.\n\nNext Steps:\n- Ask a company policy question (for example: PTO, sick leave, VPN, hardware).\n- Or share the policy area and I will search that section directly.\n- **Can I work from Mars?**: I can help with company handbook, HR, and IT policy questions only. I couldn't find a grounded policy source for this request.\n\nNext Steps:\n- Ask a company policy question (for example: PTO, sick leave, VPN, hardware).\n- Or share the policy area and I will search that section directly.\n- **Can I bring my lion to office?**: Your location is Lahore.\n- **What is my employee ID and name?**: I see you're asking about your profile. Are you looking for your leave balance or your loan eligibility?\n- **How many sick + PTO days do I have?**: You currently have 14 PTO days and 6 sick days remaining.\n- **Can I take time off next week and what\u2019s the rule?**: ## Time off and leave\n\n### Paid time off (PTO)\n\nFull-time employees accrue **PTO** according to the accrual schedule published on the internal HR portal. (Section: Paid time off (PTO))\n- **How many days do I have left**: I can help with company handbook, HR, and IT policy questions only. I couldn't find a grounded policy source for this request.\n\nNext Steps:\n- Ask a company policy question (for example: PTO, sick leave, VPN, hardware).\n- Or share the policy area and I will search that section directly.\n- **what is medical certification rule?**: ### Sick leave\n\nSick leave is for illness or medical appointments. (Section: Sick leave)\n- **What is the PTO advance notice requirement?**: ## Time off and leave\n\n### Paid time off (PTO)\n\nFull-time employees accrue **PTO** according to the accrual schedule published on the internal HR portal. (Section: Paid time off (PTO))\n- **How many PTO days can roll over?**: You currently have 14 PTO days and 6 sick days remaining.\n- **When is medical certification required for sick leave?**: ### Sick leave\n\nSick leave is for illness or medical appointments. (Section: Sick leave)\n- **What VPN is required for internal servers?**: # IT Support & Infrastructure Guide\n\n### VPN Access\nTo access internal servers from a remote location, you must use the **GlobalProtect VPN**. (Section: VPN Access)\n- **What is the VPN gateway?**: # IT Support & Infrastructure Guide\n\n### VPN Access\nTo access internal servers from a remote location, you must use the **GlobalProtect VPN**. (Section: VPN Access)\n- **How often are laptops upgraded?**: I can help with company handbook, HR, and IT policy questions only. I couldn't find a grounded policy source for this request.\n\nNext Steps:\n- Ask a company policy question (for example: PTO, sick leave, VPN, hardware).\n- Or share the policy area and I will search that section directly.\n- **What is PTO rollover?**: ## Time off and leave\n\n### Paid time off (PTO)\n\nFull-time employees accrue **PTO** according to the accrual schedule published on the internal HR portal. (Section: Paid time off (PTO))\n- **What is salary band in Dubai?**: I can help with company handbook, HR, and IT policy questions only. I couldn't find a grounded policy source for this request.\n\nNext Steps:\n- Ask a company policy question (for example: PTO, sick leave, VPN, hardware).\n- Or share the policy area and I will search that section directly.\n- **What VPN gateway do we use?**: # IT Support & Infrastructure Guide\n\n### VPN Access\nTo access internal servers from a remote location, you must use the **GlobalProtect VPN**. (Section: VPN Access)\n- **Can I use VPN for Netflix?**: # IT Support & Infrastructure Guide\n\n### VPN Access\nTo access internal servers from a remote location, you must use the **GlobalProtect VPN**. (Section: VPN Access)\n- **How many sick days do I have?**: You currently have 14 PTO days and 6 sick days remaining.\n- **What is moon remote-work policy?**: I can help with company handbook, HR, and IT policy questions only. I couldn't find a grounded policy source for this request.\n\nNext Steps:\n- Ask a company policy question (for example: PTO, sick leave, VPN, hardware).\n- Or share the policy area and I will search that section directly.\n- **What is laptop upgrade cycle?**: ### Hardware Requests\nStandard laptop upgrades occur every **3 years**. (Section: Hardware Requests)\n- **What is Germany labor-law notice period?**: I can help with company handbook, HR, and IT policy questions only. I couldn't find a grounded policy source for this request.\n\nNext Steps:\n- Ask a company policy question (for example: PTO, sick leave, VPN, hardware).\n- Or share the policy area and I will search that section directly.\n- **leave**: ### Sick leave\n\nSick leave is for illness or medical appointments. (Section: Sick leave)\n\nSource: IT Support & Infrastructure Guide > Section: VPN Access; Employee Handbook > Section: Paid time off (PTO)",
+        "answer": "I couldn't find the specific policy text in the handbook.",
+        "citations": [
+          {
+            "text": "### Hardware Requests\nStandard laptop upgrades occur every **3 years**. \n* **Broken Hardware:** If your device is damaged, submit a ticket via the 'Jira Service Desk' immediately.\n* **Peripherals:** Keyboards, mice, and monitors can be requested through the IT portal with manager approval.",
+            "score": 0.4564,
+            "source": "it_guide.md",
+            "section_title": "Hardware Requests"
+          }
+        ],
+        "retrieval_attempts": [
+          {
+            "attempt": 1,
+            "query": "how much loan i can avail",
+            "top_score": 0.4564,
+            "verdict": "re-search",
+            "reason": "The retrieved chunks do not provide any information related to loan availability or how much loan one can avail. They are focused on hardware requests and IT support, which is irrelevant to the question.",
+            "citations": [
+              {
+                "text": "### Hardware Requests\nStandard laptop upgrades occur every **3 years**. \n* **Broken Hardware:** If your device is damaged, submit a ticket via the 'Jira Service Desk' immediately.\n* **Peripherals:** Keyboards, mice, and monitors can be requested through the IT portal with manager approval.",
+                "score": 0.4564,
+                "source": "it_guide.md",
+                "section_title": "Hardware Requests"
+              }
+            ]
+          },
+          {
+            "attempt": 2,
+            "query": "what is the maximum loan amount i am eligible to receive, and what are the eligibility criteria, application process, and any exceptions that may apply?",
+            "top_score": 0.4564,
+            "verdict": "re-search",
+            "reason": "The retrieved chunks do not provide any information related to loan availability or how much loan one can avail. They are focused on hardware requests and IT support, which is irrelevant to the question.",
+            "citations": [
+              {
+                "text": "### Hardware Requests\nStandard laptop upgrades occur every **3 years**. \n* **Broken Hardware:** If your device is damaged, submit a ticket via the 'Jira Service Desk' immediately.\n* **Peripherals:** Keyboards, mice, and monitors can be requested through the IT portal with manager approval.",
+                "score": 0.4564,
+                "source": "it_guide.md",
+                "section_title": "Hardware Requests"
+              }
+            ]
+          }
+        ],
+        "isEscalated": false,
+        "escalation_reason": null,
+        "pipeline_steps": [
+          {
+            "id": "guardrail",
+            "label": "Guardrail",
+            "status": "ok",
+            "detail": "No sensitive pattern matched"
+          },
+          {
+            "id": "router",
+            "label": "Semantic Intent Router",
+            "status": "ok",
+            "detail": "INTENT_POLICY (domain=POLICY, conf=0.00) \u2014 intent_policy domain=POLICY conf=0.00; scores={'PROFILE': 1.0, 'POLICY': 0.0, 'IT': 0.0, 'OOS': 0.0}; primary=POLICY; scope in=True ratio=0.33"
+          },
+          {
+            "id": "retrieve",
+            "label": "Chroma retrieval (embeddings + similarity)",
+            "status": "empty",
+            "detail": "Re-search failed after 2 attempt(s): The retrieved chunks do not provide any information related to loan availability or how much loan one can avail. They are focused on hardware requests and IT support, which is irrelevant to the question."
+          },
+          {
+            "id": "mcp_hr",
+            "label": "Employee tool (MCP-style)",
+            "status": "skipped",
+            "detail": "No employee profile context"
+          },
+          {
+            "id": "llm",
+            "label": "OpenAI chat \u2014 gpt-4o-mini",
+            "status": "ok",
+            "detail": "Embeddings: text-embedding-3-small; structured JSON answer"
+          }
+        ],
+        "use_rag": true,
+        "chat_model": "gpt-4o-mini",
+        "route": "POLICY",
+        "router_version": "v2.1",
+        "context_presence": {
+          "has_policy": true,
+          "has_profile": false,
+          "has_it": false
+        },
+        "clarification_triggered": false,
+        "employee_profile": null,
+        "tool_called": false,
+        "recovery_applied": false
+      },
+      "created_at": "2026-04-16T16:12:44.450446+00:00"
+    },
+    {
+      "key": "v9::how much loan i can have::route=POLICY::emp=E001::rag=1",
+      "question_norm": "how much loan i can have",
+      "employee_id": "E001",
+      "use_rag": true,
+      "kb_signature": "a4b66c063f6d6ff9da8f85dd53fd237924ed969f921fc56d8993ffa8ba1f2391",
+      "response": {
+        "answer": "I couldn't find the specific policy text in the handbook.",
+        "citations": [
+          {
+            "text": "### Hardware Requests\nStandard laptop upgrades occur every **3 years**. \n* **Broken Hardware:** If your device is damaged, submit a ticket via the 'Jira Service Desk' immediately.\n* **Peripherals:** Keyboards, mice, and monitors can be requested through the IT portal with manager approval.",
+            "score": 0.4462,
+            "source": "it_guide.md",
+            "section_title": "Hardware Requests"
+          }
+        ],
+        "retrieval_attempts": [
+          {
+            "attempt": 1,
+            "query": "how much loan i can have",
+            "top_score": 0.4462,
+            "verdict": "re-search",
+            "reason": "The retrieved chunks do not provide any information related to loan amounts or loan eligibility. They are focused on hardware requests and IT support, which is irrelevant to the question about loans.",
+            "citations": [
+              {
+                "text": "### Hardware Requests\nStandard laptop upgrades occur every **3 years**. \n* **Broken Hardware:** If your device is damaged, submit a ticket via the 'Jira Service Desk' immediately.\n* **Peripherals:** Keyboards, mice, and monitors can be requested through the IT portal with manager approval.",
+                "score": 0.4462,
+                "source": "it_guide.md",
+                "section_title": "Hardware Requests"
+              }
+            ]
+          },
+          {
+            "attempt": 2,
+            "query": "what is the maximum loan amount i am eligible to receive, and what are the eligibility criteria and exceptions for obtaining a loan?",
+            "top_score": 0.4462,
+            "verdict": "re-search",
+            "reason": "The retrieved chunks do not provide any information related to loan amounts or loan eligibility. They are focused on hardware requests and IT support, which is irrelevant to the question about loans.",
+            "citations": [
+              {
+                "text": "### Hardware Requests\nStandard laptop upgrades occur every **3 years**. \n* **Broken Hardware:** If your device is damaged, submit a ticket via the 'Jira Service Desk' immediately.\n* **Peripherals:** Keyboards, mice, and monitors can be requested through the IT portal with manager approval.",
+                "score": 0.4462,
+                "source": "it_guide.md",
+                "section_title": "Hardware Requests"
+              }
+            ]
+          }
+        ],
+        "isEscalated": false,
+        "escalation_reason": null,
+        "pipeline_steps": [
+          {
+            "id": "guardrail",
+            "label": "Guardrail",
+            "status": "ok",
+            "detail": "No sensitive pattern matched"
+          },
+          {
+            "id": "router",
+            "label": "Semantic Intent Router",
+            "status": "ok",
+            "detail": "INTENT_POLICY (domain=POLICY, conf=0.00) \u2014 intent_policy domain=POLICY conf=0.00; scores={'PROFILE': 1.0, 'POLICY': 0.0, 'IT': 0.0, 'OOS': 0.0}; primary=POLICY; scope in=True ratio=0.33"
+          },
+          {
+            "id": "retrieve",
+            "label": "Chroma retrieval (embeddings + similarity)",
+            "status": "empty",
+            "detail": "Re-search failed after 2 attempt(s): The retrieved chunks do not provide any information related to loan amounts or loan eligibility. They are focused on hardware requests and IT support, which is irrelevant to the question about loans."
+          },
+          {
+            "id": "mcp_hr",
+            "label": "Employee tool (MCP-style)",
+            "status": "skipped",
+            "detail": "No employee profile context"
+          },
+          {
+            "id": "llm",
+            "label": "OpenAI chat \u2014 gpt-4o-mini",
+            "status": "ok",
+            "detail": "Embeddings: text-embedding-3-small; structured JSON answer"
+          }
+        ],
+        "use_rag": true,
+        "chat_model": "gpt-4o-mini",
+        "route": "POLICY",
+        "router_version": "v2.1",
+        "context_presence": {
+          "has_policy": true,
+          "has_profile": false,
+          "has_it": false
+        },
+        "clarification_triggered": false,
+        "employee_profile": null,
+        "tool_called": false,
+        "recovery_applied": false
+      },
+      "created_at": "2026-04-16T16:12:57.419655+00:00"
+    },
+    {
+      "key": "v9::how much loan i can have::route=POLICY::emp=E001::rag=0",
+      "question_norm": "how much loan i can have",
+      "employee_id": "E001",
+      "use_rag": false,
+      "kb_signature": "a4b66c063f6d6ff9da8f85dd53fd237924ed969f921fc56d8993ffa8ba1f2391",
+      "response": {
+        "answer": "I couldn't find the specific policy text in the handbook.",
+        "citations": [
+          {
+            "text": "### Hardware Requests\nStandard laptop upgrades occur every **3 years**. \n* **Broken Hardware:** If your device is damaged, submit a ticket via the 'Jira Service Desk' immediately.\n* **Peripherals:** Keyboards, mice, and monitors can be requested through the IT portal with manager approval.",
+            "score": 0.4462,
+            "source": "it_guide.md",
+            "section_title": "Hardware Requests"
+          }
+        ],
+        "retrieval_attempts": [
+          {
+            "attempt": 1,
+            "query": "how much loan i can have",
+            "top_score": 0.4462,
+            "verdict": "re-search",
+            "reason": "The retrieved chunks do not provide any information related to loan amounts or loan eligibility. They are focused on hardware requests and IT support, which is irrelevant to the question about loans.",
+            "citations": [
+              {
+                "text": "### Hardware Requests\nStandard laptop upgrades occur every **3 years**. \n* **Broken Hardware:** If your device is damaged, submit a ticket via the 'Jira Service Desk' immediately.\n* **Peripherals:** Keyboards, mice, and monitors can be requested through the IT portal with manager approval.",
+                "score": 0.4462,
+                "source": "it_guide.md",
+                "section_title": "Hardware Requests"
+              }
+            ]
+          },
+          {
+            "attempt": 2,
+            "query": "what is the maximum loan amount i am eligible to receive, and what are the eligibility criteria and exceptions for obtaining a loan?",
+            "top_score": 0.4462,
+            "verdict": "re-search",
+            "reason": "The retrieved chunks do not provide any information related to loan amounts or loan eligibility. They are focused on hardware requests and IT support, which is irrelevant to the question about loans.",
+            "citations": [
+              {
+                "text": "### Hardware Requests\nStandard laptop upgrades occur every **3 years**. \n* **Broken Hardware:** If your device is damaged, submit a ticket via the 'Jira Service Desk' immediately.\n* **Peripherals:** Keyboards, mice, and monitors can be requested through the IT portal with manager approval.",
+                "score": 0.4462,
+                "source": "it_guide.md",
+                "section_title": "Hardware Requests"
+              }
+            ]
+          }
+        ],
+        "isEscalated": false,
+        "escalation_reason": null,
+        "pipeline_steps": [
+          {
+            "id": "guardrail",
+            "label": "Guardrail",
+            "status": "ok",
+            "detail": "No sensitive pattern matched"
+          },
+          {
+            "id": "router",
+            "label": "Semantic Intent Router",
+            "status": "ok",
+            "detail": "INTENT_POLICY (domain=POLICY, conf=0.00) \u2014 intent_policy domain=POLICY conf=0.00; scores={'PROFILE': 1.0, 'POLICY': 0.0, 'IT': 0.0, 'OOS': 0.0}; primary=POLICY; scope in=True ratio=0.33"
+          },
+          {
+            "id": "retrieve",
+            "label": "Chroma retrieval",
+            "status": "skipped",
+            "detail": "Direct LLM mode (no handbook vectors)"
+          },
+          {
+            "id": "mcp_hr",
+            "label": "Employee profile data (MCP-style)",
+            "status": "skipped",
+            "detail": "Disabled in direct LLM mode"
+          },
+          {
+            "id": "llm",
+            "label": "OpenAI chat \u2014 gpt-4o-mini",
+            "status": "ok",
+            "detail": "Embeddings: text-embedding-3-small; structured JSON answer"
+          }
+        ],
+        "use_rag": false,
+        "chat_model": "gpt-4o-mini",
+        "route": "POLICY",
+        "router_version": "v2.1",
+        "context_presence": {
+          "has_policy": true,
+          "has_profile": false,
+          "has_it": false
+        },
+        "clarification_triggered": false,
+        "employee_profile": null,
+        "tool_called": false,
+        "recovery_applied": false
+      },
+      "created_at": "2026-04-16T16:12:57.429591+00:00"
+    },
+    {
+      "key": "v9::what is loan limit for me::route=PROFILE::emp=E001::rag=1",
+      "question_norm": "what is loan limit for me",
+      "employee_id": "E001",
+      "use_rag": true,
+      "kb_signature": "a4b66c063f6d6ff9da8f85dd53fd237924ed969f921fc56d8993ffa8ba1f2391",
+      "response": {
+        "answer": "Your **maximum services loan amount** (profile) is **PKR 250000**.",
+        "citations": [],
+        "retrieval_attempts": [],
+        "isEscalated": false,
+        "escalation_reason": null,
+        "pipeline_steps": [
+          {
+            "id": "guardrail",
+            "label": "Guardrail",
+            "status": "ok",
+            "detail": "No sensitive pattern matched"
+          },
+          {
+            "id": "router",
+            "label": "Semantic Intent Router",
+            "status": "ok",
+            "detail": "INTENT_PERSONAL (domain=PROFILE, conf=0.90) \u2014 loan limit query with employee context forced to personal profile"
+          },
+          {
+            "id": "retrieve",
+            "label": "Chroma retrieval (embeddings + similarity)",
+            "status": "skipped",
+            "detail": "Route is personal data lookup"
+          },
+          {
+            "id": "mcp_hr",
+            "label": "Employee tool (MCP-style)",
+            "status": "ok",
+            "detail": "\u2705 Active: Securely retrieved data for E001"
+          },
+          {
+            "id": "llm",
+            "label": "OpenAI chat \u2014 gpt-4o-mini",
+            "status": "ok",
+            "detail": "Embeddings: text-embedding-3-small; structured JSON answer"
+          }
+        ],
+        "use_rag": true,
+        "chat_model": "gpt-4o-mini",
+        "route": "PROFILE",
+        "router_version": "v2.1",
+        "context_presence": {
+          "has_policy": false,
+          "has_profile": true,
+          "has_it": false
+        },
+        "clarification_triggered": false,
+        "employee_profile": {
+          "employee_id": "E001",
+          "name": "Alex Chen",
+          "department": "Engineering",
+          "title": "Senior Software Engineer",
+          "employment_type": "full-time",
+          "location": "Lahore",
+          "manager": "Nadia Rahman",
+          "pto_days_remaining": "14",
+          "sick_days_remaining": "6",
+          "services_loan_available": "True",
+          "services_loan_limit_pkr": "250000",
+          "services_loan_eligible_after_months": "12",
+          "language_pref": "en",
+          "pto_days": "14",
+          "sick_days": "6"
+        },
+        "tool_called": true,
+        "recovery_applied": false
+      },
+      "created_at": "2026-04-16T16:13:00.368389+00:00"
+    },
+    {
+      "key": "v9::what is loan limit for me::route=PROFILE::emp=E001::rag=0",
+      "question_norm": "what is loan limit for me",
+      "employee_id": "E001",
+      "use_rag": false,
+      "kb_signature": "a4b66c063f6d6ff9da8f85dd53fd237924ed969f921fc56d8993ffa8ba1f2391",
+      "response": {
+        "answer": "Your **maximum services loan amount** (profile) is **PKR 250000**.",
+        "citations": [],
+        "retrieval_attempts": [],
+        "isEscalated": false,
+        "escalation_reason": null,
+        "pipeline_steps": [
+          {
+            "id": "guardrail",
+            "label": "Guardrail",
+            "status": "ok",
+            "detail": "No sensitive pattern matched"
+          },
+          {
+            "id": "router",
+            "label": "Semantic Intent Router",
+            "status": "ok",
+            "detail": "INTENT_PERSONAL (domain=PROFILE, conf=0.90) \u2014 loan limit query with employee context forced to personal profile"
+          },
+          {
+            "id": "retrieve",
+            "label": "Chroma retrieval",
+            "status": "skipped",
+            "detail": "Direct LLM mode (no handbook vectors)"
+          },
+          {
+            "id": "mcp_hr",
+            "label": "Employee profile data (MCP-style)",
+            "status": "skipped",
+            "detail": "Disabled in direct LLM mode"
+          },
+          {
+            "id": "llm",
+            "label": "OpenAI chat \u2014 gpt-4o-mini",
+            "status": "ok",
+            "detail": "Embeddings: text-embedding-3-small; structured JSON answer"
+          }
+        ],
+        "use_rag": false,
+        "chat_model": "gpt-4o-mini",
+        "route": "PROFILE",
+        "router_version": "v2.1",
+        "context_presence": {
+          "has_policy": false,
+          "has_profile": true,
+          "has_it": false
+        },
+        "clarification_triggered": false,
+        "employee_profile": {
+          "employee_id": "E001",
+          "name": "Alex Chen",
+          "department": "Engineering",
+          "title": "Senior Software Engineer",
+          "employment_type": "full-time",
+          "location": "Lahore",
+          "manager": "Nadia Rahman",
+          "pto_days_remaining": "14",
+          "sick_days_remaining": "6",
+          "services_loan_available": "True",
+          "services_loan_limit_pkr": "250000",
+          "services_loan_eligible_after_months": "12",
+          "language_pref": "en",
+          "pto_days": "14",
+          "sick_days": "6"
+        },
+        "tool_called": true,
+        "recovery_applied": false
+      },
+      "created_at": "2026-04-16T16:13:01.692342+00:00"
+    },
+    {
+      "key": "v9::what is my name::route=POLICY::emp=E001::rag=0",
+      "question_norm": "what is my name",
+      "employee_id": "E001",
+      "use_rag": false,
+      "kb_signature": "a4b66c063f6d6ff9da8f85dd53fd237924ed969f921fc56d8993ffa8ba1f2391",
+      "response": {
+        "answer": "Your name is Alex Chen.",
+        "citations": [],
+        "retrieval_attempts": [],
+        "isEscalated": false,
+        "escalation_reason": null,
+        "pipeline_steps": [
+          {
+            "id": "guardrail",
+            "label": "Guardrail",
+            "status": "ok",
+            "detail": "No sensitive pattern matched"
+          },
+          {
+            "id": "router",
+            "label": "Semantic Intent Router",
+            "status": "ok",
+            "detail": "INTENT_OUT_OF_DOMAIN (domain=OOS, conf=0.00) \u2014 intent_policy domain=OOS conf=0.00; scores={'PROFILE': 3.0, 'POLICY': 0.0, 'IT': 0.0, 'OOS': 0.0}; primary=POLICY; scope in=False ratio=0.00"
+          },
+          {
+            "id": "retrieve",
+            "label": "Chroma retrieval",
+            "status": "skipped",
+            "detail": "Direct LLM mode (no handbook vectors)"
+          },
+          {
+            "id": "mcp_hr",
+            "label": "Employee profile data (MCP-style)",
+            "status": "skipped",
+            "detail": "Disabled in direct LLM mode"
+          },
+          {
+            "id": "llm",
+            "label": "OpenAI chat \u2014 gpt-4o-mini",
+            "status": "ok",
+            "detail": "Embeddings: text-embedding-3-small; structured JSON answer"
+          }
+        ],
+        "use_rag": false,
+        "chat_model": "gpt-4o-mini",
+        "route": "PROFILE",
+        "router_version": "v2.1",
+        "context_presence": {
+          "has_policy": false,
+          "has_profile": true,
+          "has_it": false
+        },
+        "clarification_triggered": false,
+        "employee_profile": {
+          "employee_id": "E001",
+          "name": "Alex Chen",
+          "department": "Engineering",
+          "title": "Senior Software Engineer",
+          "employment_type": "full-time",
+          "location": "Lahore",
+          "manager": "Nadia Rahman",
+          "pto_days_remaining": "14",
+          "sick_days_remaining": "6",
+          "services_loan_available": "True",
+          "services_loan_limit_pkr": "250000",
+          "services_loan_eligible_after_months": "12",
+          "language_pref": "en",
+          "pto_days": "14",
+          "sick_days": "6"
+        },
+        "tool_called": true,
+        "recovery_applied": false
+      },
+      "created_at": "2026-04-16T16:13:10.559741+00:00"
+    },
+    {
+      "key": "v9::what is my name::route=POLICY::emp=E001::rag=1",
+      "question_norm": "what is my name",
+      "employee_id": "E001",
+      "use_rag": true,
+      "kb_signature": "a4b66c063f6d6ff9da8f85dd53fd237924ed969f921fc56d8993ffa8ba1f2391",
+      "response": {
+        "answer": "Your name is Alex Chen.",
+        "citations": [],
+        "retrieval_attempts": [],
+        "isEscalated": false,
+        "escalation_reason": null,
+        "pipeline_steps": [
+          {
+            "id": "guardrail",
+            "label": "Guardrail",
+            "status": "ok",
+            "detail": "No sensitive pattern matched"
+          },
+          {
+            "id": "router",
+            "label": "Semantic Intent Router",
+            "status": "ok",
+            "detail": "INTENT_OUT_OF_DOMAIN (domain=OOS, conf=0.00) \u2014 intent_policy domain=OOS conf=0.00; scores={'PROFILE': 3.0, 'POLICY': 0.0, 'IT': 0.0, 'OOS': 0.0}; primary=POLICY; scope in=False ratio=0.00"
+          },
+          {
+            "id": "retrieve",
+            "label": "Chroma retrieval (embeddings + similarity)",
+            "status": "skipped",
+            "detail": "Route is personal data lookup"
+          },
+          {
+            "id": "mcp_hr",
+            "label": "Employee tool (MCP-style)",
+            "status": "ok",
+            "detail": "\u2705 Active: Securely retrieved data for E001"
+          },
+          {
+            "id": "llm",
+            "label": "OpenAI chat \u2014 gpt-4o-mini",
+            "status": "ok",
+            "detail": "Embeddings: text-embedding-3-small; structured JSON answer"
+          }
+        ],
+        "use_rag": true,
+        "chat_model": "gpt-4o-mini",
+        "route": "PROFILE",
+        "router_version": "v2.1",
+        "context_presence": {
+          "has_policy": false,
+          "has_profile": true,
+          "has_it": false
+        },
+        "clarification_triggered": false,
+        "employee_profile": {
+          "employee_id": "E001",
+          "name": "Alex Chen",
+          "department": "Engineering",
+          "title": "Senior Software Engineer",
+          "employment_type": "full-time",
+          "location": "Lahore",
+          "manager": "Nadia Rahman",
+          "pto_days_remaining": "14",
+          "sick_days_remaining": "6",
+          "services_loan_available": "True",
+          "services_loan_limit_pkr": "250000",
+          "services_loan_eligible_after_months": "12",
+          "language_pref": "en",
+          "pto_days": "14",
+          "sick_days": "6"
+        },
+        "tool_called": true,
+        "recovery_applied": false
+      },
+      "created_at": "2026-04-16T16:13:10.629654+00:00"
+    },
+    {
+      "key": "v9::what is my name::route=POLICY::emp=E002::rag=0",
+      "question_norm": "what is my name",
+      "employee_id": "E002",
+      "use_rag": false,
+      "kb_signature": "a4b66c063f6d6ff9da8f85dd53fd237924ed969f921fc56d8993ffa8ba1f2391",
+      "response": {
+        "answer": "Your name is Sara Khan.",
+        "citations": [],
+        "retrieval_attempts": [],
+        "isEscalated": false,
+        "escalation_reason": null,
+        "pipeline_steps": [
+          {
+            "id": "guardrail",
+            "label": "Guardrail",
+            "status": "ok",
+            "detail": "No sensitive pattern matched"
+          },
+          {
+            "id": "router",
+            "label": "Semantic Intent Router",
+            "status": "ok",
+            "detail": "INTENT_OUT_OF_DOMAIN (domain=OOS, conf=0.00) \u2014 intent_policy domain=OOS conf=0.00; scores={'PROFILE': 3.0, 'POLICY': 0.0, 'IT': 0.0, 'OOS': 0.0}; primary=POLICY; scope in=False ratio=0.00"
+          },
+          {
+            "id": "retrieve",
+            "label": "Chroma retrieval",
+            "status": "skipped",
+            "detail": "Direct LLM mode (no handbook vectors)"
+          },
+          {
+            "id": "mcp_hr",
+            "label": "Employee profile data (MCP-style)",
+            "status": "skipped",
+            "detail": "Disabled in direct LLM mode"
+          },
+          {
+            "id": "llm",
+            "label": "OpenAI chat \u2014 gpt-4o-mini",
+            "status": "ok",
+            "detail": "Embeddings: text-embedding-3-small; structured JSON answer"
+          }
+        ],
+        "use_rag": false,
+        "chat_model": "gpt-4o-mini",
+        "route": "PROFILE",
+        "router_version": "v2.1",
+        "context_presence": {
+          "has_policy": false,
+          "has_profile": true,
+          "has_it": false
+        },
+        "clarification_triggered": false,
+        "employee_profile": {
+          "employee_id": "E002",
+          "name": "Sara Khan",
+          "department": "People Operations",
+          "title": "HR Business Partner",
+          "employment_type": "full-time",
+          "location": "Karachi",
+          "manager": "Omar Siddiqui",
+          "pto_days_remaining": "9",
+          "sick_days_remaining": "4",
+          "services_loan_available": "False",
+          "services_loan_limit_pkr": "0",
+          "services_loan_eligible_after_months": "0",
+          "language_pref": "ur",
+          "pto_days": "9",
+          "sick_days": "4"
+        },
+        "tool_called": true,
+        "recovery_applied": false
+      },
+      "created_at": "2026-04-16T16:13:17.954278+00:00"
+    },
+    {
+      "key": "v9::what is my name::route=POLICY::emp=E002::rag=1",
+      "question_norm": "what is my name",
+      "employee_id": "E002",
+      "use_rag": true,
+      "kb_signature": "a4b66c063f6d6ff9da8f85dd53fd237924ed969f921fc56d8993ffa8ba1f2391",
+      "response": {
+        "answer": "Your name is Sara Khan.",
+        "citations": [],
+        "retrieval_attempts": [],
+        "isEscalated": false,
+        "escalation_reason": null,
+        "pipeline_steps": [
+          {
+            "id": "guardrail",
+            "label": "Guardrail",
+            "status": "ok",
+            "detail": "No sensitive pattern matched"
+          },
+          {
+            "id": "router",
+            "label": "Semantic Intent Router",
+            "status": "ok",
+            "detail": "INTENT_OUT_OF_DOMAIN (domain=OOS, conf=0.00) \u2014 intent_policy domain=OOS conf=0.00; scores={'PROFILE': 3.0, 'POLICY': 0.0, 'IT': 0.0, 'OOS': 0.0}; primary=POLICY; scope in=False ratio=0.00"
+          },
+          {
+            "id": "retrieve",
+            "label": "Chroma retrieval (embeddings + similarity)",
+            "status": "skipped",
+            "detail": "Route is personal data lookup"
+          },
+          {
+            "id": "mcp_hr",
+            "label": "Employee tool (MCP-style)",
+            "status": "ok",
+            "detail": "\u2705 Active: Securely retrieved data for E002"
+          },
+          {
+            "id": "llm",
+            "label": "OpenAI chat \u2014 gpt-4o-mini",
+            "status": "ok",
+            "detail": "Embeddings: text-embedding-3-small; structured JSON answer"
+          }
+        ],
+        "use_rag": true,
+        "chat_model": "gpt-4o-mini",
+        "route": "PROFILE",
+        "router_version": "v2.1",
+        "context_presence": {
+          "has_policy": false,
+          "has_profile": true,
+          "has_it": false
+        },
+        "clarification_triggered": false,
+        "employee_profile": {
+          "employee_id": "E002",
+          "name": "Sara Khan",
+          "department": "People Operations",
+          "title": "HR Business Partner",
+          "employment_type": "full-time",
+          "location": "Karachi",
+          "manager": "Omar Siddiqui",
+          "pto_days_remaining": "9",
+          "sick_days_remaining": "4",
+          "services_loan_available": "False",
+          "services_loan_limit_pkr": "0",
+          "services_loan_eligible_after_months": "0",
+          "language_pref": "ur",
+          "pto_days": "9",
+          "sick_days": "4"
+        },
+        "tool_called": true,
+        "recovery_applied": false
+      },
+      "created_at": "2026-04-16T16:13:18.333502+00:00"
+    },
+    {
+      "key": "v9::tell me my loan limit and eligibility::route=PROFILE::emp=E002::rag=0",
+      "question_norm": "tell me my loan limit and eligibility",
+      "employee_id": "E002",
+      "use_rag": false,
+      "kb_signature": "a4b66c063f6d6ff9da8f85dd53fd237924ed969f921fc56d8993ffa8ba1f2391",
+      "response": {
+        "answer": "Your **maximum services loan amount** (profile) is **PKR 0**.",
+        "citations": [],
+        "retrieval_attempts": [],
+        "isEscalated": false,
+        "escalation_reason": null,
+        "pipeline_steps": [
+          {
+            "id": "guardrail",
+            "label": "Guardrail",
+            "status": "ok",
+            "detail": "No sensitive pattern matched"
+          },
+          {
+            "id": "router",
+            "label": "Semantic Intent Router",
+            "status": "ok",
+            "detail": "INTENT_PERSONAL (domain=PROFILE, conf=0.90) \u2014 loan limit query with employee context forced to personal profile"
+          },
+          {
+            "id": "retrieve",
+            "label": "Chroma retrieval",
+            "status": "skipped",
+            "detail": "Direct LLM mode (no handbook vectors)"
+          },
+          {
+            "id": "mcp_hr",
+            "label": "Employee profile data (MCP-style)",
+            "status": "skipped",
+            "detail": "Disabled in direct LLM mode"
+          },
+          {
+            "id": "llm",
+            "label": "OpenAI chat \u2014 gpt-4o-mini",
+            "status": "ok",
+            "detail": "Embeddings: text-embedding-3-small; structured JSON answer"
+          }
+        ],
+        "use_rag": false,
+        "chat_model": "gpt-4o-mini",
+        "route": "PROFILE",
+        "router_version": "v2.1",
+        "context_presence": {
+          "has_policy": false,
+          "has_profile": true,
+          "has_it": false
+        },
+        "clarification_triggered": false,
+        "employee_profile": {
+          "employee_id": "E002",
+          "name": "Sara Khan",
+          "department": "People Operations",
+          "title": "HR Business Partner",
+          "employment_type": "full-time",
+          "location": "Karachi",
+          "manager": "Omar Siddiqui",
+          "pto_days_remaining": "9",
+          "sick_days_remaining": "4",
+          "services_loan_available": "False",
+          "services_loan_limit_pkr": "0",
+          "services_loan_eligible_after_months": "0",
+          "language_pref": "ur",
+          "pto_days": "9",
+          "sick_days": "4"
+        },
+        "tool_called": true,
+        "recovery_applied": false
+      },
+      "created_at": "2026-04-16T16:13:27.465611+00:00"
+    },
+    {
+      "key": "v9::tell me my loan limit and eligibility::route=PROFILE::emp=E002::rag=1",
+      "question_norm": "tell me my loan limit and eligibility",
+      "employee_id": "E002",
+      "use_rag": true,
+      "kb_signature": "a4b66c063f6d6ff9da8f85dd53fd237924ed969f921fc56d8993ffa8ba1f2391",
+      "response": {
+        "answer": "Your **maximum services loan amount** (profile) is **PKR 0**.",
+        "citations": [],
+        "retrieval_attempts": [],
+        "isEscalated": false,
+        "escalation_reason": null,
+        "pipeline_steps": [
+          {
+            "id": "guardrail",
+            "label": "Guardrail",
+            "status": "ok",
+            "detail": "No sensitive pattern matched"
+          },
+          {
+            "id": "router",
+            "label": "Semantic Intent Router",
+            "status": "ok",
+            "detail": "INTENT_PERSONAL (domain=PROFILE, conf=0.90) \u2014 loan limit query with employee context forced to personal profile"
+          },
+          {
+            "id": "retrieve",
+            "label": "Chroma retrieval (embeddings + similarity)",
+            "status": "skipped",
+            "detail": "Route is personal data lookup"
+          },
+          {
+            "id": "mcp_hr",
+            "label": "Employee tool (MCP-style)",
+            "status": "ok",
+            "detail": "\u2705 Active: Securely retrieved data for E002"
+          },
+          {
+            "id": "llm",
+            "label": "OpenAI chat \u2014 gpt-4o-mini",
+            "status": "ok",
+            "detail": "Embeddings: text-embedding-3-small; structured JSON answer"
+          }
+        ],
+        "use_rag": true,
+        "chat_model": "gpt-4o-mini",
+        "route": "PROFILE",
+        "router_version": "v2.1",
+        "context_presence": {
+          "has_policy": false,
+          "has_profile": true,
+          "has_it": false
+        },
+        "clarification_triggered": false,
+        "employee_profile": {
+          "employee_id": "E002",
+          "name": "Sara Khan",
+          "department": "People Operations",
+          "title": "HR Business Partner",
+          "employment_type": "full-time",
+          "location": "Karachi",
+          "manager": "Omar Siddiqui",
+          "pto_days_remaining": "9",
+          "sick_days_remaining": "4",
+          "services_loan_available": "False",
+          "services_loan_limit_pkr": "0",
+          "services_loan_eligible_after_months": "0",
+          "language_pref": "ur",
+          "pto_days": "9",
+          "sick_days": "4"
+        },
+        "tool_called": true,
+        "recovery_applied": false
+      },
+      "created_at": "2026-04-16T16:13:27.529597+00:00"
+    },
+    {
+      "key": "v9::am i eligible for loan?::route=PROFILE::emp=E002::rag=0",
+      "question_norm": "am i eligible for loan?",
+      "employee_id": "E002",
+      "use_rag": false,
+      "kb_signature": "a4b66c063f6d6ff9da8f85dd53fd237924ed969f921fc56d8993ffa8ba1f2391",
+      "response": {
+        "answer": "No \u2014 your profile shows you are **not** eligible for the services loan program.",
+        "citations": [],
+        "retrieval_attempts": [],
+        "isEscalated": false,
+        "escalation_reason": null,
+        "pipeline_steps": [
+          {
+            "id": "guardrail",
+            "label": "Guardrail",
+            "status": "ok",
+            "detail": "No sensitive pattern matched"
+          },
+          {
+            "id": "router",
+            "label": "Semantic Intent Router",
+            "status": "ok",
+            "detail": "INTENT_PERSONAL (domain=PROFILE, conf=0.95) \u2014 intent_policy domain=PROFILE conf=0.95; loan_personal_phrase"
+          },
+          {
+            "id": "retrieve",
+            "label": "Chroma retrieval",
+            "status": "skipped",
+            "detail": "Direct LLM mode (no handbook vectors)"
+          },
+          {
+            "id": "mcp_hr",
+            "label": "Employee profile data (MCP-style)",
+            "status": "skipped",
+            "detail": "Disabled in direct LLM mode"
+          },
+          {
+            "id": "llm",
+            "label": "OpenAI chat \u2014 gpt-4o-mini",
+            "status": "ok",
+            "detail": "Embeddings: text-embedding-3-small; structured JSON answer"
+          }
+        ],
+        "use_rag": false,
+        "chat_model": "gpt-4o-mini",
+        "route": "PROFILE",
+        "router_version": "v2.1",
+        "context_presence": {
+          "has_policy": false,
+          "has_profile": true,
+          "has_it": false
+        },
+        "clarification_triggered": false,
+        "employee_profile": {
+          "employee_id": "E002",
+          "name": "Sara Khan",
+          "department": "People Operations",
+          "title": "HR Business Partner",
+          "employment_type": "full-time",
+          "location": "Karachi",
+          "manager": "Omar Siddiqui",
+          "pto_days_remaining": "9",
+          "sick_days_remaining": "4",
+          "services_loan_available": "False",
+          "services_loan_limit_pkr": "0",
+          "services_loan_eligible_after_months": "0",
+          "language_pref": "ur",
+          "pto_days": "9",
+          "sick_days": "4"
+        },
+        "tool_called": true,
+        "recovery_applied": false
+      },
+      "created_at": "2026-04-16T16:13:38.075961+00:00"
+    },
+    {
+      "key": "v9::am i eligible for loan?::route=PROFILE::emp=E002::rag=1",
+      "question_norm": "am i eligible for loan?",
+      "employee_id": "E002",
+      "use_rag": true,
+      "kb_signature": "a4b66c063f6d6ff9da8f85dd53fd237924ed969f921fc56d8993ffa8ba1f2391",
+      "response": {
+        "answer": "No \u2014 your profile shows you are **not** eligible for the services loan program.",
+        "citations": [],
+        "retrieval_attempts": [],
+        "isEscalated": false,
+        "escalation_reason": null,
+        "pipeline_steps": [
+          {
+            "id": "guardrail",
+            "label": "Guardrail",
+            "status": "ok",
+            "detail": "No sensitive pattern matched"
+          },
+          {
+            "id": "router",
+            "label": "Semantic Intent Router",
+            "status": "ok",
+            "detail": "INTENT_PERSONAL (domain=PROFILE, conf=0.95) \u2014 intent_policy domain=PROFILE conf=0.95; loan_personal_phrase"
+          },
+          {
+            "id": "retrieve",
+            "label": "Chroma retrieval (embeddings + similarity)",
+            "status": "skipped",
+            "detail": "Route is personal data lookup"
+          },
+          {
+            "id": "mcp_hr",
+            "label": "Employee tool (MCP-style)",
+            "status": "ok",
+            "detail": "\u2705 Active: Securely retrieved data for E002"
+          },
+          {
+            "id": "llm",
+            "label": "OpenAI chat \u2014 gpt-4o-mini",
+            "status": "ok",
+            "detail": "Embeddings: text-embedding-3-small; structured JSON answer"
+          }
+        ],
+        "use_rag": true,
+        "chat_model": "gpt-4o-mini",
+        "route": "PROFILE",
+        "router_version": "v2.1",
+        "context_presence": {
+          "has_policy": false,
+          "has_profile": true,
+          "has_it": false
+        },
+        "clarification_triggered": false,
+        "employee_profile": {
+          "employee_id": "E002",
+          "name": "Sara Khan",
+          "department": "People Operations",
+          "title": "HR Business Partner",
+          "employment_type": "full-time",
+          "location": "Karachi",
+          "manager": "Omar Siddiqui",
+          "pto_days_remaining": "9",
+          "sick_days_remaining": "4",
+          "services_loan_available": "False",
+          "services_loan_limit_pkr": "0",
+          "services_loan_eligible_after_months": "0",
+          "language_pref": "ur",
+          "pto_days": "9",
+          "sick_days": "4"
+        },
+        "tool_called": true,
+        "recovery_applied": false
+      },
+      "created_at": "2026-04-16T16:13:38.452885+00:00"
+    },
+    {
+      "key": "v9::is there any von for company server::route=POLICY::emp=E002::rag=0",
+      "question_norm": "is there any von for company server",
+      "employee_id": "E002",
+      "use_rag": false,
+      "kb_signature": "a4b66c063f6d6ff9da8f85dd53fd237924ed969f921fc56d8993ffa8ba1f2391",
+      "response": {
+        "answer": "I cannot see internal policy documents or specific company information. Please contact your HR department or IT support for questions regarding company servers and related policies.",
+        "citations": [],
+        "retrieval_attempts": [],
+        "isEscalated": false,
+        "escalation_reason": null,
+        "pipeline_steps": [
+          {
+            "id": "guardrail",
+            "label": "Guardrail",
+            "status": "ok",
+            "detail": "No sensitive pattern matched"
+          },
+          {
+            "id": "router",
+            "label": "Semantic Intent Router",
+            "status": "ok",
+            "detail": "INTENT_OUT_OF_DOMAIN (domain=OOS, conf=0.00) \u2014 intent_policy domain=OOS conf=0.00; scores={'PROFILE': 0.0, 'POLICY': 0.0, 'IT': 0.0, 'OOS': 0.0}; primary=POLICY; scope in=False ratio=0.00"
+          },
+          {
+            "id": "retrieve",
+            "label": "Chroma retrieval",
+            "status": "skipped",
+            "detail": "Direct LLM mode (no handbook vectors)"
+          },
+          {
+            "id": "mcp_hr",
+            "label": "Employee profile data (MCP-style)",
+            "status": "skipped",
+            "detail": "Disabled in direct LLM mode"
+          },
+          {
+            "id": "llm",
+            "label": "OpenAI chat \u2014 gpt-4o-mini",
+            "status": "ok",
+            "detail": "Embeddings: text-embedding-3-small; structured JSON answer"
+          }
+        ],
+        "use_rag": false,
+        "chat_model": "gpt-4o-mini",
+        "route": "GENERAL",
+        "router_version": "v2.1",
+        "context_presence": {
+          "has_policy": false,
+          "has_profile": false,
+          "has_it": false
+        },
+        "clarification_triggered": false,
+        "employee_profile": null,
+        "tool_called": false,
+        "recovery_applied": false
+      },
+      "created_at": "2026-04-16T16:14:20.796782+00:00"
+    },
+    {
+      "key": "v9::is there any von for company server::route=POLICY::emp=E002::rag=1",
+      "question_norm": "is there any von for company server",
+      "employee_id": "E002",
+      "use_rag": true,
+      "kb_signature": "a4b66c063f6d6ff9da8f85dd53fd237924ed969f921fc56d8993ffa8ba1f2391",
+      "response": {
+        "answer": "I couldn't find the specific policy text in the handbook.",
         "citations": [
           {
             "text": "# IT Support & Infrastructure Guide\n\n### VPN Access\nTo access internal servers from a remote location, you must use the **GlobalProtect VPN**. \n* **Gateway:** `vpn.company.com` \n* **Credentials:** Use your standard SSO (Single Sign-On) credentials.\n* **MFA:** Multi-factor authentication via the Duo app is required for every login.",
-            "score": 0.7089,
+            "score": 0.8186,
             "source": "it_guide.md",
             "section_title": "VPN Access"
+          }
+        ],
+        "retrieval_attempts": [
+          {
+            "attempt": 1,
+            "query": "is there any vpn for company server?",
+            "top_score": 0.8186,
+            "verdict": "re-search",
+            "reason": "The retrieved chunk discusses VPN access for internal servers but does not provide information about a 'von' for the company server, which is the specific query. The relevance is insufficient to answer the question directly.",
+            "citations": [
+              {
+                "text": "# IT Support & Infrastructure Guide\n\n### VPN Access\nTo access internal servers from a remote location, you must use the **GlobalProtect VPN**. \n* **Gateway:** `vpn.company.com` \n* **Credentials:** Use your standard SSO (Single Sign-On) credentials.\n* **MFA:** Multi-factor authentication via the Duo app is required for every login.",
+                "score": 0.8186,
+                "source": "it_guide.md",
+                "section_title": "VPN Access"
+              }
+            ]
           },
           {
-            "text": "# Demo Employee Handbook (Synthetic)\n\nThis is **synthetic** content for demos only \u2014 not legal or HR advice.\n\n---",
-            "score": 0.6477,
-            "source": "handbook.md",
-            "section_title": "Demo Employee Handbook (Synthetic)"
+            "attempt": 2,
+            "query": "is there a virtual private network (vpn) available for accessing the company server, and what are the eligibility requirements, processes for setup, and any exceptions to the policy?",
+            "top_score": 0.8186,
+            "verdict": "re-search",
+            "reason": "The retrieved chunk discusses VPN access for internal servers but does not provide information about a 'von' for the company server, which is the specific query. It is unclear what 'von' refers to in this context, and the provided information does not address the question directly.",
+            "citations": [
+              {
+                "text": "# IT Support & Infrastructure Guide\n\n### VPN Access\nTo access internal servers from a remote location, you must use the **GlobalProtect VPN**. \n* **Gateway:** `vpn.company.com` \n* **Credentials:** Use your standard SSO (Single Sign-On) credentials.\n* **MFA:** Multi-factor authentication via the Duo app is required for every login.",
+                "score": 0.8186,
+                "source": "it_guide.md",
+                "section_title": "VPN Access"
+              }
+            ]
+          }
+        ],
+        "isEscalated": false,
+        "escalation_reason": null,
+        "pipeline_steps": [
+          {
+            "id": "guardrail",
+            "label": "Guardrail",
+            "status": "ok",
+            "detail": "No sensitive pattern matched"
           },
+          {
+            "id": "router",
+            "label": "Semantic Intent Router",
+            "status": "ok",
+            "detail": "INTENT_POLICY (domain=POLICY, conf=0.79) \u2014 intent_policy domain=OOS conf=0.00; scores={'PROFILE': 0.0, 'POLICY': 0.0, 'IT': 0.0, 'OOS': 0.0}; primary=POLICY; scope in=False ratio=0.00; semantic_rescue route=policy score=0.786 model=intfloat/e5-base-v2"
+          },
+          {
+            "id": "retrieve",
+            "label": "Chroma retrieval (embeddings + similarity)",
+            "status": "empty",
+            "detail": "Re-search failed after 2 attempt(s): The retrieved chunk discusses VPN access for internal servers but does not provide information about a 'von' for the company server, which is the specific query. It is unclear what 'von' refers to in this context, and the provided information does not address the question directly."
+          },
+          {
+            "id": "mcp_hr",
+            "label": "Employee tool (MCP-style)",
+            "status": "skipped",
+            "detail": "No employee profile context"
+          },
+          {
+            "id": "llm",
+            "label": "OpenAI chat \u2014 gpt-4o-mini",
+            "status": "ok",
+            "detail": "Embeddings: text-embedding-3-small; structured JSON answer"
+          }
+        ],
+        "use_rag": true,
+        "chat_model": "gpt-4o-mini",
+        "route": "POLICY",
+        "router_version": "v2.1",
+        "context_presence": {
+          "has_policy": true,
+          "has_profile": false,
+          "has_it": false
+        },
+        "clarification_triggered": false,
+        "employee_profile": null,
+        "tool_called": false,
+        "recovery_applied": false
+      },
+      "created_at": "2026-04-16T16:14:27.300028+00:00"
+    },
+    {
+      "key": "v9::can i take time off next week and what\u2019s the rule?::route=POLICY::emp=E002::rag=0",
+      "question_norm": "can i take time off next week and what\u2019s the rule?",
+      "employee_id": "E002",
+      "use_rag": false,
+      "kb_signature": "a4b66c063f6d6ff9da8f85dd53fd237924ed969f921fc56d8993ffa8ba1f2391",
+      "response": {
+        "answer": "To take time off next week, you would need to submit your PTO request at least 10 business days in advance, unless your manager approves an exception for emergencies. Since next week is less than 10 business days away, you may need to discuss your situation with your manager to see if an exception can be made. \n\nSource: our employee handbook",
+        "citations": [
           {
             "text": "## Time off and leave\n\n### Paid time off (PTO)\n\nFull-time employees accrue **PTO** according to the accrual schedule published on the internal HR portal. PTO requests must be submitted **at least 10 business days** in advance unless your manager approves an exception for emergencies.\n\nUnused PTO may roll over up to **5 days** into the next calendar year unless local policy states otherwise.",
-            "score": 0.5961,
+            "score": 0.7033,
             "source": "handbook.md",
             "section_title": "Paid time off (PTO)"
           }
@@ -283,26 +1638,14 @@
         "retrieval_attempts": [
           {
             "attempt": 1,
-            "query": "Recommend best consumer VPN for streaming.",
-            "top_score": 0.7089,
+            "query": "can i take pto next week and what\u2019s the rule?",
+            "top_score": 0.7033,
             "verdict": "answerable",
-            "reason": "Fast-path accept: top score 0.71 with 3 citation(s)",
+            "reason": "The retrieved chunk provides relevant information about the rules for taking paid time off (PTO), including the requirement to submit requests at least 10 business days in advance, which directly addresses the question about taking time off next week.",
             "citations": [
               {
-                "text": "# IT Support & Infrastructure Guide\n\n### VPN Access\nTo access internal servers from a remote location, you must use the **GlobalProtect VPN**. \n* **Gateway:** `vpn.company.com` \n* **Credentials:** Use your standard SSO (Single Sign-On) credentials.\n* **MFA:** Multi-factor authentication via the Duo app is required for every login.",
-                "score": 0.7089,
-                "source": "it_guide.md",
-                "section_title": "VPN Access"
-              },
-              {
-                "text": "# Demo Employee Handbook (Synthetic)\n\nThis is **synthetic** content for demos only \u2014 not legal or HR advice.\n\n---",
-                "score": 0.6477,
-                "source": "handbook.md",
-                "section_title": "Demo Employee Handbook (Synthetic)"
-              },
-              {
                 "text": "## Time off and leave\n\n### Paid time off (PTO)\n\nFull-time employees accrue **PTO** according to the accrual schedule published on the internal HR portal. PTO requests must be submitted **at least 10 business days** in advance unless your manager approves an exception for emergencies.\n\nUnused PTO may roll over up to **5 days** into the next calendar year unless local policy states otherwise.",
-                "score": 0.5961,
+                "score": 0.7033,
                 "source": "handbook.md",
                 "section_title": "Paid time off (PTO)"
               }
@@ -322,19 +1665,117 @@
             "id": "router",
             "label": "Semantic Intent Router",
             "status": "ok",
-            "detail": "INTENT_POLICY (domain=POLICY, conf=0.90) \u2014 process-policy guardrail: contact/procedure query forced to policy"
+            "detail": "INTENT_POLICY (domain=POLICY, conf=0.67) \u2014 intent_policy domain=POLICY conf=0.67; scores={'PROFILE': 1.0, 'POLICY': 2.0, 'IT': 0.0, 'OOS': 0.0}; primary=POLICY; scope in=True ratio=0.20"
+          },
+          {
+            "id": "retrieve",
+            "label": "Chroma retrieval",
+            "status": "skipped",
+            "detail": "Direct LLM mode (no handbook vectors)"
+          },
+          {
+            "id": "mcp_hr",
+            "label": "Employee profile data (MCP-style)",
+            "status": "skipped",
+            "detail": "Disabled in direct LLM mode"
+          },
+          {
+            "id": "llm",
+            "label": "OpenAI chat \u2014 gpt-4o-mini",
+            "status": "ok",
+            "detail": "Embeddings: text-embedding-3-small; structured JSON answer"
+          }
+        ],
+        "use_rag": false,
+        "chat_model": "gpt-4o-mini",
+        "route": "POLICY",
+        "router_version": "v2.1",
+        "context_presence": {
+          "has_policy": true,
+          "has_profile": false,
+          "has_it": false
+        },
+        "clarification_triggered": false,
+        "employee_profile": null,
+        "tool_called": false,
+        "recovery_applied": false
+      },
+      "created_at": "2026-04-16T16:14:33.761718+00:00"
+    },
+    {
+      "key": "v9::can i take time off next week and what\u2019s the rule?::route=POLICY::emp=E002::rag=1",
+      "question_norm": "can i take time off next week and what\u2019s the rule?",
+      "employee_id": "E002",
+      "use_rag": true,
+      "kb_signature": "a4b66c063f6d6ff9da8f85dd53fd237924ed969f921fc56d8993ffa8ba1f2391",
+      "response": {
+        "answer": "To take time off next week, you would need to submit your PTO request at least 10 business days in advance, unless your manager approves an exception for emergencies. Since next week is less than 10 business days away, you may need to discuss your situation with your manager to see if an exception can be made. \n\nSource: our employee handbook",
+        "citations": [
+          {
+            "text": "## Time off and leave\n\n### Paid time off (PTO)\n\nFull-time employees accrue **PTO** according to the accrual schedule published on the internal HR portal. PTO requests must be submitted **at least 10 business days** in advance unless your manager approves an exception for emergencies.\n\nUnused PTO may roll over up to **5 days** into the next calendar year unless local policy states otherwise.",
+            "score": 0.7033,
+            "source": "handbook.md",
+            "section_title": "Paid time off (PTO)"
+          }
+        ],
+        "retrieval_attempts": [
+          {
+            "attempt": 1,
+            "query": "can i take pto next week and what\u2019s the rule?",
+            "top_score": 0.7033,
+            "verdict": "re-search",
+            "reason": "The retrieved chunk provides information about the accrual of PTO and the requirement to submit requests 10 business days in advance, but it does not specifically address whether you can take time off next week or any exceptions to this rule. More context is needed to determine if time off can be taken next week.",
+            "citations": [
+              {
+                "text": "## Time off and leave\n\n### Paid time off (PTO)\n\nFull-time employees accrue **PTO** according to the accrual schedule published on the internal HR portal. PTO requests must be submitted **at least 10 business days** in advance unless your manager approves an exception for emergencies.\n\nUnused PTO may roll over up to **5 days** into the next calendar year unless local policy states otherwise.",
+                "score": 0.7033,
+                "source": "handbook.md",
+                "section_title": "Paid time off (PTO)"
+              }
+            ]
+          },
+          {
+            "attempt": 2,
+            "query": "what is the process for requesting paid time off (pto) for next week, including eligibility criteria, any exceptions to the standard notice requirement, and the specific rules governing time off requests?",
+            "top_score": 0.7033,
+            "verdict": "answerable",
+            "reason": "The retrieved chunk provides relevant information about the rules for taking paid time off (PTO), including the requirement to submit requests at least 10 business days in advance, which directly addresses the question about taking time off next week.",
+            "citations": [
+              {
+                "text": "## Time off and leave\n\n### Paid time off (PTO)\n\nFull-time employees accrue **PTO** according to the accrual schedule published on the internal HR portal. PTO requests must be submitted **at least 10 business days** in advance unless your manager approves an exception for emergencies.\n\nUnused PTO may roll over up to **5 days** into the next calendar year unless local policy states otherwise.",
+                "score": 0.7033,
+                "source": "handbook.md",
+                "section_title": "Paid time off (PTO)"
+              }
+            ]
+          }
+        ],
+        "isEscalated": false,
+        "escalation_reason": null,
+        "pipeline_steps": [
+          {
+            "id": "guardrail",
+            "label": "Guardrail",
+            "status": "ok",
+            "detail": "No sensitive pattern matched"
+          },
+          {
+            "id": "router",
+            "label": "Semantic Intent Router",
+            "status": "ok",
+            "detail": "INTENT_POLICY (domain=POLICY, conf=0.67) \u2014 intent_policy domain=POLICY conf=0.67; scores={'PROFILE': 1.0, 'POLICY': 2.0, 'IT': 0.0, 'OOS': 0.0}; primary=POLICY; scope in=True ratio=0.20"
           },
           {
             "id": "retrieve",
             "label": "Chroma retrieval (embeddings + similarity)",
             "status": "ok",
-            "detail": "3 chunk(s), 1 retrieval attempt(s)"
+            "detail": "1 chunk(s), 2 retrieval attempt(s)"
           },
           {
             "id": "mcp_hr",
             "label": "Employee tool (MCP-style)",
-            "status": "ok",
-            "detail": "\u2705 Active: Securely retrieved data for E001"
+            "status": "skipped",
+            "detail": "No employee profile context"
           },
           {
             "id": "llm",
@@ -344,22 +1785,93 @@
           }
         ],
         "use_rag": true,
-        "chat_model": "gpt-4o-mini"
+        "chat_model": "gpt-4o-mini",
+        "route": "POLICY",
+        "router_version": "v2.1",
+        "context_presence": {
+          "has_policy": true,
+          "has_profile": false,
+          "has_it": false
+        },
+        "clarification_triggered": false,
+        "employee_profile": null,
+        "tool_called": false,
+        "recovery_applied": false
       },
-      "created_at": "2026-04-15T10:50:24.626576+00:00"
+      "created_at": "2026-04-16T16:14:39.304125+00:00"
     },
     {
-      "key": "v6::how to contact hr::emp=E001::rag=1",
-      "question_norm": "how to contact hr",
-      "employee_id": "E001",
-      "use_rag": true,
-      "kb_signature": "42f3bf1712dce280a46d49e42e837ce030ccc621341347bd2c21ba4a6a97ccf8",
+      "key": "v9::can i bring my lion to office?::route=POLICY::emp=E002::rag=0",
+      "question_norm": "can i bring my lion to office?",
+      "employee_id": "E002",
+      "use_rag": false,
+      "kb_signature": "a4b66c063f6d6ff9da8f85dd53fd237924ed969f921fc56d8993ffa8ba1f2391",
       "response": {
-        "answer": "You can contact HR through the HR Intake Team at hr-support@company.com or through the internal HR portal.",
+        "answer": "Bringing a lion or any wild animal to the office is generally not permitted due to safety and health regulations. Most workplaces have strict policies regarding animals in the office. For specific policies regarding pets or animals in your workplace, please contact your HR department.",
+        "citations": [],
+        "retrieval_attempts": [],
+        "isEscalated": false,
+        "escalation_reason": null,
+        "pipeline_steps": [
+          {
+            "id": "guardrail",
+            "label": "Guardrail",
+            "status": "ok",
+            "detail": "No sensitive pattern matched"
+          },
+          {
+            "id": "router",
+            "label": "Semantic Intent Router",
+            "status": "ok",
+            "detail": "INTENT_OUT_OF_DOMAIN (domain=OOS, conf=0.00) \u2014 intent_policy domain=OOS conf=0.00; scores={'PROFILE': 0.0, 'POLICY': 0.0, 'IT': 0.0, 'OOS': 0.0}; primary=POLICY; scope in=False ratio=0.00"
+          },
+          {
+            "id": "retrieve",
+            "label": "Chroma retrieval",
+            "status": "skipped",
+            "detail": "Direct LLM mode (no handbook vectors)"
+          },
+          {
+            "id": "mcp_hr",
+            "label": "Employee profile data (MCP-style)",
+            "status": "skipped",
+            "detail": "Disabled in direct LLM mode"
+          },
+          {
+            "id": "llm",
+            "label": "OpenAI chat \u2014 gpt-4o-mini",
+            "status": "ok",
+            "detail": "Embeddings: text-embedding-3-small; structured JSON answer"
+          }
+        ],
+        "use_rag": false,
+        "chat_model": "gpt-4o-mini",
+        "route": "GENERAL",
+        "router_version": "v2.1",
+        "context_presence": {
+          "has_policy": false,
+          "has_profile": false,
+          "has_it": false
+        },
+        "clarification_triggered": false,
+        "employee_profile": null,
+        "tool_called": false,
+        "recovery_applied": false
+      },
+      "created_at": "2026-04-16T16:14:51.991173+00:00"
+    },
+    {
+      "key": "v9::can i bring my lion to office?::route=POLICY::emp=E002::rag=1",
+      "question_norm": "can i bring my lion to office?",
+      "employee_id": "E002",
+      "use_rag": true,
+      "kb_signature": "a4b66c063f6d6ff9da8f85dd53fd237924ed969f921fc56d8993ffa8ba1f2391",
+      "response": {
+        "answer": "I couldn't find the specific policy text in the handbook.",
         "citations": [
           {
             "text": "## Conduct and escalation\n\n### Respectful workplace\n\nWe are committed to a workplace free of harassment and discrimination. Concerns should be reported through the **HR intake channel** or your people partner. **Do not use this chatbot for harassment, discrimination, or legal claims** \u2014 contact HR directly.",
-            "score": 0.7093,
+            "score": 0.4099,
             "source": "handbook.md",
             "section_title": "Respectful workplace"
           }
@@ -367,14 +1879,29 @@
         "retrieval_attempts": [
           {
             "attempt": 1,
-            "query": "how to contact hr",
-            "top_score": 0.7093,
-            "verdict": "answerable",
-            "reason": "The retrieved chunk provides information on how to contact HR through the HR intake channel or a people partner, which directly answers the question.",
+            "query": "can i bring my lion to the office?",
+            "top_score": 0.4099,
+            "verdict": "re-search",
+            "reason": "The retrieved chunk does not address the question about bringing a lion to the office; it discusses workplace conduct and reporting concerns instead.",
             "citations": [
               {
                 "text": "## Conduct and escalation\n\n### Respectful workplace\n\nWe are committed to a workplace free of harassment and discrimination. Concerns should be reported through the **HR intake channel** or your people partner. **Do not use this chatbot for harassment, discrimination, or legal claims** \u2014 contact HR directly.",
-                "score": 0.7093,
+                "score": 0.4099,
+                "source": "handbook.md",
+                "section_title": "Respectful workplace"
+              }
+            ]
+          },
+          {
+            "attempt": 2,
+            "query": "what is the policy regarding bringing pets, specifically large animals like lions, to the office? are there any eligibility criteria, exceptions, or processes i need to follow?",
+            "top_score": 0.4099,
+            "verdict": "re-search",
+            "reason": "The retrieved chunk does not address the question about bringing a lion to the office; it discusses workplace conduct and HR procedures instead.",
+            "citations": [
+              {
+                "text": "## Conduct and escalation\n\n### Respectful workplace\n\nWe are committed to a workplace free of harassment and discrimination. Concerns should be reported through the **HR intake channel** or your people partner. **Do not use this chatbot for harassment, discrimination, or legal claims** \u2014 contact HR directly.",
+                "score": 0.4099,
                 "source": "handbook.md",
                 "section_title": "Respectful workplace"
               }
@@ -394,310 +1921,19 @@
             "id": "router",
             "label": "Semantic Intent Router",
             "status": "ok",
-            "detail": "INTENT_POLICY (domain=POLICY, conf=0.90) \u2014 process-policy guardrail: contact/procedure query forced to policy"
-          },
-          {
-            "id": "retrieve",
-            "label": "Chroma retrieval (embeddings + similarity)",
-            "status": "ok",
-            "detail": "1 chunk(s), 1 retrieval attempt(s)"
-          },
-          {
-            "id": "mcp_hr",
-            "label": "Employee tool (MCP-style)",
-            "status": "ok",
-            "detail": "\u2705 Active: Securely retrieved data for E001"
-          },
-          {
-            "id": "llm",
-            "label": "OpenAI chat \u2014 gpt-4o-mini",
-            "status": "ok",
-            "detail": "Embeddings: text-embedding-3-small; structured JSON answer"
-          }
-        ],
-        "use_rag": true,
-        "chat_model": "gpt-4o-mini"
-      },
-      "created_at": "2026-04-15T10:50:47.694580+00:00"
-    },
-    {
-      "key": "v6::how to contact hr::emp=E001::rag=0",
-      "question_norm": "how to contact hr",
-      "employee_id": "E001",
-      "use_rag": false,
-      "kb_signature": "42f3bf1712dce280a46d49e42e837ce030ccc621341347bd2c21ba4a6a97ccf8",
-      "response": {
-        "answer": "To contact HR, you typically can do so via the following methods:\n\n1. **Email**: Look for the HR department's email address on your company's intranet or employee directory.\n2. **Phone**: Call the HR department using the phone number provided in your company resources.\n3. **In-Person**: Visit the HR office if your company has a physical location.\n4. **Company Intranet**: Check your company's intranet for a contact form or additional contact information.\n\nIf you are unsure, please refer to your company's internal resources or ask your manager for guidance.",
-        "citations": [],
-        "retrieval_attempts": [],
-        "isEscalated": false,
-        "escalation_reason": null,
-        "pipeline_steps": [
-          {
-            "id": "guardrail",
-            "label": "Guardrail",
-            "status": "ok",
-            "detail": "No sensitive pattern matched"
-          },
-          {
-            "id": "router",
-            "label": "Semantic Intent Router",
-            "status": "ok",
-            "detail": "INTENT_POLICY (domain=POLICY, conf=0.90) \u2014 process-policy guardrail: contact/procedure query forced to policy"
-          },
-          {
-            "id": "retrieve",
-            "label": "Chroma retrieval",
-            "status": "skipped",
-            "detail": "Direct LLM mode (no handbook vectors)"
-          },
-          {
-            "id": "mcp_hr",
-            "label": "Employee profile data (MCP-style)",
-            "status": "skipped",
-            "detail": "Disabled in direct LLM mode"
-          },
-          {
-            "id": "llm",
-            "label": "OpenAI chat \u2014 gpt-4o-mini",
-            "status": "ok",
-            "detail": "Embeddings: text-embedding-3-small; structured JSON answer"
-          }
-        ],
-        "use_rag": false,
-        "chat_model": "gpt-4o-mini"
-      },
-      "created_at": "2026-04-15T10:50:47.742974+00:00"
-    },
-    {
-      "key": "v6::i want to put resign::emp=E001::rag=1",
-      "question_norm": "i want to put resign",
-      "employee_id": "E001",
-      "use_rag": true,
-      "kb_signature": "42f3bf1712dce280a46d49e42e837ce030ccc621341347bd2c21ba4a6a97ccf8",
-      "response": {
-        "answer": "I am an Enterprise Assistant restricted to HR, IT, and company policy questions. I cannot answer general knowledge questions or queries outside this scope.",
-        "citations": [],
-        "retrieval_attempts": [],
-        "isEscalated": false,
-        "escalation_reason": null,
-        "pipeline_steps": [
-          {
-            "id": "guardrail",
-            "label": "Guardrail",
-            "status": "ok",
-            "detail": "No sensitive pattern matched"
-          },
-          {
-            "id": "router",
-            "label": "Semantic Intent Router",
-            "status": "ok",
-            "detail": "INTENT_OUT_OF_DOMAIN (domain=OOS, conf=0.00) \u2014 intent_policy domain=OOS conf=0.00; scores={'PROFILE': 0.0, 'POLICY': 0.0, 'IT': 0.0, 'OOS': 0.0}; primary=POLICY; scope in=False ratio=0.00"
-          },
-          {
-            "id": "retrieve",
-            "label": "Chroma retrieval (embeddings + similarity)",
-            "status": "skipped",
-            "detail": "Intent is out of domain"
-          },
-          {
-            "id": "mcp_hr",
-            "label": "Employee tool (MCP-style)",
-            "status": "ok",
-            "detail": "\u2705 Active: Securely retrieved data for E001"
-          },
-          {
-            "id": "llm",
-            "label": "OpenAI chat \u2014 gpt-4o-mini",
-            "status": "ok",
-            "detail": "Embeddings: text-embedding-3-small; structured JSON answer"
-          }
-        ],
-        "use_rag": true,
-        "chat_model": "gpt-4o-mini"
-      },
-      "created_at": "2026-04-15T10:50:54.425331+00:00"
-    },
-    {
-      "key": "v6::i want to put resign::emp=E001::rag=0",
-      "question_norm": "i want to put resign",
-      "employee_id": "E001",
-      "use_rag": false,
-      "kb_signature": "42f3bf1712dce280a46d49e42e837ce030ccc621341347bd2c21ba4a6a97ccf8",
-      "response": {
-        "answer": "I cannot see internal policy or handbook excerpts. Please contact your HR department for guidance on the resignation process.",
-        "citations": [],
-        "retrieval_attempts": [],
-        "isEscalated": false,
-        "escalation_reason": null,
-        "pipeline_steps": [
-          {
-            "id": "guardrail",
-            "label": "Guardrail",
-            "status": "ok",
-            "detail": "No sensitive pattern matched"
-          },
-          {
-            "id": "router",
-            "label": "Semantic Intent Router",
-            "status": "ok",
-            "detail": "INTENT_OUT_OF_DOMAIN (domain=OOS, conf=0.00) \u2014 intent_policy domain=OOS conf=0.00; scores={'PROFILE': 0.0, 'POLICY': 0.0, 'IT': 0.0, 'OOS': 0.0}; primary=POLICY; scope in=False ratio=0.00"
-          },
-          {
-            "id": "retrieve",
-            "label": "Chroma retrieval",
-            "status": "skipped",
-            "detail": "Direct LLM mode (no handbook vectors)"
-          },
-          {
-            "id": "mcp_hr",
-            "label": "Employee profile data (MCP-style)",
-            "status": "skipped",
-            "detail": "Disabled in direct LLM mode"
-          },
-          {
-            "id": "llm",
-            "label": "OpenAI chat \u2014 gpt-4o-mini",
-            "status": "ok",
-            "detail": "Embeddings: text-embedding-3-small; structured JSON answer"
-          }
-        ],
-        "use_rag": false,
-        "chat_model": "gpt-4o-mini"
-      },
-      "created_at": "2026-04-15T10:50:55.248683+00:00"
-    },
-    {
-      "key": "v6::i want to replace my laptop::emp=E001::rag=0",
-      "question_norm": "i want to replace my laptop",
-      "employee_id": "E001",
-      "use_rag": false,
-      "kb_signature": "42f3bf1712dce280a46d49e42e837ce030ccc621341347bd2c21ba4a6a97ccf8",
-      "response": {
-        "answer": "I cannot see internal policy regarding laptop replacement. Please contact your HR department for guidance on this matter.",
-        "citations": [],
-        "retrieval_attempts": [],
-        "isEscalated": false,
-        "escalation_reason": null,
-        "pipeline_steps": [
-          {
-            "id": "guardrail",
-            "label": "Guardrail",
-            "status": "ok",
-            "detail": "No sensitive pattern matched"
-          },
-          {
-            "id": "router",
-            "label": "Semantic Intent Router",
-            "status": "ok",
-            "detail": "INTENT_POLICY (domain=IT, conf=1.00) \u2014 intent_policy domain=IT conf=1.00; scores={'PROFILE': 0.0, 'POLICY': 0.0, 'IT': 1.8, 'OOS': 0.0}; primary=IT"
-          },
-          {
-            "id": "retrieve",
-            "label": "Chroma retrieval",
-            "status": "skipped",
-            "detail": "Direct LLM mode (no handbook vectors)"
-          },
-          {
-            "id": "mcp_hr",
-            "label": "Employee profile data (MCP-style)",
-            "status": "skipped",
-            "detail": "Disabled in direct LLM mode"
-          },
-          {
-            "id": "llm",
-            "label": "OpenAI chat \u2014 gpt-4o-mini",
-            "status": "ok",
-            "detail": "Embeddings: text-embedding-3-small; structured JSON answer"
-          }
-        ],
-        "use_rag": false,
-        "chat_model": "gpt-4o-mini"
-      },
-      "created_at": "2026-04-15T10:51:14.827021+00:00"
-    },
-    {
-      "key": "v6::i want to replace my laptop::emp=E001::rag=1",
-      "question_norm": "i want to replace my laptop",
-      "employee_id": "E001",
-      "use_rag": true,
-      "kb_signature": "42f3bf1712dce280a46d49e42e837ce030ccc621341347bd2c21ba4a6a97ccf8",
-      "response": {
-        "answer": "I couldn't find a grounded IT troubleshooting policy excerpt for this exact issue.\n\nNext Steps:\n- Open a ticket in Jira Service Desk (or your internal IT portal).\n- Include device type, error message, and when the failure started.\n- If you are blocked from work, mark the ticket as high priority.",
-        "citations": [],
-        "retrieval_attempts": [
-          {
-            "attempt": 1,
-            "query": "I want to replace my laptop.",
-            "top_score": 0.6342,
-            "verdict": "re-search",
-            "reason": "The retrieved chunks do not provide relevant information about replacing a laptop; they only discuss hardware requests and upgrades without addressing the process or options for replacement.",
-            "citations": [
-              {
-                "text": "### Hardware Requests\nStandard laptop upgrades occur every **3 years**. \n* **Broken Hardware:** If your device is damaged, submit a ticket via the 'Jira Service Desk' immediately.\n* **Peripherals:** Keyboards, mice, and monitors can be requested through the IT portal with manager approval.",
-                "score": 0.6342,
-                "source": "it_guide.md",
-                "section_title": "Hardware Requests"
-              }
-            ]
-          },
-          {
-            "attempt": 2,
-            "query": "What is the process for replacing my laptop within the company, including eligibility criteria, any exceptions to the policy, and the steps I need to follow?",
-            "top_score": 0.6341,
-            "verdict": "re-search",
-            "reason": "The retrieved chunks do not provide relevant information about replacing a laptop; they only discuss hardware requests and upgrade timelines without addressing the process or options for replacement.",
-            "citations": [
-              {
-                "text": "### Hardware Requests\nStandard laptop upgrades occur every **3 years**. \n* **Broken Hardware:** If your device is damaged, submit a ticket via the 'Jira Service Desk' immediately.\n* **Peripherals:** Keyboards, mice, and monitors can be requested through the IT portal with manager approval.",
-                "score": 0.6341,
-                "source": "it_guide.md",
-                "section_title": "Hardware Requests"
-              }
-            ]
-          },
-          {
-            "attempt": 3,
-            "query": "What is the official procedure for replacing my company-issued laptop? Please include details on eligibility requirements, any exceptions to the replacement policy, and a step-by-step guide on how to initiate the replacement process.",
-            "top_score": 0.6342,
-            "verdict": "re-search",
-            "reason": "The retrieved chunks do not provide relevant information about replacing a laptop; they only discuss hardware requests and upgrades without addressing the process or options for replacement.",
-            "citations": [
-              {
-                "text": "### Hardware Requests\nStandard laptop upgrades occur every **3 years**. \n* **Broken Hardware:** If your device is damaged, submit a ticket via the 'Jira Service Desk' immediately.\n* **Peripherals:** Keyboards, mice, and monitors can be requested through the IT portal with manager approval.",
-                "score": 0.6342,
-                "source": "it_guide.md",
-                "section_title": "Hardware Requests"
-              }
-            ]
-          }
-        ],
-        "isEscalated": false,
-        "escalation_reason": null,
-        "pipeline_steps": [
-          {
-            "id": "guardrail",
-            "label": "Guardrail",
-            "status": "ok",
-            "detail": "No sensitive pattern matched"
-          },
-          {
-            "id": "router",
-            "label": "Semantic Intent Router",
-            "status": "ok",
-            "detail": "INTENT_POLICY (domain=IT, conf=1.00) \u2014 intent_policy domain=IT conf=1.00; scores={'PROFILE': 0.0, 'POLICY': 0.0, 'IT': 1.8, 'OOS': 0.0}; primary=IT"
+            "detail": "INTENT_POLICY (domain=POLICY, conf=0.76) \u2014 intent_policy domain=OOS conf=0.00; scores={'PROFILE': 0.0, 'POLICY': 0.0, 'IT': 0.0, 'OOS': 0.0}; primary=POLICY; scope in=False ratio=0.00; semantic_rescue route=policy score=0.76 model=intfloat/e5-base-v2"
           },
           {
             "id": "retrieve",
             "label": "Chroma retrieval (embeddings + similarity)",
             "status": "empty",
-            "detail": "Re-search failed after 3 attempt(s): The retrieved chunks do not provide relevant information about replacing a laptop; they only discuss hardware requests and upgrades without addressing the process or options for replacement."
+            "detail": "Re-search failed after 2 attempt(s): The retrieved chunk does not address the question about bringing a lion to the office; it discusses workplace conduct and HR procedures instead."
           },
           {
             "id": "mcp_hr",
             "label": "Employee tool (MCP-style)",
-            "status": "ok",
-            "detail": "\u2705 Active: Securely retrieved data for E001"
+            "status": "skipped",
+            "detail": "No employee profile context"
           },
           {
             "id": "llm",
@@ -707,88 +1943,50 @@
           }
         ],
         "use_rag": true,
-        "chat_model": "gpt-4o-mini"
+        "chat_model": "gpt-4o-mini",
+        "route": "POLICY",
+        "router_version": "v2.1",
+        "context_presence": {
+          "has_policy": true,
+          "has_profile": false,
+          "has_it": false
+        },
+        "clarification_triggered": false,
+        "employee_profile": null,
+        "tool_called": false,
+        "recovery_applied": false
       },
-      "created_at": "2026-04-15T10:51:25.723931+00:00"
+      "created_at": "2026-04-16T16:14:55.709217+00:00"
     },
     {
-      "key": "v6::do unused vacation days carry over to next year?::emp=E001::rag=0",
-      "question_norm": "do unused vacation days carry over to next year?",
-      "employee_id": "E001",
+      "key": "v9::what vpn is required for internal servers?::route=IT::emp=E002::rag=0",
+      "question_norm": "what vpn is required for internal servers?",
+      "employee_id": "E002",
       "use_rag": false,
-      "kb_signature": "42f3bf1712dce280a46d49e42e837ce030ccc621341347bd2c21ba4a6a97ccf8",
+      "kb_signature": "a4b66c063f6d6ff9da8f85dd53fd237924ed969f921fc56d8993ffa8ba1f2391",
       "response": {
-        "answer": "I cannot see internal policy documents, including your company's employee handbook. Please contact your HR department for specific information regarding unused vacation days and their carryover policy.",
-        "citations": [],
-        "retrieval_attempts": [],
-        "isEscalated": false,
-        "escalation_reason": null,
-        "pipeline_steps": [
-          {
-            "id": "guardrail",
-            "label": "Guardrail",
-            "status": "ok",
-            "detail": "No sensitive pattern matched"
-          },
-          {
-            "id": "router",
-            "label": "Semantic Intent Router",
-            "status": "ok",
-            "detail": "INTENT_POLICY (domain=POLICY, conf=1.00) \u2014 intent_policy domain=POLICY conf=1.00; scores={'PROFILE': 0.0, 'POLICY': 3.5, 'IT': 0.0, 'OOS': 0.0}; primary=POLICY; scope in=False ratio=0.14"
-          },
-          {
-            "id": "retrieve",
-            "label": "Chroma retrieval",
-            "status": "skipped",
-            "detail": "Direct LLM mode (no handbook vectors)"
-          },
-          {
-            "id": "mcp_hr",
-            "label": "Employee profile data (MCP-style)",
-            "status": "skipped",
-            "detail": "Disabled in direct LLM mode"
-          },
-          {
-            "id": "llm",
-            "label": "OpenAI chat \u2014 gpt-4o-mini",
-            "status": "ok",
-            "detail": "Embeddings: text-embedding-3-small; structured JSON answer"
-          }
-        ],
-        "use_rag": false,
-        "chat_model": "gpt-4o-mini"
-      },
-      "created_at": "2026-04-15T10:55:18.977967+00:00"
-    },
-    {
-      "key": "v6::do unused vacation days carry over to next year?::emp=E001::rag=1",
-      "question_norm": "do unused vacation days carry over to next year?",
-      "employee_id": "E001",
-      "use_rag": true,
-      "kb_signature": "42f3bf1712dce280a46d49e42e837ce030ccc621341347bd2c21ba4a6a97ccf8",
-      "response": {
-        "answer": "You currently have 14 PTO days remaining. According to the policy, unused PTO may roll over up to 5 days into the next calendar year unless local policy states otherwise. This means that while you can carry over 5 days, the remaining 9 days will not carry over and will expire at the end of the year. \n\nIf you have any further questions about your PTO or need assistance with planning your time off, feel free to ask!\n\nSource: Employee Handbook > Section: Paid time off (PTO)",
+        "answer": "To access internal servers from a remote location, you must use the **GlobalProtect VPN**. The gateway is `vpn.company.com`, and you will need to use your standard SSO (Single Sign-On) credentials. Additionally, multi-factor authentication via the Duo app is required for every login.\n\nSource: IT Support & Infrastructure Guide > Section: VPN Access",
         "citations": [
           {
-            "text": "## Time off and leave\n\n### Paid time off (PTO)\n\nFull-time employees accrue **PTO** according to the accrual schedule published on the internal HR portal. PTO requests must be submitted **at least 10 business days** in advance unless your manager approves an exception for emergencies.\n\nUnused PTO may roll over up to **5 days** into the next calendar year unless local policy states otherwise.",
-            "score": 0.7273,
-            "source": "handbook.md",
-            "section_title": "Paid time off (PTO)"
+            "text": "# IT Support & Infrastructure Guide\n\n### VPN Access\nTo access internal servers from a remote location, you must use the **GlobalProtect VPN**. \n* **Gateway:** `vpn.company.com` \n* **Credentials:** Use your standard SSO (Single Sign-On) credentials.\n* **MFA:** Multi-factor authentication via the Duo app is required for every login.",
+            "score": 1.0428,
+            "source": "it_guide.md",
+            "section_title": "VPN Access"
           }
         ],
         "retrieval_attempts": [
           {
             "attempt": 1,
-            "query": "Do unused vacation days carry over to next year?",
-            "top_score": 0.7273,
+            "query": "what vpn is required for accessing internal servers?",
+            "top_score": 1.0428,
             "verdict": "answerable",
-            "reason": "The retrieved chunk clearly states that unused PTO may roll over up to 5 days into the next calendar year, directly answering the question about whether unused vacation days carry over.",
+            "reason": "IT policy fast-path: retrieved concrete IT policy evidence",
             "citations": [
               {
-                "text": "## Time off and leave\n\n### Paid time off (PTO)\n\nFull-time employees accrue **PTO** according to the accrual schedule published on the internal HR portal. PTO requests must be submitted **at least 10 business days** in advance unless your manager approves an exception for emergencies.\n\nUnused PTO may roll over up to **5 days** into the next calendar year unless local policy states otherwise.",
-                "score": 0.7273,
-                "source": "handbook.md",
-                "section_title": "Paid time off (PTO)"
+                "text": "# IT Support & Infrastructure Guide\n\n### VPN Access\nTo access internal servers from a remote location, you must use the **GlobalProtect VPN**. \n* **Gateway:** `vpn.company.com` \n* **Credentials:** Use your standard SSO (Single Sign-On) credentials.\n* **MFA:** Multi-factor authentication via the Duo app is required for every login.",
+                "score": 1.0428,
+                "source": "it_guide.md",
+                "section_title": "VPN Access"
               }
             ]
           }
@@ -806,105 +2004,7 @@
             "id": "router",
             "label": "Semantic Intent Router",
             "status": "ok",
-            "detail": "INTENT_POLICY (domain=POLICY, conf=1.00) \u2014 intent_policy domain=POLICY conf=1.00; scores={'PROFILE': 0.0, 'POLICY': 3.5, 'IT': 0.0, 'OOS': 0.0}; primary=POLICY; scope in=False ratio=0.14"
-          },
-          {
-            "id": "retrieve",
-            "label": "Chroma retrieval (embeddings + similarity)",
-            "status": "ok",
-            "detail": "1 chunk(s), 1 retrieval attempt(s)"
-          },
-          {
-            "id": "mcp_hr",
-            "label": "Employee tool (MCP-style)",
-            "status": "ok",
-            "detail": "\u2705 Active: Securely retrieved data for E001"
-          },
-          {
-            "id": "llm",
-            "label": "OpenAI chat \u2014 gpt-4o-mini",
-            "status": "ok",
-            "detail": "Embeddings: text-embedding-3-small; structured JSON answer"
-          }
-        ],
-        "use_rag": true,
-        "chat_model": "gpt-4o-mini"
-      },
-      "created_at": "2026-04-15T10:55:21.099683+00:00"
-    },
-    {
-      "key": "v6::what is the probation period duration::emp=E001::rag=1",
-      "question_norm": "what is the probation period duration",
-      "employee_id": "E001",
-      "use_rag": true,
-      "kb_signature": "42f3bf1712dce280a46d49e42e837ce030ccc621341347bd2c21ba4a6a97ccf8",
-      "response": {
-        "answer": "I am an Enterprise Assistant restricted to HR, IT, and company policy questions. I cannot answer general knowledge questions or queries outside this scope.",
-        "citations": [],
-        "retrieval_attempts": [],
-        "isEscalated": false,
-        "escalation_reason": null,
-        "pipeline_steps": [
-          {
-            "id": "guardrail",
-            "label": "Guardrail",
-            "status": "ok",
-            "detail": "No sensitive pattern matched"
-          },
-          {
-            "id": "router",
-            "label": "Semantic Intent Router",
-            "status": "ok",
-            "detail": "INTENT_OUT_OF_DOMAIN (domain=OOS, conf=0.00) \u2014 intent_policy domain=OOS conf=0.00; scores={'PROFILE': 0.0, 'POLICY': 0.0, 'IT': 0.0, 'OOS': 0.0}; primary=POLICY; scope in=False ratio=0.00"
-          },
-          {
-            "id": "retrieve",
-            "label": "Chroma retrieval (embeddings + similarity)",
-            "status": "skipped",
-            "detail": "Intent is out of domain"
-          },
-          {
-            "id": "mcp_hr",
-            "label": "Employee tool (MCP-style)",
-            "status": "ok",
-            "detail": "\u2705 Active: Securely retrieved data for E001"
-          },
-          {
-            "id": "llm",
-            "label": "OpenAI chat \u2014 gpt-4o-mini",
-            "status": "ok",
-            "detail": "Embeddings: text-embedding-3-small; structured JSON answer"
-          }
-        ],
-        "use_rag": true,
-        "chat_model": "gpt-4o-mini"
-      },
-      "created_at": "2026-04-15T10:55:36.639060+00:00"
-    },
-    {
-      "key": "v6::what is the probation period duration::emp=E001::rag=0",
-      "question_norm": "what is the probation period duration",
-      "employee_id": "E001",
-      "use_rag": false,
-      "kb_signature": "42f3bf1712dce280a46d49e42e837ce030ccc621341347bd2c21ba4a6a97ccf8",
-      "response": {
-        "answer": "I cannot see internal policy documents or specific company information. Please contact your HR department for details regarding the probation period duration.",
-        "citations": [],
-        "retrieval_attempts": [],
-        "isEscalated": false,
-        "escalation_reason": null,
-        "pipeline_steps": [
-          {
-            "id": "guardrail",
-            "label": "Guardrail",
-            "status": "ok",
-            "detail": "No sensitive pattern matched"
-          },
-          {
-            "id": "router",
-            "label": "Semantic Intent Router",
-            "status": "ok",
-            "detail": "INTENT_OUT_OF_DOMAIN (domain=OOS, conf=0.00) \u2014 intent_policy domain=OOS conf=0.00; scores={'PROFILE': 0.0, 'POLICY': 0.0, 'IT': 0.0, 'OOS': 0.0}; primary=POLICY; scope in=False ratio=0.00"
+            "detail": "INTENT_POLICY (domain=IT, conf=0.64) \u2014 intent_policy domain=IT conf=0.64; scores={'PROFILE': 0.0, 'POLICY': 1.0, 'IT': 1.8, 'OOS': 0.0}; primary=IT"
           },
           {
             "id": "retrieve",
@@ -926,95 +2026,269 @@
           }
         ],
         "use_rag": false,
-        "chat_model": "gpt-4o-mini"
+        "chat_model": "gpt-4o-mini",
+        "route": "POLICY",
+        "router_version": "v2.1",
+        "context_presence": {
+          "has_policy": true,
+          "has_profile": false,
+          "has_it": true
+        },
+        "clarification_triggered": false,
+        "employee_profile": null,
+        "tool_called": false,
+        "recovery_applied": false
       },
-      "created_at": "2026-04-15T10:55:37.694028+00:00"
+      "created_at": "2026-04-16T16:15:03.953423+00:00"
     },
     {
-      "key": "v7::i want to report a harassment incident involving my lead.::emp=E001::rag=0",
-      "question_norm": "i want to report a harassment incident involving my lead.",
-      "employee_id": "E001",
-      "use_rag": false,
-      "kb_signature": "42f3bf1712dce280a46d49e42e837ce030ccc621341347bd2c21ba4a6a97ccf8",
+      "key": "v9::what vpn is required for internal servers?::route=IT::emp=E002::rag=1",
+      "question_norm": "what vpn is required for internal servers?",
+      "employee_id": "E002",
+      "use_rag": true,
+      "kb_signature": "a4b66c063f6d6ff9da8f85dd53fd237924ed969f921fc56d8993ffa8ba1f2391",
       "response": {
-        "answer": "I have detected that this is a sensitive matter. For your protection and to ensure proper handling, I cannot provide policy details on this topic. Please contact the HR Intake Team directly at hr-support@company.com or via the internal portal link below.",
-        "citations": [],
-        "retrieval_attempts": [],
-        "isEscalated": true,
-        "escalation_reason": "Sensitive HR/legal matter detected.",
-        "pipeline_steps": [
+        "answer": "To access internal servers from a remote location, you must use the **GlobalProtect VPN**. The gateway is `vpn.company.com`, and you will need to use your standard SSO (Single Sign-On) credentials. Additionally, multi-factor authentication via the Duo app is required for every login.\n\nSource: IT Support & Infrastructure Guide > Section: VPN Access",
+        "citations": [
           {
-            "id": "guardrail",
-            "label": "Guardrail (sensitive topics)",
-            "status": "triggered",
-            "detail": "Sensitive HR/legal matter detected."
-          },
-          {
-            "id": "retrieve",
-            "label": "Chroma vector retrieval",
-            "status": "skipped",
-            "detail": "Pipeline stopped after guardrail"
-          },
-          {
-            "id": "mcp_hr",
-            "label": "Employee profile data (MCP-style)",
-            "status": "skipped",
-            "detail": "Not run"
-          },
-          {
-            "id": "llm",
-            "label": "OpenAI chat \u2014 gpt-4o-mini",
-            "status": "skipped",
-            "detail": "Escalation message returned"
+            "text": "# IT Support & Infrastructure Guide\n\n### VPN Access\nTo access internal servers from a remote location, you must use the **GlobalProtect VPN**. \n* **Gateway:** `vpn.company.com` \n* **Credentials:** Use your standard SSO (Single Sign-On) credentials.\n* **MFA:** Multi-factor authentication via the Duo app is required for every login.",
+            "score": 1.0428,
+            "source": "it_guide.md",
+            "section_title": "VPN Access"
           }
         ],
-        "use_rag": false,
-        "chat_model": "gpt-4o-mini"
-      },
-      "created_at": "2026-04-15T11:09:27.270455+00:00"
-    },
-    {
-      "key": "v7::i want to report a harassment incident involving my lead.::emp=E001::rag=1",
-      "question_norm": "i want to report a harassment incident involving my lead.",
-      "employee_id": "E001",
-      "use_rag": true,
-      "kb_signature": "42f3bf1712dce280a46d49e42e837ce030ccc621341347bd2c21ba4a6a97ccf8",
-      "response": {
-        "answer": "I have detected that this is a sensitive matter. For your protection and to ensure proper handling, I cannot provide policy details on this topic. Please contact the HR Intake Team directly at hr-support@company.com or via the internal portal link below.",
-        "citations": [],
-        "retrieval_attempts": [],
-        "isEscalated": true,
-        "escalation_reason": "Sensitive HR/legal matter detected.",
+        "retrieval_attempts": [
+          {
+            "attempt": 1,
+            "query": "what vpn is required for accessing internal servers?",
+            "top_score": 1.0428,
+            "verdict": "answerable",
+            "reason": "IT policy fast-path: retrieved concrete IT policy evidence",
+            "citations": [
+              {
+                "text": "# IT Support & Infrastructure Guide\n\n### VPN Access\nTo access internal servers from a remote location, you must use the **GlobalProtect VPN**. \n* **Gateway:** `vpn.company.com` \n* **Credentials:** Use your standard SSO (Single Sign-On) credentials.\n* **MFA:** Multi-factor authentication via the Duo app is required for every login.",
+                "score": 1.0428,
+                "source": "it_guide.md",
+                "section_title": "VPN Access"
+              }
+            ]
+          }
+        ],
+        "isEscalated": false,
+        "escalation_reason": null,
         "pipeline_steps": [
           {
             "id": "guardrail",
-            "label": "Guardrail (sensitive topics)",
-            "status": "triggered",
-            "detail": "Sensitive HR/legal matter detected."
+            "label": "Guardrail",
+            "status": "ok",
+            "detail": "No sensitive pattern matched"
+          },
+          {
+            "id": "router",
+            "label": "Semantic Intent Router",
+            "status": "ok",
+            "detail": "INTENT_POLICY (domain=IT, conf=0.64) \u2014 intent_policy domain=IT conf=0.64; scores={'PROFILE': 0.0, 'POLICY': 1.0, 'IT': 1.8, 'OOS': 0.0}; primary=IT"
           },
           {
             "id": "retrieve",
-            "label": "Chroma vector retrieval",
-            "status": "skipped",
-            "detail": "Pipeline stopped after guardrail"
+            "label": "Chroma retrieval (embeddings + similarity)",
+            "status": "ok",
+            "detail": "1 chunk(s), 1 retrieval attempt(s)"
           },
           {
             "id": "mcp_hr",
-            "label": "Employee profile data (MCP-style)",
+            "label": "Employee tool (MCP-style)",
             "status": "skipped",
-            "detail": "Not run"
+            "detail": "No employee profile context"
           },
           {
             "id": "llm",
             "label": "OpenAI chat \u2014 gpt-4o-mini",
-            "status": "skipped",
-            "detail": "Escalation message returned"
+            "status": "ok",
+            "detail": "Embeddings: text-embedding-3-small; structured JSON answer"
           }
         ],
         "use_rag": true,
-        "chat_model": "gpt-4o-mini"
+        "chat_model": "gpt-4o-mini",
+        "route": "POLICY",
+        "router_version": "v2.1",
+        "context_presence": {
+          "has_policy": true,
+          "has_profile": false,
+          "has_it": true
+        },
+        "clarification_triggered": false,
+        "employee_profile": null,
+        "tool_called": false,
+        "recovery_applied": false
       },
-      "created_at": "2026-04-15T11:09:27.282134+00:00"
+      "created_at": "2026-04-16T16:15:04.444743+00:00"
+    },
+    {
+      "key": "v9::what is the vpn gateway?::route=IT::emp=E002::rag=0",
+      "question_norm": "what is the vpn gateway?",
+      "employee_id": "E002",
+      "use_rag": false,
+      "kb_signature": "a4b66c063f6d6ff9da8f85dd53fd237924ed969f921fc56d8993ffa8ba1f2391",
+      "response": {
+        "answer": "The VPN gateway is `vpn.company.com`. To access internal servers from a remote location, you must use the GlobalProtect VPN with your standard SSO (Single Sign-On) credentials, and multi-factor authentication via the Duo app is required for every login. \n\nSource: our official IT policy guide",
+        "citations": [
+          {
+            "text": "# IT Support & Infrastructure Guide\n\n### VPN Access\nTo access internal servers from a remote location, you must use the **GlobalProtect VPN**. \n* **Gateway:** `vpn.company.com` \n* **Credentials:** Use your standard SSO (Single Sign-On) credentials.\n* **MFA:** Multi-factor authentication via the Duo app is required for every login.",
+            "score": 1.0244,
+            "source": "it_guide.md",
+            "section_title": "VPN Access"
+          }
+        ],
+        "retrieval_attempts": [
+          {
+            "attempt": 1,
+            "query": "what is a vpn gateway?",
+            "top_score": 1.0244,
+            "verdict": "answerable",
+            "reason": "IT policy fast-path: retrieved concrete IT policy evidence",
+            "citations": [
+              {
+                "text": "# IT Support & Infrastructure Guide\n\n### VPN Access\nTo access internal servers from a remote location, you must use the **GlobalProtect VPN**. \n* **Gateway:** `vpn.company.com` \n* **Credentials:** Use your standard SSO (Single Sign-On) credentials.\n* **MFA:** Multi-factor authentication via the Duo app is required for every login.",
+                "score": 1.0244,
+                "source": "it_guide.md",
+                "section_title": "VPN Access"
+              }
+            ]
+          }
+        ],
+        "isEscalated": false,
+        "escalation_reason": null,
+        "pipeline_steps": [
+          {
+            "id": "guardrail",
+            "label": "Guardrail",
+            "status": "ok",
+            "detail": "No sensitive pattern matched"
+          },
+          {
+            "id": "router",
+            "label": "Semantic Intent Router",
+            "status": "ok",
+            "detail": "INTENT_POLICY (domain=IT, conf=1.00) \u2014 intent_policy domain=IT conf=1.00; scores={'PROFILE': 0.0, 'POLICY': 0.0, 'IT': 2.6, 'OOS': 0.0}; primary=IT"
+          },
+          {
+            "id": "retrieve",
+            "label": "Chroma retrieval",
+            "status": "skipped",
+            "detail": "Direct LLM mode (no handbook vectors)"
+          },
+          {
+            "id": "mcp_hr",
+            "label": "Employee profile data (MCP-style)",
+            "status": "skipped",
+            "detail": "Disabled in direct LLM mode"
+          },
+          {
+            "id": "llm",
+            "label": "OpenAI chat \u2014 gpt-4o-mini",
+            "status": "ok",
+            "detail": "Embeddings: text-embedding-3-small; structured JSON answer"
+          }
+        ],
+        "use_rag": false,
+        "chat_model": "gpt-4o-mini",
+        "route": "POLICY",
+        "router_version": "v2.1",
+        "context_presence": {
+          "has_policy": true,
+          "has_profile": false,
+          "has_it": true
+        },
+        "clarification_triggered": false,
+        "employee_profile": null,
+        "tool_called": false,
+        "recovery_applied": false
+      },
+      "created_at": "2026-04-16T16:15:15.227654+00:00"
+    },
+    {
+      "key": "v9::what is the vpn gateway?::route=IT::emp=E002::rag=1",
+      "question_norm": "what is the vpn gateway?",
+      "employee_id": "E002",
+      "use_rag": true,
+      "kb_signature": "a4b66c063f6d6ff9da8f85dd53fd237924ed969f921fc56d8993ffa8ba1f2391",
+      "response": {
+        "answer": "The VPN gateway is the address you use to access the GlobalProtect VPN, which is `vpn.company.com`. To connect, you'll need your standard SSO (Single Sign-On) credentials and must complete multi-factor authentication via the Duo app for every login. \n\nSource: our official IT policy guide",
+        "citations": [
+          {
+            "text": "# IT Support & Infrastructure Guide\n\n### VPN Access\nTo access internal servers from a remote location, you must use the **GlobalProtect VPN**. \n* **Gateway:** `vpn.company.com` \n* **Credentials:** Use your standard SSO (Single Sign-On) credentials.\n* **MFA:** Multi-factor authentication via the Duo app is required for every login.",
+            "score": 1.0244,
+            "source": "it_guide.md",
+            "section_title": "VPN Access"
+          }
+        ],
+        "retrieval_attempts": [
+          {
+            "attempt": 1,
+            "query": "what is a vpn gateway?",
+            "top_score": 1.0244,
+            "verdict": "answerable",
+            "reason": "IT policy fast-path: retrieved concrete IT policy evidence",
+            "citations": [
+              {
+                "text": "# IT Support & Infrastructure Guide\n\n### VPN Access\nTo access internal servers from a remote location, you must use the **GlobalProtect VPN**. \n* **Gateway:** `vpn.company.com` \n* **Credentials:** Use your standard SSO (Single Sign-On) credentials.\n* **MFA:** Multi-factor authentication via the Duo app is required for every login.",
+                "score": 1.0244,
+                "source": "it_guide.md",
+                "section_title": "VPN Access"
+              }
+            ]
+          }
+        ],
+        "isEscalated": false,
+        "escalation_reason": null,
+        "pipeline_steps": [
+          {
+            "id": "guardrail",
+            "label": "Guardrail",
+            "status": "ok",
+            "detail": "No sensitive pattern matched"
+          },
+          {
+            "id": "router",
+            "label": "Semantic Intent Router",
+            "status": "ok",
+            "detail": "INTENT_POLICY (domain=IT, conf=1.00) \u2014 intent_policy domain=IT conf=1.00; scores={'PROFILE': 0.0, 'POLICY': 0.0, 'IT': 2.6, 'OOS': 0.0}; primary=IT"
+          },
+          {
+            "id": "retrieve",
+            "label": "Chroma retrieval (embeddings + similarity)",
+            "status": "ok",
+            "detail": "1 chunk(s), 1 retrieval attempt(s)"
+          },
+          {
+            "id": "mcp_hr",
+            "label": "Employee tool (MCP-style)",
+            "status": "skipped",
+            "detail": "No employee profile context"
+          },
+          {
+            "id": "llm",
+            "label": "OpenAI chat \u2014 gpt-4o-mini",
+            "status": "ok",
+            "detail": "Embeddings: text-embedding-3-small; structured JSON answer"
+          }
+        ],
+        "use_rag": true,
+        "chat_model": "gpt-4o-mini",
+        "route": "POLICY",
+        "router_version": "v2.1",
+        "context_presence": {
+          "has_policy": true,
+          "has_profile": false,
+          "has_it": true
+        },
+        "clarification_triggered": false,
+        "employee_profile": null,
+        "tool_called": false,
+        "recovery_applied": false
+      },
+      "created_at": "2026-04-16T16:15:15.722088+00:00"
     }
   ]
 }

@@ -25,3 +25,18 @@ def test_intent_policy_regression_suite() -> None:
         if actual != expected:
             mismatches.append(f"{query} -> expected {expected}, got {actual}")
     assert not mismatches, "Intent policy mismatches:\n" + "\n".join(mismatches[:10])
+
+
+def test_classify_query_treats_laptap_damage_as_it() -> None:
+    result = classify_query("my laptap is damage")
+    assert str(result.get("domain_class")) == "IT"
+
+
+def test_classify_query_treats_vacation_days_as_in_scope_hr() -> None:
+    result = classify_query("How many vacation days do I get?")
+    assert str(result.get("domain_class")) in {"PROFILE", "POLICY"}
+
+
+def test_classify_query_treats_days_off_as_in_scope_hr() -> None:
+    result = classify_query("How many days off do I have?")
+    assert str(result.get("domain_class")) in {"PROFILE", "POLICY"}

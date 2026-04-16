@@ -96,6 +96,16 @@ def resolve_profile_field(
                 "needs_clarification": False,
             }
 
+    # Catalog questions ("types of loans") are handled by loan composite in rag_graph;
+    # do not let token "type" resolve to employment_type.
+    if re.search(r"\b(loans?)\b", q) and re.search(r"\b(type|types|kind|kinds)\b", q):
+        return {
+            "resolved_key": None,
+            "confidence": 0.0,
+            "reason": "loan_type_catalog_defer_to_composite",
+            "needs_clarification": False,
+        }
+
     # Explicit loan-topic fallbacks.
     if asks_eligibility and "services_loan_available" in profile and "loan" in q:
         return {

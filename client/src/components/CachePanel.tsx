@@ -34,7 +34,7 @@ type CacheVizResponse = {
   items?: VectorPointResponse[];
 };
 
-type Category = "PTO" | "VPN" | "Personal" | "General";
+type Category = "Policy" | "IT" | "Personal" | "Sensitive" | "Out of Scope";
 
 type VizPoint = {
   x: number;
@@ -45,10 +45,11 @@ type VizPoint = {
 };
 
 const CATEGORY_COLORS: Record<Category, string> = {
-  PTO: "#3b82f6",
-  VPN: "#22c55e",
+  Policy: "#3b82f6",
+  IT: "#22c55e",
   Personal: "#ef4444",
-  General: "#a1a1aa",
+  Sensitive: "#f97316",
+  "Out of Scope": "#a1a1aa",
 };
 
 const safeNumber = (value: unknown): number | null =>
@@ -61,15 +62,34 @@ const isNotFoundResponse = (error: unknown): boolean =>
 
 const guessCategory = (raw: VectorPointResponse): Category => {
   const fromApi = raw.category?.toLowerCase();
-  if (fromApi?.includes("pto") || fromApi?.includes("leave")) return "PTO";
-  if (fromApi?.includes("vpn") || fromApi?.includes("it")) return "VPN";
+  if (fromApi?.includes("sensitive")) return "Sensitive";
+  if (fromApi?.includes("policy") || fromApi?.includes("pto") || fromApi?.includes("leave")) return "Policy";
+  if (fromApi?.includes("vpn") || fromApi?.includes("it")) return "IT";
   if (fromApi?.includes("personal") || fromApi?.includes("employee")) return "Personal";
+  if (fromApi?.includes("oos") || fromApi?.includes("out of scope") || fromApi?.includes("general")) return "Out of Scope";
 
   const combined = `${raw.text ?? ""} ${raw.chunk_text ?? ""} ${raw.label ?? ""} ${raw.source ?? ""}`.toLowerCase();
-  if (combined.includes("pto") || combined.includes("leave") || combined.includes("vacation")) return "PTO";
-  if (combined.includes("vpn") || combined.includes("globalprotect") || combined.includes("gateway")) return "VPN";
-  if (combined.includes("employee") || combined.includes("balance") || combined.includes("sick")) return "Personal";
-  return "General";
+  if (
+    combined.includes("harass") ||
+    combined.includes("harrass") ||
+    combined.includes("bullied") ||
+    combined.includes("abuse") ||
+    combined.includes("termination") ||
+    combined.includes("accommodation")
+  ) return "Sensitive";
+  if (combined.includes("employee") || combined.includes("balance") || combined.includes("sick") || combined.includes("loan")) return "Personal";
+  if (
+    combined.includes("vpn") ||
+    combined.includes("globalprotect") ||
+    combined.includes("gateway") ||
+    combined.includes("laptop") ||
+    combined.includes("hardware") ||
+    combined.includes("device")
+  ) return "IT";
+  if (combined.includes("pto") || combined.includes("leave") || combined.includes("vacation") || combined.includes("policy") || combined.includes("handbook")) {
+    return "Policy";
+  }
+  return "Out of Scope";
 };
 
 const normalizePoint = (raw: VectorPointResponse, index: number): VizPoint | null => {
@@ -108,28 +128,27 @@ const purgeCache = async (): Promise<void> => {
 };
 
 const buildPlotTraces = (points: VizPoint[]): Data[] => {
-  const categories: Category[] = ["PTO", "VPN", "Personal", "General"];
-  return categories
-    .map((category) => {
-      const categoryPoints = points.filter((point) => point.category === category);
-      if (categoryPoints.length === 0) return null;
-      return {
-        type: "scattergl",
-        mode: "markers",
-        name: category,
-        x: categoryPoints.map((point) => point.x),
-        y: categoryPoints.map((point) => point.y),
-        text: categoryPoints.map((point) => `<b>${point.label}</b><br>${point.text}`),
-        marker: {
-          color: CATEGORY_COLORS[category],
-          size: 9,
-          line: { color: "#18181b", width: 0.5 },
-          opacity: 0.9,
-        },
-        hovertemplate: "%{text}<extra></extra>",
-      } as Data;
-    })
-    .filter((trace): trace is Data => trace !== null);
+  const categories: Category[] = ["Policy", "IT", "Personal", "Sensitive", "Out of Scope"];
+  return categories.map((category) => {
+    const categoryPoints = points.filter((point) => point.category === category);
+    const hasPoints = categoryPoints.length > 0;
+    return {
+      type: "scattergl",
+      mode: "markers",
+      name: category,
+      x: hasPoints ? categoryPoints.map((point) => point.x) : [null],
+      y: hasPoints ? categoryPoints.map((point) => point.y) : [null],
+      text: hasPoints ? categoryPoints.map((point) => `<b>${point.label}</b><br>${point.text}`) : [category],
+      marker: {
+        color: CATEGORY_COLORS[category],
+        size: 9,
+        line: { color: "#18181b", width: 0.5 },
+        opacity: hasPoints ? 0.9 : 0.65,
+      },
+      hovertemplate: hasPoints ? "%{text}<extra></extra>" : "<extra></extra>",
+      showlegend: true,
+    } as Data;
+  });
 };
 
 type CachePanelProps = {
@@ -219,7 +238,9 @@ export const CachePanel = ({ fallbackCount = 0 }: CachePanelProps) => {
         <div className="flex flex-wrap items-center justify-between gap-4">
           <div>
             <h2 className="text-base font-semibold text-zinc-900 dark:text-zinc-100">Vector Space Visualizer</h2>
-            <p className="mt-1 text-sm text-zinc-500 dark:text-zinc-400">2D semantic projection of cached queries and indexed chunks.</p>
+            <p className="mt-1 text-sm text-zinc-500 dark:text-zinc-400">
+              2D semantic projection of cached queries and indexed chunks across Policy, IT, Personal, Sensitive, and Out of Scope routes.
+            </p>
           </div>
           <button
             type="button"

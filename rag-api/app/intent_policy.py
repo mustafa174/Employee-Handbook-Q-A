@@ -2,7 +2,10 @@
 
 from __future__ import annotations
 
+import json
 import re
+import time
+from pathlib import Path
 from typing import Literal, TypedDict
 
 DomainClass = Literal["PROFILE", "POLICY", "IT", "OOS"]
@@ -38,9 +41,11 @@ _PROFILE_TOKENS = {
     "type",
     "profile",
     "details",
+    "name"
 }
 _POLICY_TOKENS = {
     "policy",
+    "polocy",
     "policies",
     "rule",
     "rules",
@@ -64,6 +69,7 @@ _POLICY_TOKENS = {
     "time",
     "off",
     "holiday",
+    "vacation",
     "hr",
     "contact",
     "human",
@@ -185,7 +191,59 @@ _OOS_PATTERN = re.compile(
     r")\b",
     re.I,
 )
+_LOAN_PERSONAL_SIGNALS = (
+    "am i",
+    "can i",
+    "eligible",
+    "for me",
+    "how many months",
+    "after how many months",
+    "when can i",
+    "when am i",
+)
+_LOAN_POLICY_SIGNALS = (
+    "loan policy",
+    "loan rules",
+    "company loan policy",
+)
+_DEBUG_LOG_PATH = Path(__file__).resolve().parents[2] / "debug-0b08b0.log"
 
+
+def _agent_debug_log(run_id: str, hypothesis_id: str, location: str, message: str, data: dict) -> None:
+    payload = {
+        "sessionId": "0b08b0",
+        "runId": run_id,
+        "hypothesisId": hypothesis_id,
+        "location": location,
+        "message": message,
+        "data": data,
+        "timestamp": int(time.time() * 1000),
+    }
+    try:
+        with _DEBUG_LOG_PATH.open("a", encoding="utf-8") as f:
+            f.write(json.dumps(payload, ensure_ascii=True) + "\n")
+    except Exception:
+        pass
+
+
+def _normalize_classifier_text(text: str) -> str:
+    q = (text or "").lower().strip()
+    replacements = {
+        "laptap": "laptop",
+        "lptop": "laptop",
+        "labtop": "laptop",
+        "damge": "damage",
+        "dammage": "damage",
+        "damagede": "damaged",
+        "vacation days": "pto days",
+        "vacation day": "pto day",
+        "days off": "pto",
+    }
+    for src, dest in replacements.items():
+        q = q.replace(src, dest)
+    q = re.sub(r"\bis damage\b", "is damaged", q)
+    q = re.sub(r"\bgot damage\b", "got damaged", q)
+    return q
 
 def _tokens(text: str) -> set[str]:
     return set(_TOKEN_RE.findall(text.lower()))
@@ -210,7 +268,10 @@ def _profile_score(question: str, tokens: set[str]) -> float:
 
 def _policy_score(question: str, tokens: set[str]) -> float:
     score = float(_token_hits(tokens, _POLICY_TOKENS))
-    if re.search(r"\bwhat is .*policy\b|\bpolicy for\b|\bcompany .*policy\b|\bwhat policy\b|\bpolicy covers\b", question):
+    if re.search(
+        r"\bwhat is .*(?:policy|polocy)\b|\b(?:policy|polocy) for\b|\bcompany .*(?:policy|polocy)\b|\bwhat (?:policy|polocy)\b|\b(?:policy|polocy) covers\b",
+        question,
+    ):
         score += 2.0
     if re.search(r"\bhow far in advance\b|\badvance notice\b", question):
         score += 1.5
@@ -240,11 +301,24 @@ def _oos_score(question: str, tokens: set[str]) -> float:
 
 
 def _has_personal_pronoun(question: str) -> bool:
-    return bool(re.search(r"\b(my|i|me|mine)\b", question))
+    return bool(re.search(r"\b(my|mine|i have|do i have|am i|for me)\b", question))
 
 
 def classify_query(question: str) -> IntentPolicyResult:
-    q = question.lower().strip()
+    q = _normalize_classifier_text(question)
+    if "vacation" in (question or "").lower() or "days off" in (question or "").lower() or "holiday" in (question or "").lower():
+        # #region agent log
+        _agent_debug_log(
+            "repro-vocab-1",
+            "H1",
+            "intent_policy.py:classify_query",
+            "Classifier normalization snapshot",
+            {
+                "raw_question": (question or "")[:160],
+                "normalized_question": q[:160],
+            },
+        )
+        # #endregion
     tokens = _tokens(q)
     if not tokens:
         return {
@@ -253,6 +327,24 @@ def classify_query(question: str) -> IntentPolicyResult:
             "reasons": ["empty_query"],
             "secondary_class": None,
             "needs_clarification": True,
+        }
+
+    if "loan" in q and any(signal in q for signal in _LOAN_POLICY_SIGNALS):
+        return {
+            "domain_class": "POLICY",
+            "confidence": 0.95,
+            "reasons": ["loan_policy_phrase"],
+            "secondary_class": "PROFILE",
+            "needs_clarification": False,
+        }
+
+    if "loan" in q and any(signal in q for signal in _LOAN_PERSONAL_SIGNALS):
+        return {
+            "domain_class": "PROFILE",
+            "confidence": 0.95,
+            "reasons": ["loan_personal_phrase"],
+            "secondary_class": "POLICY",
+            "needs_clarification": False,
         }
 
     scores: dict[DomainClass, float] = {
@@ -284,6 +376,11 @@ def classify_query(question: str) -> IntentPolicyResult:
         else:
             primary, primary_score = "POLICY", scores["POLICY"]
             secondary = "IT"
+
+    # "Employee handbook" refers to policy docs, not personal profile fields.
+    if "handbook" in tokens and not has_pronoun:
+        primary, primary_score = "POLICY", max(scores["POLICY"], 0.7)
+        secondary = "PROFILE" if scores["PROFILE"] >= scores["IT"] else "IT"
 
     # Out-of-scope entities should override policy wording (e.g., "policy about Mars").
     if (
@@ -335,6 +432,26 @@ def classify_query(question: str) -> IntentPolicyResult:
         f"secondary={secondary}",
         f"hints(hr={has_hr_hint}, it={has_it_hint}, pronoun={has_pronoun}, profile_alias={has_profile_alias})",
     ]
+    if "vacation" in q or ("leave" in q and ("days" in q or "how many" in q)):
+        # #region agent log
+        _agent_debug_log(
+            "repro-vacation-1",
+            "H1",
+            "intent_policy.py:classify_query",
+            "Vacation/leave classification snapshot",
+            {
+                "question": q[:160],
+                "tokens": sorted(list(tokens))[:20],
+                "scores": score_summary,
+                "primary": primary,
+                "secondary": secondary,
+                "has_hr_hint": has_hr_hint,
+                "has_in_scope_hint": has_in_scope_hint,
+                "has_oos_pattern": has_oos_pattern,
+                "only_generic_scope_hints": only_generic_scope_hints,
+            },
+        )
+        # #endregion
     return {
         "domain_class": primary,
         "confidence": confidence,
