@@ -132,6 +132,7 @@ class RagState(TypedDict, total=False):
     is_mixed_intent: bool
     route: str
     normalized_question: str
+    agent_action: dict
 
 
 INTENT_PERSONAL = "INTENT_PERSONAL"
@@ -266,6 +267,25 @@ def detect_sensitive(question: str) -> bool:
         SENSITIVE_PATTERNS.search(q)
         or any(re.search(pattern, q, re.I) for pattern in SENSITIVE_SEMANTIC_PATTERNS)
     )
+
+
+def _build_harassment_agent_action(state: RagState) -> dict | None:
+    q = str(state.get("question", "") or "")
+    if not re.search(r"\b(harra?s{1,2}ment|harra?s{1,2}(?:ed|ing)?|bull(?:y|ied|ying))\b", q, re.I):
+        return None
+    profile = state.get("employee_profile") or {}
+    employee_name = ""
+    if isinstance(profile, dict):
+        employee_name = str(profile.get("name", "") or "").strip()
+    employee_id = str(state.get("employee_id", "") or "").strip()
+    return {
+        "type": "HARASSMENT_REPORT",
+        "payload": {
+            "employee_id": employee_id or None,
+            "employee_name": employee_name or None,
+            "message": q,
+        },
+    }
 
 
 def _set_answer_once(state: RagState, answer: str, **extra: object) -> RagState:
@@ -3598,12 +3618,14 @@ def build_ask_response_from_state(result: RagState, *, use_rag: bool) -> dict:
         },
     )
     if result.get("escalate"):
+        agent_action = _build_harassment_agent_action(result)
         return {
             "answer": final_answer,
             "citations": [],
             "retrieval_attempts": [],
             "isEscalated": True,
             "escalation_reason": result.get("escalation_reason"),
+            "agent_action": agent_action,
             "pipeline_steps": pipeline_steps,
             "use_rag": use_rag,
             "chat_model": OPENAI_CHAT_MODEL,

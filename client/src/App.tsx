@@ -66,8 +66,12 @@ const App = () => {
   const isLanding = location.pathname === "/";
   const isAssistantPage = !isLanding && !isSettings;
   const pageTitle = useMemo(
-    () => (isSettings ? "Settings" : "Employee Handbook Q&A Assistant"),
+    () => (isSettings ? "Settings" : "Employee Handbook Q&A System"),
     [isSettings]
+  );
+  const selectedEmployeeName = useMemo(
+    () => employeeOptions.find((row) => row.employee_id === selectedEmployeeId)?.name ?? "",
+    [employeeOptions, selectedEmployeeId],
   );
 
   if (isLanding) {
@@ -152,6 +156,7 @@ const App = () => {
             chatHistory={chatHistory}
             onChatHistoryChange={setChatHistory}
             selectedEmployeeId={selectedEmployeeId}
+            selectedEmployeeName={selectedEmployeeName}
           />
         </section>
         <section className={isSettings ? "block" : "hidden"}>

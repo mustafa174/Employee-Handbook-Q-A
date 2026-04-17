@@ -8,6 +8,7 @@ import re
 from pathlib import Path
 from datetime import datetime, timezone
 import uuid
+from typing import Literal
 
 from fastapi import FastAPI, File, HTTPException, UploadFile
 from fastapi.middleware.cors import CORSMiddleware
@@ -259,12 +260,24 @@ class PipelineStepModel(BaseModel):
     detail: str | None = None
 
 
+class AgentActionPayloadModel(BaseModel):
+    employee_id: str | None = None
+    employee_name: str | None = None
+    message: str
+
+
+class AgentActionModel(BaseModel):
+    type: Literal["HARASSMENT_REPORT"]
+    payload: AgentActionPayloadModel
+
+
 class AskResponseModel(BaseModel):
     answer: str
     citations: list[CitationModel]
     retrieval_attempts: list[RetrievalAttemptModel] = []
     isEscalated: bool = False
     escalation_reason: str | None = None
+    agent_action: AgentActionModel | None = None
     pipeline_steps: list[PipelineStepModel]
     use_rag: bool
     chat_model: str
@@ -489,6 +502,7 @@ def ask(body: AskRequest) -> AskResponseModel:
         retrieval_attempts=attempts,
         isEscalated=bool(raw.get("isEscalated")),
         escalation_reason=raw.get("escalation_reason"),
+        agent_action=raw.get("agent_action"),
         pipeline_steps=steps,
         use_rag=bool(raw.get("use_rag", True)),
         chat_model=str(raw.get("chat_model", OPENAI_CHAT_MODEL)),

@@ -23,7 +23,7 @@ export default function App() {
             <div className="text-[#4f46e5]">
               <BookOpen className="w-7 h-7" strokeWidth={2.5} />
             </div>
-            <span className="font-extrabold text-2xl tracking-tight text-[#4f46e5]">PolicyPal AI</span>
+            <span className="font-extrabold text-2xl tracking-tight text-[#4f46e5]">Employee Handbook Q&A System</span>
           </div>
           <div className="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
             <a href="#features" className="hover:text-indigo-600 transition-colors">Features</a>
@@ -96,7 +96,7 @@ export default function App() {
                   <BookOpen className="w-4 h-4 text-white" />
                 </div>
                 <div>
-                  <div className="font-bold text-sm text-[#1e293b]">Policy Assistant</div>
+                  <div className="font-bold text-sm text-[#1e293b]">Our Assistant</div>
                   <div className="text-[10px] text-[#10b981] font-semibold tracking-wider flex items-center gap-1 uppercase">
                     ● Online
                   </div>
@@ -195,7 +195,7 @@ export default function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row gap-12 items-center">
             <div className="flex-1">
-              <h2 className="text-3xl font-bold tracking-tight text-[#0f172a] mb-8">How PolicyPal Works</h2>
+              <h2 className="text-3xl font-bold tracking-tight text-[#0f172a] mb-8">How Our Assistant Works</h2>
               <div className="space-y-8">
                 <Step 
                   number="1"
@@ -270,7 +270,7 @@ export default function App() {
         <div className="max-w-4xl mx-auto px-4 text-center relative z-10">
           <h2 className="text-4xl font-extrabold mb-6 text-[#0f172a] tracking-tight">Ready to give your HR team their time back?</h2>
           <p className="text-[#475569] text-lg mb-10 max-w-2xl mx-auto leading-[1.6]">
-            Join hundreds of forward-thinking companies using PolicyPal to automate routine HR inquiries while maintaining a human touch for what matters.
+            Join hundreds of forward-thinking companies using our assistant to automate routine HR inquiries while maintaining a human touch for what matters.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <button className="bg-[#4f46e5] text-white px-8 py-4 rounded-full font-semibold hover:bg-indigo-700 transition-colors shadow-[0_4px_12px_rgba(79,70,229,0.2)] cursor-pointer">
@@ -289,7 +289,7 @@ export default function App() {
           <div className="col-span-2 md:col-span-1">
             <div className="flex items-center gap-2 mb-4">
               <BookOpen className="w-5 h-5 text-indigo-500" />
-              <span className="font-semibold text-white">PolicyPal AI</span>
+              <span className="font-semibold text-white">Employee Handbook Q&A System</span>
             </div>
             <p className="text-sm">Agentic HR assistance powered by RAG and MCP.</p>
           </div>
@@ -318,7 +318,7 @@ export default function App() {
           </div>
         </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 pt-8 border-t border-slate-800 text-sm flex justify-between items-center">
-          <p>© 2026 PolicyPal AI. All rights reserved.</p>
+          <p>© 2026 Employee Handbook Q&A System. All rights reserved.</p>
           <div className="flex items-center gap-2">
             <Lock className="w-4 h-4" />
             <span>SOC2 Type II Certified</span>

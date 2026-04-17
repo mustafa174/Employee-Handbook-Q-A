@@ -24,7 +24,7 @@ const LandingPage = () => {
             <div className="text-[#4f46e5]">
               <BookOpen className="h-7 w-7" strokeWidth={2.5} />
             </div>
-            <span className="text-2xl font-extrabold tracking-tight text-[#4f46e5]">PolicyPal AI</span>
+            <span className="text-2xl font-extrabold tracking-tight text-[#4f46e5]">Employee Handbook Q&A System</span>
           </div>
           <div className="hidden items-center gap-8 text-sm font-medium text-slate-600 md:flex">
             <a href="#features" className="transition-colors hover:text-indigo-600">
@@ -103,7 +103,7 @@ const LandingPage = () => {
                 <BookOpen className="h-4 w-4 text-white" />
               </div>
               <div>
-                <div className="text-sm font-bold text-[#1e293b]">Policy Assistant</div>
+                  <div className="text-sm font-bold text-[#1e293b]">Our Assistant</div>
                 <div className="flex items-center gap-1 text-[10px] font-semibold uppercase tracking-wider text-[#10b981]">
                   ● Online
                 </div>
@@ -163,7 +163,7 @@ const LandingPage = () => {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col items-center gap-12 md:flex-row">
             <div className="flex-1">
-              <h2 className="mb-8 text-3xl font-bold tracking-tight text-[#0f172a]">How PolicyPal Works</h2>
+              <h2 className="mb-8 text-3xl font-bold tracking-tight text-[#0f172a]">How Our Assistant Works</h2>
               <div className="space-y-8">
                 <Step number="1" title="Upload your Handbook" description="Ingest your employee handbook into Chroma." />
                 <Step number="2" title="AI Indexes & Retrieves" description="RAG and retrieval find the best grounded sections." />

@@ -12,6 +12,7 @@ import { apiUrl } from "../apiBase";
 import { CachePanel } from "./CachePanel";
 import { RAGPipelineVisualizer } from "./RAGPipelineVisualizer";
 import { useTheme } from "../theme";
+import { HarassmentReportModal } from "./HarassmentReportModal";
 
 type AskRequestWithHistory = AskRequest & {
   chat_history?: ChatHistoryItem[];
@@ -117,9 +118,12 @@ type ChatTurn = {
   id: string;
   question: string;
   questionAt: string;
+  employeeId?: string;
+  employeeName?: string;
   answer?: string;
   answerAt?: string;
   error?: string;
+  agentAction?: NonNullable<AskResponse["agent_action"]>;
 };
 
 type ChatHistoryItem = {
@@ -131,7 +135,10 @@ type HandbookQAProps = {
   chatHistory?: ChatHistoryItem[];
   onChatHistoryChange?: (history: ChatHistoryItem[]) => void;
   selectedEmployeeId: string;
+  selectedEmployeeName?: string;
 };
+
+type HarassmentReportPayload = NonNullable<AskResponse["agent_action"]>["payload"];
 
 type TokenVector = {
   token: string;
@@ -356,7 +363,18 @@ const readStoredNaiveTurns = (): ChatTurn[] => {
   }
 };
 
-export const HandbookQA = ({ chatHistory, onChatHistoryChange, selectedEmployeeId }: HandbookQAProps) => {
+const scrollPaneToBottom = (paneRef: React.RefObject<HTMLDivElement | null>) => {
+  const el = paneRef.current;
+  if (!el) return;
+  el.scrollTo({ top: el.scrollHeight, behavior: "smooth" });
+};
+
+export const HandbookQA = ({
+  chatHistory,
+  onChatHistoryChange,
+  selectedEmployeeId,
+  selectedEmployeeName,
+}: HandbookQAProps) => {
   const { theme } = useTheme();
   const isDark = theme === "dark";
 
@@ -380,6 +398,7 @@ export const HandbookQA = ({ chatHistory, onChatHistoryChange, selectedEmployeeI
   const [lastRagTurnId, setLastRagTurnId] = useState<string | null>(null);
   const [activeNodes, setActiveNodes] = useState<string[]>([]);
   const [doneNodes, setDoneNodes] = useState<string[]>([]);
+  const [reportModalPayload, setReportModalPayload] = useState<HarassmentReportPayload | null>(null);
   const inputRef = useRef<HTMLTextAreaElement | null>(null);
   const naivePaneRef = useRef<HTMLDivElement | null>(null);
   const ragPaneRef = useRef<HTMLDivElement | null>(null);
@@ -437,6 +456,7 @@ export const HandbookQA = ({ chatHistory, onChatHistoryChange, selectedEmployeeI
   const runAsk = () => {
     const q = question.trim();
     const contextValue = selectedEmployeeId.trim() || undefined;
+    const selectedEmployeeNameForTurn = selectedEmployeeName?.trim() || undefined;
     if (!q || isSending) return;
     // #region agent log
     fetch("http://127.0.0.1:7340/ingest/caf36bdf-b3aa-457a-8a14-e9c51eb4cc1d", {
@@ -467,8 +487,18 @@ export const HandbookQA = ({ chatHistory, onChatHistoryChange, selectedEmployeeI
     setDoneNodes([]);
     setLastQuery(q);
     const questionAt = new Date().toISOString();
-    setNaiveTurns((prev) => [...prev, { id, question: q, questionAt }]);
-    setRagTurns((prev) => [...prev, { id, question: q, questionAt }]);
+    setNaiveTurns((prev) => [
+      ...prev,
+      { id, question: q, questionAt, employeeId: contextValue, employeeName: selectedEmployeeNameForTurn },
+    ]);
+    setRagTurns((prev) => [
+      ...prev,
+      { id, question: q, questionAt, employeeId: contextValue, employeeName: selectedEmployeeNameForTurn },
+    ]);
+    requestAnimationFrame(() => {
+      scrollPaneToBottom(naivePaneRef);
+      scrollPaneToBottom(ragPaneRef);
+    });
 
     const base = {
       question: q,
@@ -496,6 +526,9 @@ export const HandbookQA = ({ chatHistory, onChatHistoryChange, selectedEmployeeI
               setRagTurns((prev) =>
                 prev.map((t) => (t.id === id ? { ...t, answer: `${t.answer ?? ""}${chunk}` } : t)),
               );
+              requestAnimationFrame(() => {
+                scrollPaneToBottom(ragPaneRef);
+              });
             },
           },
         ),
@@ -522,10 +555,23 @@ export const HandbookQA = ({ chatHistory, onChatHistoryChange, selectedEmployeeI
         prev.map((t) => {
           if (t.id !== id) return t;
           if (ragSettled.status === "fulfilled") {
+            const action = ragSettled.value.agent_action;
+            const mergedAction =
+              action?.type === "HARASSMENT_REPORT"
+                ? {
+                    ...action,
+                    payload: {
+                      ...action.payload,
+                      employee_id: contextValue ?? action.payload.employee_id,
+                      employee_name: selectedEmployeeNameForTurn ?? action.payload.employee_name,
+                    },
+                  }
+                : action;
             return {
               ...t,
               answer: ragSettled.value.answer,
               answerAt: new Date().toISOString(),
+              agentAction: mergedAction ?? undefined,
             };
           }
           return {
@@ -550,6 +596,10 @@ export const HandbookQA = ({ chatHistory, onChatHistoryChange, selectedEmployeeI
         setSendError(ragSettled.reason instanceof Error ? ragSettled.reason.message : "RAG request failed");
         setActiveNodes([]);
       }
+      requestAnimationFrame(() => {
+        scrollPaneToBottom(naivePaneRef);
+        scrollPaneToBottom(ragPaneRef);
+      });
       setIsSending(false);
     })();
   };
@@ -588,15 +638,6 @@ export const HandbookQA = ({ chatHistory, onChatHistoryChange, selectedEmployeeI
   const mcpStep = lastAnswer?.pipeline_steps.find((s) => s.id === "mcp_hr");
   const retrieveStep = lastAnswer?.pipeline_steps.find((s) => s.id === "retrieve");
   const mcpMeta = mcpStatusMeta(mcpStep);
-  const cachePill = useMemo(() => {
-    const hit = lastAnswer?.cache_hit ?? false;
-    const reason = lastAnswer?.cache_reason ?? "miss";
-    if (hit) return { text: "Cache hit", cls: "border-emerald-300 bg-emerald-50 text-emerald-800 dark:border-emerald-700 dark:bg-emerald-950/40 dark:text-emerald-200" };
-    if (reason === "kb_changed") {
-      return { text: "Policy updated · refreshed", cls: "border-amber-300 bg-amber-50 text-amber-800 dark:border-amber-700 dark:bg-amber-950/40 dark:text-amber-200" };
-    }
-    return { text: "Cache miss", cls: "border-zinc-300 bg-zinc-100 text-zinc-700 dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-200" };
-  }, [lastAnswer?.cache_hit, lastAnswer?.cache_reason]);
   const llmNodeLabel = useMemo(
     () => `OpenAI\n${lastAnswer?.chat_model ?? "gpt-4o-mini"}`,
     [lastAnswer?.chat_model],
@@ -662,13 +703,13 @@ export const HandbookQA = ({ chatHistory, onChatHistoryChange, selectedEmployeeI
   const latestRagCompletedKey = useMemo(() => latestCompletedTurnKey(ragTurns), [ragTurns]);
 
   useEffect(() => {
-    if (!naivePaneRef.current || !latestNaiveCompletedKey) return;
-    naivePaneRef.current.scrollTo({ top: naivePaneRef.current.scrollHeight, behavior: "smooth" });
+    if (!latestNaiveCompletedKey) return;
+    scrollPaneToBottom(naivePaneRef);
   }, [latestNaiveCompletedKey]);
 
   useEffect(() => {
-    if (!ragPaneRef.current || !latestRagCompletedKey) return;
-    ragPaneRef.current.scrollTo({ top: ragPaneRef.current.scrollHeight, behavior: "smooth" });
+    if (!latestRagCompletedKey) return;
+    scrollPaneToBottom(ragPaneRef);
   }, [latestRagCompletedKey]);
 
   return (
@@ -678,7 +719,6 @@ export const HandbookQA = ({ chatHistory, onChatHistoryChange, selectedEmployeeI
           <section className="flex min-h-0 flex-col rounded-xl border border-zinc-200 bg-white/80 p-5 dark:border-zinc-800 dark:bg-zinc-900/40 lg:h-[36rem] lg:max-h-[36rem]">
           <h2 className="mb-2 text-base font-medium text-zinc-900 dark:text-zinc-100">Naive Chatbot Pane</h2>
           <p className="mb-4 text-xs text-zinc-500 dark:text-zinc-500">Standard LLM without retrieval.</p>
-          <p className="mb-3 min-h-4 text-xs text-sky-600 dark:text-sky-400">{isSending ? "Generating..." : ""}</p>
           <div ref={naivePaneRef} className="min-h-0 flex-1 space-y-4 overflow-y-auto pr-1">
             {naiveTurns.length === 0 ? (
               <p className="text-sm text-zinc-500 dark:text-zinc-500">No messages yet.</p>
@@ -708,18 +748,19 @@ export const HandbookQA = ({ chatHistory, onChatHistoryChange, selectedEmployeeI
                 </article>
               ))
             )}
+            {isSending ? (
+              <article className="rounded-lg border border-sky-200 bg-sky-50/80 p-3 shadow-sm shadow-sky-200/40 dark:border-sky-900/60 dark:bg-sky-950/20 dark:shadow-sky-950/30">
+                <p className="text-sm text-sky-700 dark:text-sky-300">Generating...</p>
+              </article>
+            ) : null}
           </div>
           </section>
 
           <section className="flex min-h-0 flex-col rounded-xl border border-zinc-200 bg-white/80 p-5 dark:border-zinc-800 dark:bg-zinc-900/40 lg:h-[36rem] lg:max-h-[36rem]">
             <div className="mb-2 flex items-center gap-2">
               <h2 className="text-base font-medium text-zinc-900 dark:text-zinc-100">RAG Chatbot Pane</h2>
-              <span className={["inline-flex rounded-full border px-2 py-0.5 text-[11px] font-medium", cachePill.cls].join(" ")}>
-                {cachePill.text}
-              </span>
             </div>
           <p className="mb-4 text-xs text-zinc-500 dark:text-zinc-500">Grounded LLM with handbook retrieval.</p>
-          <p className="mb-3 min-h-4 text-xs text-sky-600 dark:text-sky-400">{isSending ? "Retrieving..." : ""}</p>
           <div ref={ragPaneRef} className="min-h-0 flex-1 space-y-4 overflow-y-auto pr-1">
             {ragTurns.length === 0 ? (
               <p className="text-sm text-zinc-500 dark:text-zinc-500">No messages yet.</p>
@@ -757,9 +798,29 @@ export const HandbookQA = ({ chatHistory, onChatHistoryChange, selectedEmployeeI
                       ⚠️ No policy source found
                     </p>
                   ) : null}
+                  {turn.agentAction?.type === "HARASSMENT_REPORT" ? (
+                    <button
+                      type="button"
+                      onClick={() =>
+                        setReportModalPayload({
+                          ...turn.agentAction.payload,
+                          employee_id: turn.employeeId ?? turn.agentAction.payload.employee_id,
+                          employee_name: turn.employeeName ?? turn.agentAction.payload.employee_name,
+                        })
+                      }
+                      className="mt-3 rounded-lg border border-sky-300 bg-sky-50 px-3 py-1.5 text-xs font-medium text-sky-700 hover:bg-sky-100 dark:border-sky-700 dark:bg-sky-950/40 dark:text-sky-200 dark:hover:bg-sky-900/50"
+                    >
+                      Prepare HR Report
+                    </button>
+                  ) : null}
                 </article>
               ))
             )}
+            {isSending ? (
+              <article className="rounded-lg border border-sky-200 bg-sky-50/80 p-3 shadow-sm shadow-sky-200/40 dark:border-sky-900/60 dark:bg-sky-950/20 dark:shadow-sky-950/30">
+                <p className="text-sm text-sky-700 dark:text-sky-300">Retrieving...</p>
+              </article>
+            ) : null}
           </div>
           </section>
         </div>
@@ -917,6 +978,7 @@ export const HandbookQA = ({ chatHistory, onChatHistoryChange, selectedEmployeeI
       </section>
 
       <CachePanel fallbackCount={(chatHistory ?? []).filter((item) => item.role === "user").length} />
+      <HarassmentReportModal payload={reportModalPayload} onClose={() => setReportModalPayload(null)} />
     </div>
   );
 };

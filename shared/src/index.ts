@@ -54,6 +54,16 @@ export const askResponseSchema = z.object({
   retrieval_attempts: z.array(retrievalAttemptSchema).optional(),
   isEscalated: z.boolean(),
   escalation_reason: z.string().nullable().optional(),
+  agent_action: z
+    .object({
+      type: z.literal("HARASSMENT_REPORT"),
+      payload: z.object({
+        employee_id: z.string().optional(),
+        employee_name: z.string().optional(),
+        message: z.string(),
+      }),
+    })
+    .optional(),
   pipeline_steps: z.array(pipelineStepSchema),
   use_rag: z.boolean(),
   /** OpenAI chat model id from rag-api (`OPENAI_CHAT_MODEL`). */
