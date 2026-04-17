@@ -184,6 +184,46 @@
       "query": "i want to do accommodation requests",
       "category": "Sensitive",
       "created_at": "2026-04-17T08:59:22.982083+00:00"
+    },
+    {
+      "query": "How many PTO days do I have?",
+      "category": "Personal",
+      "created_at": "2026-04-17T09:03:18.761672+00:00"
+    },
+    {
+      "query": "i want to do accommodation requests",
+      "category": "Out of Scope",
+      "created_at": "2026-04-17T09:03:28.689556+00:00"
+    },
+    {
+      "query": "i want to do accommodation requests",
+      "category": "Out of Scope",
+      "created_at": "2026-04-17T09:03:31.119075+00:00"
+    },
+    {
+      "query": "How many PTO days do I have?",
+      "category": "Personal",
+      "created_at": "2026-04-17T09:47:50.664815+00:00"
+    },
+    {
+      "query": "How many PTO days do I have?",
+      "category": "Personal",
+      "created_at": "2026-04-17T09:58:08.955183+00:00"
+    },
+    {
+      "query": "How many PTO days do I have?",
+      "category": "Personal",
+      "created_at": "2026-04-17T10:07:43.555547+00:00"
+    },
+    {
+      "query": "How many PTO days do I have?",
+      "category": "Personal",
+      "created_at": "2026-04-17T10:35:46.122481+00:00"
+    },
+    {
+      "query": "How many PTO days do I have?",
+      "category": "Personal",
+      "created_at": "2026-04-17T10:37:32.209965+00:00"
     }
   ],
   "answers": [
@@ -2069,6 +2109,202 @@
         "recovery_applied": false
       },
       "created_at": "2026-04-17T08:59:04.416616+00:00"
+    },
+    {
+      "key": "v9::i want to do accommodation requests::route=POLICY::emp=E001::rag=0",
+      "question_norm": "i want to do accommodation requests",
+      "employee_id": "E001",
+      "use_rag": false,
+      "kb_signature": "d5385aebf7e754b077ca0d00e5b28473fdcdf496a72638fdee42b839c9cbf468",
+      "response": {
+        "answer": "I couldn't find the specific policy text in the handbook.",
+        "citations": [
+          {
+            "text": "### Hardware Requests\nStandard laptop upgrades occur every **3 years**. \n* **Broken Hardware:** If your device is damaged, submit a ticket via the 'Jira Service Desk' immediately.\n* **Peripherals:** Keyboards, mice, and monitors can be requested through the IT portal with manager approval.",
+            "score": 0.5639,
+            "source": "it_guide.md",
+            "section_title": "Hardware Requests"
+          }
+        ],
+        "retrieval_attempts": [
+          {
+            "attempt": 1,
+            "query": "i want to make accommodation requests.",
+            "top_score": 0.564,
+            "verdict": "re-search",
+            "reason": "The retrieved chunks discuss hardware requests and procedures for broken hardware and peripherals, but do not provide any information about accommodation requests. Therefore, they are not relevant to the question.",
+            "citations": [
+              {
+                "text": "### Hardware Requests\nStandard laptop upgrades occur every **3 years**. \n* **Broken Hardware:** If your device is damaged, submit a ticket via the 'Jira Service Desk' immediately.\n* **Peripherals:** Keyboards, mice, and monitors can be requested through the IT portal with manager approval.",
+                "score": 0.564,
+                "source": "it_guide.md",
+                "section_title": "Hardware Requests"
+              }
+            ]
+          },
+          {
+            "attempt": 2,
+            "query": "what is the process for submitting accommodation requests, including eligibility criteria and any exceptions that may apply?",
+            "top_score": 0.5639,
+            "verdict": "re-search",
+            "reason": "The retrieved chunks discuss hardware requests and procedures for broken hardware and peripherals, but do not provide any information about accommodation requests. Therefore, they are not relevant to the question.",
+            "citations": [
+              {
+                "text": "### Hardware Requests\nStandard laptop upgrades occur every **3 years**. \n* **Broken Hardware:** If your device is damaged, submit a ticket via the 'Jira Service Desk' immediately.\n* **Peripherals:** Keyboards, mice, and monitors can be requested through the IT portal with manager approval.",
+                "score": 0.5639,
+                "source": "it_guide.md",
+                "section_title": "Hardware Requests"
+              }
+            ]
+          }
+        ],
+        "isEscalated": false,
+        "escalation_reason": null,
+        "pipeline_steps": [
+          {
+            "id": "guardrail",
+            "label": "Guardrail",
+            "status": "ok",
+            "detail": "No sensitive pattern matched"
+          },
+          {
+            "id": "router",
+            "label": "Semantic Intent Router",
+            "status": "ok",
+            "detail": "INTENT_POLICY (domain=POLICY, conf=1.00) \u2014 intent_policy domain=POLICY conf=1.00; scores={'PROFILE': 0.0, 'POLICY': 1.0, 'IT': 0.0, 'OOS': 0.0}; primary=POLICY; scope in=False ratio=0.50"
+          },
+          {
+            "id": "retrieve",
+            "label": "Chroma retrieval",
+            "status": "skipped",
+            "detail": "Direct LLM mode (no handbook vectors)"
+          },
+          {
+            "id": "mcp_hr",
+            "label": "Employee profile data (MCP-style)",
+            "status": "skipped",
+            "detail": "Disabled in direct LLM mode"
+          },
+          {
+            "id": "llm",
+            "label": "OpenAI chat \u2014 gpt-4o-mini",
+            "status": "ok",
+            "detail": "Embeddings: text-embedding-3-small; structured JSON answer"
+          }
+        ],
+        "use_rag": false,
+        "chat_model": "gpt-4o-mini",
+        "route": "POLICY",
+        "router_version": "v2.1",
+        "context_presence": {
+          "has_policy": true,
+          "has_profile": false,
+          "has_it": false
+        },
+        "clarification_triggered": false,
+        "employee_profile": null,
+        "tool_called": false,
+        "recovery_applied": false
+      },
+      "created_at": "2026-04-17T09:03:28.682053+00:00"
+    },
+    {
+      "key": "v9::i want to do accommodation requests::route=POLICY::emp=E001::rag=1",
+      "question_norm": "i want to do accommodation requests",
+      "employee_id": "E001",
+      "use_rag": true,
+      "kb_signature": "d5385aebf7e754b077ca0d00e5b28473fdcdf496a72638fdee42b839c9cbf468",
+      "response": {
+        "answer": "I couldn't find the specific policy text in the handbook.",
+        "citations": [
+          {
+            "text": "### Hardware Requests\nStandard laptop upgrades occur every **3 years**. \n* **Broken Hardware:** If your device is damaged, submit a ticket via the 'Jira Service Desk' immediately.\n* **Peripherals:** Keyboards, mice, and monitors can be requested through the IT portal with manager approval.",
+            "score": 0.5639,
+            "source": "it_guide.md",
+            "section_title": "Hardware Requests"
+          }
+        ],
+        "retrieval_attempts": [
+          {
+            "attempt": 1,
+            "query": "i want to make accommodation requests.",
+            "top_score": 0.564,
+            "verdict": "re-search",
+            "reason": "The retrieved chunks discuss hardware requests and procedures for broken hardware and peripherals, but do not provide any information about accommodation requests. Therefore, they are not relevant to the question.",
+            "citations": [
+              {
+                "text": "### Hardware Requests\nStandard laptop upgrades occur every **3 years**. \n* **Broken Hardware:** If your device is damaged, submit a ticket via the 'Jira Service Desk' immediately.\n* **Peripherals:** Keyboards, mice, and monitors can be requested through the IT portal with manager approval.",
+                "score": 0.564,
+                "source": "it_guide.md",
+                "section_title": "Hardware Requests"
+              }
+            ]
+          },
+          {
+            "attempt": 2,
+            "query": "what is the process for submitting accommodation requests, including eligibility criteria and any exceptions that may apply?",
+            "top_score": 0.5639,
+            "verdict": "re-search",
+            "reason": "The retrieved chunks discuss hardware requests and procedures for broken hardware and peripherals, but do not provide any information about accommodation requests. Therefore, they are not relevant to the question.",
+            "citations": [
+              {
+                "text": "### Hardware Requests\nStandard laptop upgrades occur every **3 years**. \n* **Broken Hardware:** If your device is damaged, submit a ticket via the 'Jira Service Desk' immediately.\n* **Peripherals:** Keyboards, mice, and monitors can be requested through the IT portal with manager approval.",
+                "score": 0.5639,
+                "source": "it_guide.md",
+                "section_title": "Hardware Requests"
+              }
+            ]
+          }
+        ],
+        "isEscalated": false,
+        "escalation_reason": null,
+        "pipeline_steps": [
+          {
+            "id": "guardrail",
+            "label": "Guardrail",
+            "status": "ok",
+            "detail": "No sensitive pattern matched"
+          },
+          {
+            "id": "router",
+            "label": "Semantic Intent Router",
+            "status": "ok",
+            "detail": "INTENT_POLICY (domain=POLICY, conf=1.00) \u2014 intent_policy domain=POLICY conf=1.00; scores={'PROFILE': 0.0, 'POLICY': 1.0, 'IT': 0.0, 'OOS': 0.0}; primary=POLICY; scope in=False ratio=0.50"
+          },
+          {
+            "id": "retrieve",
+            "label": "Chroma retrieval (embeddings + similarity)",
+            "status": "empty",
+            "detail": "Re-search failed after 2 attempt(s): The retrieved chunks discuss hardware requests and procedures for broken hardware and peripherals, but do not provide any information about accommodation requests. Therefore, they are not relevant to the question."
+          },
+          {
+            "id": "mcp_hr",
+            "label": "Employee tool (MCP-style)",
+            "status": "skipped",
+            "detail": "No employee profile context"
+          },
+          {
+            "id": "llm",
+            "label": "OpenAI chat \u2014 gpt-4o-mini",
+            "status": "ok",
+            "detail": "Embeddings: text-embedding-3-small; structured JSON answer"
+          }
+        ],
+        "use_rag": true,
+        "chat_model": "gpt-4o-mini",
+        "route": "POLICY",
+        "router_version": "v2.1",
+        "context_presence": {
+          "has_policy": true,
+          "has_profile": false,
+          "has_it": false
+        },
+        "clarification_triggered": false,
+        "employee_profile": null,
+        "tool_called": false,
+        "recovery_applied": false
+      },
+      "created_at": "2026-04-17T09:03:30.943787+00:00"
     }
   ]
 }
