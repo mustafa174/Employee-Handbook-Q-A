@@ -27,7 +27,7 @@ FastAPI after invoke:  build_ask_response_from_state -> _enforce_response_contra
 
 1. **`intent_policy.classify_query`** — Token/rule scores for PROFILE / POLICY / IT / OOS; `confidence = primary / sum(scores)`; overrides (loan phrases, IT dominance, PROFILE needs pronoun+alias, …); `needs_clarification` for weak PROFILE.
 2. **`router_node`** — Maps to execution route; loan/PTO safety nets; **does not** let late “force policy” overwrite **personal/mixed**; sets `use_rag` (off for pure personal).
-3. **`semantic_rescue_route`** — Only if route still **`general`**, RAG on, not hard-OOS: embedding vs label passages; threshold via `SEMANTIC_ROUTER_*` env.
+3. **`semantic_rescue_route`** — Only if route still **`general`**, RAG on, not hard-OOS: lazy-loads `sentence-transformers` (`SentenceTransformer`) using `SEMANTIC_ROUTER_MODEL` (default `intfloat/e5-base-v2`), encodes `query:` vs `passage:` labels, computes cosine on normalized vectors, and rescues to `personal` or `policy` when score >= `SEMANTIC_ROUTER_THRESHOLD`. If model load/encode fails, routing continues without rescue.
 
 ## Design trade-offs (short)
 

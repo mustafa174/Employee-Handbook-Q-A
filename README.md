@@ -44,7 +44,7 @@ FastAPI · LangGraph (`rag_graph.py`) · OpenAI · Chroma · React/Vite · Zod (
 
 ## Environment
 
-Single root **`.env`** — see [`.env.example`](.env.example). Main vars: `OPENAI_API_KEY`, `OPENAI_*_MODEL`, `CHROMA_*`, `DEFAULT_HANDBOOK_PATH`, `EMPLOYEES_JSON_PATH`, `ALLOWED_INGEST_ROOT`, `RAG_CORS_ORIGINS`, `RAG_API_URL`, `VITE_API_BASE_URL`, `RAG_API_PORT`, optional `SEMANTIC_ROUTER_*`.
+Single root **`.env`** — see [`.env.example`](.env.example). Main vars: `OPENAI_API_KEY`, `OPENAI_*_MODEL`, `CHROMA_*`, `DEFAULT_HANDBOOK_PATH`, `EMPLOYEES_JSON_PATH`, `ALLOWED_INGEST_ROOT`, `RAG_CORS_ORIGINS`, `RAG_API_URL`, `VITE_API_BASE_URL`, `RAG_API_PORT`, optional `SEMANTIC_ROUTER_*` (`MODEL`, `THRESHOLD`, `LOCAL_ONLY`) for the SentenceTransformer semantic rescue router.
 
 ## Docs
 
