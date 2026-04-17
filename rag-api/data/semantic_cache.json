@@ -3,110 +3,250 @@
     {
       "query": "How many PTO days do I have?",
       "category": "Personal",
-      "created_at": "2026-04-17T07:10:10.972925+00:00"
-    },
-    {
-      "query": "i am being harrased",
-      "category": "Out of Scope",
-      "created_at": "2026-04-17T07:10:19.829797+00:00"
-    },
-    {
-      "query": "i am being harrased",
-      "category": "Out of Scope",
-      "created_at": "2026-04-17T07:10:20.800159+00:00"
+      "created_at": "2026-04-17T08:56:13.743111+00:00"
     },
     {
       "query": "How many PTO days do I have?",
       "category": "Personal",
-      "created_at": "2026-04-17T07:11:13.657234+00:00"
-    },
-    {
-      "query": "How many PTO days do I have?",
-      "category": "Personal",
-      "created_at": "2026-04-17T07:15:47.516606+00:00"
-    },
-    {
-      "query": "How many PTO days do I have?",
-      "category": "Personal",
-      "created_at": "2026-04-17T07:15:51.909760+00:00"
-    },
-    {
-      "query": "How many PTO days do I have?",
-      "category": "Personal",
-      "created_at": "2026-04-17T07:15:55.315399+00:00"
+      "created_at": "2026-04-17T08:56:14.430233+00:00"
     },
     {
       "query": "How far in advance should I request PTO?",
       "category": "Policy",
-      "created_at": "2026-04-17T07:16:03.528724+00:00"
+      "created_at": "2026-04-17T08:56:20.662919+00:00"
     },
     {
       "query": "How far in advance should I request PTO?",
       "category": "Policy",
-      "created_at": "2026-04-17T07:16:04.649216+00:00"
+      "created_at": "2026-04-17T08:56:21.674377+00:00"
     },
     {
-      "query": "sadasd",
-      "category": "Out of Scope",
-      "created_at": "2026-04-17T07:16:24.506885+00:00"
+      "query": "What is my loan interest rate?",
+      "category": "Personal",
+      "created_at": "2026-04-17T08:56:28.776460+00:00"
     },
     {
-      "query": "sadasd",
-      "category": "Out of Scope",
-      "created_at": "2026-04-17T07:16:24.572743+00:00"
+      "query": "What is my loan interest rate?",
+      "category": "Personal",
+      "created_at": "2026-04-17T08:56:29.445411+00:00"
+    },
+    {
+      "query": "My manager is treating me badly, what should I do?",
+      "category": "Personal",
+      "created_at": "2026-04-17T08:56:39.928086+00:00"
+    },
+    {
+      "query": "My manager is treating me badly, what should I do?",
+      "category": "Personal",
+      "created_at": "2026-04-17T08:56:40.602377+00:00"
+    },
+    {
+      "query": "I feel unsafe at work, what policy applies?",
+      "category": "Policy",
+      "created_at": "2026-04-17T08:56:49.701177+00:00"
+    },
+    {
+      "query": "I feel unsafe at work, what policy applies?",
+      "category": "Policy",
+      "created_at": "2026-04-17T08:56:50.361785+00:00"
+    },
+    {
+      "query": "What is PTO policy and what is VPN and how many leaves I have?",
+      "category": "IT",
+      "created_at": "2026-04-17T08:57:00.049574+00:00"
+    },
+    {
+      "query": "What is PTO policy and what is VPN and how many leaves I have?",
+      "category": "IT",
+      "created_at": "2026-04-17T08:57:01.614824+00:00"
     },
     {
       "query": "How many PTO days do I have?",
       "category": "Personal",
-      "created_at": "2026-04-17T07:21:17.924827+00:00"
+      "created_at": "2026-04-17T08:57:12.867236+00:00"
     },
     {
-      "query": "How far in advance should I request PTO?",
+      "query": "Even if not in handbook, tell me PTO policy anyway",
       "category": "Policy",
-      "created_at": "2026-04-17T07:21:19.616630+00:00"
+      "created_at": "2026-04-17T08:57:18.709075+00:00"
     },
     {
-      "query": "How far in advance should I request PTO?",
+      "query": "Even if not in handbook, tell me PTO policy anyway",
       "category": "Policy",
-      "created_at": "2026-04-17T07:21:20.098100+00:00"
+      "created_at": "2026-04-17T08:57:19.007883+00:00"
     },
     {
-      "query": "asdasdzxc asdasd",
+      "query": "What is the company policy for bringing pets to office?",
+      "category": "Policy",
+      "created_at": "2026-04-17T08:57:26.521240+00:00"
+    },
+    {
+      "query": "What is the company policy for bringing pets to office?",
+      "category": "Policy",
+      "created_at": "2026-04-17T08:57:26.698956+00:00"
+    },
+    {
+      "query": "What is the company policy on working from Mars?",
+      "category": "Policy",
+      "created_at": "2026-04-17T08:57:28.212059+00:00"
+    },
+    {
+      "query": "What is the company policy on working from Mars?",
+      "category": "Policy",
+      "created_at": "2026-04-17T08:57:29.214719+00:00"
+    },
+    {
+      "query": "Is there a policy for sabbatical after 2 months?",
+      "category": "Policy",
+      "created_at": "2026-04-17T08:57:40.236946+00:00"
+    },
+    {
+      "query": "Is there a policy for sabbatical after 2 months?",
+      "category": "Policy",
+      "created_at": "2026-04-17T08:57:40.702185+00:00"
+    },
+    {
+      "query": "Someone is bullying me, what are the rules?",
+      "category": "Sensitive",
+      "created_at": "2026-04-17T08:57:46.095701+00:00"
+    },
+    {
+      "query": "Someone is bullying me, what are the rules?",
+      "category": "Sensitive",
+      "created_at": "2026-04-17T08:57:47.065642+00:00"
+    },
+    {
+      "query": "How many PTO days do I have?",
+      "category": "Personal",
+      "created_at": "2026-04-17T08:57:59.036172+00:00"
+    },
+    {
+      "query": "Am I eligible for leave and what is the policy?",
+      "category": "Personal",
+      "created_at": "2026-04-17T08:58:08.046602+00:00"
+    },
+    {
+      "query": "Am I eligible for leave and what is the policy?",
+      "category": "Personal",
+      "created_at": "2026-04-17T08:58:08.217878+00:00"
+    },
+    {
+      "query": "How many vacation days do I get?",
+      "category": "Policy",
+      "created_at": "2026-04-17T08:58:35.515546+00:00"
+    },
+    {
+      "query": "How many vacation days do I get?",
+      "category": "Policy",
+      "created_at": "2026-04-17T08:58:36.005180+00:00"
+    },
+    {
+      "query": "How many PTO days do I have?",
+      "category": "Personal",
+      "created_at": "2026-04-17T08:58:44.924255+00:00"
+    },
+    {
+      "query": "What's the parental leave policy?",
+      "category": "Policy",
+      "created_at": "2026-04-17T08:58:53.633306+00:00"
+    },
+    {
+      "query": "What's the parental leave policy?",
+      "category": "Policy",
+      "created_at": "2026-04-17T08:58:54.064375+00:00"
+    },
+    {
+      "query": "i want terminiation",
       "category": "Out of Scope",
-      "created_at": "2026-04-17T07:21:25.222400+00:00"
+      "created_at": "2026-04-17T08:59:04.231976+00:00"
     },
     {
-      "query": "asdasdzxc asdasd",
+      "query": "i want terminiation",
       "category": "Out of Scope",
-      "created_at": "2026-04-17T07:21:26.818636+00:00"
+      "created_at": "2026-04-17T08:59:04.424550+00:00"
     },
     {
-      "query": "How far in advance should I request PTO?",
-      "category": "Policy",
-      "created_at": "2026-04-17T07:24:51.277422+00:00"
+      "query": "i am being harrassed",
+      "category": "Sensitive",
+      "created_at": "2026-04-17T08:59:11.023713+00:00"
     },
     {
-      "query": "How far in advance should I request PTO?",
-      "category": "Policy",
-      "created_at": "2026-04-17T07:24:51.757072+00:00"
+      "query": "i am being harrassed",
+      "category": "Sensitive",
+      "created_at": "2026-04-17T08:59:12.002889+00:00"
     },
     {
-      "query": "How many PTO days do I have?",
-      "category": "Personal",
-      "created_at": "2026-04-17T07:34:09.623719+00:00"
+      "query": "i want to do accommodation requests",
+      "category": "Sensitive",
+      "created_at": "2026-04-17T08:59:22.004134+00:00"
     },
     {
-      "query": "How many PTO days do I have?",
-      "category": "Personal",
-      "created_at": "2026-04-17T07:44:21.403835+00:00"
-    },
-    {
-      "query": "How many PTO days do I have?",
-      "category": "Personal",
-      "created_at": "2026-04-17T08:26:05.490052+00:00"
+      "query": "i want to do accommodation requests",
+      "category": "Sensitive",
+      "created_at": "2026-04-17T08:59:22.982083+00:00"
     }
   ],
   "answers": [
+    {
+      "key": "v9::how far in advance should i request pto?::route=POLICY::emp=E001::rag=0",
+      "question_norm": "how far in advance should i request pto?",
+      "employee_id": "E001",
+      "use_rag": false,
+      "kb_signature": "d5385aebf7e754b077ca0d00e5b28473fdcdf496a72638fdee42b839c9cbf468",
+      "response": {
+        "answer": "I cannot see internal policy documents, including the employee handbook. Please contact your HR department for specific guidelines on how far in advance you should request PTO.",
+        "citations": [],
+        "retrieval_attempts": [],
+        "isEscalated": false,
+        "escalation_reason": null,
+        "pipeline_steps": [
+          {
+            "id": "guardrail",
+            "label": "Guardrail",
+            "status": "ok",
+            "detail": "No sensitive pattern matched"
+          },
+          {
+            "id": "router",
+            "label": "Semantic Intent Router",
+            "status": "ok",
+            "detail": "INTENT_POLICY (domain=POLICY, conf=0.90) \u2014 process-policy guardrail: contact/procedure query forced to policy"
+          },
+          {
+            "id": "retrieve",
+            "label": "Chroma retrieval",
+            "status": "skipped",
+            "detail": "Direct LLM mode (no handbook vectors)"
+          },
+          {
+            "id": "mcp_hr",
+            "label": "Employee profile data (MCP-style)",
+            "status": "skipped",
+            "detail": "Disabled in direct LLM mode"
+          },
+          {
+            "id": "llm",
+            "label": "OpenAI chat \u2014 gpt-4o-mini",
+            "status": "ok",
+            "detail": "Embeddings: text-embedding-3-small; structured JSON answer"
+          }
+        ],
+        "use_rag": false,
+        "chat_model": "gpt-4o-mini",
+        "route": "GENERAL",
+        "router_version": "v2.1",
+        "context_presence": {
+          "has_policy": false,
+          "has_profile": false,
+          "has_it": false
+        },
+        "clarification_triggered": false,
+        "employee_profile": null,
+        "tool_called": false,
+        "recovery_applied": false
+      },
+      "created_at": "2026-04-17T08:56:20.660266+00:00"
+    },
     {
       "key": "v9::how far in advance should i request pto?::route=POLICY::emp=E001::rag=1",
       "question_norm": "how far in advance should i request pto?",
@@ -188,16 +328,16 @@
         "tool_called": false,
         "recovery_applied": false
       },
-      "created_at": "2026-04-17T07:16:03.062350+00:00"
+      "created_at": "2026-04-17T08:56:21.206214+00:00"
     },
     {
-      "key": "v9::how far in advance should i request pto?::route=POLICY::emp=E001::rag=0",
-      "question_norm": "how far in advance should i request pto?",
+      "key": "v9::what is my loan interest rate?::route=PROFILE::emp=E001::rag=0",
+      "question_norm": "what is my loan interest rate?",
       "employee_id": "E001",
       "use_rag": false,
       "kb_signature": "d5385aebf7e754b077ca0d00e5b28473fdcdf496a72638fdee42b839c9cbf468",
       "response": {
-        "answer": "I cannot see internal policy documents, including the employee handbook. Please contact your HR department for specific guidelines on how far in advance you should request PTO.",
+        "answer": "I see you're asking about your profile. Are you looking for your leave balance or your loan eligibility?",
         "citations": [],
         "retrieval_attempts": [],
         "isEscalated": false,
@@ -213,7 +353,7 @@
             "id": "router",
             "label": "Semantic Intent Router",
             "status": "ok",
-            "detail": "INTENT_POLICY (domain=POLICY, conf=0.90) \u2014 process-policy guardrail: contact/procedure query forced to policy"
+            "detail": "INTENT_PERSONAL (domain=PROFILE, conf=1.00) \u2014 intent_policy domain=PROFILE conf=1.00; scores={'PROFILE': 3.0, 'POLICY': 0.0, 'IT': 0.0, 'OOS': 0.0}; primary=PROFILE"
           },
           {
             "id": "retrieve",
@@ -236,10 +376,403 @@
         ],
         "use_rag": false,
         "chat_model": "gpt-4o-mini",
-        "route": "GENERAL",
+        "route": "PROFILE",
         "router_version": "v2.1",
         "context_presence": {
           "has_policy": false,
+          "has_profile": true,
+          "has_it": false
+        },
+        "clarification_triggered": false,
+        "employee_profile": {
+          "employee_id": "E001",
+          "name": "Alex Chen",
+          "department": "Engineering",
+          "title": "Senior Software Engineer",
+          "employment_type": "full-time",
+          "location": "Lahore",
+          "manager": "Nadia Rahman",
+          "pto_days_remaining": "14",
+          "sick_days_remaining": "6",
+          "services_loan_available": "True",
+          "services_loan_limit_pkr": "250000",
+          "services_loan_eligible_after_months": "12",
+          "language_pref": "en",
+          "pto_days": "14",
+          "sick_days": "6"
+        },
+        "tool_called": true,
+        "recovery_applied": false
+      },
+      "created_at": "2026-04-17T08:56:28.771107+00:00"
+    },
+    {
+      "key": "v9::what is my loan interest rate?::route=PROFILE::emp=E001::rag=1",
+      "question_norm": "what is my loan interest rate?",
+      "employee_id": "E001",
+      "use_rag": true,
+      "kb_signature": "d5385aebf7e754b077ca0d00e5b28473fdcdf496a72638fdee42b839c9cbf468",
+      "response": {
+        "answer": "I see you're asking about your profile. Are you looking for your leave balance or your loan eligibility?",
+        "citations": [],
+        "retrieval_attempts": [],
+        "isEscalated": false,
+        "escalation_reason": null,
+        "pipeline_steps": [
+          {
+            "id": "guardrail",
+            "label": "Guardrail",
+            "status": "ok",
+            "detail": "No sensitive pattern matched"
+          },
+          {
+            "id": "router",
+            "label": "Semantic Intent Router",
+            "status": "ok",
+            "detail": "INTENT_PERSONAL (domain=PROFILE, conf=1.00) \u2014 intent_policy domain=PROFILE conf=1.00; scores={'PROFILE': 3.0, 'POLICY': 0.0, 'IT': 0.0, 'OOS': 0.0}; primary=PROFILE"
+          },
+          {
+            "id": "retrieve",
+            "label": "Chroma retrieval (embeddings + similarity)",
+            "status": "skipped",
+            "detail": "Route is personal data lookup"
+          },
+          {
+            "id": "mcp_hr",
+            "label": "Employee tool (MCP-style)",
+            "status": "ok",
+            "detail": "\u2705 Active: Securely retrieved data for E001"
+          },
+          {
+            "id": "llm",
+            "label": "OpenAI chat \u2014 gpt-4o-mini",
+            "status": "ok",
+            "detail": "Embeddings: text-embedding-3-small; structured JSON answer"
+          }
+        ],
+        "use_rag": true,
+        "chat_model": "gpt-4o-mini",
+        "route": "PROFILE",
+        "router_version": "v2.1",
+        "context_presence": {
+          "has_policy": false,
+          "has_profile": true,
+          "has_it": false
+        },
+        "clarification_triggered": false,
+        "employee_profile": {
+          "employee_id": "E001",
+          "name": "Alex Chen",
+          "department": "Engineering",
+          "title": "Senior Software Engineer",
+          "employment_type": "full-time",
+          "location": "Lahore",
+          "manager": "Nadia Rahman",
+          "pto_days_remaining": "14",
+          "sick_days_remaining": "6",
+          "services_loan_available": "True",
+          "services_loan_limit_pkr": "250000",
+          "services_loan_eligible_after_months": "12",
+          "language_pref": "en",
+          "pto_days": "14",
+          "sick_days": "6"
+        },
+        "tool_called": true,
+        "recovery_applied": false
+      },
+      "created_at": "2026-04-17T08:56:29.148446+00:00"
+    },
+    {
+      "key": "v9::what is pto policy and what is vpn and how many leaves i have?::route=POLICY::emp=E001::rag=0",
+      "question_norm": "what is pto policy and what is vpn and how many leaves i have?",
+      "employee_id": "E001",
+      "use_rag": false,
+      "kb_signature": "d5385aebf7e754b077ca0d00e5b28473fdcdf496a72638fdee42b839c9cbf468",
+      "response": {
+        "answer": "Your balance:\nYou currently have 14 PTO days and 6 sick days remaining.\n\nPolicy:\n## Time off and leave\n### Paid time off (PTO)\nFull-time employees accrue **PTO** according to the accrual schedule published on the internal HR portal. (Section: Paid time off (PTO))\n# IT Support & Infrastructure Guide\n### VPN Access\nTo access internal servers from a remote location, you must use the **GlobalProtect VPN**. (Section: VPN Access)\n\nSource: Employee Handbook > Section: Paid time off (PTO); IT Support & Infrastructure Guide > Section: VPN Access",
+        "citations": [
+          {
+            "text": "# IT Support & Infrastructure Guide\n\n### VPN Access\nTo access internal servers from a remote location, you must use the **GlobalProtect VPN**. \n* **Gateway:** `vpn.company.com` \n* **Credentials:** Use your standard SSO (Single Sign-On) credentials.\n* **MFA:** Multi-factor authentication via the Duo app is required for every login.",
+            "score": 1.0244,
+            "source": "it_guide.md",
+            "section_title": "VPN Access"
+          },
+          {
+            "text": "## Time off and leave\n\n### Paid time off (PTO)\n\nFull-time employees accrue **PTO** according to the accrual schedule published on the internal HR portal. PTO requests must be submitted **at least 10 business days** in advance unless your manager approves an exception for emergencies.\n\nUnused PTO may roll over up to **5 days** into the next calendar year unless local policy states otherwise.",
+            "score": 0.9751,
+            "source": "handbook.md",
+            "section_title": "Paid time off (PTO)"
+          }
+        ],
+        "retrieval_attempts": [
+          {
+            "attempt": 1,
+            "query": "what is paid time off policy",
+            "top_score": 1.0244,
+            "verdict": "answerable",
+            "reason": "Fast-path accept: top score 1.02 with 2 citation(s)",
+            "citations": [
+              {
+                "text": "# IT Support & Infrastructure Guide\n\n### VPN Access\nTo access internal servers from a remote location, you must use the **GlobalProtect VPN**. \n* **Gateway:** `vpn.company.com` \n* **Credentials:** Use your standard SSO (Single Sign-On) credentials.\n* **MFA:** Multi-factor authentication via the Duo app is required for every login.",
+                "score": 1.0244,
+                "source": "it_guide.md",
+                "section_title": "VPN Access"
+              },
+              {
+                "text": "## Time off and leave\n\n### Paid time off (PTO)\n\nFull-time employees accrue **PTO** according to the accrual schedule published on the internal HR portal. PTO requests must be submitted **at least 10 business days** in advance unless your manager approves an exception for emergencies.\n\nUnused PTO may roll over up to **5 days** into the next calendar year unless local policy states otherwise.",
+                "score": 0.9751,
+                "source": "handbook.md",
+                "section_title": "Paid time off (PTO)"
+              }
+            ]
+          }
+        ],
+        "isEscalated": false,
+        "escalation_reason": null,
+        "pipeline_steps": [
+          {
+            "id": "guardrail",
+            "label": "Guardrail",
+            "status": "ok",
+            "detail": "No sensitive pattern matched"
+          },
+          {
+            "id": "router",
+            "label": "Semantic Intent Router",
+            "status": "ok",
+            "detail": "INTENT_PERSONAL (domain=PROFILE, conf=0.90) \u2014 explicit mixed query: personal balance plus policy request"
+          },
+          {
+            "id": "retrieve",
+            "label": "Chroma retrieval",
+            "status": "skipped",
+            "detail": "Direct LLM mode (no handbook vectors)"
+          },
+          {
+            "id": "mcp_hr",
+            "label": "Employee profile data (MCP-style)",
+            "status": "skipped",
+            "detail": "Disabled in direct LLM mode"
+          },
+          {
+            "id": "llm",
+            "label": "OpenAI chat \u2014 gpt-4o-mini",
+            "status": "ok",
+            "detail": "Embeddings: text-embedding-3-small; structured JSON answer"
+          }
+        ],
+        "use_rag": false,
+        "chat_model": "gpt-4o-mini",
+        "route": "MIXED",
+        "router_version": "v2.1",
+        "context_presence": {
+          "has_policy": true,
+          "has_profile": true,
+          "has_it": false
+        },
+        "clarification_triggered": false,
+        "employee_profile": {
+          "employee_id": "E001",
+          "name": "Alex Chen",
+          "department": "Engineering",
+          "title": "Senior Software Engineer",
+          "employment_type": "full-time",
+          "location": "Lahore",
+          "manager": "Nadia Rahman",
+          "pto_days_remaining": "14",
+          "sick_days_remaining": "6",
+          "services_loan_available": "True",
+          "services_loan_limit_pkr": "250000",
+          "services_loan_eligible_after_months": "12",
+          "language_pref": "en"
+        },
+        "tool_called": false,
+        "recovery_applied": false
+      },
+      "created_at": "2026-04-17T08:57:00.044690+00:00"
+    },
+    {
+      "key": "v9::what is pto policy and what is vpn and how many leaves i have?::route=POLICY::emp=E001::rag=1",
+      "question_norm": "what is pto policy and what is vpn and how many leaves i have?",
+      "employee_id": "E001",
+      "use_rag": true,
+      "kb_signature": "d5385aebf7e754b077ca0d00e5b28473fdcdf496a72638fdee42b839c9cbf468",
+      "response": {
+        "answer": "Your balance:\nYou currently have 14 PTO days and 6 sick days remaining.\n\nPolicy:\n## Time off and leave\n### Paid time off (PTO)\nFull-time employees accrue **PTO** according to the accrual schedule published on the internal HR portal. (Section: Paid time off (PTO))\n# IT Support & Infrastructure Guide\n### VPN Access\nTo access internal servers from a remote location, you must use the **GlobalProtect VPN**. (Section: VPN Access)\n\nSource: Employee Handbook > Section: Paid time off (PTO); IT Support & Infrastructure Guide > Section: VPN Access",
+        "citations": [
+          {
+            "text": "# IT Support & Infrastructure Guide\n\n### VPN Access\nTo access internal servers from a remote location, you must use the **GlobalProtect VPN**. \n* **Gateway:** `vpn.company.com` \n* **Credentials:** Use your standard SSO (Single Sign-On) credentials.\n* **MFA:** Multi-factor authentication via the Duo app is required for every login.",
+            "score": 1.0244,
+            "source": "it_guide.md",
+            "section_title": "VPN Access"
+          },
+          {
+            "text": "## Time off and leave\n\n### Paid time off (PTO)\n\nFull-time employees accrue **PTO** according to the accrual schedule published on the internal HR portal. PTO requests must be submitted **at least 10 business days** in advance unless your manager approves an exception for emergencies.\n\nUnused PTO may roll over up to **5 days** into the next calendar year unless local policy states otherwise.",
+            "score": 0.9751,
+            "source": "handbook.md",
+            "section_title": "Paid time off (PTO)"
+          }
+        ],
+        "retrieval_attempts": [
+          {
+            "attempt": 1,
+            "query": "what is paid time off policy",
+            "top_score": 1.0244,
+            "verdict": "answerable",
+            "reason": "Fast-path accept: top score 1.02 with 2 citation(s)",
+            "citations": [
+              {
+                "text": "# IT Support & Infrastructure Guide\n\n### VPN Access\nTo access internal servers from a remote location, you must use the **GlobalProtect VPN**. \n* **Gateway:** `vpn.company.com` \n* **Credentials:** Use your standard SSO (Single Sign-On) credentials.\n* **MFA:** Multi-factor authentication via the Duo app is required for every login.",
+                "score": 1.0244,
+                "source": "it_guide.md",
+                "section_title": "VPN Access"
+              },
+              {
+                "text": "## Time off and leave\n\n### Paid time off (PTO)\n\nFull-time employees accrue **PTO** according to the accrual schedule published on the internal HR portal. PTO requests must be submitted **at least 10 business days** in advance unless your manager approves an exception for emergencies.\n\nUnused PTO may roll over up to **5 days** into the next calendar year unless local policy states otherwise.",
+                "score": 0.9751,
+                "source": "handbook.md",
+                "section_title": "Paid time off (PTO)"
+              }
+            ]
+          }
+        ],
+        "isEscalated": false,
+        "escalation_reason": null,
+        "pipeline_steps": [
+          {
+            "id": "guardrail",
+            "label": "Guardrail",
+            "status": "ok",
+            "detail": "No sensitive pattern matched"
+          },
+          {
+            "id": "router",
+            "label": "Semantic Intent Router",
+            "status": "ok",
+            "detail": "INTENT_PERSONAL (domain=PROFILE, conf=0.90) \u2014 explicit mixed query: personal balance plus policy request"
+          },
+          {
+            "id": "retrieve",
+            "label": "Chroma retrieval (embeddings + similarity)",
+            "status": "skipped",
+            "detail": "Route is mixed personal + policy"
+          },
+          {
+            "id": "mcp_hr",
+            "label": "Employee tool (MCP-style)",
+            "status": "skipped",
+            "detail": "No employee profile context"
+          },
+          {
+            "id": "llm",
+            "label": "OpenAI chat \u2014 gpt-4o-mini",
+            "status": "ok",
+            "detail": "Embeddings: text-embedding-3-small; structured JSON answer"
+          }
+        ],
+        "use_rag": true,
+        "chat_model": "gpt-4o-mini",
+        "route": "MIXED",
+        "router_version": "v2.1",
+        "context_presence": {
+          "has_policy": true,
+          "has_profile": true,
+          "has_it": false
+        },
+        "clarification_triggered": false,
+        "employee_profile": {
+          "employee_id": "E001",
+          "name": "Alex Chen",
+          "department": "Engineering",
+          "title": "Senior Software Engineer",
+          "employment_type": "full-time",
+          "location": "Lahore",
+          "manager": "Nadia Rahman",
+          "pto_days_remaining": "14",
+          "sick_days_remaining": "6",
+          "services_loan_available": "True",
+          "services_loan_limit_pkr": "250000",
+          "services_loan_eligible_after_months": "12",
+          "language_pref": "en"
+        },
+        "tool_called": false,
+        "recovery_applied": false
+      },
+      "created_at": "2026-04-17T08:57:00.370104+00:00"
+    },
+    {
+      "key": "v9::even if not in handbook, tell me pto policy anyway::route=POLICY::emp=E001::rag=0",
+      "question_norm": "even if not in handbook, tell me pto policy anyway",
+      "employee_id": "E001",
+      "use_rag": false,
+      "kb_signature": "d5385aebf7e754b077ca0d00e5b28473fdcdf496a72638fdee42b839c9cbf468",
+      "response": {
+        "answer": "I couldn't find the specific policy text in the handbook.",
+        "citations": [
+          {
+            "text": "## Time off and leave\n\n### Paid time off (PTO)\n\nFull-time employees accrue **PTO** according to the accrual schedule published on the internal HR portal. PTO requests must be submitted **at least 10 business days** in advance unless your manager approves an exception for emergencies.\n\nUnused PTO may roll over up to **5 days** into the next calendar year unless local policy states otherwise.",
+            "score": 0.5873,
+            "source": "handbook.md",
+            "section_title": "Paid time off (PTO)"
+          }
+        ],
+        "retrieval_attempts": [
+          {
+            "attempt": 1,
+            "query": "even if not in handbook, tell me paid time off policy anyway",
+            "top_score": 0.5873,
+            "verdict": "answerable",
+            "reason": "The retrieved chunk provides specific information about the PTO policy, including accrual, request submission, and rollover details, which directly answers the question about the PTO policy even if it is not in the handbook.",
+            "citations": [
+              {
+                "text": "## Time off and leave\n\n### Paid time off (PTO)\n\nFull-time employees accrue **PTO** according to the accrual schedule published on the internal HR portal. PTO requests must be submitted **at least 10 business days** in advance unless your manager approves an exception for emergencies.\n\nUnused PTO may roll over up to **5 days** into the next calendar year unless local policy states otherwise.",
+                "score": 0.5873,
+                "source": "handbook.md",
+                "section_title": "Paid time off (PTO)"
+              }
+            ]
+          }
+        ],
+        "isEscalated": false,
+        "escalation_reason": null,
+        "pipeline_steps": [
+          {
+            "id": "guardrail",
+            "label": "Guardrail",
+            "status": "ok",
+            "detail": "No sensitive pattern matched"
+          },
+          {
+            "id": "router",
+            "label": "Semantic Intent Router",
+            "status": "ok",
+            "detail": "INTENT_POLICY (domain=POLICY, conf=0.75) \u2014 intent_policy domain=POLICY conf=0.75; scores={'PROFILE': 1.0, 'POLICY': 3.0, 'IT': 0.0, 'OOS': 0.0}; primary=POLICY; scope in=True ratio=0.40"
+          },
+          {
+            "id": "retrieve",
+            "label": "Chroma retrieval",
+            "status": "skipped",
+            "detail": "Direct LLM mode (no handbook vectors)"
+          },
+          {
+            "id": "mcp_hr",
+            "label": "Employee profile data (MCP-style)",
+            "status": "skipped",
+            "detail": "Disabled in direct LLM mode"
+          },
+          {
+            "id": "llm",
+            "label": "OpenAI chat \u2014 gpt-4o-mini",
+            "status": "ok",
+            "detail": "Embeddings: text-embedding-3-small; structured JSON answer"
+          }
+        ],
+        "use_rag": false,
+        "chat_model": "gpt-4o-mini",
+        "route": "POLICY",
+        "router_version": "v2.1",
+        "context_presence": {
+          "has_policy": true,
           "has_profile": false,
           "has_it": false
         },
@@ -248,11 +781,290 @@
         "tool_called": false,
         "recovery_applied": false
       },
-      "created_at": "2026-04-17T07:16:04.646679+00:00"
+      "created_at": "2026-04-17T08:57:18.704250+00:00"
     },
     {
-      "key": "v9::sadasd::route=POLICY::emp=E001::rag=1",
-      "question_norm": "sadasd",
+      "key": "v9::even if not in handbook, tell me pto policy anyway::route=POLICY::emp=E001::rag=1",
+      "question_norm": "even if not in handbook, tell me pto policy anyway",
+      "employee_id": "E001",
+      "use_rag": true,
+      "kb_signature": "d5385aebf7e754b077ca0d00e5b28473fdcdf496a72638fdee42b839c9cbf468",
+      "response": {
+        "answer": "I couldn't find the specific policy text in the handbook.",
+        "citations": [
+          {
+            "text": "## Time off and leave\n\n### Paid time off (PTO)\n\nFull-time employees accrue **PTO** according to the accrual schedule published on the internal HR portal. PTO requests must be submitted **at least 10 business days** in advance unless your manager approves an exception for emergencies.\n\nUnused PTO may roll over up to **5 days** into the next calendar year unless local policy states otherwise.",
+            "score": 0.5873,
+            "source": "handbook.md",
+            "section_title": "Paid time off (PTO)"
+          }
+        ],
+        "retrieval_attempts": [
+          {
+            "attempt": 1,
+            "query": "even if not in handbook, tell me paid time off policy anyway",
+            "top_score": 0.5873,
+            "verdict": "answerable",
+            "reason": "The retrieved chunk provides relevant information about the PTO policy, including accrual, request submission, and rollover details.",
+            "citations": [
+              {
+                "text": "## Time off and leave\n\n### Paid time off (PTO)\n\nFull-time employees accrue **PTO** according to the accrual schedule published on the internal HR portal. PTO requests must be submitted **at least 10 business days** in advance unless your manager approves an exception for emergencies.\n\nUnused PTO may roll over up to **5 days** into the next calendar year unless local policy states otherwise.",
+                "score": 0.5873,
+                "source": "handbook.md",
+                "section_title": "Paid time off (PTO)"
+              }
+            ]
+          }
+        ],
+        "isEscalated": false,
+        "escalation_reason": null,
+        "pipeline_steps": [
+          {
+            "id": "guardrail",
+            "label": "Guardrail",
+            "status": "ok",
+            "detail": "No sensitive pattern matched"
+          },
+          {
+            "id": "router",
+            "label": "Semantic Intent Router",
+            "status": "ok",
+            "detail": "INTENT_POLICY (domain=POLICY, conf=0.75) \u2014 intent_policy domain=POLICY conf=0.75; scores={'PROFILE': 1.0, 'POLICY': 3.0, 'IT': 0.0, 'OOS': 0.0}; primary=POLICY; scope in=True ratio=0.40"
+          },
+          {
+            "id": "retrieve",
+            "label": "Chroma retrieval (embeddings + similarity)",
+            "status": "ok",
+            "detail": "1 chunk(s), 1 retrieval attempt(s)"
+          },
+          {
+            "id": "mcp_hr",
+            "label": "Employee tool (MCP-style)",
+            "status": "skipped",
+            "detail": "No employee profile context"
+          },
+          {
+            "id": "llm",
+            "label": "OpenAI chat \u2014 gpt-4o-mini",
+            "status": "ok",
+            "detail": "Embeddings: text-embedding-3-small; structured JSON answer"
+          }
+        ],
+        "use_rag": true,
+        "chat_model": "gpt-4o-mini",
+        "route": "POLICY",
+        "router_version": "v2.1",
+        "context_presence": {
+          "has_policy": true,
+          "has_profile": false,
+          "has_it": false
+        },
+        "clarification_triggered": false,
+        "employee_profile": null,
+        "tool_called": false,
+        "recovery_applied": false
+      },
+      "created_at": "2026-04-17T08:57:18.833274+00:00"
+    },
+    {
+      "key": "v9::what is the company policy for bringing pets to office?::route=POLICY::emp=E001::rag=1",
+      "question_norm": "what is the company policy for bringing pets to office?",
+      "employee_id": "E001",
+      "use_rag": true,
+      "kb_signature": "d5385aebf7e754b077ca0d00e5b28473fdcdf496a72638fdee42b839c9cbf468",
+      "response": {
+        "answer": "I couldn't find the specific policy text in the handbook.",
+        "citations": [
+          {
+            "text": "## Time off and leave\n\n### Paid time off (PTO)\n\nFull-time employees accrue **PTO** according to the accrual schedule published on the internal HR portal. PTO requests must be submitted **at least 10 business days** in advance unless your manager approves an exception for emergencies.\n\nUnused PTO may roll over up to **5 days** into the next calendar year unless local policy states otherwise.",
+            "score": 0.4234,
+            "source": "handbook.md",
+            "section_title": "Paid time off (PTO)"
+          }
+        ],
+        "retrieval_attempts": [
+          {
+            "attempt": 1,
+            "query": "what is the company policy for bringing pets to office?",
+            "top_score": 0.4234,
+            "verdict": "re-search",
+            "reason": "The retrieved chunk discusses paid time off (PTO) and does not provide any information about the company policy for bringing pets to the office.",
+            "citations": [
+              {
+                "text": "## Time off and leave\n\n### Paid time off (PTO)\n\nFull-time employees accrue **PTO** according to the accrual schedule published on the internal HR portal. PTO requests must be submitted **at least 10 business days** in advance unless your manager approves an exception for emergencies.\n\nUnused PTO may roll over up to **5 days** into the next calendar year unless local policy states otherwise.",
+                "score": 0.4234,
+                "source": "handbook.md",
+                "section_title": "Paid time off (PTO)"
+              }
+            ]
+          },
+          {
+            "attempt": 2,
+            "query": "what are the guidelines and procedures regarding the presence of pets in the workplace, including eligibility criteria, any exceptions to the policy, and the process for requesting permission to bring a pet to the office?",
+            "top_score": 0.4234,
+            "verdict": "re-search",
+            "reason": "The retrieved chunk discusses paid time off (PTO) and does not provide any information about the company policy for bringing pets to the office.",
+            "citations": [
+              {
+                "text": "## Time off and leave\n\n### Paid time off (PTO)\n\nFull-time employees accrue **PTO** according to the accrual schedule published on the internal HR portal. PTO requests must be submitted **at least 10 business days** in advance unless your manager approves an exception for emergencies.\n\nUnused PTO may roll over up to **5 days** into the next calendar year unless local policy states otherwise.",
+                "score": 0.4234,
+                "source": "handbook.md",
+                "section_title": "Paid time off (PTO)"
+              }
+            ]
+          }
+        ],
+        "isEscalated": false,
+        "escalation_reason": null,
+        "pipeline_steps": [
+          {
+            "id": "guardrail",
+            "label": "Guardrail",
+            "status": "ok",
+            "detail": "No sensitive pattern matched"
+          },
+          {
+            "id": "router",
+            "label": "Semantic Intent Router",
+            "status": "ok",
+            "detail": "INTENT_POLICY (domain=POLICY, conf=1.00) \u2014 intent_policy domain=POLICY conf=1.00; scores={'PROFILE': 0.0, 'POLICY': 3.0, 'IT': 0.0, 'OOS': 0.0}; primary=POLICY; scope in=False ratio=0.00"
+          },
+          {
+            "id": "retrieve",
+            "label": "Chroma retrieval (embeddings + similarity)",
+            "status": "empty",
+            "detail": "Re-search failed after 2 attempt(s): The retrieved chunk discusses paid time off (PTO) and does not provide any information about the company policy for bringing pets to the office."
+          },
+          {
+            "id": "mcp_hr",
+            "label": "Employee tool (MCP-style)",
+            "status": "skipped",
+            "detail": "No employee profile context"
+          },
+          {
+            "id": "llm",
+            "label": "OpenAI chat \u2014 gpt-4o-mini",
+            "status": "ok",
+            "detail": "Embeddings: text-embedding-3-small; structured JSON answer"
+          }
+        ],
+        "use_rag": true,
+        "chat_model": "gpt-4o-mini",
+        "route": "POLICY",
+        "router_version": "v2.1",
+        "context_presence": {
+          "has_policy": true,
+          "has_profile": false,
+          "has_it": false
+        },
+        "clarification_triggered": false,
+        "employee_profile": null,
+        "tool_called": false,
+        "recovery_applied": false
+      },
+      "created_at": "2026-04-17T08:57:26.347531+00:00"
+    },
+    {
+      "key": "v9::what is the company policy for bringing pets to office?::route=POLICY::emp=E001::rag=0",
+      "question_norm": "what is the company policy for bringing pets to office?",
+      "employee_id": "E001",
+      "use_rag": false,
+      "kb_signature": "d5385aebf7e754b077ca0d00e5b28473fdcdf496a72638fdee42b839c9cbf468",
+      "response": {
+        "answer": "I couldn't find the specific policy text in the handbook.",
+        "citations": [
+          {
+            "text": "## Time off and leave\n\n### Paid time off (PTO)\n\nFull-time employees accrue **PTO** according to the accrual schedule published on the internal HR portal. PTO requests must be submitted **at least 10 business days** in advance unless your manager approves an exception for emergencies.\n\nUnused PTO may roll over up to **5 days** into the next calendar year unless local policy states otherwise.",
+            "score": 0.4234,
+            "source": "handbook.md",
+            "section_title": "Paid time off (PTO)"
+          }
+        ],
+        "retrieval_attempts": [
+          {
+            "attempt": 1,
+            "query": "what is the company policy for bringing pets to office?",
+            "top_score": 0.4234,
+            "verdict": "re-search",
+            "reason": "The retrieved chunk discusses paid time off (PTO) and does not provide any information about the company policy for bringing pets to the office.",
+            "citations": [
+              {
+                "text": "## Time off and leave\n\n### Paid time off (PTO)\n\nFull-time employees accrue **PTO** according to the accrual schedule published on the internal HR portal. PTO requests must be submitted **at least 10 business days** in advance unless your manager approves an exception for emergencies.\n\nUnused PTO may roll over up to **5 days** into the next calendar year unless local policy states otherwise.",
+                "score": 0.4234,
+                "source": "handbook.md",
+                "section_title": "Paid time off (PTO)"
+              }
+            ]
+          },
+          {
+            "attempt": 2,
+            "query": "what are the guidelines and procedures regarding the presence of pets in the workplace, including eligibility criteria, any exceptions to the policy, and the process for requesting permission to bring a pet to the office?",
+            "top_score": 0.4234,
+            "verdict": "re-search",
+            "reason": "The retrieved chunk discusses paid time off (PTO) and does not provide any information about the company policy for bringing pets to the office.",
+            "citations": [
+              {
+                "text": "## Time off and leave\n\n### Paid time off (PTO)\n\nFull-time employees accrue **PTO** according to the accrual schedule published on the internal HR portal. PTO requests must be submitted **at least 10 business days** in advance unless your manager approves an exception for emergencies.\n\nUnused PTO may roll over up to **5 days** into the next calendar year unless local policy states otherwise.",
+                "score": 0.4234,
+                "source": "handbook.md",
+                "section_title": "Paid time off (PTO)"
+              }
+            ]
+          }
+        ],
+        "isEscalated": false,
+        "escalation_reason": null,
+        "pipeline_steps": [
+          {
+            "id": "guardrail",
+            "label": "Guardrail",
+            "status": "ok",
+            "detail": "No sensitive pattern matched"
+          },
+          {
+            "id": "router",
+            "label": "Semantic Intent Router",
+            "status": "ok",
+            "detail": "INTENT_POLICY (domain=POLICY, conf=1.00) \u2014 intent_policy domain=POLICY conf=1.00; scores={'PROFILE': 0.0, 'POLICY': 3.0, 'IT': 0.0, 'OOS': 0.0}; primary=POLICY; scope in=False ratio=0.00"
+          },
+          {
+            "id": "retrieve",
+            "label": "Chroma retrieval",
+            "status": "skipped",
+            "detail": "Direct LLM mode (no handbook vectors)"
+          },
+          {
+            "id": "mcp_hr",
+            "label": "Employee profile data (MCP-style)",
+            "status": "skipped",
+            "detail": "Disabled in direct LLM mode"
+          },
+          {
+            "id": "llm",
+            "label": "OpenAI chat \u2014 gpt-4o-mini",
+            "status": "ok",
+            "detail": "Embeddings: text-embedding-3-small; structured JSON answer"
+          }
+        ],
+        "use_rag": false,
+        "chat_model": "gpt-4o-mini",
+        "route": "POLICY",
+        "router_version": "v2.1",
+        "context_presence": {
+          "has_policy": true,
+          "has_profile": false,
+          "has_it": false
+        },
+        "clarification_triggered": false,
+        "employee_profile": null,
+        "tool_called": false,
+        "recovery_applied": false
+      },
+      "created_at": "2026-04-17T08:57:26.695091+00:00"
+    },
+    {
+      "key": "v9::what is the company policy on working from mars?::route=OOS::emp=E001::rag=1",
+      "question_norm": "what is the company policy on working from mars?",
       "employee_id": "E001",
       "use_rag": true,
       "kb_signature": "d5385aebf7e754b077ca0d00e5b28473fdcdf496a72638fdee42b839c9cbf468",
@@ -273,7 +1085,7 @@
             "id": "router",
             "label": "Semantic Intent Router",
             "status": "ok",
-            "detail": "INTENT_OUT_OF_DOMAIN (domain=OOS, conf=0.00) \u2014 intent_policy domain=OOS conf=0.00; scores={'PROFILE': 0.0, 'POLICY': 0.0, 'IT': 0.0, 'OOS': 0.0}; primary=POLICY; scope in=False ratio=0.00"
+            "detail": "INTENT_OUT_OF_DOMAIN (domain=OOS, conf=0.46) \u2014 intent_policy domain=OOS conf=0.46; scores={'PROFILE': 0.0, 'POLICY': 3.0, 'IT': 0.0, 'OOS': 2.5}; primary=OOS; scope in=False ratio=0.00"
           },
           {
             "id": "retrieve",
@@ -308,16 +1120,16 @@
         "tool_called": false,
         "recovery_applied": false
       },
-      "created_at": "2026-04-17T07:16:24.386088+00:00"
+      "created_at": "2026-04-17T08:57:28.026531+00:00"
     },
     {
-      "key": "v9::sadasd::route=POLICY::emp=E001::rag=0",
-      "question_norm": "sadasd",
+      "key": "v9::what is the company policy on working from mars?::route=OOS::emp=E001::rag=0",
+      "question_norm": "what is the company policy on working from mars?",
       "employee_id": "E001",
       "use_rag": false,
       "kb_signature": "d5385aebf7e754b077ca0d00e5b28473fdcdf496a72638fdee42b839c9cbf468",
       "response": {
-        "answer": "I'm sorry, but I cannot access internal company policies or handbooks. For specific questions regarding company policies, please contact your HR department.",
+        "answer": "I cannot see internal policy documents, including any specific company policies regarding working from Mars. Please contact your HR department for accurate information.",
         "citations": [],
         "retrieval_attempts": [],
         "isEscalated": false,
@@ -333,7 +1145,7 @@
             "id": "router",
             "label": "Semantic Intent Router",
             "status": "ok",
-            "detail": "INTENT_OUT_OF_DOMAIN (domain=OOS, conf=0.00) \u2014 intent_policy domain=OOS conf=0.00; scores={'PROFILE': 0.0, 'POLICY': 0.0, 'IT': 0.0, 'OOS': 0.0}; primary=POLICY; scope in=False ratio=0.00"
+            "detail": "INTENT_OUT_OF_DOMAIN (domain=OOS, conf=0.46) \u2014 intent_policy domain=OOS conf=0.46; scores={'PROFILE': 0.0, 'POLICY': 3.0, 'IT': 0.0, 'OOS': 2.5}; primary=OOS; scope in=False ratio=0.00"
           },
           {
             "id": "retrieve",
@@ -368,18 +1180,56 @@
         "tool_called": false,
         "recovery_applied": false
       },
-      "created_at": "2026-04-17T07:16:24.502330+00:00"
+      "created_at": "2026-04-17T08:57:29.211165+00:00"
     },
     {
-      "key": "v9::asdasdzxc asdasd::route=POLICY::emp=E001::rag=1",
-      "question_norm": "asdasdzxc asdasd",
+      "key": "v9::is there a policy for sabbatical after 2 months?::route=POLICY::emp=E001::rag=0",
+      "question_norm": "is there a policy for sabbatical after 2 months?",
       "employee_id": "E001",
-      "use_rag": true,
+      "use_rag": false,
       "kb_signature": "d5385aebf7e754b077ca0d00e5b28473fdcdf496a72638fdee42b839c9cbf468",
       "response": {
-        "answer": "I can only help with HR, IT, and company policy questions.",
-        "citations": [],
-        "retrieval_attempts": [],
+        "answer": "I couldn't find the specific policy text in the handbook.",
+        "citations": [
+          {
+            "text": "### Sick leave\n\nSick leave is for illness or medical appointments. Notify your manager **as soon as practicable** on the day you cannot work. For absences longer than **3 consecutive workdays**, HR may request a fitness-for-duty or medical certification consistent with applicable law.",
+            "score": 0.4548,
+            "source": "handbook.md",
+            "section_title": "Sick leave"
+          }
+        ],
+        "retrieval_attempts": [
+          {
+            "attempt": 1,
+            "query": "is there a policy for sabbatical after 2 months?",
+            "top_score": 0.4548,
+            "verdict": "re-search",
+            "reason": "The retrieved chunk discusses sick leave policies and does not provide any information regarding sabbatical policies, making it irrelevant to the question.",
+            "citations": [
+              {
+                "text": "### Sick leave\n\nSick leave is for illness or medical appointments. Notify your manager **as soon as practicable** on the day you cannot work. For absences longer than **3 consecutive workdays**, HR may request a fitness-for-duty or medical certification consistent with applicable law.",
+                "score": 0.4548,
+                "source": "handbook.md",
+                "section_title": "Sick leave"
+              }
+            ]
+          },
+          {
+            "attempt": 2,
+            "query": "what is the policy regarding eligibility for a sabbatical leave after completing two months of employment, including any specific processes, exceptions, and requirements that need to be met?",
+            "top_score": 0.4548,
+            "verdict": "re-search",
+            "reason": "The retrieved chunk discusses sick leave policies and does not provide any information regarding sabbatical policies, making it irrelevant to the question.",
+            "citations": [
+              {
+                "text": "### Sick leave\n\nSick leave is for illness or medical appointments. Notify your manager **as soon as practicable** on the day you cannot work. For absences longer than **3 consecutive workdays**, HR may request a fitness-for-duty or medical certification consistent with applicable law.",
+                "score": 0.4548,
+                "source": "handbook.md",
+                "section_title": "Sick leave"
+              }
+            ]
+          }
+        ],
         "isEscalated": false,
         "escalation_reason": null,
         "pipeline_steps": [
@@ -393,13 +1243,111 @@
             "id": "router",
             "label": "Semantic Intent Router",
             "status": "ok",
-            "detail": "INTENT_OUT_OF_DOMAIN (domain=OOS, conf=0.00) \u2014 intent_policy domain=OOS conf=0.00; scores={'PROFILE': 0.0, 'POLICY': 0.0, 'IT': 0.0, 'OOS': 0.0}; primary=POLICY; scope in=False ratio=0.00"
+            "detail": "INTENT_POLICY (domain=POLICY, conf=1.00) \u2014 intent_policy domain=POLICY conf=1.00; scores={'PROFILE': 0.0, 'POLICY': 3.0, 'IT': 0.0, 'OOS': 0.0}; primary=POLICY; scope in=False ratio=0.00"
+          },
+          {
+            "id": "retrieve",
+            "label": "Chroma retrieval",
+            "status": "skipped",
+            "detail": "Direct LLM mode (no handbook vectors)"
+          },
+          {
+            "id": "mcp_hr",
+            "label": "Employee profile data (MCP-style)",
+            "status": "skipped",
+            "detail": "Disabled in direct LLM mode"
+          },
+          {
+            "id": "llm",
+            "label": "OpenAI chat \u2014 gpt-4o-mini",
+            "status": "ok",
+            "detail": "Embeddings: text-embedding-3-small; structured JSON answer"
+          }
+        ],
+        "use_rag": false,
+        "chat_model": "gpt-4o-mini",
+        "route": "POLICY",
+        "router_version": "v2.1",
+        "context_presence": {
+          "has_policy": true,
+          "has_profile": false,
+          "has_it": false
+        },
+        "clarification_triggered": false,
+        "employee_profile": null,
+        "tool_called": false,
+        "recovery_applied": false
+      },
+      "created_at": "2026-04-17T08:57:40.233424+00:00"
+    },
+    {
+      "key": "v9::is there a policy for sabbatical after 2 months?::route=POLICY::emp=E001::rag=1",
+      "question_norm": "is there a policy for sabbatical after 2 months?",
+      "employee_id": "E001",
+      "use_rag": true,
+      "kb_signature": "d5385aebf7e754b077ca0d00e5b28473fdcdf496a72638fdee42b839c9cbf468",
+      "response": {
+        "answer": "I couldn't find the specific policy text in the handbook.",
+        "citations": [
+          {
+            "text": "### Sick leave\n\nSick leave is for illness or medical appointments. Notify your manager **as soon as practicable** on the day you cannot work. For absences longer than **3 consecutive workdays**, HR may request a fitness-for-duty or medical certification consistent with applicable law.",
+            "score": 0.4548,
+            "source": "handbook.md",
+            "section_title": "Sick leave"
+          }
+        ],
+        "retrieval_attempts": [
+          {
+            "attempt": 1,
+            "query": "is there a policy for sabbatical after 2 months?",
+            "top_score": 0.4548,
+            "verdict": "re-search",
+            "reason": "The retrieved chunk discusses sick leave policies and does not provide any information regarding sabbatical policies, making it irrelevant to the question.",
+            "citations": [
+              {
+                "text": "### Sick leave\n\nSick leave is for illness or medical appointments. Notify your manager **as soon as practicable** on the day you cannot work. For absences longer than **3 consecutive workdays**, HR may request a fitness-for-duty or medical certification consistent with applicable law.",
+                "score": 0.4548,
+                "source": "handbook.md",
+                "section_title": "Sick leave"
+              }
+            ]
+          },
+          {
+            "attempt": 2,
+            "query": "what is the policy regarding sabbatical leave eligibility after two months of employment, including any specific requirements, exceptions, and the application process?",
+            "top_score": 0.4548,
+            "verdict": "re-search",
+            "reason": "The retrieved chunk discusses sick leave policies and does not provide any information regarding sabbatical policies, making it irrelevant to the question.",
+            "citations": [
+              {
+                "text": "### Sick leave\n\nSick leave is for illness or medical appointments. Notify your manager **as soon as practicable** on the day you cannot work. For absences longer than **3 consecutive workdays**, HR may request a fitness-for-duty or medical certification consistent with applicable law.",
+                "score": 0.4548,
+                "source": "handbook.md",
+                "section_title": "Sick leave"
+              }
+            ]
+          }
+        ],
+        "isEscalated": false,
+        "escalation_reason": null,
+        "pipeline_steps": [
+          {
+            "id": "guardrail",
+            "label": "Guardrail",
+            "status": "ok",
+            "detail": "No sensitive pattern matched"
+          },
+          {
+            "id": "router",
+            "label": "Semantic Intent Router",
+            "status": "ok",
+            "detail": "INTENT_POLICY (domain=POLICY, conf=1.00) \u2014 intent_policy domain=POLICY conf=1.00; scores={'PROFILE': 0.0, 'POLICY': 3.0, 'IT': 0.0, 'OOS': 0.0}; primary=POLICY; scope in=False ratio=0.00"
           },
           {
             "id": "retrieve",
             "label": "Chroma retrieval (embeddings + similarity)",
-            "status": "skipped",
-            "detail": "Route is general conversation"
+            "status": "empty",
+            "detail": "Re-search failed after 2 attempt(s): The retrieved chunk discusses sick leave policies and does not provide any information regarding sabbatical policies, making it irrelevant to the question."
           },
           {
             "id": "mcp_hr",
@@ -416,10 +1364,10 @@
         ],
         "use_rag": true,
         "chat_model": "gpt-4o-mini",
-        "route": "GENERAL",
+        "route": "POLICY",
         "router_version": "v2.1",
         "context_presence": {
-          "has_policy": false,
+          "has_policy": true,
           "has_profile": false,
           "has_it": false
         },
@@ -428,16 +1376,648 @@
         "tool_called": false,
         "recovery_applied": false
       },
-      "created_at": "2026-04-17T07:21:25.034497+00:00"
+      "created_at": "2026-04-17T08:57:40.529437+00:00"
     },
     {
-      "key": "v9::asdasdzxc asdasd::route=POLICY::emp=E001::rag=0",
-      "question_norm": "asdasdzxc asdasd",
+      "key": "v9::am i eligible for leave and what is the policy?::route=POLICY::emp=E001::rag=1",
+      "question_norm": "am i eligible for leave and what is the policy?",
+      "employee_id": "E001",
+      "use_rag": true,
+      "kb_signature": "d5385aebf7e754b077ca0d00e5b28473fdcdf496a72638fdee42b839c9cbf468",
+      "response": {
+        "answer": "I couldn't find this information in the employee handbook. Please contact HR.",
+        "citations": [],
+        "retrieval_attempts": [
+          {
+            "attempt": 1,
+            "query": "am i eligible for leave",
+            "top_score": 0.6916,
+            "verdict": "re-search",
+            "reason": "The retrieved chunk only discusses sick leave but does not provide information on overall eligibility for leave or the complete leave policy. More context is needed to answer the question fully.",
+            "citations": [
+              {
+                "text": "### Sick leave\n\nSick leave is for illness or medical appointments. Notify your manager **as soon as practicable** on the day you cannot work. For absences longer than **3 consecutive workdays**, HR may request a fitness-for-duty or medical certification consistent with applicable law.",
+                "score": 0.6916,
+                "source": "handbook.md",
+                "section_title": "Sick leave"
+              }
+            ]
+          },
+          {
+            "attempt": 2,
+            "query": "what are the eligibility criteria for taking leave and what is the comprehensive leave policy including types of leave, application process, and any exceptions?",
+            "top_score": 0.6915,
+            "verdict": "re-search",
+            "reason": "The retrieved chunk only discusses sick leave but does not provide information on overall eligibility for leave or the complete leave policy.",
+            "citations": [
+              {
+                "text": "### Sick leave\n\nSick leave is for illness or medical appointments. Notify your manager **as soon as practicable** on the day you cannot work. For absences longer than **3 consecutive workdays**, HR may request a fitness-for-duty or medical certification consistent with applicable law.",
+                "score": 0.6915,
+                "source": "handbook.md",
+                "section_title": "Sick leave"
+              }
+            ]
+          }
+        ],
+        "isEscalated": false,
+        "escalation_reason": null,
+        "pipeline_steps": [
+          {
+            "id": "guardrail",
+            "label": "Guardrail",
+            "status": "ok",
+            "detail": "No sensitive pattern matched"
+          },
+          {
+            "id": "router",
+            "label": "Semantic Intent Router",
+            "status": "ok",
+            "detail": "INTENT_PERSONAL (domain=PROFILE, conf=0.90) \u2014 explicit mixed query: personal balance plus policy request"
+          },
+          {
+            "id": "retrieve",
+            "label": "Chroma retrieval (embeddings + similarity)",
+            "status": "skipped",
+            "detail": "Route is mixed personal + policy"
+          },
+          {
+            "id": "mcp_hr",
+            "label": "Employee tool (MCP-style)",
+            "status": "skipped",
+            "detail": "No employee profile context"
+          },
+          {
+            "id": "llm",
+            "label": "OpenAI chat \u2014 gpt-4o-mini",
+            "status": "ok",
+            "detail": "Embeddings: text-embedding-3-small; structured JSON answer"
+          }
+        ],
+        "use_rag": true,
+        "chat_model": "gpt-4o-mini",
+        "route": "MIXED",
+        "router_version": "v2.1",
+        "context_presence": {
+          "has_policy": true,
+          "has_profile": true,
+          "has_it": false
+        },
+        "clarification_triggered": false,
+        "employee_profile": {
+          "employee_id": "E001",
+          "name": "Alex Chen",
+          "department": "Engineering",
+          "title": "Senior Software Engineer",
+          "employment_type": "full-time",
+          "location": "Lahore",
+          "manager": "Nadia Rahman",
+          "pto_days_remaining": "14",
+          "sick_days_remaining": "6",
+          "services_loan_available": "True",
+          "services_loan_limit_pkr": "250000",
+          "services_loan_eligible_after_months": "12",
+          "language_pref": "en"
+        },
+        "tool_called": false,
+        "recovery_applied": true
+      },
+      "created_at": "2026-04-17T08:58:07.859280+00:00"
+    },
+    {
+      "key": "v9::am i eligible for leave and what is the policy?::route=POLICY::emp=E001::rag=0",
+      "question_norm": "am i eligible for leave and what is the policy?",
       "employee_id": "E001",
       "use_rag": false,
       "kb_signature": "d5385aebf7e754b077ca0d00e5b28473fdcdf496a72638fdee42b839c9cbf468",
       "response": {
-        "answer": "I'm sorry, but I cannot access internal company policies or handbooks. For specific questions regarding company policies, please contact your HR department.",
+        "answer": "I couldn't find this information in the employee handbook. Please contact HR.",
+        "citations": [],
+        "retrieval_attempts": [
+          {
+            "attempt": 1,
+            "query": "am i eligible for leave",
+            "top_score": 0.6916,
+            "verdict": "re-search",
+            "reason": "The retrieved chunk only discusses sick leave but does not provide information on overall eligibility for leave or the complete leave policy. More context is needed to answer the question fully.",
+            "citations": [
+              {
+                "text": "### Sick leave\n\nSick leave is for illness or medical appointments. Notify your manager **as soon as practicable** on the day you cannot work. For absences longer than **3 consecutive workdays**, HR may request a fitness-for-duty or medical certification consistent with applicable law.",
+                "score": 0.6916,
+                "source": "handbook.md",
+                "section_title": "Sick leave"
+              }
+            ]
+          },
+          {
+            "attempt": 2,
+            "query": "what are the eligibility criteria for taking leave and what is the comprehensive leave policy including types of leave, application process, and any exceptions?",
+            "top_score": 0.6916,
+            "verdict": "re-search",
+            "reason": "The retrieved chunk only discusses sick leave but does not provide information on overall eligibility for leave or the complete leave policy. More context is needed to answer the question fully.",
+            "citations": [
+              {
+                "text": "### Sick leave\n\nSick leave is for illness or medical appointments. Notify your manager **as soon as practicable** on the day you cannot work. For absences longer than **3 consecutive workdays**, HR may request a fitness-for-duty or medical certification consistent with applicable law.",
+                "score": 0.6916,
+                "source": "handbook.md",
+                "section_title": "Sick leave"
+              }
+            ]
+          }
+        ],
+        "isEscalated": false,
+        "escalation_reason": null,
+        "pipeline_steps": [
+          {
+            "id": "guardrail",
+            "label": "Guardrail",
+            "status": "ok",
+            "detail": "No sensitive pattern matched"
+          },
+          {
+            "id": "router",
+            "label": "Semantic Intent Router",
+            "status": "ok",
+            "detail": "INTENT_PERSONAL (domain=PROFILE, conf=0.90) \u2014 explicit mixed query: personal balance plus policy request"
+          },
+          {
+            "id": "retrieve",
+            "label": "Chroma retrieval",
+            "status": "skipped",
+            "detail": "Direct LLM mode (no handbook vectors)"
+          },
+          {
+            "id": "mcp_hr",
+            "label": "Employee profile data (MCP-style)",
+            "status": "skipped",
+            "detail": "Disabled in direct LLM mode"
+          },
+          {
+            "id": "llm",
+            "label": "OpenAI chat \u2014 gpt-4o-mini",
+            "status": "ok",
+            "detail": "Embeddings: text-embedding-3-small; structured JSON answer"
+          }
+        ],
+        "use_rag": false,
+        "chat_model": "gpt-4o-mini",
+        "route": "MIXED",
+        "router_version": "v2.1",
+        "context_presence": {
+          "has_policy": true,
+          "has_profile": true,
+          "has_it": false
+        },
+        "clarification_triggered": false,
+        "employee_profile": {
+          "employee_id": "E001",
+          "name": "Alex Chen",
+          "department": "Engineering",
+          "title": "Senior Software Engineer",
+          "employment_type": "full-time",
+          "location": "Lahore",
+          "manager": "Nadia Rahman",
+          "pto_days_remaining": "14",
+          "sick_days_remaining": "6",
+          "services_loan_available": "True",
+          "services_loan_limit_pkr": "250000",
+          "services_loan_eligible_after_months": "12",
+          "language_pref": "en"
+        },
+        "tool_called": false,
+        "recovery_applied": true
+      },
+      "created_at": "2026-04-17T08:58:08.214669+00:00"
+    },
+    {
+      "key": "v9::how many vacation days do i get?::route=POLICY::emp=E001::rag=0",
+      "question_norm": "how many vacation days do i get?",
+      "employee_id": "E001",
+      "use_rag": false,
+      "kb_signature": "d5385aebf7e754b077ca0d00e5b28473fdcdf496a72638fdee42b839c9cbf468",
+      "response": {
+        "answer": "You currently have 14 PTO days remaining.",
+        "citations": [],
+        "retrieval_attempts": [],
+        "isEscalated": false,
+        "escalation_reason": null,
+        "pipeline_steps": [
+          {
+            "id": "guardrail",
+            "label": "Guardrail",
+            "status": "ok",
+            "detail": "No sensitive pattern matched"
+          },
+          {
+            "id": "router",
+            "label": "Semantic Intent Router",
+            "status": "ok",
+            "detail": "INTENT_POLICY (domain=POLICY, conf=0.50) \u2014 intent_policy domain=POLICY conf=0.50; scores={'PROFILE': 1.0, 'POLICY': 1.0, 'IT': 0.0, 'OOS': 0.0}; primary=POLICY; scope in=True ratio=0.33"
+          },
+          {
+            "id": "retrieve",
+            "label": "Chroma retrieval",
+            "status": "skipped",
+            "detail": "Direct LLM mode (no handbook vectors)"
+          },
+          {
+            "id": "mcp_hr",
+            "label": "Employee profile data (MCP-style)",
+            "status": "skipped",
+            "detail": "Disabled in direct LLM mode"
+          },
+          {
+            "id": "llm",
+            "label": "OpenAI chat \u2014 gpt-4o-mini",
+            "status": "ok",
+            "detail": "Embeddings: text-embedding-3-small; structured JSON answer"
+          }
+        ],
+        "use_rag": false,
+        "chat_model": "gpt-4o-mini",
+        "route": "PROFILE",
+        "router_version": "v2.1",
+        "context_presence": {
+          "has_policy": false,
+          "has_profile": true,
+          "has_it": false
+        },
+        "clarification_triggered": false,
+        "employee_profile": {
+          "employee_id": "E001",
+          "name": "Alex Chen",
+          "department": "Engineering",
+          "title": "Senior Software Engineer",
+          "employment_type": "full-time",
+          "location": "Lahore",
+          "manager": "Nadia Rahman",
+          "pto_days_remaining": "14",
+          "sick_days_remaining": "6",
+          "services_loan_available": "True",
+          "services_loan_limit_pkr": "250000",
+          "services_loan_eligible_after_months": "12",
+          "language_pref": "en",
+          "pto_days": "14",
+          "sick_days": "6"
+        },
+        "tool_called": true,
+        "recovery_applied": false
+      },
+      "created_at": "2026-04-17T08:58:35.509154+00:00"
+    },
+    {
+      "key": "v9::how many vacation days do i get?::route=POLICY::emp=E001::rag=1",
+      "question_norm": "how many vacation days do i get?",
+      "employee_id": "E001",
+      "use_rag": true,
+      "kb_signature": "d5385aebf7e754b077ca0d00e5b28473fdcdf496a72638fdee42b839c9cbf468",
+      "response": {
+        "answer": "You currently have 14 PTO days remaining.",
+        "citations": [],
+        "retrieval_attempts": [],
+        "isEscalated": false,
+        "escalation_reason": null,
+        "pipeline_steps": [
+          {
+            "id": "guardrail",
+            "label": "Guardrail",
+            "status": "ok",
+            "detail": "No sensitive pattern matched"
+          },
+          {
+            "id": "router",
+            "label": "Semantic Intent Router",
+            "status": "ok",
+            "detail": "INTENT_POLICY (domain=POLICY, conf=0.50) \u2014 intent_policy domain=POLICY conf=0.50; scores={'PROFILE': 1.0, 'POLICY': 1.0, 'IT': 0.0, 'OOS': 0.0}; primary=POLICY; scope in=True ratio=0.33"
+          },
+          {
+            "id": "retrieve",
+            "label": "Chroma retrieval (embeddings + similarity)",
+            "status": "skipped",
+            "detail": "Route is personal data lookup"
+          },
+          {
+            "id": "mcp_hr",
+            "label": "Employee tool (MCP-style)",
+            "status": "ok",
+            "detail": "\u2705 Active: Securely retrieved data for E001"
+          },
+          {
+            "id": "llm",
+            "label": "OpenAI chat \u2014 gpt-4o-mini",
+            "status": "ok",
+            "detail": "Embeddings: text-embedding-3-small; structured JSON answer"
+          }
+        ],
+        "use_rag": true,
+        "chat_model": "gpt-4o-mini",
+        "route": "PROFILE",
+        "router_version": "v2.1",
+        "context_presence": {
+          "has_policy": false,
+          "has_profile": true,
+          "has_it": false
+        },
+        "clarification_triggered": false,
+        "employee_profile": {
+          "employee_id": "E001",
+          "name": "Alex Chen",
+          "department": "Engineering",
+          "title": "Senior Software Engineer",
+          "employment_type": "full-time",
+          "location": "Lahore",
+          "manager": "Nadia Rahman",
+          "pto_days_remaining": "14",
+          "sick_days_remaining": "6",
+          "services_loan_available": "True",
+          "services_loan_limit_pkr": "250000",
+          "services_loan_eligible_after_months": "12",
+          "language_pref": "en",
+          "pto_days": "14",
+          "sick_days": "6"
+        },
+        "tool_called": true,
+        "recovery_applied": false
+      },
+      "created_at": "2026-04-17T08:58:35.881327+00:00"
+    },
+    {
+      "key": "v9::what's the parental leave policy?::route=POLICY::emp=E001::rag=0",
+      "question_norm": "what's the parental leave policy?",
+      "employee_id": "E001",
+      "use_rag": false,
+      "kb_signature": "d5385aebf7e754b077ca0d00e5b28473fdcdf496a72638fdee42b839c9cbf468",
+      "response": {
+        "answer": "I couldn't find the specific policy text in the handbook.",
+        "citations": [
+          {
+            "text": "## Time off and leave\n\n### Paid time off (PTO)\n\nFull-time employees accrue **PTO** according to the accrual schedule published on the internal HR portal. PTO requests must be submitted **at least 10 business days** in advance unless your manager approves an exception for emergencies.\n\nUnused PTO may roll over up to **5 days** into the next calendar year unless local policy states otherwise.",
+            "score": 0.673,
+            "source": "handbook.md",
+            "section_title": "Paid time off (PTO)"
+          }
+        ],
+        "retrieval_attempts": [
+          {
+            "attempt": 1,
+            "query": "what's the parental leave policy?",
+            "top_score": 0.673,
+            "verdict": "re-search",
+            "reason": "The retrieved chunk discusses paid time off (PTO) but does not provide any information about the parental leave policy specifically.",
+            "citations": [
+              {
+                "text": "## Time off and leave\n\n### Paid time off (PTO)\n\nFull-time employees accrue **PTO** according to the accrual schedule published on the internal HR portal. PTO requests must be submitted **at least 10 business days** in advance unless your manager approves an exception for emergencies.\n\nUnused PTO may roll over up to **5 days** into the next calendar year unless local policy states otherwise.",
+                "score": 0.673,
+                "source": "handbook.md",
+                "section_title": "Paid time off (PTO)"
+              }
+            ]
+          },
+          {
+            "attempt": 2,
+            "query": "what are the details of the parental leave policy, including eligibility criteria, duration of leave, any exceptions to the policy, and the process for applying for parental leave?",
+            "top_score": 0.673,
+            "verdict": "re-search",
+            "reason": "The retrieved chunk discusses paid time off (PTO) but does not provide any information about the parental leave policy specifically.",
+            "citations": [
+              {
+                "text": "## Time off and leave\n\n### Paid time off (PTO)\n\nFull-time employees accrue **PTO** according to the accrual schedule published on the internal HR portal. PTO requests must be submitted **at least 10 business days** in advance unless your manager approves an exception for emergencies.\n\nUnused PTO may roll over up to **5 days** into the next calendar year unless local policy states otherwise.",
+                "score": 0.673,
+                "source": "handbook.md",
+                "section_title": "Paid time off (PTO)"
+              }
+            ]
+          }
+        ],
+        "isEscalated": false,
+        "escalation_reason": null,
+        "pipeline_steps": [
+          {
+            "id": "guardrail",
+            "label": "Guardrail",
+            "status": "ok",
+            "detail": "No sensitive pattern matched"
+          },
+          {
+            "id": "router",
+            "label": "Semantic Intent Router",
+            "status": "ok",
+            "detail": "INTENT_POLICY (domain=POLICY, conf=1.00) \u2014 intent_policy domain=POLICY conf=1.00; scores={'PROFILE': 0.0, 'POLICY': 2.0, 'IT': 0.0, 'OOS': 0.0}; primary=POLICY; scope in=True ratio=0.50"
+          },
+          {
+            "id": "retrieve",
+            "label": "Chroma retrieval",
+            "status": "skipped",
+            "detail": "Direct LLM mode (no handbook vectors)"
+          },
+          {
+            "id": "mcp_hr",
+            "label": "Employee profile data (MCP-style)",
+            "status": "skipped",
+            "detail": "Disabled in direct LLM mode"
+          },
+          {
+            "id": "llm",
+            "label": "OpenAI chat \u2014 gpt-4o-mini",
+            "status": "ok",
+            "detail": "Embeddings: text-embedding-3-small; structured JSON answer"
+          }
+        ],
+        "use_rag": false,
+        "chat_model": "gpt-4o-mini",
+        "route": "POLICY",
+        "router_version": "v2.1",
+        "context_presence": {
+          "has_policy": true,
+          "has_profile": false,
+          "has_it": false
+        },
+        "clarification_triggered": false,
+        "employee_profile": null,
+        "tool_called": false,
+        "recovery_applied": false
+      },
+      "created_at": "2026-04-17T08:58:53.628832+00:00"
+    },
+    {
+      "key": "v9::what's the parental leave policy?::route=POLICY::emp=E001::rag=1",
+      "question_norm": "what's the parental leave policy?",
+      "employee_id": "E001",
+      "use_rag": true,
+      "kb_signature": "d5385aebf7e754b077ca0d00e5b28473fdcdf496a72638fdee42b839c9cbf468",
+      "response": {
+        "answer": "I couldn't find the specific policy text in the handbook.",
+        "citations": [
+          {
+            "text": "## Time off and leave\n\n### Paid time off (PTO)\n\nFull-time employees accrue **PTO** according to the accrual schedule published on the internal HR portal. PTO requests must be submitted **at least 10 business days** in advance unless your manager approves an exception for emergencies.\n\nUnused PTO may roll over up to **5 days** into the next calendar year unless local policy states otherwise.",
+            "score": 0.673,
+            "source": "handbook.md",
+            "section_title": "Paid time off (PTO)"
+          }
+        ],
+        "retrieval_attempts": [
+          {
+            "attempt": 1,
+            "query": "what's the parental leave policy?",
+            "top_score": 0.673,
+            "verdict": "re-search",
+            "reason": "The retrieved chunk discusses paid time off (PTO) but does not provide specific information about the parental leave policy, which is the focus of the question.",
+            "citations": [
+              {
+                "text": "## Time off and leave\n\n### Paid time off (PTO)\n\nFull-time employees accrue **PTO** according to the accrual schedule published on the internal HR portal. PTO requests must be submitted **at least 10 business days** in advance unless your manager approves an exception for emergencies.\n\nUnused PTO may roll over up to **5 days** into the next calendar year unless local policy states otherwise.",
+                "score": 0.673,
+                "source": "handbook.md",
+                "section_title": "Paid time off (PTO)"
+              }
+            ]
+          },
+          {
+            "attempt": 2,
+            "query": "what are the details of the parental leave policy, including eligibility criteria, duration of leave, any exceptions to the policy, and the application process?",
+            "top_score": 0.673,
+            "verdict": "re-search",
+            "reason": "The retrieved chunk discusses Paid Time Off (PTO) but does not provide any information about the parental leave policy specifically.",
+            "citations": [
+              {
+                "text": "## Time off and leave\n\n### Paid time off (PTO)\n\nFull-time employees accrue **PTO** according to the accrual schedule published on the internal HR portal. PTO requests must be submitted **at least 10 business days** in advance unless your manager approves an exception for emergencies.\n\nUnused PTO may roll over up to **5 days** into the next calendar year unless local policy states otherwise.",
+                "score": 0.673,
+                "source": "handbook.md",
+                "section_title": "Paid time off (PTO)"
+              }
+            ]
+          }
+        ],
+        "isEscalated": false,
+        "escalation_reason": null,
+        "pipeline_steps": [
+          {
+            "id": "guardrail",
+            "label": "Guardrail",
+            "status": "ok",
+            "detail": "No sensitive pattern matched"
+          },
+          {
+            "id": "router",
+            "label": "Semantic Intent Router",
+            "status": "ok",
+            "detail": "INTENT_POLICY (domain=POLICY, conf=1.00) \u2014 intent_policy domain=POLICY conf=1.00; scores={'PROFILE': 0.0, 'POLICY': 2.0, 'IT': 0.0, 'OOS': 0.0}; primary=POLICY; scope in=True ratio=0.50"
+          },
+          {
+            "id": "retrieve",
+            "label": "Chroma retrieval (embeddings + similarity)",
+            "status": "empty",
+            "detail": "Re-search failed after 2 attempt(s): The retrieved chunk discusses Paid Time Off (PTO) but does not provide any information about the parental leave policy specifically."
+          },
+          {
+            "id": "mcp_hr",
+            "label": "Employee tool (MCP-style)",
+            "status": "skipped",
+            "detail": "No employee profile context"
+          },
+          {
+            "id": "llm",
+            "label": "OpenAI chat \u2014 gpt-4o-mini",
+            "status": "ok",
+            "detail": "Embeddings: text-embedding-3-small; structured JSON answer"
+          }
+        ],
+        "use_rag": true,
+        "chat_model": "gpt-4o-mini",
+        "route": "POLICY",
+        "router_version": "v2.1",
+        "context_presence": {
+          "has_policy": true,
+          "has_profile": false,
+          "has_it": false
+        },
+        "clarification_triggered": false,
+        "employee_profile": null,
+        "tool_called": false,
+        "recovery_applied": false
+      },
+      "created_at": "2026-04-17T08:58:53.907899+00:00"
+    },
+    {
+      "key": "v9::i want terminiation::route=POLICY::emp=E001::rag=1",
+      "question_norm": "i want terminiation",
+      "employee_id": "E001",
+      "use_rag": true,
+      "kb_signature": "d5385aebf7e754b077ca0d00e5b28473fdcdf496a72638fdee42b839c9cbf468",
+      "response": {
+        "answer": "I couldn't find your personal data.",
+        "citations": [],
+        "retrieval_attempts": [],
+        "isEscalated": false,
+        "escalation_reason": null,
+        "pipeline_steps": [
+          {
+            "id": "guardrail",
+            "label": "Guardrail",
+            "status": "ok",
+            "detail": "No sensitive pattern matched"
+          },
+          {
+            "id": "router",
+            "label": "Semantic Intent Router",
+            "status": "ok",
+            "detail": "INTENT_PERSONAL (domain=PROFILE, conf=0.77) \u2014 intent_policy domain=OOS conf=0.00; scores={'PROFILE': 0.0, 'POLICY': 0.0, 'IT': 0.0, 'OOS': 0.0}; primary=POLICY; scope in=False ratio=0.00; semantic_rescue route=personal score=0.772 model=intfloat/e5-base-v2"
+          },
+          {
+            "id": "retrieve",
+            "label": "Chroma retrieval (embeddings + similarity)",
+            "status": "skipped",
+            "detail": "Route is personal data lookup"
+          },
+          {
+            "id": "mcp_hr",
+            "label": "Employee tool (MCP-style)",
+            "status": "ok",
+            "detail": "\u2705 Active: Securely retrieved data for E001"
+          },
+          {
+            "id": "llm",
+            "label": "OpenAI chat \u2014 gpt-4o-mini",
+            "status": "ok",
+            "detail": "Embeddings: text-embedding-3-small; structured JSON answer"
+          }
+        ],
+        "use_rag": true,
+        "chat_model": "gpt-4o-mini",
+        "route": "PROFILE",
+        "router_version": "v2.1",
+        "context_presence": {
+          "has_policy": false,
+          "has_profile": true,
+          "has_it": false
+        },
+        "clarification_triggered": false,
+        "employee_profile": {
+          "employee_id": "E001",
+          "name": "Alex Chen",
+          "department": "Engineering",
+          "title": "Senior Software Engineer",
+          "employment_type": "full-time",
+          "location": "Lahore",
+          "manager": "Nadia Rahman",
+          "pto_days_remaining": "14",
+          "sick_days_remaining": "6",
+          "services_loan_available": "True",
+          "services_loan_limit_pkr": "250000",
+          "services_loan_eligible_after_months": "12",
+          "language_pref": "en"
+        },
+        "tool_called": true,
+        "recovery_applied": false
+      },
+      "created_at": "2026-04-17T08:59:04.122195+00:00"
+    },
+    {
+      "key": "v9::i want terminiation::route=POLICY::emp=E001::rag=0",
+      "question_norm": "i want terminiation",
+      "employee_id": "E001",
+      "use_rag": false,
+      "kb_signature": "d5385aebf7e754b077ca0d00e5b28473fdcdf496a72638fdee42b839c9cbf468",
+      "response": {
+        "answer": "I cannot see internal policy or handbook excerpts. Please contact HR for assistance regarding termination procedures.",
         "citations": [],
         "retrieval_attempts": [],
         "isEscalated": false,
@@ -488,7 +2068,7 @@
         "tool_called": false,
         "recovery_applied": false
       },
-      "created_at": "2026-04-17T07:21:26.815706+00:00"
+      "created_at": "2026-04-17T08:59:04.416616+00:00"
     }
   ]
 }

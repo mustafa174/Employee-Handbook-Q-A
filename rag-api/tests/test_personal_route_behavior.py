@@ -157,6 +157,46 @@ def test_run_ask_mixed_leave_and_policy_combines_personal_and_policy() -> None:
     assert "policy:" in answer
 
 
+def test_run_ask_manager_treating_badly_routes_sensitive() -> None:
+    resp = run_ask("My manager is treating me badly, what should I do?", employee_id="E001", use_rag=True)
+    answer = str(resp.get("answer", "")).lower()
+    assert "sensitive matter" in answer
+    assert "your manager is" not in answer
+
+
+def test_run_ask_unlimited_unpaid_leave_stays_policy_even_with_employee_scope() -> None:
+    resp = run_ask("Can I take unlimited unpaid leave?", employee_id="E001", use_rag=True)
+    answer = str(resp.get("answer", "")).lower()
+    assert "couldn't find your personal data" not in answer
+    assert str(resp.get("route", "")).upper() in {"POLICY", "GENERAL"}
+
+
+def test_run_ask_loan_policy_and_amount_routes_mixed() -> None:
+    resp = run_ask("What is the loan policy and how much loan can I get?", employee_id="E001", use_rag=True)
+    assert str(resp.get("route", "")).upper() == "MIXED"
+    answer = str(resp.get("answer", "")).lower()
+    assert "policy" in answer
+    assert ("pkr" in answer) or ("loan" in answer)
+
+
+def test_run_ask_eligibility_and_policy_routes_mixed() -> None:
+    resp = run_ask("Am I eligible for leave and what is the policy?", employee_id="E001", use_rag=True)
+    assert str(resp.get("route", "")).upper() == "MIXED"
+
+
+def test_run_ask_ambiguous_financial_support_asks_clarification() -> None:
+    resp = run_ask("What support does company give me financially?", employee_id="E001", use_rag=True)
+    answer = str(resp.get("answer", "")).lower()
+    assert "can you clarify whether you are asking about company financial support policies" in answer
+
+
+def test_run_ask_accommodation_request_is_not_sensitive() -> None:
+    resp = run_ask("i want to do accommodation requests", employee_id="E001", use_rag=True)
+    answer = str(resp.get("answer", "")).lower()
+    assert "sensitive matter" not in answer
+    assert str(resp.get("route", "")).upper() in {"POLICY", "GENERAL"}
+
+
 def test_node_generate_hardware_query_uses_direct_grounded_instruction() -> None:
     state = {
         "intent": INTENT_POLICY,

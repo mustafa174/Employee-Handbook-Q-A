@@ -62,8 +62,6 @@ SENSITIVE_TOPICS = [
     "termination",
     "firing",
     "discrimination",
-    "accommodation request",
-    "accommodation requests",
     "sexual assault",
     "violence",
     "lawsuit",
@@ -88,10 +86,19 @@ SENSITIVE_SEMANTIC_PATTERNS = (
     r"\blaid\s*off\b",
     r"\bdismissed\b",
     r"\bdiscriminat(?:e|ed|ion|ory)\b",
-    r"\baccommodation(?:s| request| requests)?\b",
-    r"\bdisabilit(?:y|ies)\b",
-    r"\bmedical\s+issue(?:s)?\b",
     r"\bharra?s{1,2}e?d\b",
+    r"\b(?:treat(?:ing)?|treated|mistreat(?:ing|ed)?)\s+me\s+(?:very\s+)?bad(?:ly|le)?\b",
+    r"\b(?:manager|supervisor|boss)[^.!?\n]{0,32}\b(?:mistreat(?:ing|ed)?|treat(?:ing|ed)?\s+me\s+bad(?:ly|le)?|abus(?:e|ing|ed)|bull(?:y|ied|ying)|hostile|unfair)\b",
+    r"\bunfair(?:ly)?\b",
+    r"\bhostile\b",
+)
+HR_REPORT_PATTERNS = (
+    r"\bharra?s{1,2}ment\b",
+    r"\bharra?s{1,2}(?:ed|ing)?\b",
+    r"\bbull(?:y|ied|ying)\b",
+    r"\babus(?:e|ed|ing)\b",
+    r"\bunsafe\b",
+    r"\b(?:treat(?:ing)?|treated|mistreat(?:ing|ed)?)\s+me\s+(?:very\s+)?bad(?:ly|le)?\b",
 )
 CRISIS_PATTERNS = re.compile(
     r"\b(i am dying|i'm dying|suicid(?:e|al)|self harm|kill myself|end my life)\b",
@@ -271,7 +278,7 @@ def detect_sensitive(question: str) -> bool:
 
 def _build_harassment_agent_action(state: RagState) -> dict | None:
     q = str(state.get("question", "") or "")
-    if not re.search(r"\b(harra?s{1,2}ment|harra?s{1,2}(?:ed|ing)?|bull(?:y|ied|ying))\b", q, re.I):
+    if not any(re.search(pattern, q, re.I) for pattern in HR_REPORT_PATTERNS):
         return None
     profile = state.get("employee_profile") or {}
     employee_name = ""
@@ -669,7 +676,7 @@ def _explicit_personal_data_request(question: str) -> bool:
             return False
     return bool(
         re.search(
-            r"\b(i have|do i have|how many .* do i have|remaining|left|balance|quota|qouta|my balance|my\s+(?:pto|leave|sick(?:\s+days?)?)|for me)\b",
+            r"\b(i have|do i have|how many .* do i (?:have|get)|remaining|left|balance|quota|qouta|my balance|my\s+(?:pto|leave|sick(?:\s+days?)?)|for me)\b",
             q,
         )
     )
@@ -679,7 +686,7 @@ def _is_explicit_mixed_query(question: str) -> bool:
     q = question.lower().strip()
     has_explicit_personal_ref = bool(
         re.search(
-            r"\b(i have|do i have|my balance|remaining|left|how many .* do i have|my (?:pto|sick|leave|employee id|id|name))\b",
+            r"\b(i have|do i have|my balance|remaining|left|how many .* do i have|am i eligible(?: for)?|how much .* can i (?:get|take|borrow)|my (?:pto|sick|leave|employee id|id|name|loan))\b",
             q,
         )
     )
@@ -772,6 +779,21 @@ def _needs_mixed_clarification(question: str) -> bool:
     has_weak_personal_hint = bool(re.search(r"\b(my|i|me|left|remaining)\b", q))
     has_policy_hint = bool(re.search(r"\b(policy|rule|carry over|rollover|request|process)\b", q))
     return has_weak_personal_hint and has_policy_hint
+
+
+def _is_ambiguous_financial_support_query(question: str) -> bool:
+    q = (question or "").lower().strip()
+    if not q:
+        return False
+    if not re.search(r"\b(company|financial(?:ly)?|support|benefit|benefits)\b", q):
+        return False
+    # If this is clearly a personal-data request, do not force clarification.
+    if _explicit_personal_data_request(q):
+        return False
+    # If user already asked as a policy/rule/process query, keep policy route.
+    if re.search(r"\b(policy|rule|rules|process|procedure)\b", q):
+        return False
+    return bool(re.search(r"\b(financial|support|benefit|benefits)\b", q))
 
 
 def _strip_unrequested_personal_balance(answer: str, *, allow_personal_summary: bool) -> str:
@@ -1562,6 +1584,20 @@ def router_node(state: RagState) -> RagState:
             "use_rag": False,
             "intent_reason": "leave or PTO balance question requires an employee profile to be selected",
         }
+    if _is_ambiguous_financial_support_query(q_norm):
+        return {
+            **state,
+            "normalized_question": q_norm,
+            "intent": INTENT_GENERAL,
+            "intent_domain": "GENERAL",
+            "intent_confidence": 0.7,
+            "needs_clarification": True,
+            "mixed_clarification_needed": False,
+            "is_mixed_intent": False,
+            "route": "clarify",
+            "use_rag": True,
+            "intent_reason": "ambiguous financial support request needs clarification between company policy and personal eligibility",
+        }
     if "vacation" in str(question).lower() or "days off" in str(question).lower() or "holiday" in str(question).lower():
         # #region agent log
         _agent_debug_log(
@@ -1643,6 +1679,24 @@ def router_node(state: RagState) -> RagState:
             "route": "policy",
             "use_rag": True,
             "intent_reason": "strong PTO policy phrase forced to policy retrieval",
+        }
+    if (
+        bool(re.search(r"\bcan i\b", q_lower))
+        and bool(re.search(r"\b(unpaid|unlimited)\s+leave\b", q_lower))
+        and not _explicit_personal_data_request(q_lower)
+    ):
+        return {
+            **state,
+            "intent": INTENT_POLICY,
+            "normalized_question": q_norm,
+            "intent_domain": "POLICY",
+            "intent_confidence": 0.92,
+            "needs_clarification": False,
+            "mixed_clarification_needed": False,
+            "is_mixed_intent": False,
+            "route": "policy",
+            "use_rag": True,
+            "intent_reason": "unpaid/unlimited leave eligibility phrasing treated as policy query",
         }
     if (
         "loan" in q_lower
@@ -1734,6 +1788,7 @@ def router_node(state: RagState) -> RagState:
         and state.get("employee_id")
         and bool(re.search(r"\b(leave|pto)\b", q_norm))
         and not is_policy_intent
+        and _explicit_personal_data_request(q_norm)
     ):
         execution_route = "personal"
     # Ambiguous "my leave ... how/rules/work" asks usually need mixed context.
@@ -1905,6 +1960,17 @@ def node_clarify(state: RagState) -> RagState:
             "escalation_reason": "Ambiguous mixed request needs HR follow-up.",
         }
     domain = str(state.get("intent_domain", "POLICY"))
+    q_norm = normalize_query(str(state.get("question", "") or ""))
+    if _is_ambiguous_financial_support_query(q_norm):
+        return {
+            **state,
+            "answer": (
+                "Can you clarify whether you are asking about company financial support policies "
+                "(for everyone) or your personal eligibility and limits?"
+            ),
+            "escalate": False,
+            "escalation_reason": None,
+        }
     if domain == "PROFILE":
         answer = (
             "I want to make sure I answer your personal profile question correctly. "
@@ -2890,7 +2956,7 @@ def node_generate(state: RagState) -> RagState:
         if profile and state.get("employee_id") and _is_loan_only_question(q_norm)
         else None
     )
-    if loan_composite:
+    if loan_composite and route != "mixed":
         return {**state, "answer": loan_composite, "messages": [AIMessage(content=loan_composite)]}
     if use_rag and len(effective_sub_questions) >= 2:
         bullets: list[str] = []

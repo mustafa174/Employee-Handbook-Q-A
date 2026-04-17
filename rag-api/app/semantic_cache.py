@@ -163,7 +163,6 @@ def _infer_category(text: str) -> str:
         or re.search(r"\bbully|bullied|bullying\b", q)
         or re.search(r"\babuse|abused|abusing\b", q)
         or re.search(r"\btermination|terminated|fired|dismissed\b", q)
-        or re.search(r"\baccommodation\b", q)
     ):
         return "Sensitive"
     if (

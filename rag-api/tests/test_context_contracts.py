@@ -89,6 +89,8 @@ def test_enforce_response_contract_replaces_policy_leak() -> None:
 
 def test_mixed_detection_requires_explicit_personal_and_policy_operation() -> None:
     assert _is_explicit_mixed_query("How many PTO days do I have and how many can I carry over?")
+    assert _is_explicit_mixed_query("What is the loan policy and how much loan can I get?")
+    assert _is_explicit_mixed_query("Am I eligible for leave and what is the policy?")
     assert not _is_explicit_mixed_query("What is my company policy?")
 
 
@@ -157,5 +159,5 @@ def test_sensitive_questions_bypass_cache() -> None:
     assert _should_bypass_cache("my manager is abusing me")
     assert _should_bypass_cache("i feel unsafe at work")
     assert _should_bypass_cache("i got fired unfairly")
-    assert _should_bypass_cache("i need accommodation for medical issue")
+    assert not _should_bypass_cache("i need accommodation for medical issue")
     assert not _should_bypass_cache("How many PTO days do I have?")
