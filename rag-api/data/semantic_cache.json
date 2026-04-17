@@ -89,6 +89,21 @@
       "query": "How far in advance should I request PTO?",
       "category": "Policy",
       "created_at": "2026-04-17T07:24:51.757072+00:00"
+    },
+    {
+      "query": "How many PTO days do I have?",
+      "category": "Personal",
+      "created_at": "2026-04-17T07:34:09.623719+00:00"
+    },
+    {
+      "query": "How many PTO days do I have?",
+      "category": "Personal",
+      "created_at": "2026-04-17T07:44:21.403835+00:00"
+    },
+    {
+      "query": "How many PTO days do I have?",
+      "category": "Personal",
+      "created_at": "2026-04-17T08:26:05.490052+00:00"
     }
   ],
   "answers": [
