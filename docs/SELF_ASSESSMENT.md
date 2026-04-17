@@ -64,6 +64,6 @@ Rate each category: **Needs improvement** | **Meets expectations** | **Exceeds e
 | Technical quality | | FastAPI + Chroma + LangGraph + shared Zod + tests (`pytest`, Vitest), CI |
 | Product thinking | | See **Product thinking** “Exceeds expectations” block above; escalation UX, bilingual handbook |
 | Development process | | `CLAUDE.md`, Cursor rules, `docs/BUILD_LOG.md`, branching/PRs as applicable |
-| Communication & demo | | `docs/DEMO_SCRIPT.md`, live walkthrough of ingest → ask → RAG trace chart |
+| Communication & demo | | Live walkthrough of ingest → ask → RAG trace chart |
 
 **Reflection:** Tradeoffs (e.g. heuristic guardrail vs classifier), known limitations (empty index, API keys), and a short **production roadmap** (auth, real HR systems, observability).
