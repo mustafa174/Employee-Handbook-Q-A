@@ -1,3 +1,5 @@
+import pytest
+
 from app.intent_policy import classify_query
 from app.rag_graph import INTENT_PERSONAL, INTENT_POLICY, _is_personal_query, node_generate, run_ask
 
@@ -54,6 +56,10 @@ def test_personal_query_detector_covers_status_and_balance_phrasing() -> None:
     assert _is_personal_query("What's my current PTO and sick leave status?")
 
 
+def test_personal_query_detector_does_not_treat_policy_days_followup_as_personal() -> None:
+    assert not _is_personal_query("How many days in advance do I need to request it?")
+
+
 def test_node_generate_generic_leave_balance_does_not_trigger_unknown_leave_type() -> None:
     state = {
         "intent": INTENT_PERSONAL,
@@ -100,6 +106,28 @@ def test_classify_query_treats_loan_tenure_as_profile() -> None:
     assert out["domain_class"] == "PROFILE"
 
 
+@pytest.mark.parametrize(
+    "q",
+    [
+        "i want to avail loan",
+        "i want to get loan",
+        "i want to get company loan",
+        "i want to know about company loan",
+    ],
+)
+def test_classify_query_treats_services_loan_intent_as_profile(q: str) -> None:
+    out = classify_query(q)
+    assert out["domain_class"] == "PROFILE"
+    assert "loan_personal_phrase" in out["reasons"]
+
+
+def test_run_ask_avail_loan_uses_profile_not_policy_fallback() -> None:
+    resp = run_ask("i want to avail loan", employee_id="E001", use_rag=True)
+    answer = str(resp.get("answer", "")).lower()
+    assert "couldn't find the specific policy text" not in answer
+    assert "services loan" in answer or "pkr" in answer
+
+
 def test_node_generate_loan_types_question_uses_composite_not_employment_type() -> None:
     """Personal route used to resolve 'type' to employment_type before loan composite ran."""
     state = {
@@ -141,6 +169,13 @@ def test_run_ask_vacation_days_with_employee_uses_profile_not_policy_fallback() 
     assert "couldn't find the specific policy text" not in answer
 
 
+def test_run_ask_leaveeeee_balance_normalizes_to_personal_balance() -> None:
+    resp = run_ask("i want to know leaveeee balance", employee_id="E001", use_rag=True)
+    answer = str(resp.get("answer", "")).lower()
+    assert "couldn't find your personal data" not in answer
+    assert ("14" in answer) or ("pto" in answer)
+
+
 def test_run_ask_vacation_days_without_employee_prompts_profile_not_policy_fallback() -> None:
     resp = run_ask("How many vacation days do I get?", employee_id=None, use_rag=True)
     answer = str(resp.get("answer", "")).lower()
@@ -154,14 +189,69 @@ def test_run_ask_mixed_leave_and_policy_combines_personal_and_policy() -> None:
     answer = str(resp.get("answer", "")).lower()
     assert "14 pto days" in answer
     assert "6 sick days" in answer
-    assert "policy:" in answer
+    assert "1. how many leaves i have?" in answer
+    assert "2. what is leave policy?" in answer
 
 
 def test_run_ask_manager_treating_badly_routes_sensitive() -> None:
     resp = run_ask("My manager is treating me badly, what should I do?", employee_id="E001", use_rag=True)
     answer = str(resp.get("answer", "")).lower()
     assert "sensitive matter" in answer
+    assert "prepare an hr report summary" in answer
     assert "your manager is" not in answer
+
+
+def test_run_ask_harassed_routes_sensitive_with_hr_report_offer() -> None:
+    resp = run_ask("i am being harrassed", employee_id="E001", use_rag=True)
+    answer = str(resp.get("answer", "")).lower()
+    assert "sensitive matter" in answer
+    assert "prepare an hr report summary" in answer
+    action = resp.get("agent_action") or {}
+    assert action.get("type") == "HARASSMENT_REPORT"
+
+
+def test_run_ask_manager_harrasing_routes_sensitive_with_hr_report_offer() -> None:
+    resp = run_ask("my manager is harrasing me", employee_id="E001", use_rag=True)
+    answer = str(resp.get("answer", "")).lower()
+    assert "sensitive matter" in answer
+    assert "prepare an hr report summary" in answer
+    assert "your manager is" not in answer
+
+
+def test_run_ask_manager_harrassssing_routes_sensitive_with_hr_report_offer() -> None:
+    resp = run_ask("my manager is harrassssing me", employee_id="E001", use_rag=True)
+    answer = str(resp.get("answer", "")).lower()
+    assert "sensitive matter" in answer
+    assert "prepare an hr report summary" in answer
+    assert "your manager is" not in answer
+
+
+def test_run_ask_manager_harraasssing_routes_sensitive_with_hr_report_offer() -> None:
+    resp = run_ask("my manager is harraasssing me", employee_id="E001", use_rag=True)
+    answer = str(resp.get("answer", "")).lower()
+    assert "sensitive matter" in answer
+    assert "prepare an hr report summary" in answer
+    assert "your manager is" not in answer
+
+
+def test_run_ask_report_harassment_by_manager_has_report_action() -> None:
+    resp = run_ask("I want to report harassment by my manager.", employee_id="E001", use_rag=True)
+    answer = str(resp.get("answer", "")).lower()
+    assert "sensitive matter" in answer
+    action = resp.get("agent_action") or {}
+    assert action.get("type") == "HARASSMENT_REPORT"
+    payload = action.get("payload") or {}
+    msg = str(payload.get("message", "")).lower()
+    assert "workplace harassment" in msg
+    assert "manager" in msg
+
+
+def test_run_ask_wrongful_termination_has_report_action() -> None:
+    resp = run_ask("I was wrongfully terminated", employee_id="E001", use_rag=True)
+    answer = str(resp.get("answer", "")).lower()
+    assert "sensitive matter" in answer
+    action = resp.get("agent_action") or {}
+    assert action.get("type") == "HARASSMENT_REPORT"
 
 
 def test_run_ask_unlimited_unpaid_leave_stays_policy_even_with_employee_scope() -> None:
@@ -182,6 +272,101 @@ def test_run_ask_loan_policy_and_amount_routes_mixed() -> None:
 def test_run_ask_eligibility_and_policy_routes_mixed() -> None:
     resp = run_ask("Am I eligible for leave and what is the policy?", employee_id="E001", use_rag=True)
     assert str(resp.get("route", "")).upper() == "MIXED"
+
+
+def test_run_ask_mixed_pto_balance_and_carryover_includes_carryover_policy() -> None:
+    resp = run_ask(
+        "How many PTO days do I have left and what is the policy for carry-over into next year?",
+        employee_id="E001",
+        use_rag=True,
+    )
+    answer = str(resp.get("answer", "")).lower()
+    assert str(resp.get("route", "")).upper() == "MIXED"
+    assert "14 pto" in answer
+    assert ("roll over" in answer) or ("carry over" in answer)
+
+
+def test_run_ask_mixed_loan_and_broken_laptop_request_returns_both_parts() -> None:
+    resp = run_ask(
+        "Am I eligible for a services loan and how do I request a replacement for a broken laptop?",
+        employee_id="E001",
+        use_rag=True,
+    )
+    answer = str(resp.get("answer", "")).lower()
+    assert str(resp.get("route", "")).upper() == "MIXED"
+    assert ("yes, you are eligible for services loan eligibility" in answer) or ("eligible for services loan" in answer)
+    assert ("submit a ticket" in answer) or ("jira service desk" in answer)
+    assert "couldn't find the specific policy text in the handbook" not in answer
+
+
+def test_run_ask_employee_id_and_medical_certificate_routes_mixed() -> None:
+    resp = run_ask(
+        "What is my employee ID and do I need a medical certificate if I take 3 sick days?",
+        employee_id="E001",
+        use_rag=True,
+    )
+    answer = str(resp.get("answer", "")).lower()
+    assert str(resp.get("route", "")).upper() == "MIXED"
+    assert "employee id" in answer
+    assert ("medical certification" in answer) or ("medical certificate" in answer)
+
+
+def test_run_ask_policy_followup_with_it_coreference_keeps_policy_context() -> None:
+    history = [
+        {"role": "user", "content": "What is the PTO policy?"},
+        {
+            "role": "assistant",
+            "content": (
+                "PTO requests must be submitted at least 10 business days in advance. "
+                "Unused PTO may roll over up to 5 days."
+            ),
+        },
+    ]
+    resp = run_ask(
+        "How many days in advance do I need to request it?",
+        employee_id="E001",
+        chat_history=history,
+        use_rag=True,
+    )
+    answer = str(resp.get("answer", "")).lower()
+    assert "couldn't find your personal data" not in answer
+    assert ("10 business days" in answer) or ("advance" in answer)
+
+
+def test_run_ask_rollover_followup_with_that_coreference_stays_grounded() -> None:
+    history = [
+        {"role": "user", "content": "What is the PTO policy?"},
+        {
+            "role": "assistant",
+            "content": (
+                "PTO requests must be submitted at least 10 business days in advance. "
+                "Unused PTO may roll over up to 5 days."
+            ),
+        },
+        {"role": "user", "content": "How many days in advance do I need to request it?"},
+        {"role": "assistant", "content": "At least 10 business days in advance."},
+    ]
+    resp = run_ask(
+        "And what about rollover for that?",
+        employee_id="E001",
+        chat_history=history,
+        use_rag=True,
+    )
+    answer = str(resp.get("answer", "")).lower()
+    assert "couldn't find the specific policy text in the handbook" not in answer
+    assert "pto" in answer
+
+
+def test_run_ask_what_about_sick_days_after_manager_context_prefers_personal_balance() -> None:
+    history = [
+        {"role": "user", "content": "How many PTO days do I have?"},
+        {"role": "assistant", "content": "You currently have 14 PTO days remaining."},
+        {"role": "user", "content": "And my manager?"},
+        {"role": "assistant", "content": "Your manager is Nadia Rahman."},
+    ]
+    resp = run_ask("What about sick days?", employee_id="E001", chat_history=history, use_rag=True)
+    answer = str(resp.get("answer", "")).lower()
+    assert "6 sick days" in answer
 
 
 def test_run_ask_ambiguous_financial_support_asks_clarification() -> None:

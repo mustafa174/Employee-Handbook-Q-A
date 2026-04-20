@@ -160,6 +160,7 @@ type RetrievalAttemptView = {
   reason?: string;
   citations: AskResponse["citations"];
 };
+type RouteBucket = "POLICY" | "IT" | "OUT_OF_SCOPE";
 
 const tokenize = (text: string): string[] => {
   const all = text.toLowerCase().match(/[\p{L}\p{N}']+/gu) ?? [];
@@ -642,6 +643,30 @@ export const HandbookQA = ({
     () => `OpenAI\n${lastAnswer?.chat_model ?? "gpt-4o-mini"}`,
     [lastAnswer?.chat_model],
   );
+  const routeBuckets = useMemo<RouteBucket[]>(() => {
+    if (!lastAnswer) return [];
+    const raw = lastAnswer as AskResponse & {
+      route?: string;
+      context_presence?: { has_it?: boolean };
+    };
+    const selected = new Set<RouteBucket>();
+    const route = String(raw.route ?? "").toUpperCase();
+    const answer = String(lastAnswer.answer ?? "");
+    const hasOutOfScopeSection =
+      /\*\*outside supported scope\*\*/i.test(answer) ||
+      /\boutside supported scope\b/i.test(answer);
+    const hasPolicySection =
+      /\*\*not found in handbook\*\*/i.test(answer) ||
+      (lastAnswer.citations?.length ?? 0) > 0;
+
+    if (raw.context_presence?.has_it) selected.add("IT");
+    if (route === "GENERAL" || route === "SENSITIVE") selected.add("OUT_OF_SCOPE");
+    if (route === "POLICY" || route === "MIXED") selected.add("POLICY");
+    if (hasPolicySection) selected.add(raw.context_presence?.has_it ? "IT" : "POLICY");
+    if (hasOutOfScopeSection) selected.add("OUT_OF_SCOPE");
+    if (selected.size === 0 && route !== "PROFILE") selected.add("POLICY");
+    return [...selected];
+  }, [lastAnswer]);
   const pipelineComplete = !isSending && (lastAnswer !== null || sendError !== null);
   const chartGrid = isDark ? "#3f3f46" : "#d4d4d8";
   const chartTick = isDark ? "#a1a1aa" : "#52525b";
@@ -798,21 +823,25 @@ export const HandbookQA = ({
                       ⚠️ No policy source found
                     </p>
                   ) : null}
-                  {turn.agentAction?.type === "HARASSMENT_REPORT" ? (
-                    <button
-                      type="button"
-                      onClick={() =>
-                        setReportModalPayload({
-                          ...turn.agentAction.payload,
-                          employee_id: turn.employeeId ?? turn.agentAction.payload.employee_id,
-                          employee_name: turn.employeeName ?? turn.agentAction.payload.employee_name,
-                        })
-                      }
-                      className="mt-3 rounded-lg border border-sky-300 bg-sky-50 px-3 py-1.5 text-xs font-medium text-sky-700 hover:bg-sky-100 dark:border-sky-700 dark:bg-sky-950/40 dark:text-sky-200 dark:hover:bg-sky-900/50"
-                    >
-                      Prepare HR Report
-                    </button>
-                  ) : null}
+                  {(() => {
+                    const harassmentAction = turn.agentAction;
+                    if (harassmentAction?.type !== "HARASSMENT_REPORT") return null;
+                    return (
+                      <button
+                        type="button"
+                        onClick={() =>
+                          setReportModalPayload({
+                            ...harassmentAction.payload,
+                            employee_id: turn.employeeId ?? harassmentAction.payload.employee_id,
+                            employee_name: turn.employeeName ?? harassmentAction.payload.employee_name,
+                          })
+                        }
+                        className="mt-3 rounded-lg border border-sky-300 bg-sky-50 px-3 py-1.5 text-xs font-medium text-sky-700 hover:bg-sky-100 dark:border-sky-700 dark:bg-sky-950/40 dark:text-sky-200 dark:hover:bg-sky-900/50"
+                      >
+                        Prepare HR Report
+                      </button>
+                    );
+                  })()}
                 </article>
               ))
             )}
@@ -873,6 +902,7 @@ export const HandbookQA = ({
           pipelineComplete={pipelineComplete}
           isDark={isDark}
           llmNodeLabel={llmNodeLabel}
+          routeBuckets={routeBuckets}
           activeNodes={activeNodes}
           doneNodes={doneNodes}
         />

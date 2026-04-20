@@ -14,6 +14,7 @@ import "@xyflow/react/dist/style.css";
 import { memo, useMemo } from "react";
 
 type StageState = "idle" | "active" | "done";
+type RouteBucket = "POLICY" | "IT" | "OUT_OF_SCOPE";
 
 type StageData = { label: string; state: StageState };
 
@@ -144,16 +145,16 @@ const stateForNode = (
 function buildNodes(
   pipelineComplete: boolean,
   llmNodeLabel: string,
+  routeBuckets: readonly RouteBucket[],
   activeNodeIds: Set<string>,
   doneNodeIds: Set<string>,
 ): Node[] {
   const s = (id: string) => stateForNode(id, pipelineComplete, activeNodeIds, doneNodeIds);
-  let mixedState: StageState = "idle";
-  if (s("chroma") === "active" || s("mcp") === "active") {
-    mixedState = "active";
-  } else if (s("chroma") === "done" || s("mcp") === "done") {
-    mixedState = "done";
-  }
+  const selectedBuckets = new Set<RouteBucket>(routeBuckets);
+  const bucketState = (name: RouteBucket): StageState => {
+    if (!selectedBuckets.has(name)) return "idle";
+    return pipelineComplete ? "done" : "active";
+  };
   return [
     {
       id: "query",
@@ -174,52 +175,28 @@ function buildNodes(
       data: { label: "Intent Router\nHard Route Lock", state: s("router") },
     },
     {
-      id: "clarify",
+      id: "policy",
       type: "ragStage",
-      position: { x: 635, y: 250 },
-      data: { label: "Clarification Gate\nAmbiguous Queries", state: s("clarify") },
+      position: { x: 640, y: 18 },
+      data: { label: "POLICY\nHandbook / Process", state: bucketState("POLICY") },
     },
     {
-      id: "chroma",
+      id: "it",
       type: "ragStage",
-      position: { x: 635, y: 20 },
-      data: { label: "Policy Retrieval\nChromaDB + Citations", state: s("chroma") },
+      position: { x: 640, y: 120 },
+      data: { label: "IT\nSupport & IT Policies", state: bucketState("IT") },
     },
     {
-      id: "mcp",
+      id: "out_of_scope",
       type: "ragStage",
-      position: { x: 635, y: 138 },
-      data: { label: "Personal Tool\nEmployee Data Only", state: s("mcp") },
-    },
-    {
-      id: "mixed",
-      type: "ragStage",
-      position: { x: 635, y: 78 },
-      data: { label: "Mixed Resolver\nPersonal + Policy", state: mixedState },
-    },
-    {
-      id: "scoring",
-      type: "ragStage",
-      position: { x: 845, y: 20 },
-      data: { label: "Retrieval Scoring\nConfidence Check", state: s("judge") },
-    },
-    {
-      id: "synthesis",
-      type: "ragStage",
-      position: { x: 845, y: 138 },
-      data: { label: "Answer Builder\nGrounded Only", state: s("synthesis") },
-    },
-    {
-      id: "judge",
-      type: "ragStage",
-      position: { x: 1045, y: 138 },
-      data: { label: "Atomic Judge\nVerify Response", state: s("judge") },
+      position: { x: 640, y: 222 },
+      data: { label: "OUT OF SCOPE\nFallback / Escalation", state: bucketState("OUT_OF_SCOPE") },
     },
     {
       id: "output",
       type: "llmOnly",
-      position: { x: 1245, y: 138 },
-      data: { label: `Verified Response\n${llmNodeLabel}`, state: s("output") },
+      position: { x: 930, y: 120 },
+      data: { label: `Final Response\n${llmNodeLabel}`, state: s("output") },
     },
   ];
 }
@@ -233,27 +210,12 @@ function buildEdges(isLoading: boolean, isDark: boolean): Edge[] {
   return [
     { id: "e-q-g", source: "query", target: "guardrail", type: "smoothstep", animated, style: { stroke, strokeWidth: 2 } },
     { id: "e-g-r", source: "guardrail", target: "router", type: "smoothstep", animated, style: { stroke, strokeWidth: 2 } },
-    { id: "e-r-c", source: "router", target: "chroma", type: "smoothstep", animated, style: { stroke: blueStroke, strokeWidth: 2.4 } },
-    { id: "e-r-m", source: "router", target: "mcp", type: "smoothstep", animated, style: { stroke: greenStroke, strokeWidth: 2.4 } },
-    { id: "e-r-mx-c", source: "router", target: "mixed", type: "smoothstep", animated, style: { stroke: blueStroke, strokeWidth: 1.8, strokeDasharray: "5 4" } },
-    { id: "e-r-mx-m", source: "router", target: "mixed", type: "smoothstep", animated, style: { stroke: greenStroke, strokeWidth: 1.8, strokeDasharray: "5 4" } },
-    { id: "e-r-cl", source: "router", target: "clarify", type: "smoothstep", animated, style: { stroke: amberStroke, strokeWidth: 2 } },
-    { id: "e-c-sc", source: "chroma", target: "scoring", type: "smoothstep", animated, style: { stroke: blueStroke, strokeWidth: 2.2 } },
-    { id: "e-sc-s", source: "scoring", target: "synthesis", type: "smoothstep", animated, style: { stroke: blueStroke, strokeWidth: 2.2 } },
-    { id: "e-m-s", source: "mcp", target: "synthesis", type: "smoothstep", animated, style: { stroke: greenStroke, strokeWidth: 2.2 } },
-    { id: "e-mx-s", source: "mixed", target: "synthesis", type: "smoothstep", animated, style: { stroke, strokeWidth: 1.8, strokeDasharray: "5 4" } },
-    {
-      id: "e-cl-o",
-      source: "clarify",
-      sourceHandle: "bottom",
-      target: "output",
-      targetHandle: "bottom",
-      type: "smoothstep",
-      animated,
-      style: { stroke: amberStroke, strokeWidth: 2 },
-    },
-    { id: "e-s-j", source: "synthesis", target: "judge", type: "smoothstep", animated, style: { stroke, strokeWidth: 2 } },
-    { id: "e-j-o", source: "judge", target: "output", type: "smoothstep", animated, style: { stroke, strokeWidth: 2 } },
+    { id: "e-r-p", source: "router", target: "policy", type: "smoothstep", animated, style: { stroke: blueStroke, strokeWidth: 2.4 } },
+    { id: "e-r-i", source: "router", target: "it", type: "smoothstep", animated, style: { stroke: greenStroke, strokeWidth: 2.4 } },
+    { id: "e-r-o", source: "router", target: "out_of_scope", type: "smoothstep", animated, style: { stroke: amberStroke, strokeWidth: 2.2 } },
+    { id: "e-p-out", source: "policy", target: "output", type: "smoothstep", animated, style: { stroke: blueStroke, strokeWidth: 2 } },
+    { id: "e-i-out", source: "it", target: "output", type: "smoothstep", animated, style: { stroke: greenStroke, strokeWidth: 2 } },
+    { id: "e-o-out", source: "out_of_scope", target: "output", type: "smoothstep", animated, style: { stroke: amberStroke, strokeWidth: 2 } },
   ];
 }
 
@@ -263,6 +225,7 @@ type InnerProps = {
   isDark: boolean;
   /** Shown on the final node; use `\n` for a second line (e.g. OpenAI + model id). */
   llmNodeLabel: string;
+  routeBuckets?: readonly RouteBucket[];
   activeNodes?: string[];
   doneNodes?: string[];
 };
@@ -272,15 +235,20 @@ function RAGPipelineFlow({
   pipelineComplete,
   isDark,
   llmNodeLabel,
+  routeBuckets = [],
   activeNodes,
   doneNodes,
 }: Readonly<InnerProps>) {
   const activeNodeIds = useMemo(() => new Set(activeNodes ?? []), [activeNodes]);
   const doneNodeIds = useMemo(() => new Set(doneNodes ?? []), [doneNodes]);
+  const normalizedRouteBuckets = useMemo(
+    () => [...new Set(routeBuckets)],
+    [routeBuckets],
+  );
 
   const nodes = useMemo(
-    () => buildNodes(pipelineComplete, llmNodeLabel, activeNodeIds, doneNodeIds),
-    [pipelineComplete, llmNodeLabel, activeNodeIds, doneNodeIds],
+    () => buildNodes(pipelineComplete, llmNodeLabel, normalizedRouteBuckets, activeNodeIds, doneNodeIds),
+    [pipelineComplete, llmNodeLabel, normalizedRouteBuckets, activeNodeIds, doneNodeIds],
   );
 
   const edges = useMemo(() => buildEdges(isLoading, isDark), [isLoading, isDark]);
@@ -318,17 +286,17 @@ export function RAGPipelineVisualizer(props: Readonly<InnerProps>) {
           RAG logic flow
         </p>
         <div className="flex flex-wrap gap-2 text-[11px] text-zinc-600 dark:text-zinc-400">
+          <span className="rounded-full border border-violet-200 bg-violet-50 px-2 py-1 dark:border-violet-900 dark:bg-violet-950/30">
+            Guardrail
+          </span>
           <span className="rounded-full border border-sky-200 bg-sky-50 px-2 py-1 dark:border-sky-900 dark:bg-sky-950/30">
-            Policy routes force retrieval
+            Policy
           </span>
           <span className="rounded-full border border-emerald-200 bg-emerald-50 px-2 py-1 dark:border-emerald-900 dark:bg-emerald-950/30">
-            Personal routes use employee data only
+            IT
           </span>
           <span className="rounded-full border border-amber-200 bg-amber-50 px-2 py-1 dark:border-amber-900 dark:bg-amber-950/30">
-            Sensitive matters hard-override to HR
-          </span>
-          <span className="rounded-full border border-zinc-200 bg-zinc-50 px-2 py-1 dark:border-zinc-700 dark:bg-zinc-900/60">
-            Personal answers bypass retrieval
+            Out of Scope
           </span>
         </div>
         <RAGPipelineFlow {...props} />

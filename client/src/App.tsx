@@ -8,6 +8,7 @@ import { SettingsPage } from "./pages/Settings";
 import { useChatHistory } from "./state/ChatHistoryContext";
 import { apiUrl } from "./apiBase";
 import { LandingPage } from "./pages/LandingPage";
+import { PersonalDocumentationPage } from "./pages/PersonalDocumentation";
 
 const EMPLOYEE_OPTIONS = [
   { employee_id: "E001", name: "Alex Chen" },
@@ -64,11 +65,14 @@ const App = () => {
 
   const isSettings = location.pathname === "/settings";
   const isLanding = location.pathname === "/";
-  const isAssistantPage = !isLanding && !isSettings;
-  const pageTitle = useMemo(
-    () => (isSettings ? "Settings" : "Employee Handbook Q&A System"),
-    [isSettings]
-  );
+  const isDocumentation = location.pathname === "/personal-documentaion";
+  const isAssistantPage = !isLanding && !isSettings && !isDocumentation;
+  let pageTitle = "Employee Handbook Q&A System";
+  if (isSettings) {
+    pageTitle = "Settings";
+  } else if (isDocumentation) {
+    pageTitle = "Personal Documentation";
+  }
   const selectedEmployeeName = useMemo(
     () => employeeOptions.find((row) => row.employee_id === selectedEmployeeId)?.name ?? "",
     [employeeOptions, selectedEmployeeId],
@@ -111,6 +115,18 @@ const App = () => {
               >
                 Settings
               </button>
+              <button
+                type="button"
+                onClick={() => navigate("/personal-documentaion")}
+                className={[
+                  "rounded-md px-3 py-1.5 text-xs font-medium transition-all duration-200",
+                  isDocumentation
+                    ? "bg-white text-zinc-900 shadow-sm dark:bg-zinc-700 dark:text-zinc-50"
+                    : "text-zinc-600 hover:text-zinc-900 dark:text-zinc-300 dark:hover:text-zinc-100",
+                ].join(" ")}
+              >
+                Documentation
+              </button>
             </nav>
             <span className="hidden text-xs text-zinc-500 sm:inline dark:text-zinc-500">
               Chroma · OpenAI · LangGraph
@@ -134,7 +150,7 @@ const App = () => {
               )}
             </button>
             <label className="hidden items-center gap-2 text-xs text-zinc-500 sm:flex dark:text-zinc-400">
-              User
+              User{" "}
               <select
                 value={selectedEmployeeId}
                 onChange={(e) => setSelectedEmployeeId(e.target.value)}
@@ -161,6 +177,9 @@ const App = () => {
         </section>
         <section className={isSettings ? "block" : "hidden"}>
           <SettingsPage />
+        </section>
+        <section className={isDocumentation ? "block" : "hidden"}>
+          <PersonalDocumentationPage />
         </section>
       </main>
     </div>

@@ -26,6 +26,7 @@ def test_query_refiner_adds_paid_time_off_alias_for_pto_policy() -> None:
 
 def test_grade_documents_relaxes_threshold_for_rollover_policy() -> None:
     state = {
+        "route": "mixed",
         "question": "How many PTO days do I have and what is the rollover policy?",
         "retrieval_citations": [
             {
@@ -60,7 +61,7 @@ def test_query_refiner_adds_sick_leave_three_days_alias() -> None:
         "messages": [],
     }
     out = query_refiner_node(state)
-    retrieval_queries = [str(x).lower() for x in list(out.get("retrieval_queries") or [])]
+    retrieval_queries = [str(x).lower() for x in (out.get("retrieval_queries") or [])]
     assert any("3 consecutive days medical certification" in q for q in retrieval_queries)
 
 

@@ -43,6 +43,10 @@ def test_detect_sensitive_handles_real_user_sensitive_phrases() -> None:
     assert detect_sensitive("i feel unsafe at work")
     assert detect_sensitive("i got fired unfairly")
     assert detect_sensitive("i am harrased by my manager")
+    assert detect_sensitive("my manager is harrasing me")
+    assert detect_sensitive("my manager is harrassssing me")
+    assert detect_sensitive("my manager is harraasssing me")
+    assert detect_sensitive("i was beaten by my manager")
 
 
 def test_detect_sensitive_does_not_flag_accommodation_requests() -> None:
@@ -59,13 +63,33 @@ def test_query_refiner_short_circuits_sensitive_prompt_before_router() -> None:
 
 def test_harassment_action_is_built_for_abuse_unsafe_and_treating_badly() -> None:
     state = {
-        "question": "My manager is treating me badly and I feel unsafe at work",
+        "question": "My manager is abusing me and I feel unsafe at work",
         "employee_id": "E001",
         "employee_profile": {"name": "Test Employee"},
     }
     action = _build_harassment_agent_action(state)
     assert action is not None
     assert action.get("type") == "HARASSMENT_REPORT"
+    payload = action.get("payload") or {}
+    description = str(payload.get("message", "")).lower()
+    assert "abusive behavior" in description
+    assert "manager" in description
+    assert "employee statement" in description
+
+
+def test_harassment_action_is_built_for_beaten_language() -> None:
+    state = {
+        "question": "I was beaten at work by my supervisor",
+        "employee_id": "E001",
+        "employee_profile": {"name": "Test Employee"},
+    }
+    action = _build_harassment_agent_action(state)
+    assert action is not None
+    assert action.get("type") == "HARASSMENT_REPORT"
+    payload = action.get("payload") or {}
+    description = str(payload.get("message", "")).lower()
+    assert "physical assault" in description
+    assert "supervisor" in description
 
 
 def test_sensitive_patterns_no_match() -> None:

@@ -208,7 +208,7 @@ For backend-focused work:
 
 ## Docs
 
-[CLAUDE.md](CLAUDE.md) · [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md)
+[CLAUDE.md](CLAUDE.md) · [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) · [docs/BUILD_LOG.md](docs/BUILD_LOG.md) · [docs/TDD_TRACES.md](docs/TDD_TRACES.md) · [docs/PARALLEL_WORKSTREAMS.md](docs/PARALLEL_WORKSTREAMS.md)
 
 ## Limitations
 

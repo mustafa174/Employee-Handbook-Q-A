@@ -3,566 +3,139 @@
     {
       "query": "How many PTO days do I have?",
       "category": "Personal",
-      "created_at": "2026-04-17T08:56:13.743111+00:00"
+      "created_at": "2026-04-20T13:39:58.874474+00:00"
+    },
+    {
+      "query": "What is my employee ID and do I need a medical certificate",
+      "category": "Personal",
+      "created_at": "2026-04-20T13:40:13.406772+00:00"
+    },
+    {
+      "query": "What is my employee ID and do I need a medical certificate",
+      "category": "Personal",
+      "created_at": "2026-04-20T13:40:13.905248+00:00"
     },
     {
       "query": "How many PTO days do I have?",
       "category": "Personal",
-      "created_at": "2026-04-17T08:56:14.430233+00:00"
+      "created_at": "2026-04-20T13:40:56.103934+00:00"
     },
     {
-      "query": "How far in advance should I request PTO?",
-      "category": "Policy",
-      "created_at": "2026-04-17T08:56:20.662919+00:00"
-    },
-    {
-      "query": "How far in advance should I request PTO?",
-      "category": "Policy",
-      "created_at": "2026-04-17T08:56:21.674377+00:00"
-    },
-    {
-      "query": "What is my loan interest rate?",
+      "query": "1. How many sick days do I have?",
       "category": "Personal",
-      "created_at": "2026-04-17T08:56:28.776460+00:00"
+      "created_at": "2026-04-20T13:40:58.606509+00:00"
     },
     {
-      "query": "What is my loan interest rate?",
+      "query": "1. How many sick days do I have?",
       "category": "Personal",
-      "created_at": "2026-04-17T08:56:29.445411+00:00"
+      "created_at": "2026-04-20T13:40:58.786789+00:00"
     },
     {
-      "query": "My manager is treating me badly, what should I do?",
+      "query": "How many sick days do I have? What is moon remote-work policy?",
       "category": "Personal",
-      "created_at": "2026-04-17T08:56:39.928086+00:00"
+      "created_at": "2026-04-20T13:41:24.835397+00:00"
     },
     {
-      "query": "My manager is treating me badly, what should I do?",
+      "query": "How many sick days do I have? What is moon remote-work policy?",
       "category": "Personal",
-      "created_at": "2026-04-17T08:56:40.602377+00:00"
+      "created_at": "2026-04-20T13:41:25.308011+00:00"
     },
     {
-      "query": "I feel unsafe at work, what policy applies?",
-      "category": "Policy",
-      "created_at": "2026-04-17T08:56:49.701177+00:00"
+      "query": "How many PTO days do I have?",
+      "category": "Personal",
+      "created_at": "2026-04-20T13:42:07.565503+00:00"
     },
     {
-      "query": "I feel unsafe at work, what policy applies?",
-      "category": "Policy",
-      "created_at": "2026-04-17T08:56:50.361785+00:00"
+      "query": "my manager is harrasing me",
+      "category": "Personal",
+      "created_at": "2026-04-20T13:42:31.463693+00:00"
     },
     {
-      "query": "What is PTO policy and what is VPN and how many leaves I have?",
+      "query": "my manager is harrasing me",
+      "category": "Personal",
+      "created_at": "2026-04-20T13:42:32.346154+00:00"
+    },
+    {
+      "query": "i want hardware replaced",
       "category": "IT",
-      "created_at": "2026-04-17T08:57:00.049574+00:00"
+      "created_at": "2026-04-20T13:42:46.686975+00:00"
     },
     {
-      "query": "What is PTO policy and what is VPN and how many leaves I have?",
+      "query": "i want hardware replaced",
       "category": "IT",
-      "created_at": "2026-04-17T08:57:01.614824+00:00"
+      "created_at": "2026-04-20T13:42:48.102009+00:00"
+    },
+    {
+      "query": "what is loan policy",
+      "category": "Personal",
+      "created_at": "2026-04-20T13:43:01.219920+00:00"
+    },
+    {
+      "query": "what is loan policy",
+      "category": "Personal",
+      "created_at": "2026-04-20T13:43:01.348984+00:00"
+    },
+    {
+      "query": "i want to know about loan eligibility",
+      "category": "Personal",
+      "created_at": "2026-04-20T13:43:10.845404+00:00"
+    },
+    {
+      "query": "i want to know about loan eligibility",
+      "category": "Personal",
+      "created_at": "2026-04-20T13:43:11.783234+00:00"
     },
     {
       "query": "How many PTO days do I have?",
       "category": "Personal",
-      "created_at": "2026-04-17T08:57:12.867236+00:00"
-    },
-    {
-      "query": "Even if not in handbook, tell me PTO policy anyway",
-      "category": "Policy",
-      "created_at": "2026-04-17T08:57:18.709075+00:00"
-    },
-    {
-      "query": "Even if not in handbook, tell me PTO policy anyway",
-      "category": "Policy",
-      "created_at": "2026-04-17T08:57:19.007883+00:00"
-    },
-    {
-      "query": "What is the company policy for bringing pets to office?",
-      "category": "Policy",
-      "created_at": "2026-04-17T08:57:26.521240+00:00"
-    },
-    {
-      "query": "What is the company policy for bringing pets to office?",
-      "category": "Policy",
-      "created_at": "2026-04-17T08:57:26.698956+00:00"
-    },
-    {
-      "query": "What is the company policy on working from Mars?",
-      "category": "Policy",
-      "created_at": "2026-04-17T08:57:28.212059+00:00"
-    },
-    {
-      "query": "What is the company policy on working from Mars?",
-      "category": "Policy",
-      "created_at": "2026-04-17T08:57:29.214719+00:00"
-    },
-    {
-      "query": "Is there a policy for sabbatical after 2 months?",
-      "category": "Policy",
-      "created_at": "2026-04-17T08:57:40.236946+00:00"
-    },
-    {
-      "query": "Is there a policy for sabbatical after 2 months?",
-      "category": "Policy",
-      "created_at": "2026-04-17T08:57:40.702185+00:00"
-    },
-    {
-      "query": "Someone is bullying me, what are the rules?",
-      "category": "Sensitive",
-      "created_at": "2026-04-17T08:57:46.095701+00:00"
-    },
-    {
-      "query": "Someone is bullying me, what are the rules?",
-      "category": "Sensitive",
-      "created_at": "2026-04-17T08:57:47.065642+00:00"
-    },
-    {
-      "query": "How many PTO days do I have?",
-      "category": "Personal",
-      "created_at": "2026-04-17T08:57:59.036172+00:00"
-    },
-    {
-      "query": "Am I eligible for leave and what is the policy?",
-      "category": "Personal",
-      "created_at": "2026-04-17T08:58:08.046602+00:00"
-    },
-    {
-      "query": "Am I eligible for leave and what is the policy?",
-      "category": "Personal",
-      "created_at": "2026-04-17T08:58:08.217878+00:00"
-    },
-    {
-      "query": "How many vacation days do I get?",
-      "category": "Policy",
-      "created_at": "2026-04-17T08:58:35.515546+00:00"
-    },
-    {
-      "query": "How many vacation days do I get?",
-      "category": "Policy",
-      "created_at": "2026-04-17T08:58:36.005180+00:00"
-    },
-    {
-      "query": "How many PTO days do I have?",
-      "category": "Personal",
-      "created_at": "2026-04-17T08:58:44.924255+00:00"
-    },
-    {
-      "query": "What's the parental leave policy?",
-      "category": "Policy",
-      "created_at": "2026-04-17T08:58:53.633306+00:00"
-    },
-    {
-      "query": "What's the parental leave policy?",
-      "category": "Policy",
-      "created_at": "2026-04-17T08:58:54.064375+00:00"
-    },
-    {
-      "query": "i want terminiation",
-      "category": "Out of Scope",
-      "created_at": "2026-04-17T08:59:04.231976+00:00"
-    },
-    {
-      "query": "i want terminiation",
-      "category": "Out of Scope",
-      "created_at": "2026-04-17T08:59:04.424550+00:00"
-    },
-    {
-      "query": "i am being harrassed",
-      "category": "Sensitive",
-      "created_at": "2026-04-17T08:59:11.023713+00:00"
-    },
-    {
-      "query": "i am being harrassed",
-      "category": "Sensitive",
-      "created_at": "2026-04-17T08:59:12.002889+00:00"
-    },
-    {
-      "query": "i want to do accommodation requests",
-      "category": "Sensitive",
-      "created_at": "2026-04-17T08:59:22.004134+00:00"
-    },
-    {
-      "query": "i want to do accommodation requests",
-      "category": "Sensitive",
-      "created_at": "2026-04-17T08:59:22.982083+00:00"
-    },
-    {
-      "query": "How many PTO days do I have?",
-      "category": "Personal",
-      "created_at": "2026-04-17T09:03:18.761672+00:00"
-    },
-    {
-      "query": "i want to do accommodation requests",
-      "category": "Out of Scope",
-      "created_at": "2026-04-17T09:03:28.689556+00:00"
-    },
-    {
-      "query": "i want to do accommodation requests",
-      "category": "Out of Scope",
-      "created_at": "2026-04-17T09:03:31.119075+00:00"
-    },
-    {
-      "query": "How many PTO days do I have?",
-      "category": "Personal",
-      "created_at": "2026-04-17T09:47:50.664815+00:00"
-    },
-    {
-      "query": "How many PTO days do I have?",
-      "category": "Personal",
-      "created_at": "2026-04-17T09:58:08.955183+00:00"
-    },
-    {
-      "query": "How many PTO days do I have?",
-      "category": "Personal",
-      "created_at": "2026-04-17T10:07:43.555547+00:00"
-    },
-    {
-      "query": "How many PTO days do I have?",
-      "category": "Personal",
-      "created_at": "2026-04-17T10:35:46.122481+00:00"
-    },
-    {
-      "query": "How many PTO days do I have?",
-      "category": "Personal",
-      "created_at": "2026-04-17T10:37:32.209965+00:00"
+      "created_at": "2026-04-20T14:12:42.474830+00:00"
     }
   ],
   "answers": [
     {
-      "key": "v9::how far in advance should i request pto?::route=POLICY::emp=E001::rag=0",
-      "question_norm": "how far in advance should i request pto?",
+      "key": "v9::what is my employee id and do i need a medical certificate::route=PROFILE::emp=E001::rag=0",
+      "question_norm": "what is my employee id and do i need a medical certificate",
       "employee_id": "E001",
       "use_rag": false,
       "kb_signature": "d5385aebf7e754b077ca0d00e5b28473fdcdf496a72638fdee42b839c9cbf468",
       "response": {
-        "answer": "I cannot see internal policy documents, including the employee handbook. Please contact your HR department for specific guidelines on how far in advance you should request PTO.",
-        "citations": [],
-        "retrieval_attempts": [],
-        "isEscalated": false,
-        "escalation_reason": null,
-        "pipeline_steps": [
-          {
-            "id": "guardrail",
-            "label": "Guardrail",
-            "status": "ok",
-            "detail": "No sensitive pattern matched"
-          },
-          {
-            "id": "router",
-            "label": "Semantic Intent Router",
-            "status": "ok",
-            "detail": "INTENT_POLICY (domain=POLICY, conf=0.90) \u2014 process-policy guardrail: contact/procedure query forced to policy"
-          },
-          {
-            "id": "retrieve",
-            "label": "Chroma retrieval",
-            "status": "skipped",
-            "detail": "Direct LLM mode (no handbook vectors)"
-          },
-          {
-            "id": "mcp_hr",
-            "label": "Employee profile data (MCP-style)",
-            "status": "skipped",
-            "detail": "Disabled in direct LLM mode"
-          },
-          {
-            "id": "llm",
-            "label": "OpenAI chat \u2014 gpt-4o-mini",
-            "status": "ok",
-            "detail": "Embeddings: text-embedding-3-small; structured JSON answer"
-          }
-        ],
-        "use_rag": false,
-        "chat_model": "gpt-4o-mini",
-        "route": "GENERAL",
-        "router_version": "v2.1",
-        "context_presence": {
-          "has_policy": false,
-          "has_profile": false,
-          "has_it": false
-        },
-        "clarification_triggered": false,
-        "employee_profile": null,
-        "tool_called": false,
-        "recovery_applied": false
-      },
-      "created_at": "2026-04-17T08:56:20.660266+00:00"
-    },
-    {
-      "key": "v9::how far in advance should i request pto?::route=POLICY::emp=E001::rag=1",
-      "question_norm": "how far in advance should i request pto?",
-      "employee_id": "E001",
-      "use_rag": true,
-      "kb_signature": "d5385aebf7e754b077ca0d00e5b28473fdcdf496a72638fdee42b839c9cbf468",
-      "response": {
-        "answer": "You should request PTO at least **10 business days** in advance. However, if there are emergencies, your manager may approve an exception to this rule. \n\nSource: our employee handbook",
+        "answer": "1. what is my employee id?\nYour employee id is E001.\n\nThese requests are outside supported scope:\n\n2. do i need a medical certificate?\n\nI can only help with HR, IT, and company policy questions.",
         "citations": [
           {
-            "text": "## Time off and leave\n\n### Paid time off (PTO)\n\nFull-time employees accrue **PTO** according to the accrual schedule published on the internal HR portal. PTO requests must be submitted **at least 10 business days** in advance unless your manager approves an exception for emergencies.\n\nUnused PTO may roll over up to **5 days** into the next calendar year unless local policy states otherwise.",
-            "score": 0.7262,
+            "text": "# Demo Employee Handbook (Synthetic)\n\nThis is **synthetic** content for demos only \u2014 not legal or HR advice.\n\n---",
+            "score": 0.841,
             "source": "handbook.md",
-            "section_title": "Paid time off (PTO)"
+            "section_title": "Demo Employee Handbook (Synthetic)"
           }
         ],
         "retrieval_attempts": [
           {
             "attempt": 1,
-            "query": "how far in advance should i request pto?",
-            "top_score": 0.7262,
-            "verdict": "answerable",
-            "reason": "The retrieved chunk clearly states that PTO requests must be submitted at least 10 business days in advance, which directly answers the question.",
+            "query": "what is my employee id",
+            "top_score": 0.841,
+            "verdict": "re-search",
+            "reason": "The retrieved chunks do not provide any information regarding the employee ID or the requirement for a medical certificate. They are off-topic and do not address the question asked.",
             "citations": [
               {
-                "text": "## Time off and leave\n\n### Paid time off (PTO)\n\nFull-time employees accrue **PTO** according to the accrual schedule published on the internal HR portal. PTO requests must be submitted **at least 10 business days** in advance unless your manager approves an exception for emergencies.\n\nUnused PTO may roll over up to **5 days** into the next calendar year unless local policy states otherwise.",
-                "score": 0.7262,
+                "text": "# Demo Employee Handbook (Synthetic)\n\nThis is **synthetic** content for demos only \u2014 not legal or HR advice.\n\n---",
+                "score": 0.841,
                 "source": "handbook.md",
-                "section_title": "Paid time off (PTO)"
+                "section_title": "Demo Employee Handbook (Synthetic)"
               }
             ]
-          }
-        ],
-        "isEscalated": false,
-        "escalation_reason": null,
-        "pipeline_steps": [
-          {
-            "id": "guardrail",
-            "label": "Guardrail",
-            "status": "ok",
-            "detail": "No sensitive pattern matched"
           },
           {
-            "id": "router",
-            "label": "Semantic Intent Router",
-            "status": "ok",
-            "detail": "INTENT_POLICY (domain=POLICY, conf=0.90) \u2014 process-policy guardrail: contact/procedure query forced to policy"
-          },
-          {
-            "id": "retrieve",
-            "label": "Chroma retrieval (embeddings + similarity)",
-            "status": "ok",
-            "detail": "1 chunk(s), 1 retrieval attempt(s)"
-          },
-          {
-            "id": "mcp_hr",
-            "label": "Employee tool (MCP-style)",
-            "status": "skipped",
-            "detail": "No employee profile context"
-          },
-          {
-            "id": "llm",
-            "label": "OpenAI chat \u2014 gpt-4o-mini",
-            "status": "ok",
-            "detail": "Embeddings: text-embedding-3-small; structured JSON answer"
-          }
-        ],
-        "use_rag": true,
-        "chat_model": "gpt-4o-mini",
-        "route": "POLICY",
-        "router_version": "v2.1",
-        "context_presence": {
-          "has_policy": true,
-          "has_profile": false,
-          "has_it": false
-        },
-        "clarification_triggered": false,
-        "employee_profile": null,
-        "tool_called": false,
-        "recovery_applied": false
-      },
-      "created_at": "2026-04-17T08:56:21.206214+00:00"
-    },
-    {
-      "key": "v9::what is my loan interest rate?::route=PROFILE::emp=E001::rag=0",
-      "question_norm": "what is my loan interest rate?",
-      "employee_id": "E001",
-      "use_rag": false,
-      "kb_signature": "d5385aebf7e754b077ca0d00e5b28473fdcdf496a72638fdee42b839c9cbf468",
-      "response": {
-        "answer": "I see you're asking about your profile. Are you looking for your leave balance or your loan eligibility?",
-        "citations": [],
-        "retrieval_attempts": [],
-        "isEscalated": false,
-        "escalation_reason": null,
-        "pipeline_steps": [
-          {
-            "id": "guardrail",
-            "label": "Guardrail",
-            "status": "ok",
-            "detail": "No sensitive pattern matched"
-          },
-          {
-            "id": "router",
-            "label": "Semantic Intent Router",
-            "status": "ok",
-            "detail": "INTENT_PERSONAL (domain=PROFILE, conf=1.00) \u2014 intent_policy domain=PROFILE conf=1.00; scores={'PROFILE': 3.0, 'POLICY': 0.0, 'IT': 0.0, 'OOS': 0.0}; primary=PROFILE"
-          },
-          {
-            "id": "retrieve",
-            "label": "Chroma retrieval",
-            "status": "skipped",
-            "detail": "Direct LLM mode (no handbook vectors)"
-          },
-          {
-            "id": "mcp_hr",
-            "label": "Employee profile data (MCP-style)",
-            "status": "skipped",
-            "detail": "Disabled in direct LLM mode"
-          },
-          {
-            "id": "llm",
-            "label": "OpenAI chat \u2014 gpt-4o-mini",
-            "status": "ok",
-            "detail": "Embeddings: text-embedding-3-small; structured JSON answer"
-          }
-        ],
-        "use_rag": false,
-        "chat_model": "gpt-4o-mini",
-        "route": "PROFILE",
-        "router_version": "v2.1",
-        "context_presence": {
-          "has_policy": false,
-          "has_profile": true,
-          "has_it": false
-        },
-        "clarification_triggered": false,
-        "employee_profile": {
-          "employee_id": "E001",
-          "name": "Alex Chen",
-          "department": "Engineering",
-          "title": "Senior Software Engineer",
-          "employment_type": "full-time",
-          "location": "Lahore",
-          "manager": "Nadia Rahman",
-          "pto_days_remaining": "14",
-          "sick_days_remaining": "6",
-          "services_loan_available": "True",
-          "services_loan_limit_pkr": "250000",
-          "services_loan_eligible_after_months": "12",
-          "language_pref": "en",
-          "pto_days": "14",
-          "sick_days": "6"
-        },
-        "tool_called": true,
-        "recovery_applied": false
-      },
-      "created_at": "2026-04-17T08:56:28.771107+00:00"
-    },
-    {
-      "key": "v9::what is my loan interest rate?::route=PROFILE::emp=E001::rag=1",
-      "question_norm": "what is my loan interest rate?",
-      "employee_id": "E001",
-      "use_rag": true,
-      "kb_signature": "d5385aebf7e754b077ca0d00e5b28473fdcdf496a72638fdee42b839c9cbf468",
-      "response": {
-        "answer": "I see you're asking about your profile. Are you looking for your leave balance or your loan eligibility?",
-        "citations": [],
-        "retrieval_attempts": [],
-        "isEscalated": false,
-        "escalation_reason": null,
-        "pipeline_steps": [
-          {
-            "id": "guardrail",
-            "label": "Guardrail",
-            "status": "ok",
-            "detail": "No sensitive pattern matched"
-          },
-          {
-            "id": "router",
-            "label": "Semantic Intent Router",
-            "status": "ok",
-            "detail": "INTENT_PERSONAL (domain=PROFILE, conf=1.00) \u2014 intent_policy domain=PROFILE conf=1.00; scores={'PROFILE': 3.0, 'POLICY': 0.0, 'IT': 0.0, 'OOS': 0.0}; primary=PROFILE"
-          },
-          {
-            "id": "retrieve",
-            "label": "Chroma retrieval (embeddings + similarity)",
-            "status": "skipped",
-            "detail": "Route is personal data lookup"
-          },
-          {
-            "id": "mcp_hr",
-            "label": "Employee tool (MCP-style)",
-            "status": "ok",
-            "detail": "\u2705 Active: Securely retrieved data for E001"
-          },
-          {
-            "id": "llm",
-            "label": "OpenAI chat \u2014 gpt-4o-mini",
-            "status": "ok",
-            "detail": "Embeddings: text-embedding-3-small; structured JSON answer"
-          }
-        ],
-        "use_rag": true,
-        "chat_model": "gpt-4o-mini",
-        "route": "PROFILE",
-        "router_version": "v2.1",
-        "context_presence": {
-          "has_policy": false,
-          "has_profile": true,
-          "has_it": false
-        },
-        "clarification_triggered": false,
-        "employee_profile": {
-          "employee_id": "E001",
-          "name": "Alex Chen",
-          "department": "Engineering",
-          "title": "Senior Software Engineer",
-          "employment_type": "full-time",
-          "location": "Lahore",
-          "manager": "Nadia Rahman",
-          "pto_days_remaining": "14",
-          "sick_days_remaining": "6",
-          "services_loan_available": "True",
-          "services_loan_limit_pkr": "250000",
-          "services_loan_eligible_after_months": "12",
-          "language_pref": "en",
-          "pto_days": "14",
-          "sick_days": "6"
-        },
-        "tool_called": true,
-        "recovery_applied": false
-      },
-      "created_at": "2026-04-17T08:56:29.148446+00:00"
-    },
-    {
-      "key": "v9::what is pto policy and what is vpn and how many leaves i have?::route=POLICY::emp=E001::rag=0",
-      "question_norm": "what is pto policy and what is vpn and how many leaves i have?",
-      "employee_id": "E001",
-      "use_rag": false,
-      "kb_signature": "d5385aebf7e754b077ca0d00e5b28473fdcdf496a72638fdee42b839c9cbf468",
-      "response": {
-        "answer": "Your balance:\nYou currently have 14 PTO days and 6 sick days remaining.\n\nPolicy:\n## Time off and leave\n### Paid time off (PTO)\nFull-time employees accrue **PTO** according to the accrual schedule published on the internal HR portal. (Section: Paid time off (PTO))\n# IT Support & Infrastructure Guide\n### VPN Access\nTo access internal servers from a remote location, you must use the **GlobalProtect VPN**. (Section: VPN Access)\n\nSource: Employee Handbook > Section: Paid time off (PTO); IT Support & Infrastructure Guide > Section: VPN Access",
-        "citations": [
-          {
-            "text": "# IT Support & Infrastructure Guide\n\n### VPN Access\nTo access internal servers from a remote location, you must use the **GlobalProtect VPN**. \n* **Gateway:** `vpn.company.com` \n* **Credentials:** Use your standard SSO (Single Sign-On) credentials.\n* **MFA:** Multi-factor authentication via the Duo app is required for every login.",
-            "score": 1.0244,
-            "source": "it_guide.md",
-            "section_title": "VPN Access"
-          },
-          {
-            "text": "## Time off and leave\n\n### Paid time off (PTO)\n\nFull-time employees accrue **PTO** according to the accrual schedule published on the internal HR portal. PTO requests must be submitted **at least 10 business days** in advance unless your manager approves an exception for emergencies.\n\nUnused PTO may roll over up to **5 days** into the next calendar year unless local policy states otherwise.",
-            "score": 0.9751,
-            "source": "handbook.md",
-            "section_title": "Paid time off (PTO)"
-          }
-        ],
-        "retrieval_attempts": [
-          {
-            "attempt": 1,
-            "query": "what is paid time off policy",
-            "top_score": 1.0244,
-            "verdict": "answerable",
-            "reason": "Fast-path accept: top score 1.02 with 2 citation(s)",
+            "attempt": 2,
+            "query": "what is my employee identification number and am i required to submit a medical certificate for my absence?",
+            "top_score": 0.841,
+            "verdict": "re-search",
+            "reason": "The retrieved chunks do not provide any information regarding the employee ID or the requirement for a medical certificate. They are off-topic and do not address the question asked.",
             "citations": [
               {
-                "text": "# IT Support & Infrastructure Guide\n\n### VPN Access\nTo access internal servers from a remote location, you must use the **GlobalProtect VPN**. \n* **Gateway:** `vpn.company.com` \n* **Credentials:** Use your standard SSO (Single Sign-On) credentials.\n* **MFA:** Multi-factor authentication via the Duo app is required for every login.",
-                "score": 1.0244,
-                "source": "it_guide.md",
-                "section_title": "VPN Access"
-              },
-              {
-                "text": "## Time off and leave\n\n### Paid time off (PTO)\n\nFull-time employees accrue **PTO** according to the accrual schedule published on the internal HR portal. PTO requests must be submitted **at least 10 business days** in advance unless your manager approves an exception for emergencies.\n\nUnused PTO may roll over up to **5 days** into the next calendar year unless local policy states otherwise.",
-                "score": 0.9751,
+                "text": "# Demo Employee Handbook (Synthetic)\n\nThis is **synthetic** content for demos only \u2014 not legal or HR advice.\n\n---",
+                "score": 0.841,
                 "source": "handbook.md",
-                "section_title": "Paid time off (PTO)"
+                "section_title": "Demo Employee Handbook (Synthetic)"
               }
             ]
           }
@@ -629,49 +202,52 @@
         "tool_called": false,
         "recovery_applied": false
       },
-      "created_at": "2026-04-17T08:57:00.044690+00:00"
+      "created_at": "2026-04-20T13:40:13.401213+00:00"
     },
     {
-      "key": "v9::what is pto policy and what is vpn and how many leaves i have?::route=POLICY::emp=E001::rag=1",
-      "question_norm": "what is pto policy and what is vpn and how many leaves i have?",
+      "key": "v9::what is my employee id and do i need a medical certificate::route=PROFILE::emp=E001::rag=1",
+      "question_norm": "what is my employee id and do i need a medical certificate",
       "employee_id": "E001",
       "use_rag": true,
       "kb_signature": "d5385aebf7e754b077ca0d00e5b28473fdcdf496a72638fdee42b839c9cbf468",
       "response": {
-        "answer": "Your balance:\nYou currently have 14 PTO days and 6 sick days remaining.\n\nPolicy:\n## Time off and leave\n### Paid time off (PTO)\nFull-time employees accrue **PTO** according to the accrual schedule published on the internal HR portal. (Section: Paid time off (PTO))\n# IT Support & Infrastructure Guide\n### VPN Access\nTo access internal servers from a remote location, you must use the **GlobalProtect VPN**. (Section: VPN Access)\n\nSource: Employee Handbook > Section: Paid time off (PTO); IT Support & Infrastructure Guide > Section: VPN Access",
+        "answer": "1. what is my employee id?\nYour employee id is E001.\n\nThese requests are outside supported scope:\n\n2. do i need a medical certificate?\n\nI can only help with HR, IT, and company policy questions.",
         "citations": [
           {
-            "text": "# IT Support & Infrastructure Guide\n\n### VPN Access\nTo access internal servers from a remote location, you must use the **GlobalProtect VPN**. \n* **Gateway:** `vpn.company.com` \n* **Credentials:** Use your standard SSO (Single Sign-On) credentials.\n* **MFA:** Multi-factor authentication via the Duo app is required for every login.",
-            "score": 1.0244,
-            "source": "it_guide.md",
-            "section_title": "VPN Access"
-          },
-          {
-            "text": "## Time off and leave\n\n### Paid time off (PTO)\n\nFull-time employees accrue **PTO** according to the accrual schedule published on the internal HR portal. PTO requests must be submitted **at least 10 business days** in advance unless your manager approves an exception for emergencies.\n\nUnused PTO may roll over up to **5 days** into the next calendar year unless local policy states otherwise.",
-            "score": 0.9751,
+            "text": "# Demo Employee Handbook (Synthetic)\n\nThis is **synthetic** content for demos only \u2014 not legal or HR advice.\n\n---",
+            "score": 0.841,
             "source": "handbook.md",
-            "section_title": "Paid time off (PTO)"
+            "section_title": "Demo Employee Handbook (Synthetic)"
           }
         ],
         "retrieval_attempts": [
           {
             "attempt": 1,
-            "query": "what is paid time off policy",
-            "top_score": 1.0244,
-            "verdict": "answerable",
-            "reason": "Fast-path accept: top score 1.02 with 2 citation(s)",
+            "query": "what is my employee id",
+            "top_score": 0.841,
+            "verdict": "re-search",
+            "reason": "The retrieved chunks do not provide any information regarding the employee ID or the requirement for a medical certificate. They are off-topic and do not address the question asked.",
             "citations": [
               {
-                "text": "# IT Support & Infrastructure Guide\n\n### VPN Access\nTo access internal servers from a remote location, you must use the **GlobalProtect VPN**. \n* **Gateway:** `vpn.company.com` \n* **Credentials:** Use your standard SSO (Single Sign-On) credentials.\n* **MFA:** Multi-factor authentication via the Duo app is required for every login.",
-                "score": 1.0244,
-                "source": "it_guide.md",
-                "section_title": "VPN Access"
-              },
-              {
-                "text": "## Time off and leave\n\n### Paid time off (PTO)\n\nFull-time employees accrue **PTO** according to the accrual schedule published on the internal HR portal. PTO requests must be submitted **at least 10 business days** in advance unless your manager approves an exception for emergencies.\n\nUnused PTO may roll over up to **5 days** into the next calendar year unless local policy states otherwise.",
-                "score": 0.9751,
+                "text": "# Demo Employee Handbook (Synthetic)\n\nThis is **synthetic** content for demos only \u2014 not legal or HR advice.\n\n---",
+                "score": 0.841,
                 "source": "handbook.md",
-                "section_title": "Paid time off (PTO)"
+                "section_title": "Demo Employee Handbook (Synthetic)"
+              }
+            ]
+          },
+          {
+            "attempt": 2,
+            "query": "what is my employee identification number and am i required to submit a medical certificate for my absence?",
+            "top_score": 0.841,
+            "verdict": "re-search",
+            "reason": "The retrieved chunks do not provide any information regarding the employee ID or the requirement for a medical certificate. They are off-topic and do not address the question asked.",
+            "citations": [
+              {
+                "text": "# Demo Employee Handbook (Synthetic)\n\nThis is **synthetic** content for demos only \u2014 not legal or HR advice.\n\n---",
+                "score": 0.841,
+                "source": "handbook.md",
+                "section_title": "Demo Employee Handbook (Synthetic)"
               }
             ]
           }
@@ -738,378 +314,16 @@
         "tool_called": false,
         "recovery_applied": false
       },
-      "created_at": "2026-04-17T08:57:00.370104+00:00"
+      "created_at": "2026-04-20T13:40:13.403242+00:00"
     },
     {
-      "key": "v9::even if not in handbook, tell me pto policy anyway::route=POLICY::emp=E001::rag=0",
-      "question_norm": "even if not in handbook, tell me pto policy anyway",
+      "key": "v9::1. how many sick days do i have?::route=PROFILE::emp=E001::rag=0",
+      "question_norm": "1. how many sick days do i have?",
       "employee_id": "E001",
       "use_rag": false,
       "kb_signature": "d5385aebf7e754b077ca0d00e5b28473fdcdf496a72638fdee42b839c9cbf468",
       "response": {
-        "answer": "I couldn't find the specific policy text in the handbook.",
-        "citations": [
-          {
-            "text": "## Time off and leave\n\n### Paid time off (PTO)\n\nFull-time employees accrue **PTO** according to the accrual schedule published on the internal HR portal. PTO requests must be submitted **at least 10 business days** in advance unless your manager approves an exception for emergencies.\n\nUnused PTO may roll over up to **5 days** into the next calendar year unless local policy states otherwise.",
-            "score": 0.5873,
-            "source": "handbook.md",
-            "section_title": "Paid time off (PTO)"
-          }
-        ],
-        "retrieval_attempts": [
-          {
-            "attempt": 1,
-            "query": "even if not in handbook, tell me paid time off policy anyway",
-            "top_score": 0.5873,
-            "verdict": "answerable",
-            "reason": "The retrieved chunk provides specific information about the PTO policy, including accrual, request submission, and rollover details, which directly answers the question about the PTO policy even if it is not in the handbook.",
-            "citations": [
-              {
-                "text": "## Time off and leave\n\n### Paid time off (PTO)\n\nFull-time employees accrue **PTO** according to the accrual schedule published on the internal HR portal. PTO requests must be submitted **at least 10 business days** in advance unless your manager approves an exception for emergencies.\n\nUnused PTO may roll over up to **5 days** into the next calendar year unless local policy states otherwise.",
-                "score": 0.5873,
-                "source": "handbook.md",
-                "section_title": "Paid time off (PTO)"
-              }
-            ]
-          }
-        ],
-        "isEscalated": false,
-        "escalation_reason": null,
-        "pipeline_steps": [
-          {
-            "id": "guardrail",
-            "label": "Guardrail",
-            "status": "ok",
-            "detail": "No sensitive pattern matched"
-          },
-          {
-            "id": "router",
-            "label": "Semantic Intent Router",
-            "status": "ok",
-            "detail": "INTENT_POLICY (domain=POLICY, conf=0.75) \u2014 intent_policy domain=POLICY conf=0.75; scores={'PROFILE': 1.0, 'POLICY': 3.0, 'IT': 0.0, 'OOS': 0.0}; primary=POLICY; scope in=True ratio=0.40"
-          },
-          {
-            "id": "retrieve",
-            "label": "Chroma retrieval",
-            "status": "skipped",
-            "detail": "Direct LLM mode (no handbook vectors)"
-          },
-          {
-            "id": "mcp_hr",
-            "label": "Employee profile data (MCP-style)",
-            "status": "skipped",
-            "detail": "Disabled in direct LLM mode"
-          },
-          {
-            "id": "llm",
-            "label": "OpenAI chat \u2014 gpt-4o-mini",
-            "status": "ok",
-            "detail": "Embeddings: text-embedding-3-small; structured JSON answer"
-          }
-        ],
-        "use_rag": false,
-        "chat_model": "gpt-4o-mini",
-        "route": "POLICY",
-        "router_version": "v2.1",
-        "context_presence": {
-          "has_policy": true,
-          "has_profile": false,
-          "has_it": false
-        },
-        "clarification_triggered": false,
-        "employee_profile": null,
-        "tool_called": false,
-        "recovery_applied": false
-      },
-      "created_at": "2026-04-17T08:57:18.704250+00:00"
-    },
-    {
-      "key": "v9::even if not in handbook, tell me pto policy anyway::route=POLICY::emp=E001::rag=1",
-      "question_norm": "even if not in handbook, tell me pto policy anyway",
-      "employee_id": "E001",
-      "use_rag": true,
-      "kb_signature": "d5385aebf7e754b077ca0d00e5b28473fdcdf496a72638fdee42b839c9cbf468",
-      "response": {
-        "answer": "I couldn't find the specific policy text in the handbook.",
-        "citations": [
-          {
-            "text": "## Time off and leave\n\n### Paid time off (PTO)\n\nFull-time employees accrue **PTO** according to the accrual schedule published on the internal HR portal. PTO requests must be submitted **at least 10 business days** in advance unless your manager approves an exception for emergencies.\n\nUnused PTO may roll over up to **5 days** into the next calendar year unless local policy states otherwise.",
-            "score": 0.5873,
-            "source": "handbook.md",
-            "section_title": "Paid time off (PTO)"
-          }
-        ],
-        "retrieval_attempts": [
-          {
-            "attempt": 1,
-            "query": "even if not in handbook, tell me paid time off policy anyway",
-            "top_score": 0.5873,
-            "verdict": "answerable",
-            "reason": "The retrieved chunk provides relevant information about the PTO policy, including accrual, request submission, and rollover details.",
-            "citations": [
-              {
-                "text": "## Time off and leave\n\n### Paid time off (PTO)\n\nFull-time employees accrue **PTO** according to the accrual schedule published on the internal HR portal. PTO requests must be submitted **at least 10 business days** in advance unless your manager approves an exception for emergencies.\n\nUnused PTO may roll over up to **5 days** into the next calendar year unless local policy states otherwise.",
-                "score": 0.5873,
-                "source": "handbook.md",
-                "section_title": "Paid time off (PTO)"
-              }
-            ]
-          }
-        ],
-        "isEscalated": false,
-        "escalation_reason": null,
-        "pipeline_steps": [
-          {
-            "id": "guardrail",
-            "label": "Guardrail",
-            "status": "ok",
-            "detail": "No sensitive pattern matched"
-          },
-          {
-            "id": "router",
-            "label": "Semantic Intent Router",
-            "status": "ok",
-            "detail": "INTENT_POLICY (domain=POLICY, conf=0.75) \u2014 intent_policy domain=POLICY conf=0.75; scores={'PROFILE': 1.0, 'POLICY': 3.0, 'IT': 0.0, 'OOS': 0.0}; primary=POLICY; scope in=True ratio=0.40"
-          },
-          {
-            "id": "retrieve",
-            "label": "Chroma retrieval (embeddings + similarity)",
-            "status": "ok",
-            "detail": "1 chunk(s), 1 retrieval attempt(s)"
-          },
-          {
-            "id": "mcp_hr",
-            "label": "Employee tool (MCP-style)",
-            "status": "skipped",
-            "detail": "No employee profile context"
-          },
-          {
-            "id": "llm",
-            "label": "OpenAI chat \u2014 gpt-4o-mini",
-            "status": "ok",
-            "detail": "Embeddings: text-embedding-3-small; structured JSON answer"
-          }
-        ],
-        "use_rag": true,
-        "chat_model": "gpt-4o-mini",
-        "route": "POLICY",
-        "router_version": "v2.1",
-        "context_presence": {
-          "has_policy": true,
-          "has_profile": false,
-          "has_it": false
-        },
-        "clarification_triggered": false,
-        "employee_profile": null,
-        "tool_called": false,
-        "recovery_applied": false
-      },
-      "created_at": "2026-04-17T08:57:18.833274+00:00"
-    },
-    {
-      "key": "v9::what is the company policy for bringing pets to office?::route=POLICY::emp=E001::rag=1",
-      "question_norm": "what is the company policy for bringing pets to office?",
-      "employee_id": "E001",
-      "use_rag": true,
-      "kb_signature": "d5385aebf7e754b077ca0d00e5b28473fdcdf496a72638fdee42b839c9cbf468",
-      "response": {
-        "answer": "I couldn't find the specific policy text in the handbook.",
-        "citations": [
-          {
-            "text": "## Time off and leave\n\n### Paid time off (PTO)\n\nFull-time employees accrue **PTO** according to the accrual schedule published on the internal HR portal. PTO requests must be submitted **at least 10 business days** in advance unless your manager approves an exception for emergencies.\n\nUnused PTO may roll over up to **5 days** into the next calendar year unless local policy states otherwise.",
-            "score": 0.4234,
-            "source": "handbook.md",
-            "section_title": "Paid time off (PTO)"
-          }
-        ],
-        "retrieval_attempts": [
-          {
-            "attempt": 1,
-            "query": "what is the company policy for bringing pets to office?",
-            "top_score": 0.4234,
-            "verdict": "re-search",
-            "reason": "The retrieved chunk discusses paid time off (PTO) and does not provide any information about the company policy for bringing pets to the office.",
-            "citations": [
-              {
-                "text": "## Time off and leave\n\n### Paid time off (PTO)\n\nFull-time employees accrue **PTO** according to the accrual schedule published on the internal HR portal. PTO requests must be submitted **at least 10 business days** in advance unless your manager approves an exception for emergencies.\n\nUnused PTO may roll over up to **5 days** into the next calendar year unless local policy states otherwise.",
-                "score": 0.4234,
-                "source": "handbook.md",
-                "section_title": "Paid time off (PTO)"
-              }
-            ]
-          },
-          {
-            "attempt": 2,
-            "query": "what are the guidelines and procedures regarding the presence of pets in the workplace, including eligibility criteria, any exceptions to the policy, and the process for requesting permission to bring a pet to the office?",
-            "top_score": 0.4234,
-            "verdict": "re-search",
-            "reason": "The retrieved chunk discusses paid time off (PTO) and does not provide any information about the company policy for bringing pets to the office.",
-            "citations": [
-              {
-                "text": "## Time off and leave\n\n### Paid time off (PTO)\n\nFull-time employees accrue **PTO** according to the accrual schedule published on the internal HR portal. PTO requests must be submitted **at least 10 business days** in advance unless your manager approves an exception for emergencies.\n\nUnused PTO may roll over up to **5 days** into the next calendar year unless local policy states otherwise.",
-                "score": 0.4234,
-                "source": "handbook.md",
-                "section_title": "Paid time off (PTO)"
-              }
-            ]
-          }
-        ],
-        "isEscalated": false,
-        "escalation_reason": null,
-        "pipeline_steps": [
-          {
-            "id": "guardrail",
-            "label": "Guardrail",
-            "status": "ok",
-            "detail": "No sensitive pattern matched"
-          },
-          {
-            "id": "router",
-            "label": "Semantic Intent Router",
-            "status": "ok",
-            "detail": "INTENT_POLICY (domain=POLICY, conf=1.00) \u2014 intent_policy domain=POLICY conf=1.00; scores={'PROFILE': 0.0, 'POLICY': 3.0, 'IT': 0.0, 'OOS': 0.0}; primary=POLICY; scope in=False ratio=0.00"
-          },
-          {
-            "id": "retrieve",
-            "label": "Chroma retrieval (embeddings + similarity)",
-            "status": "empty",
-            "detail": "Re-search failed after 2 attempt(s): The retrieved chunk discusses paid time off (PTO) and does not provide any information about the company policy for bringing pets to the office."
-          },
-          {
-            "id": "mcp_hr",
-            "label": "Employee tool (MCP-style)",
-            "status": "skipped",
-            "detail": "No employee profile context"
-          },
-          {
-            "id": "llm",
-            "label": "OpenAI chat \u2014 gpt-4o-mini",
-            "status": "ok",
-            "detail": "Embeddings: text-embedding-3-small; structured JSON answer"
-          }
-        ],
-        "use_rag": true,
-        "chat_model": "gpt-4o-mini",
-        "route": "POLICY",
-        "router_version": "v2.1",
-        "context_presence": {
-          "has_policy": true,
-          "has_profile": false,
-          "has_it": false
-        },
-        "clarification_triggered": false,
-        "employee_profile": null,
-        "tool_called": false,
-        "recovery_applied": false
-      },
-      "created_at": "2026-04-17T08:57:26.347531+00:00"
-    },
-    {
-      "key": "v9::what is the company policy for bringing pets to office?::route=POLICY::emp=E001::rag=0",
-      "question_norm": "what is the company policy for bringing pets to office?",
-      "employee_id": "E001",
-      "use_rag": false,
-      "kb_signature": "d5385aebf7e754b077ca0d00e5b28473fdcdf496a72638fdee42b839c9cbf468",
-      "response": {
-        "answer": "I couldn't find the specific policy text in the handbook.",
-        "citations": [
-          {
-            "text": "## Time off and leave\n\n### Paid time off (PTO)\n\nFull-time employees accrue **PTO** according to the accrual schedule published on the internal HR portal. PTO requests must be submitted **at least 10 business days** in advance unless your manager approves an exception for emergencies.\n\nUnused PTO may roll over up to **5 days** into the next calendar year unless local policy states otherwise.",
-            "score": 0.4234,
-            "source": "handbook.md",
-            "section_title": "Paid time off (PTO)"
-          }
-        ],
-        "retrieval_attempts": [
-          {
-            "attempt": 1,
-            "query": "what is the company policy for bringing pets to office?",
-            "top_score": 0.4234,
-            "verdict": "re-search",
-            "reason": "The retrieved chunk discusses paid time off (PTO) and does not provide any information about the company policy for bringing pets to the office.",
-            "citations": [
-              {
-                "text": "## Time off and leave\n\n### Paid time off (PTO)\n\nFull-time employees accrue **PTO** according to the accrual schedule published on the internal HR portal. PTO requests must be submitted **at least 10 business days** in advance unless your manager approves an exception for emergencies.\n\nUnused PTO may roll over up to **5 days** into the next calendar year unless local policy states otherwise.",
-                "score": 0.4234,
-                "source": "handbook.md",
-                "section_title": "Paid time off (PTO)"
-              }
-            ]
-          },
-          {
-            "attempt": 2,
-            "query": "what are the guidelines and procedures regarding the presence of pets in the workplace, including eligibility criteria, any exceptions to the policy, and the process for requesting permission to bring a pet to the office?",
-            "top_score": 0.4234,
-            "verdict": "re-search",
-            "reason": "The retrieved chunk discusses paid time off (PTO) and does not provide any information about the company policy for bringing pets to the office.",
-            "citations": [
-              {
-                "text": "## Time off and leave\n\n### Paid time off (PTO)\n\nFull-time employees accrue **PTO** according to the accrual schedule published on the internal HR portal. PTO requests must be submitted **at least 10 business days** in advance unless your manager approves an exception for emergencies.\n\nUnused PTO may roll over up to **5 days** into the next calendar year unless local policy states otherwise.",
-                "score": 0.4234,
-                "source": "handbook.md",
-                "section_title": "Paid time off (PTO)"
-              }
-            ]
-          }
-        ],
-        "isEscalated": false,
-        "escalation_reason": null,
-        "pipeline_steps": [
-          {
-            "id": "guardrail",
-            "label": "Guardrail",
-            "status": "ok",
-            "detail": "No sensitive pattern matched"
-          },
-          {
-            "id": "router",
-            "label": "Semantic Intent Router",
-            "status": "ok",
-            "detail": "INTENT_POLICY (domain=POLICY, conf=1.00) \u2014 intent_policy domain=POLICY conf=1.00; scores={'PROFILE': 0.0, 'POLICY': 3.0, 'IT': 0.0, 'OOS': 0.0}; primary=POLICY; scope in=False ratio=0.00"
-          },
-          {
-            "id": "retrieve",
-            "label": "Chroma retrieval",
-            "status": "skipped",
-            "detail": "Direct LLM mode (no handbook vectors)"
-          },
-          {
-            "id": "mcp_hr",
-            "label": "Employee profile data (MCP-style)",
-            "status": "skipped",
-            "detail": "Disabled in direct LLM mode"
-          },
-          {
-            "id": "llm",
-            "label": "OpenAI chat \u2014 gpt-4o-mini",
-            "status": "ok",
-            "detail": "Embeddings: text-embedding-3-small; structured JSON answer"
-          }
-        ],
-        "use_rag": false,
-        "chat_model": "gpt-4o-mini",
-        "route": "POLICY",
-        "router_version": "v2.1",
-        "context_presence": {
-          "has_policy": true,
-          "has_profile": false,
-          "has_it": false
-        },
-        "clarification_triggered": false,
-        "employee_profile": null,
-        "tool_called": false,
-        "recovery_applied": false
-      },
-      "created_at": "2026-04-17T08:57:26.695091+00:00"
-    },
-    {
-      "key": "v9::what is the company policy on working from mars?::route=OOS::emp=E001::rag=1",
-      "question_norm": "what is the company policy on working from mars?",
-      "employee_id": "E001",
-      "use_rag": true,
-      "kb_signature": "d5385aebf7e754b077ca0d00e5b28473fdcdf496a72638fdee42b839c9cbf468",
-      "response": {
-        "answer": "I can only help with HR, IT, and company policy questions.",
+        "answer": "You currently have 6 sick days remaining.",
         "citations": [],
         "retrieval_attempts": [],
         "isEscalated": false,
@@ -1125,19 +339,19 @@
             "id": "router",
             "label": "Semantic Intent Router",
             "status": "ok",
-            "detail": "INTENT_OUT_OF_DOMAIN (domain=OOS, conf=0.46) \u2014 intent_policy domain=OOS conf=0.46; scores={'PROFILE': 0.0, 'POLICY': 3.0, 'IT': 0.0, 'OOS': 2.5}; primary=OOS; scope in=False ratio=0.00"
+            "detail": "INTENT_POLICY (domain=POLICY, conf=0.90) \u2014 process-policy guardrail: contact/procedure query forced to policy"
           },
           {
             "id": "retrieve",
-            "label": "Chroma retrieval (embeddings + similarity)",
+            "label": "Chroma retrieval",
             "status": "skipped",
-            "detail": "Route is general conversation"
+            "detail": "Direct LLM mode (no handbook vectors)"
           },
           {
             "id": "mcp_hr",
-            "label": "Employee tool (MCP-style)",
+            "label": "Employee profile data (MCP-style)",
             "status": "skipped",
-            "detail": "No employee profile context"
+            "detail": "Disabled in direct LLM mode"
           },
           {
             "id": "llm",
@@ -1146,30 +360,46 @@
             "detail": "Embeddings: text-embedding-3-small; structured JSON answer"
           }
         ],
-        "use_rag": true,
+        "use_rag": false,
         "chat_model": "gpt-4o-mini",
-        "route": "GENERAL",
+        "route": "PROFILE",
         "router_version": "v2.1",
         "context_presence": {
           "has_policy": false,
-          "has_profile": false,
+          "has_profile": true,
           "has_it": false
         },
         "clarification_triggered": false,
-        "employee_profile": null,
-        "tool_called": false,
+        "employee_profile": {
+          "employee_id": "E001",
+          "name": "Alex Chen",
+          "department": "Engineering",
+          "title": "Senior Software Engineer",
+          "employment_type": "full-time",
+          "location": "Lahore",
+          "manager": "Nadia Rahman",
+          "pto_days_remaining": "14",
+          "sick_days_remaining": "6",
+          "services_loan_available": "True",
+          "services_loan_limit_pkr": "250000",
+          "services_loan_eligible_after_months": "12",
+          "language_pref": "en",
+          "pto_days": "14",
+          "sick_days": "6"
+        },
+        "tool_called": true,
         "recovery_applied": false
       },
-      "created_at": "2026-04-17T08:57:28.026531+00:00"
+      "created_at": "2026-04-20T13:40:58.597863+00:00"
     },
     {
-      "key": "v9::what is the company policy on working from mars?::route=OOS::emp=E001::rag=0",
-      "question_norm": "what is the company policy on working from mars?",
+      "key": "v9::1. how many sick days do i have?::route=PROFILE::emp=E001::rag=1",
+      "question_norm": "1. how many sick days do i have?",
       "employee_id": "E001",
-      "use_rag": false,
+      "use_rag": true,
       "kb_signature": "d5385aebf7e754b077ca0d00e5b28473fdcdf496a72638fdee42b839c9cbf468",
       "response": {
-        "answer": "I cannot see internal policy documents, including any specific company policies regarding working from Mars. Please contact your HR department for accurate information.",
+        "answer": "You currently have 6 sick days remaining.",
         "citations": [],
         "retrieval_attempts": [],
         "isEscalated": false,
@@ -1185,215 +415,19 @@
             "id": "router",
             "label": "Semantic Intent Router",
             "status": "ok",
-            "detail": "INTENT_OUT_OF_DOMAIN (domain=OOS, conf=0.46) \u2014 intent_policy domain=OOS conf=0.46; scores={'PROFILE': 0.0, 'POLICY': 3.0, 'IT': 0.0, 'OOS': 2.5}; primary=OOS; scope in=False ratio=0.00"
-          },
-          {
-            "id": "retrieve",
-            "label": "Chroma retrieval",
-            "status": "skipped",
-            "detail": "Direct LLM mode (no handbook vectors)"
-          },
-          {
-            "id": "mcp_hr",
-            "label": "Employee profile data (MCP-style)",
-            "status": "skipped",
-            "detail": "Disabled in direct LLM mode"
-          },
-          {
-            "id": "llm",
-            "label": "OpenAI chat \u2014 gpt-4o-mini",
-            "status": "ok",
-            "detail": "Embeddings: text-embedding-3-small; structured JSON answer"
-          }
-        ],
-        "use_rag": false,
-        "chat_model": "gpt-4o-mini",
-        "route": "GENERAL",
-        "router_version": "v2.1",
-        "context_presence": {
-          "has_policy": false,
-          "has_profile": false,
-          "has_it": false
-        },
-        "clarification_triggered": false,
-        "employee_profile": null,
-        "tool_called": false,
-        "recovery_applied": false
-      },
-      "created_at": "2026-04-17T08:57:29.211165+00:00"
-    },
-    {
-      "key": "v9::is there a policy for sabbatical after 2 months?::route=POLICY::emp=E001::rag=0",
-      "question_norm": "is there a policy for sabbatical after 2 months?",
-      "employee_id": "E001",
-      "use_rag": false,
-      "kb_signature": "d5385aebf7e754b077ca0d00e5b28473fdcdf496a72638fdee42b839c9cbf468",
-      "response": {
-        "answer": "I couldn't find the specific policy text in the handbook.",
-        "citations": [
-          {
-            "text": "### Sick leave\n\nSick leave is for illness or medical appointments. Notify your manager **as soon as practicable** on the day you cannot work. For absences longer than **3 consecutive workdays**, HR may request a fitness-for-duty or medical certification consistent with applicable law.",
-            "score": 0.4548,
-            "source": "handbook.md",
-            "section_title": "Sick leave"
-          }
-        ],
-        "retrieval_attempts": [
-          {
-            "attempt": 1,
-            "query": "is there a policy for sabbatical after 2 months?",
-            "top_score": 0.4548,
-            "verdict": "re-search",
-            "reason": "The retrieved chunk discusses sick leave policies and does not provide any information regarding sabbatical policies, making it irrelevant to the question.",
-            "citations": [
-              {
-                "text": "### Sick leave\n\nSick leave is for illness or medical appointments. Notify your manager **as soon as practicable** on the day you cannot work. For absences longer than **3 consecutive workdays**, HR may request a fitness-for-duty or medical certification consistent with applicable law.",
-                "score": 0.4548,
-                "source": "handbook.md",
-                "section_title": "Sick leave"
-              }
-            ]
-          },
-          {
-            "attempt": 2,
-            "query": "what is the policy regarding eligibility for a sabbatical leave after completing two months of employment, including any specific processes, exceptions, and requirements that need to be met?",
-            "top_score": 0.4548,
-            "verdict": "re-search",
-            "reason": "The retrieved chunk discusses sick leave policies and does not provide any information regarding sabbatical policies, making it irrelevant to the question.",
-            "citations": [
-              {
-                "text": "### Sick leave\n\nSick leave is for illness or medical appointments. Notify your manager **as soon as practicable** on the day you cannot work. For absences longer than **3 consecutive workdays**, HR may request a fitness-for-duty or medical certification consistent with applicable law.",
-                "score": 0.4548,
-                "source": "handbook.md",
-                "section_title": "Sick leave"
-              }
-            ]
-          }
-        ],
-        "isEscalated": false,
-        "escalation_reason": null,
-        "pipeline_steps": [
-          {
-            "id": "guardrail",
-            "label": "Guardrail",
-            "status": "ok",
-            "detail": "No sensitive pattern matched"
-          },
-          {
-            "id": "router",
-            "label": "Semantic Intent Router",
-            "status": "ok",
-            "detail": "INTENT_POLICY (domain=POLICY, conf=1.00) \u2014 intent_policy domain=POLICY conf=1.00; scores={'PROFILE': 0.0, 'POLICY': 3.0, 'IT': 0.0, 'OOS': 0.0}; primary=POLICY; scope in=False ratio=0.00"
-          },
-          {
-            "id": "retrieve",
-            "label": "Chroma retrieval",
-            "status": "skipped",
-            "detail": "Direct LLM mode (no handbook vectors)"
-          },
-          {
-            "id": "mcp_hr",
-            "label": "Employee profile data (MCP-style)",
-            "status": "skipped",
-            "detail": "Disabled in direct LLM mode"
-          },
-          {
-            "id": "llm",
-            "label": "OpenAI chat \u2014 gpt-4o-mini",
-            "status": "ok",
-            "detail": "Embeddings: text-embedding-3-small; structured JSON answer"
-          }
-        ],
-        "use_rag": false,
-        "chat_model": "gpt-4o-mini",
-        "route": "POLICY",
-        "router_version": "v2.1",
-        "context_presence": {
-          "has_policy": true,
-          "has_profile": false,
-          "has_it": false
-        },
-        "clarification_triggered": false,
-        "employee_profile": null,
-        "tool_called": false,
-        "recovery_applied": false
-      },
-      "created_at": "2026-04-17T08:57:40.233424+00:00"
-    },
-    {
-      "key": "v9::is there a policy for sabbatical after 2 months?::route=POLICY::emp=E001::rag=1",
-      "question_norm": "is there a policy for sabbatical after 2 months?",
-      "employee_id": "E001",
-      "use_rag": true,
-      "kb_signature": "d5385aebf7e754b077ca0d00e5b28473fdcdf496a72638fdee42b839c9cbf468",
-      "response": {
-        "answer": "I couldn't find the specific policy text in the handbook.",
-        "citations": [
-          {
-            "text": "### Sick leave\n\nSick leave is for illness or medical appointments. Notify your manager **as soon as practicable** on the day you cannot work. For absences longer than **3 consecutive workdays**, HR may request a fitness-for-duty or medical certification consistent with applicable law.",
-            "score": 0.4548,
-            "source": "handbook.md",
-            "section_title": "Sick leave"
-          }
-        ],
-        "retrieval_attempts": [
-          {
-            "attempt": 1,
-            "query": "is there a policy for sabbatical after 2 months?",
-            "top_score": 0.4548,
-            "verdict": "re-search",
-            "reason": "The retrieved chunk discusses sick leave policies and does not provide any information regarding sabbatical policies, making it irrelevant to the question.",
-            "citations": [
-              {
-                "text": "### Sick leave\n\nSick leave is for illness or medical appointments. Notify your manager **as soon as practicable** on the day you cannot work. For absences longer than **3 consecutive workdays**, HR may request a fitness-for-duty or medical certification consistent with applicable law.",
-                "score": 0.4548,
-                "source": "handbook.md",
-                "section_title": "Sick leave"
-              }
-            ]
-          },
-          {
-            "attempt": 2,
-            "query": "what is the policy regarding sabbatical leave eligibility after two months of employment, including any specific requirements, exceptions, and the application process?",
-            "top_score": 0.4548,
-            "verdict": "re-search",
-            "reason": "The retrieved chunk discusses sick leave policies and does not provide any information regarding sabbatical policies, making it irrelevant to the question.",
-            "citations": [
-              {
-                "text": "### Sick leave\n\nSick leave is for illness or medical appointments. Notify your manager **as soon as practicable** on the day you cannot work. For absences longer than **3 consecutive workdays**, HR may request a fitness-for-duty or medical certification consistent with applicable law.",
-                "score": 0.4548,
-                "source": "handbook.md",
-                "section_title": "Sick leave"
-              }
-            ]
-          }
-        ],
-        "isEscalated": false,
-        "escalation_reason": null,
-        "pipeline_steps": [
-          {
-            "id": "guardrail",
-            "label": "Guardrail",
-            "status": "ok",
-            "detail": "No sensitive pattern matched"
-          },
-          {
-            "id": "router",
-            "label": "Semantic Intent Router",
-            "status": "ok",
-            "detail": "INTENT_POLICY (domain=POLICY, conf=1.00) \u2014 intent_policy domain=POLICY conf=1.00; scores={'PROFILE': 0.0, 'POLICY': 3.0, 'IT': 0.0, 'OOS': 0.0}; primary=POLICY; scope in=False ratio=0.00"
+            "detail": "INTENT_POLICY (domain=POLICY, conf=0.90) \u2014 process-policy guardrail: contact/procedure query forced to policy"
           },
           {
             "id": "retrieve",
             "label": "Chroma retrieval (embeddings + similarity)",
-            "status": "empty",
-            "detail": "Re-search failed after 2 attempt(s): The retrieved chunk discusses sick leave policies and does not provide any information regarding sabbatical policies, making it irrelevant to the question."
+            "status": "skipped",
+            "detail": "Route is personal data lookup"
           },
           {
             "id": "mcp_hr",
             "label": "Employee tool (MCP-style)",
-            "status": "skipped",
-            "detail": "No employee profile context"
+            "status": "ok",
+            "detail": "\u2705 Active: Securely retrieved data for E001"
           },
           {
             "id": "llm",
@@ -1404,40 +438,63 @@
         ],
         "use_rag": true,
         "chat_model": "gpt-4o-mini",
-        "route": "POLICY",
+        "route": "PROFILE",
         "router_version": "v2.1",
         "context_presence": {
-          "has_policy": true,
-          "has_profile": false,
+          "has_policy": false,
+          "has_profile": true,
           "has_it": false
         },
         "clarification_triggered": false,
-        "employee_profile": null,
-        "tool_called": false,
+        "employee_profile": {
+          "employee_id": "E001",
+          "name": "Alex Chen",
+          "department": "Engineering",
+          "title": "Senior Software Engineer",
+          "employment_type": "full-time",
+          "location": "Lahore",
+          "manager": "Nadia Rahman",
+          "pto_days_remaining": "14",
+          "sick_days_remaining": "6",
+          "services_loan_available": "True",
+          "services_loan_limit_pkr": "250000",
+          "services_loan_eligible_after_months": "12",
+          "language_pref": "en",
+          "pto_days": "14",
+          "sick_days": "6"
+        },
+        "tool_called": true,
         "recovery_applied": false
       },
-      "created_at": "2026-04-17T08:57:40.529437+00:00"
+      "created_at": "2026-04-20T13:40:58.660856+00:00"
     },
     {
-      "key": "v9::am i eligible for leave and what is the policy?::route=POLICY::emp=E001::rag=1",
-      "question_norm": "am i eligible for leave and what is the policy?",
+      "key": "v9::how many sick days do i have? what is moon remote-work policy?::route=POLICY::emp=E001::rag=1",
+      "question_norm": "how many sick days do i have? what is moon remote-work policy?",
       "employee_id": "E001",
       "use_rag": true,
       "kb_signature": "d5385aebf7e754b077ca0d00e5b28473fdcdf496a72638fdee42b839c9cbf468",
       "response": {
-        "answer": "I couldn't find this information in the employee handbook. Please contact HR.",
-        "citations": [],
+        "answer": "1. how many sick days do i have?\nYou currently have 6 sick days remaining.\n\nI couldn't find specific handbook text for:\n\n2. what is moon remote-work policy?",
+        "citations": [
+          {
+            "text": "### Sick leave\n\nSick leave is for illness or medical appointments. Notify your manager **as soon as practicable** on the day you cannot work. For absences longer than **3 consecutive workdays**, HR may request a fitness-for-duty or medical certification consistent with applicable law.",
+            "score": 0.6504,
+            "source": "handbook.md",
+            "section_title": "Sick leave"
+          }
+        ],
         "retrieval_attempts": [
           {
             "attempt": 1,
-            "query": "am i eligible for leave",
-            "top_score": 0.6916,
+            "query": "how many sick days do i have?",
+            "top_score": 0.6504,
             "verdict": "re-search",
-            "reason": "The retrieved chunk only discusses sick leave but does not provide information on overall eligibility for leave or the complete leave policy. More context is needed to answer the question fully.",
+            "reason": "The retrieved chunk provides information about sick leave policies but does not specify how many sick days are available. Additionally, there is no information regarding the moon remote-work policy.",
             "citations": [
               {
                 "text": "### Sick leave\n\nSick leave is for illness or medical appointments. Notify your manager **as soon as practicable** on the day you cannot work. For absences longer than **3 consecutive workdays**, HR may request a fitness-for-duty or medical certification consistent with applicable law.",
-                "score": 0.6916,
+                "score": 0.6504,
                 "source": "handbook.md",
                 "section_title": "Sick leave"
               }
@@ -1445,14 +502,14 @@
           },
           {
             "attempt": 2,
-            "query": "what are the eligibility criteria for taking leave and what is the comprehensive leave policy including types of leave, application process, and any exceptions?",
-            "top_score": 0.6915,
+            "query": "what is the total number of sick days available to me under the company's sick leave policy, and what are the details of the remote work policy specifically for the moon project?",
+            "top_score": 0.6504,
             "verdict": "re-search",
-            "reason": "The retrieved chunk only discusses sick leave but does not provide information on overall eligibility for leave or the complete leave policy.",
+            "reason": "The retrieved chunk provides information about sick leave policies but does not specify how many sick days are available. Additionally, there is no information regarding the moon remote-work policy.",
             "citations": [
               {
                 "text": "### Sick leave\n\nSick leave is for illness or medical appointments. Notify your manager **as soon as practicable** on the day you cannot work. For absences longer than **3 consecutive workdays**, HR may request a fitness-for-duty or medical certification consistent with applicable law.",
-                "score": 0.6915,
+                "score": 0.6504,
                 "source": "handbook.md",
                 "section_title": "Sick leave"
               }
@@ -1519,30 +576,37 @@
           "language_pref": "en"
         },
         "tool_called": false,
-        "recovery_applied": true
+        "recovery_applied": false
       },
-      "created_at": "2026-04-17T08:58:07.859280+00:00"
+      "created_at": "2026-04-20T13:41:24.429420+00:00"
     },
     {
-      "key": "v9::am i eligible for leave and what is the policy?::route=POLICY::emp=E001::rag=0",
-      "question_norm": "am i eligible for leave and what is the policy?",
+      "key": "v9::how many sick days do i have? what is moon remote-work policy?::route=POLICY::emp=E001::rag=0",
+      "question_norm": "how many sick days do i have? what is moon remote-work policy?",
       "employee_id": "E001",
       "use_rag": false,
       "kb_signature": "d5385aebf7e754b077ca0d00e5b28473fdcdf496a72638fdee42b839c9cbf468",
       "response": {
-        "answer": "I couldn't find this information in the employee handbook. Please contact HR.",
-        "citations": [],
+        "answer": "1. how many sick days do i have?\nYou currently have 6 sick days remaining.\n\nI couldn't find specific handbook text for:\n\n2. what is moon remote-work policy?",
+        "citations": [
+          {
+            "text": "### Sick leave\n\nSick leave is for illness or medical appointments. Notify your manager **as soon as practicable** on the day you cannot work. For absences longer than **3 consecutive workdays**, HR may request a fitness-for-duty or medical certification consistent with applicable law.",
+            "score": 0.6504,
+            "source": "handbook.md",
+            "section_title": "Sick leave"
+          }
+        ],
         "retrieval_attempts": [
           {
             "attempt": 1,
-            "query": "am i eligible for leave",
-            "top_score": 0.6916,
+            "query": "how many sick days do i have?",
+            "top_score": 0.6504,
             "verdict": "re-search",
-            "reason": "The retrieved chunk only discusses sick leave but does not provide information on overall eligibility for leave or the complete leave policy. More context is needed to answer the question fully.",
+            "reason": "The retrieved chunk provides information about sick leave policies but does not specify how many sick days are available. Additionally, there is no information regarding the moon remote-work policy.",
             "citations": [
               {
                 "text": "### Sick leave\n\nSick leave is for illness or medical appointments. Notify your manager **as soon as practicable** on the day you cannot work. For absences longer than **3 consecutive workdays**, HR may request a fitness-for-duty or medical certification consistent with applicable law.",
-                "score": 0.6916,
+                "score": 0.6504,
                 "source": "handbook.md",
                 "section_title": "Sick leave"
               }
@@ -1550,14 +614,14 @@
           },
           {
             "attempt": 2,
-            "query": "what are the eligibility criteria for taking leave and what is the comprehensive leave policy including types of leave, application process, and any exceptions?",
-            "top_score": 0.6916,
+            "query": "what is the total number of sick days available to me under the current sick leave policy, and what are the details of the remote work policy for employees working on the moon?",
+            "top_score": 0.6504,
             "verdict": "re-search",
-            "reason": "The retrieved chunk only discusses sick leave but does not provide information on overall eligibility for leave or the complete leave policy. More context is needed to answer the question fully.",
+            "reason": "The retrieved chunk provides information about sick leave policies but does not specify how many sick days are available. Additionally, there is no information regarding the moon remote-work policy.",
             "citations": [
               {
                 "text": "### Sick leave\n\nSick leave is for illness or medical appointments. Notify your manager **as soon as practicable** on the day you cannot work. For absences longer than **3 consecutive workdays**, HR may request a fitness-for-duty or medical certification consistent with applicable law.",
-                "score": 0.6916,
+                "score": 0.6504,
                 "source": "handbook.md",
                 "section_title": "Sick leave"
               }
@@ -1624,18 +688,380 @@
           "language_pref": "en"
         },
         "tool_called": false,
-        "recovery_applied": true
+        "recovery_applied": false
       },
-      "created_at": "2026-04-17T08:58:08.214669+00:00"
+      "created_at": "2026-04-20T13:41:25.304885+00:00"
     },
     {
-      "key": "v9::how many vacation days do i get?::route=POLICY::emp=E001::rag=0",
-      "question_norm": "how many vacation days do i get?",
+      "key": "v9::i want hardware replaced::route=IT::emp=E001::rag=0",
+      "question_norm": "i want hardware replaced",
       "employee_id": "E001",
       "use_rag": false,
       "kb_signature": "d5385aebf7e754b077ca0d00e5b28473fdcdf496a72638fdee42b839c9cbf468",
       "response": {
-        "answer": "You currently have 14 PTO days remaining.",
+        "answer": "If your laptop is damaged, submit a ticket via the Jira Service Desk immediately.\n\nIf you also need peripherals like a keyboard, mouse, or monitor, request them through the IT portal with manager approval.\n\nSource: IT Support & Infrastructure Guide > Section: Hardware Requests",
+        "citations": [
+          {
+            "text": "### Hardware Requests\nStandard laptop upgrades occur every **3 years**. \n* **Broken Hardware:** If your device is damaged, submit a ticket via the 'Jira Service Desk' immediately.\n* **Peripherals:** Keyboards, mice, and monitors can be requested through the IT portal with manager approval.",
+            "score": 0.6629,
+            "source": "it_guide.md",
+            "section_title": "Hardware Requests"
+          }
+        ],
+        "retrieval_attempts": [
+          {
+            "attempt": 1,
+            "query": "i want to request a hardware replacement.",
+            "top_score": 0.6629,
+            "verdict": "answerable",
+            "reason": "IT policy fast-path: retrieved concrete IT policy evidence",
+            "citations": [
+              {
+                "text": "### Hardware Requests\nStandard laptop upgrades occur every **3 years**. \n* **Broken Hardware:** If your device is damaged, submit a ticket via the 'Jira Service Desk' immediately.\n* **Peripherals:** Keyboards, mice, and monitors can be requested through the IT portal with manager approval.",
+                "score": 0.6629,
+                "source": "it_guide.md",
+                "section_title": "Hardware Requests"
+              }
+            ]
+          }
+        ],
+        "isEscalated": false,
+        "escalation_reason": null,
+        "pipeline_steps": [
+          {
+            "id": "guardrail",
+            "label": "Guardrail",
+            "status": "ok",
+            "detail": "No sensitive pattern matched"
+          },
+          {
+            "id": "router",
+            "label": "Semantic Intent Router",
+            "status": "ok",
+            "detail": "INTENT_POLICY (domain=IT, conf=1.00) \u2014 intent_policy domain=IT conf=1.00; scores={'PROFILE': 0.0, 'POLICY': 0.0, 'IT': 0.8, 'OOS': 0.0}; primary=IT"
+          },
+          {
+            "id": "retrieve",
+            "label": "Chroma retrieval",
+            "status": "skipped",
+            "detail": "Direct LLM mode (no handbook vectors)"
+          },
+          {
+            "id": "mcp_hr",
+            "label": "Employee profile data (MCP-style)",
+            "status": "skipped",
+            "detail": "Disabled in direct LLM mode"
+          },
+          {
+            "id": "llm",
+            "label": "OpenAI chat \u2014 gpt-4o-mini",
+            "status": "ok",
+            "detail": "Embeddings: text-embedding-3-small; structured JSON answer"
+          }
+        ],
+        "use_rag": false,
+        "chat_model": "gpt-4o-mini",
+        "route": "POLICY",
+        "router_version": "v2.1",
+        "context_presence": {
+          "has_policy": true,
+          "has_profile": false,
+          "has_it": true
+        },
+        "clarification_triggered": false,
+        "employee_profile": null,
+        "tool_called": false,
+        "recovery_applied": false
+      },
+      "created_at": "2026-04-20T13:42:46.683404+00:00"
+    },
+    {
+      "key": "v9::i want hardware replaced::route=IT::emp=E001::rag=1",
+      "question_norm": "i want hardware replaced",
+      "employee_id": "E001",
+      "use_rag": true,
+      "kb_signature": "d5385aebf7e754b077ca0d00e5b28473fdcdf496a72638fdee42b839c9cbf468",
+      "response": {
+        "answer": "If your laptop is damaged, submit a ticket via the Jira Service Desk immediately.\n\nIf you also need peripherals like a keyboard, mouse, or monitor, request them through the IT portal with manager approval.\n\nSource: IT Support & Infrastructure Guide > Section: Hardware Requests",
+        "citations": [
+          {
+            "text": "### Hardware Requests\nStandard laptop upgrades occur every **3 years**. \n* **Broken Hardware:** If your device is damaged, submit a ticket via the 'Jira Service Desk' immediately.\n* **Peripherals:** Keyboards, mice, and monitors can be requested through the IT portal with manager approval.",
+            "score": 0.6629,
+            "source": "it_guide.md",
+            "section_title": "Hardware Requests"
+          }
+        ],
+        "retrieval_attempts": [
+          {
+            "attempt": 1,
+            "query": "i want to request a hardware replacement.",
+            "top_score": 0.6629,
+            "verdict": "answerable",
+            "reason": "IT policy fast-path: retrieved concrete IT policy evidence",
+            "citations": [
+              {
+                "text": "### Hardware Requests\nStandard laptop upgrades occur every **3 years**. \n* **Broken Hardware:** If your device is damaged, submit a ticket via the 'Jira Service Desk' immediately.\n* **Peripherals:** Keyboards, mice, and monitors can be requested through the IT portal with manager approval.",
+                "score": 0.6629,
+                "source": "it_guide.md",
+                "section_title": "Hardware Requests"
+              }
+            ]
+          }
+        ],
+        "isEscalated": false,
+        "escalation_reason": null,
+        "pipeline_steps": [
+          {
+            "id": "guardrail",
+            "label": "Guardrail",
+            "status": "ok",
+            "detail": "No sensitive pattern matched"
+          },
+          {
+            "id": "router",
+            "label": "Semantic Intent Router",
+            "status": "ok",
+            "detail": "INTENT_POLICY (domain=IT, conf=1.00) \u2014 intent_policy domain=IT conf=1.00; scores={'PROFILE': 0.0, 'POLICY': 0.0, 'IT': 0.8, 'OOS': 0.0}; primary=IT"
+          },
+          {
+            "id": "retrieve",
+            "label": "Chroma retrieval (embeddings + similarity)",
+            "status": "ok",
+            "detail": "1 chunk(s), 1 retrieval attempt(s)"
+          },
+          {
+            "id": "mcp_hr",
+            "label": "Employee tool (MCP-style)",
+            "status": "skipped",
+            "detail": "No employee profile context"
+          },
+          {
+            "id": "llm",
+            "label": "OpenAI chat \u2014 gpt-4o-mini",
+            "status": "ok",
+            "detail": "Embeddings: text-embedding-3-small; structured JSON answer"
+          }
+        ],
+        "use_rag": true,
+        "chat_model": "gpt-4o-mini",
+        "route": "POLICY",
+        "router_version": "v2.1",
+        "context_presence": {
+          "has_policy": true,
+          "has_profile": false,
+          "has_it": true
+        },
+        "clarification_triggered": false,
+        "employee_profile": null,
+        "tool_called": false,
+        "recovery_applied": false
+      },
+      "created_at": "2026-04-20T13:42:47.450082+00:00"
+    },
+    {
+      "key": "v9::what is loan policy::route=POLICY::emp=E001::rag=1",
+      "question_norm": "what is loan policy",
+      "employee_id": "E001",
+      "use_rag": true,
+      "kb_signature": "d5385aebf7e754b077ca0d00e5b28473fdcdf496a72638fdee42b839c9cbf468",
+      "response": {
+        "answer": "I couldn't find the specific policy text in the handbook.",
+        "citations": [
+          {
+            "text": "### Hardware Requests\nStandard laptop upgrades occur every **3 years**. \n* **Broken Hardware:** If your device is damaged, submit a ticket via the 'Jira Service Desk' immediately.\n* **Peripherals:** Keyboards, mice, and monitors can be requested through the IT portal with manager approval.",
+            "score": 0.3881,
+            "source": "it_guide.md",
+            "section_title": "Hardware Requests"
+          }
+        ],
+        "retrieval_attempts": [
+          {
+            "attempt": 1,
+            "query": "what is loan policy",
+            "top_score": 0.3882,
+            "verdict": "re-search",
+            "reason": "Top score 0.39 below threshold 0.40",
+            "citations": [
+              {
+                "text": "### Hardware Requests\nStandard laptop upgrades occur every **3 years**. \n* **Broken Hardware:** If your device is damaged, submit a ticket via the 'Jira Service Desk' immediately.\n* **Peripherals:** Keyboards, mice, and monitors can be requested through the IT portal with manager approval.",
+                "score": 0.3882,
+                "source": "it_guide.md",
+                "section_title": "Hardware Requests"
+              }
+            ]
+          },
+          {
+            "attempt": 2,
+            "query": "what are the details and guidelines of the loan policy, including eligibility criteria, application process, and any exceptions or special conditions that may apply?",
+            "top_score": 0.3881,
+            "verdict": "re-search",
+            "reason": "Top score 0.39 below threshold 0.40",
+            "citations": [
+              {
+                "text": "### Hardware Requests\nStandard laptop upgrades occur every **3 years**. \n* **Broken Hardware:** If your device is damaged, submit a ticket via the 'Jira Service Desk' immediately.\n* **Peripherals:** Keyboards, mice, and monitors can be requested through the IT portal with manager approval.",
+                "score": 0.3881,
+                "source": "it_guide.md",
+                "section_title": "Hardware Requests"
+              }
+            ]
+          }
+        ],
+        "isEscalated": false,
+        "escalation_reason": null,
+        "pipeline_steps": [
+          {
+            "id": "guardrail",
+            "label": "Guardrail",
+            "status": "ok",
+            "detail": "No sensitive pattern matched"
+          },
+          {
+            "id": "router",
+            "label": "Semantic Intent Router",
+            "status": "ok",
+            "detail": "INTENT_POLICY (domain=POLICY, conf=0.95) \u2014 intent_policy domain=POLICY conf=0.95; loan_policy_phrase; scope in=True ratio=1.00"
+          },
+          {
+            "id": "retrieve",
+            "label": "Chroma retrieval (embeddings + similarity)",
+            "status": "empty",
+            "detail": "Re-search failed after 2 attempt(s): Top score 0.39 below threshold 0.40"
+          },
+          {
+            "id": "mcp_hr",
+            "label": "Employee tool (MCP-style)",
+            "status": "skipped",
+            "detail": "No employee profile context"
+          },
+          {
+            "id": "llm",
+            "label": "OpenAI chat \u2014 gpt-4o-mini",
+            "status": "ok",
+            "detail": "Embeddings: text-embedding-3-small; structured JSON answer"
+          }
+        ],
+        "use_rag": true,
+        "chat_model": "gpt-4o-mini",
+        "route": "POLICY",
+        "router_version": "v2.1",
+        "context_presence": {
+          "has_policy": true,
+          "has_profile": false,
+          "has_it": false
+        },
+        "clarification_triggered": false,
+        "employee_profile": null,
+        "tool_called": false,
+        "recovery_applied": false
+      },
+      "created_at": "2026-04-20T13:43:01.048864+00:00"
+    },
+    {
+      "key": "v9::what is loan policy::route=POLICY::emp=E001::rag=0",
+      "question_norm": "what is loan policy",
+      "employee_id": "E001",
+      "use_rag": false,
+      "kb_signature": "d5385aebf7e754b077ca0d00e5b28473fdcdf496a72638fdee42b839c9cbf468",
+      "response": {
+        "answer": "I couldn't find the specific policy text in the handbook.",
+        "citations": [
+          {
+            "text": "### Hardware Requests\nStandard laptop upgrades occur every **3 years**. \n* **Broken Hardware:** If your device is damaged, submit a ticket via the 'Jira Service Desk' immediately.\n* **Peripherals:** Keyboards, mice, and monitors can be requested through the IT portal with manager approval.",
+            "score": 0.3882,
+            "source": "it_guide.md",
+            "section_title": "Hardware Requests"
+          }
+        ],
+        "retrieval_attempts": [
+          {
+            "attempt": 1,
+            "query": "what is loan policy",
+            "top_score": 0.3882,
+            "verdict": "re-search",
+            "reason": "Top score 0.39 below threshold 0.40",
+            "citations": [
+              {
+                "text": "### Hardware Requests\nStandard laptop upgrades occur every **3 years**. \n* **Broken Hardware:** If your device is damaged, submit a ticket via the 'Jira Service Desk' immediately.\n* **Peripherals:** Keyboards, mice, and monitors can be requested through the IT portal with manager approval.",
+                "score": 0.3882,
+                "source": "it_guide.md",
+                "section_title": "Hardware Requests"
+              }
+            ]
+          },
+          {
+            "attempt": 2,
+            "query": "what are the details and guidelines of the loan policy, including eligibility criteria, application process, and any exceptions or special conditions that may apply?",
+            "top_score": 0.3882,
+            "verdict": "re-search",
+            "reason": "Top score 0.39 below threshold 0.40",
+            "citations": [
+              {
+                "text": "### Hardware Requests\nStandard laptop upgrades occur every **3 years**. \n* **Broken Hardware:** If your device is damaged, submit a ticket via the 'Jira Service Desk' immediately.\n* **Peripherals:** Keyboards, mice, and monitors can be requested through the IT portal with manager approval.",
+                "score": 0.3882,
+                "source": "it_guide.md",
+                "section_title": "Hardware Requests"
+              }
+            ]
+          }
+        ],
+        "isEscalated": false,
+        "escalation_reason": null,
+        "pipeline_steps": [
+          {
+            "id": "guardrail",
+            "label": "Guardrail",
+            "status": "ok",
+            "detail": "No sensitive pattern matched"
+          },
+          {
+            "id": "router",
+            "label": "Semantic Intent Router",
+            "status": "ok",
+            "detail": "INTENT_POLICY (domain=POLICY, conf=0.95) \u2014 intent_policy domain=POLICY conf=0.95; loan_policy_phrase; scope in=True ratio=1.00"
+          },
+          {
+            "id": "retrieve",
+            "label": "Chroma retrieval",
+            "status": "skipped",
+            "detail": "Direct LLM mode (no handbook vectors)"
+          },
+          {
+            "id": "mcp_hr",
+            "label": "Employee profile data (MCP-style)",
+            "status": "skipped",
+            "detail": "Disabled in direct LLM mode"
+          },
+          {
+            "id": "llm",
+            "label": "OpenAI chat \u2014 gpt-4o-mini",
+            "status": "ok",
+            "detail": "Embeddings: text-embedding-3-small; structured JSON answer"
+          }
+        ],
+        "use_rag": false,
+        "chat_model": "gpt-4o-mini",
+        "route": "POLICY",
+        "router_version": "v2.1",
+        "context_presence": {
+          "has_policy": true,
+          "has_profile": false,
+          "has_it": false
+        },
+        "clarification_triggered": false,
+        "employee_profile": null,
+        "tool_called": false,
+        "recovery_applied": false
+      },
+      "created_at": "2026-04-20T13:43:01.342957+00:00"
+    },
+    {
+      "key": "v9::i want to know about loan eligibility::route=PROFILE::emp=E001::rag=0",
+      "question_norm": "i want to know about loan eligibility",
+      "employee_id": "E001",
+      "use_rag": false,
+      "kb_signature": "d5385aebf7e754b077ca0d00e5b28473fdcdf496a72638fdee42b839c9cbf468",
+      "response": {
+        "answer": "Yes \u2014 you are eligible for the company **services loan** program (employer benefit; not a retail bank loan).\n\nYour **maximum services loan amount** (profile) is **PKR 250000**.",
         "citations": [],
         "retrieval_attempts": [],
         "isEscalated": false,
@@ -1651,7 +1077,7 @@
             "id": "router",
             "label": "Semantic Intent Router",
             "status": "ok",
-            "detail": "INTENT_POLICY (domain=POLICY, conf=0.50) \u2014 intent_policy domain=POLICY conf=0.50; scores={'PROFILE': 1.0, 'POLICY': 1.0, 'IT': 0.0, 'OOS': 0.0}; primary=POLICY; scope in=True ratio=0.33"
+            "detail": "INTENT_PERSONAL (domain=PROFILE, conf=0.95) \u2014 intent_policy domain=PROFILE conf=0.95; loan_personal_phrase"
           },
           {
             "id": "retrieve",
@@ -1702,16 +1128,16 @@
         "tool_called": true,
         "recovery_applied": false
       },
-      "created_at": "2026-04-17T08:58:35.509154+00:00"
+      "created_at": "2026-04-20T13:43:10.839819+00:00"
     },
     {
-      "key": "v9::how many vacation days do i get?::route=POLICY::emp=E001::rag=1",
-      "question_norm": "how many vacation days do i get?",
+      "key": "v9::i want to know about loan eligibility::route=PROFILE::emp=E001::rag=1",
+      "question_norm": "i want to know about loan eligibility",
       "employee_id": "E001",
       "use_rag": true,
       "kb_signature": "d5385aebf7e754b077ca0d00e5b28473fdcdf496a72638fdee42b839c9cbf468",
       "response": {
-        "answer": "You currently have 14 PTO days remaining.",
+        "answer": "Yes \u2014 you are eligible for the company **services loan** program (employer benefit; not a retail bank loan).\n\nYour **maximum services loan amount** (profile) is **PKR 250000**.",
         "citations": [],
         "retrieval_attempts": [],
         "isEscalated": false,
@@ -1727,7 +1153,7 @@
             "id": "router",
             "label": "Semantic Intent Router",
             "status": "ok",
-            "detail": "INTENT_POLICY (domain=POLICY, conf=0.50) \u2014 intent_policy domain=POLICY conf=0.50; scores={'PROFILE': 1.0, 'POLICY': 1.0, 'IT': 0.0, 'OOS': 0.0}; primary=POLICY; scope in=True ratio=0.33"
+            "detail": "INTENT_PERSONAL (domain=PROFILE, conf=0.95) \u2014 intent_policy domain=PROFILE conf=0.95; loan_personal_phrase"
           },
           {
             "id": "retrieve",
@@ -1778,533 +1204,7 @@
         "tool_called": true,
         "recovery_applied": false
       },
-      "created_at": "2026-04-17T08:58:35.881327+00:00"
-    },
-    {
-      "key": "v9::what's the parental leave policy?::route=POLICY::emp=E001::rag=0",
-      "question_norm": "what's the parental leave policy?",
-      "employee_id": "E001",
-      "use_rag": false,
-      "kb_signature": "d5385aebf7e754b077ca0d00e5b28473fdcdf496a72638fdee42b839c9cbf468",
-      "response": {
-        "answer": "I couldn't find the specific policy text in the handbook.",
-        "citations": [
-          {
-            "text": "## Time off and leave\n\n### Paid time off (PTO)\n\nFull-time employees accrue **PTO** according to the accrual schedule published on the internal HR portal. PTO requests must be submitted **at least 10 business days** in advance unless your manager approves an exception for emergencies.\n\nUnused PTO may roll over up to **5 days** into the next calendar year unless local policy states otherwise.",
-            "score": 0.673,
-            "source": "handbook.md",
-            "section_title": "Paid time off (PTO)"
-          }
-        ],
-        "retrieval_attempts": [
-          {
-            "attempt": 1,
-            "query": "what's the parental leave policy?",
-            "top_score": 0.673,
-            "verdict": "re-search",
-            "reason": "The retrieved chunk discusses paid time off (PTO) but does not provide any information about the parental leave policy specifically.",
-            "citations": [
-              {
-                "text": "## Time off and leave\n\n### Paid time off (PTO)\n\nFull-time employees accrue **PTO** according to the accrual schedule published on the internal HR portal. PTO requests must be submitted **at least 10 business days** in advance unless your manager approves an exception for emergencies.\n\nUnused PTO may roll over up to **5 days** into the next calendar year unless local policy states otherwise.",
-                "score": 0.673,
-                "source": "handbook.md",
-                "section_title": "Paid time off (PTO)"
-              }
-            ]
-          },
-          {
-            "attempt": 2,
-            "query": "what are the details of the parental leave policy, including eligibility criteria, duration of leave, any exceptions to the policy, and the process for applying for parental leave?",
-            "top_score": 0.673,
-            "verdict": "re-search",
-            "reason": "The retrieved chunk discusses paid time off (PTO) but does not provide any information about the parental leave policy specifically.",
-            "citations": [
-              {
-                "text": "## Time off and leave\n\n### Paid time off (PTO)\n\nFull-time employees accrue **PTO** according to the accrual schedule published on the internal HR portal. PTO requests must be submitted **at least 10 business days** in advance unless your manager approves an exception for emergencies.\n\nUnused PTO may roll over up to **5 days** into the next calendar year unless local policy states otherwise.",
-                "score": 0.673,
-                "source": "handbook.md",
-                "section_title": "Paid time off (PTO)"
-              }
-            ]
-          }
-        ],
-        "isEscalated": false,
-        "escalation_reason": null,
-        "pipeline_steps": [
-          {
-            "id": "guardrail",
-            "label": "Guardrail",
-            "status": "ok",
-            "detail": "No sensitive pattern matched"
-          },
-          {
-            "id": "router",
-            "label": "Semantic Intent Router",
-            "status": "ok",
-            "detail": "INTENT_POLICY (domain=POLICY, conf=1.00) \u2014 intent_policy domain=POLICY conf=1.00; scores={'PROFILE': 0.0, 'POLICY': 2.0, 'IT': 0.0, 'OOS': 0.0}; primary=POLICY; scope in=True ratio=0.50"
-          },
-          {
-            "id": "retrieve",
-            "label": "Chroma retrieval",
-            "status": "skipped",
-            "detail": "Direct LLM mode (no handbook vectors)"
-          },
-          {
-            "id": "mcp_hr",
-            "label": "Employee profile data (MCP-style)",
-            "status": "skipped",
-            "detail": "Disabled in direct LLM mode"
-          },
-          {
-            "id": "llm",
-            "label": "OpenAI chat \u2014 gpt-4o-mini",
-            "status": "ok",
-            "detail": "Embeddings: text-embedding-3-small; structured JSON answer"
-          }
-        ],
-        "use_rag": false,
-        "chat_model": "gpt-4o-mini",
-        "route": "POLICY",
-        "router_version": "v2.1",
-        "context_presence": {
-          "has_policy": true,
-          "has_profile": false,
-          "has_it": false
-        },
-        "clarification_triggered": false,
-        "employee_profile": null,
-        "tool_called": false,
-        "recovery_applied": false
-      },
-      "created_at": "2026-04-17T08:58:53.628832+00:00"
-    },
-    {
-      "key": "v9::what's the parental leave policy?::route=POLICY::emp=E001::rag=1",
-      "question_norm": "what's the parental leave policy?",
-      "employee_id": "E001",
-      "use_rag": true,
-      "kb_signature": "d5385aebf7e754b077ca0d00e5b28473fdcdf496a72638fdee42b839c9cbf468",
-      "response": {
-        "answer": "I couldn't find the specific policy text in the handbook.",
-        "citations": [
-          {
-            "text": "## Time off and leave\n\n### Paid time off (PTO)\n\nFull-time employees accrue **PTO** according to the accrual schedule published on the internal HR portal. PTO requests must be submitted **at least 10 business days** in advance unless your manager approves an exception for emergencies.\n\nUnused PTO may roll over up to **5 days** into the next calendar year unless local policy states otherwise.",
-            "score": 0.673,
-            "source": "handbook.md",
-            "section_title": "Paid time off (PTO)"
-          }
-        ],
-        "retrieval_attempts": [
-          {
-            "attempt": 1,
-            "query": "what's the parental leave policy?",
-            "top_score": 0.673,
-            "verdict": "re-search",
-            "reason": "The retrieved chunk discusses paid time off (PTO) but does not provide specific information about the parental leave policy, which is the focus of the question.",
-            "citations": [
-              {
-                "text": "## Time off and leave\n\n### Paid time off (PTO)\n\nFull-time employees accrue **PTO** according to the accrual schedule published on the internal HR portal. PTO requests must be submitted **at least 10 business days** in advance unless your manager approves an exception for emergencies.\n\nUnused PTO may roll over up to **5 days** into the next calendar year unless local policy states otherwise.",
-                "score": 0.673,
-                "source": "handbook.md",
-                "section_title": "Paid time off (PTO)"
-              }
-            ]
-          },
-          {
-            "attempt": 2,
-            "query": "what are the details of the parental leave policy, including eligibility criteria, duration of leave, any exceptions to the policy, and the application process?",
-            "top_score": 0.673,
-            "verdict": "re-search",
-            "reason": "The retrieved chunk discusses Paid Time Off (PTO) but does not provide any information about the parental leave policy specifically.",
-            "citations": [
-              {
-                "text": "## Time off and leave\n\n### Paid time off (PTO)\n\nFull-time employees accrue **PTO** according to the accrual schedule published on the internal HR portal. PTO requests must be submitted **at least 10 business days** in advance unless your manager approves an exception for emergencies.\n\nUnused PTO may roll over up to **5 days** into the next calendar year unless local policy states otherwise.",
-                "score": 0.673,
-                "source": "handbook.md",
-                "section_title": "Paid time off (PTO)"
-              }
-            ]
-          }
-        ],
-        "isEscalated": false,
-        "escalation_reason": null,
-        "pipeline_steps": [
-          {
-            "id": "guardrail",
-            "label": "Guardrail",
-            "status": "ok",
-            "detail": "No sensitive pattern matched"
-          },
-          {
-            "id": "router",
-            "label": "Semantic Intent Router",
-            "status": "ok",
-            "detail": "INTENT_POLICY (domain=POLICY, conf=1.00) \u2014 intent_policy domain=POLICY conf=1.00; scores={'PROFILE': 0.0, 'POLICY': 2.0, 'IT': 0.0, 'OOS': 0.0}; primary=POLICY; scope in=True ratio=0.50"
-          },
-          {
-            "id": "retrieve",
-            "label": "Chroma retrieval (embeddings + similarity)",
-            "status": "empty",
-            "detail": "Re-search failed after 2 attempt(s): The retrieved chunk discusses Paid Time Off (PTO) but does not provide any information about the parental leave policy specifically."
-          },
-          {
-            "id": "mcp_hr",
-            "label": "Employee tool (MCP-style)",
-            "status": "skipped",
-            "detail": "No employee profile context"
-          },
-          {
-            "id": "llm",
-            "label": "OpenAI chat \u2014 gpt-4o-mini",
-            "status": "ok",
-            "detail": "Embeddings: text-embedding-3-small; structured JSON answer"
-          }
-        ],
-        "use_rag": true,
-        "chat_model": "gpt-4o-mini",
-        "route": "POLICY",
-        "router_version": "v2.1",
-        "context_presence": {
-          "has_policy": true,
-          "has_profile": false,
-          "has_it": false
-        },
-        "clarification_triggered": false,
-        "employee_profile": null,
-        "tool_called": false,
-        "recovery_applied": false
-      },
-      "created_at": "2026-04-17T08:58:53.907899+00:00"
-    },
-    {
-      "key": "v9::i want terminiation::route=POLICY::emp=E001::rag=1",
-      "question_norm": "i want terminiation",
-      "employee_id": "E001",
-      "use_rag": true,
-      "kb_signature": "d5385aebf7e754b077ca0d00e5b28473fdcdf496a72638fdee42b839c9cbf468",
-      "response": {
-        "answer": "I couldn't find your personal data.",
-        "citations": [],
-        "retrieval_attempts": [],
-        "isEscalated": false,
-        "escalation_reason": null,
-        "pipeline_steps": [
-          {
-            "id": "guardrail",
-            "label": "Guardrail",
-            "status": "ok",
-            "detail": "No sensitive pattern matched"
-          },
-          {
-            "id": "router",
-            "label": "Semantic Intent Router",
-            "status": "ok",
-            "detail": "INTENT_PERSONAL (domain=PROFILE, conf=0.77) \u2014 intent_policy domain=OOS conf=0.00; scores={'PROFILE': 0.0, 'POLICY': 0.0, 'IT': 0.0, 'OOS': 0.0}; primary=POLICY; scope in=False ratio=0.00; semantic_rescue route=personal score=0.772 model=intfloat/e5-base-v2"
-          },
-          {
-            "id": "retrieve",
-            "label": "Chroma retrieval (embeddings + similarity)",
-            "status": "skipped",
-            "detail": "Route is personal data lookup"
-          },
-          {
-            "id": "mcp_hr",
-            "label": "Employee tool (MCP-style)",
-            "status": "ok",
-            "detail": "\u2705 Active: Securely retrieved data for E001"
-          },
-          {
-            "id": "llm",
-            "label": "OpenAI chat \u2014 gpt-4o-mini",
-            "status": "ok",
-            "detail": "Embeddings: text-embedding-3-small; structured JSON answer"
-          }
-        ],
-        "use_rag": true,
-        "chat_model": "gpt-4o-mini",
-        "route": "PROFILE",
-        "router_version": "v2.1",
-        "context_presence": {
-          "has_policy": false,
-          "has_profile": true,
-          "has_it": false
-        },
-        "clarification_triggered": false,
-        "employee_profile": {
-          "employee_id": "E001",
-          "name": "Alex Chen",
-          "department": "Engineering",
-          "title": "Senior Software Engineer",
-          "employment_type": "full-time",
-          "location": "Lahore",
-          "manager": "Nadia Rahman",
-          "pto_days_remaining": "14",
-          "sick_days_remaining": "6",
-          "services_loan_available": "True",
-          "services_loan_limit_pkr": "250000",
-          "services_loan_eligible_after_months": "12",
-          "language_pref": "en"
-        },
-        "tool_called": true,
-        "recovery_applied": false
-      },
-      "created_at": "2026-04-17T08:59:04.122195+00:00"
-    },
-    {
-      "key": "v9::i want terminiation::route=POLICY::emp=E001::rag=0",
-      "question_norm": "i want terminiation",
-      "employee_id": "E001",
-      "use_rag": false,
-      "kb_signature": "d5385aebf7e754b077ca0d00e5b28473fdcdf496a72638fdee42b839c9cbf468",
-      "response": {
-        "answer": "I cannot see internal policy or handbook excerpts. Please contact HR for assistance regarding termination procedures.",
-        "citations": [],
-        "retrieval_attempts": [],
-        "isEscalated": false,
-        "escalation_reason": null,
-        "pipeline_steps": [
-          {
-            "id": "guardrail",
-            "label": "Guardrail",
-            "status": "ok",
-            "detail": "No sensitive pattern matched"
-          },
-          {
-            "id": "router",
-            "label": "Semantic Intent Router",
-            "status": "ok",
-            "detail": "INTENT_OUT_OF_DOMAIN (domain=OOS, conf=0.00) \u2014 intent_policy domain=OOS conf=0.00; scores={'PROFILE': 0.0, 'POLICY': 0.0, 'IT': 0.0, 'OOS': 0.0}; primary=POLICY; scope in=False ratio=0.00"
-          },
-          {
-            "id": "retrieve",
-            "label": "Chroma retrieval",
-            "status": "skipped",
-            "detail": "Direct LLM mode (no handbook vectors)"
-          },
-          {
-            "id": "mcp_hr",
-            "label": "Employee profile data (MCP-style)",
-            "status": "skipped",
-            "detail": "Disabled in direct LLM mode"
-          },
-          {
-            "id": "llm",
-            "label": "OpenAI chat \u2014 gpt-4o-mini",
-            "status": "ok",
-            "detail": "Embeddings: text-embedding-3-small; structured JSON answer"
-          }
-        ],
-        "use_rag": false,
-        "chat_model": "gpt-4o-mini",
-        "route": "GENERAL",
-        "router_version": "v2.1",
-        "context_presence": {
-          "has_policy": false,
-          "has_profile": false,
-          "has_it": false
-        },
-        "clarification_triggered": false,
-        "employee_profile": null,
-        "tool_called": false,
-        "recovery_applied": false
-      },
-      "created_at": "2026-04-17T08:59:04.416616+00:00"
-    },
-    {
-      "key": "v9::i want to do accommodation requests::route=POLICY::emp=E001::rag=0",
-      "question_norm": "i want to do accommodation requests",
-      "employee_id": "E001",
-      "use_rag": false,
-      "kb_signature": "d5385aebf7e754b077ca0d00e5b28473fdcdf496a72638fdee42b839c9cbf468",
-      "response": {
-        "answer": "I couldn't find the specific policy text in the handbook.",
-        "citations": [
-          {
-            "text": "### Hardware Requests\nStandard laptop upgrades occur every **3 years**. \n* **Broken Hardware:** If your device is damaged, submit a ticket via the 'Jira Service Desk' immediately.\n* **Peripherals:** Keyboards, mice, and monitors can be requested through the IT portal with manager approval.",
-            "score": 0.5639,
-            "source": "it_guide.md",
-            "section_title": "Hardware Requests"
-          }
-        ],
-        "retrieval_attempts": [
-          {
-            "attempt": 1,
-            "query": "i want to make accommodation requests.",
-            "top_score": 0.564,
-            "verdict": "re-search",
-            "reason": "The retrieved chunks discuss hardware requests and procedures for broken hardware and peripherals, but do not provide any information about accommodation requests. Therefore, they are not relevant to the question.",
-            "citations": [
-              {
-                "text": "### Hardware Requests\nStandard laptop upgrades occur every **3 years**. \n* **Broken Hardware:** If your device is damaged, submit a ticket via the 'Jira Service Desk' immediately.\n* **Peripherals:** Keyboards, mice, and monitors can be requested through the IT portal with manager approval.",
-                "score": 0.564,
-                "source": "it_guide.md",
-                "section_title": "Hardware Requests"
-              }
-            ]
-          },
-          {
-            "attempt": 2,
-            "query": "what is the process for submitting accommodation requests, including eligibility criteria and any exceptions that may apply?",
-            "top_score": 0.5639,
-            "verdict": "re-search",
-            "reason": "The retrieved chunks discuss hardware requests and procedures for broken hardware and peripherals, but do not provide any information about accommodation requests. Therefore, they are not relevant to the question.",
-            "citations": [
-              {
-                "text": "### Hardware Requests\nStandard laptop upgrades occur every **3 years**. \n* **Broken Hardware:** If your device is damaged, submit a ticket via the 'Jira Service Desk' immediately.\n* **Peripherals:** Keyboards, mice, and monitors can be requested through the IT portal with manager approval.",
-                "score": 0.5639,
-                "source": "it_guide.md",
-                "section_title": "Hardware Requests"
-              }
-            ]
-          }
-        ],
-        "isEscalated": false,
-        "escalation_reason": null,
-        "pipeline_steps": [
-          {
-            "id": "guardrail",
-            "label": "Guardrail",
-            "status": "ok",
-            "detail": "No sensitive pattern matched"
-          },
-          {
-            "id": "router",
-            "label": "Semantic Intent Router",
-            "status": "ok",
-            "detail": "INTENT_POLICY (domain=POLICY, conf=1.00) \u2014 intent_policy domain=POLICY conf=1.00; scores={'PROFILE': 0.0, 'POLICY': 1.0, 'IT': 0.0, 'OOS': 0.0}; primary=POLICY; scope in=False ratio=0.50"
-          },
-          {
-            "id": "retrieve",
-            "label": "Chroma retrieval",
-            "status": "skipped",
-            "detail": "Direct LLM mode (no handbook vectors)"
-          },
-          {
-            "id": "mcp_hr",
-            "label": "Employee profile data (MCP-style)",
-            "status": "skipped",
-            "detail": "Disabled in direct LLM mode"
-          },
-          {
-            "id": "llm",
-            "label": "OpenAI chat \u2014 gpt-4o-mini",
-            "status": "ok",
-            "detail": "Embeddings: text-embedding-3-small; structured JSON answer"
-          }
-        ],
-        "use_rag": false,
-        "chat_model": "gpt-4o-mini",
-        "route": "POLICY",
-        "router_version": "v2.1",
-        "context_presence": {
-          "has_policy": true,
-          "has_profile": false,
-          "has_it": false
-        },
-        "clarification_triggered": false,
-        "employee_profile": null,
-        "tool_called": false,
-        "recovery_applied": false
-      },
-      "created_at": "2026-04-17T09:03:28.682053+00:00"
-    },
-    {
-      "key": "v9::i want to do accommodation requests::route=POLICY::emp=E001::rag=1",
-      "question_norm": "i want to do accommodation requests",
-      "employee_id": "E001",
-      "use_rag": true,
-      "kb_signature": "d5385aebf7e754b077ca0d00e5b28473fdcdf496a72638fdee42b839c9cbf468",
-      "response": {
-        "answer": "I couldn't find the specific policy text in the handbook.",
-        "citations": [
-          {
-            "text": "### Hardware Requests\nStandard laptop upgrades occur every **3 years**. \n* **Broken Hardware:** If your device is damaged, submit a ticket via the 'Jira Service Desk' immediately.\n* **Peripherals:** Keyboards, mice, and monitors can be requested through the IT portal with manager approval.",
-            "score": 0.5639,
-            "source": "it_guide.md",
-            "section_title": "Hardware Requests"
-          }
-        ],
-        "retrieval_attempts": [
-          {
-            "attempt": 1,
-            "query": "i want to make accommodation requests.",
-            "top_score": 0.564,
-            "verdict": "re-search",
-            "reason": "The retrieved chunks discuss hardware requests and procedures for broken hardware and peripherals, but do not provide any information about accommodation requests. Therefore, they are not relevant to the question.",
-            "citations": [
-              {
-                "text": "### Hardware Requests\nStandard laptop upgrades occur every **3 years**. \n* **Broken Hardware:** If your device is damaged, submit a ticket via the 'Jira Service Desk' immediately.\n* **Peripherals:** Keyboards, mice, and monitors can be requested through the IT portal with manager approval.",
-                "score": 0.564,
-                "source": "it_guide.md",
-                "section_title": "Hardware Requests"
-              }
-            ]
-          },
-          {
-            "attempt": 2,
-            "query": "what is the process for submitting accommodation requests, including eligibility criteria and any exceptions that may apply?",
-            "top_score": 0.5639,
-            "verdict": "re-search",
-            "reason": "The retrieved chunks discuss hardware requests and procedures for broken hardware and peripherals, but do not provide any information about accommodation requests. Therefore, they are not relevant to the question.",
-            "citations": [
-              {
-                "text": "### Hardware Requests\nStandard laptop upgrades occur every **3 years**. \n* **Broken Hardware:** If your device is damaged, submit a ticket via the 'Jira Service Desk' immediately.\n* **Peripherals:** Keyboards, mice, and monitors can be requested through the IT portal with manager approval.",
-                "score": 0.5639,
-                "source": "it_guide.md",
-                "section_title": "Hardware Requests"
-              }
-            ]
-          }
-        ],
-        "isEscalated": false,
-        "escalation_reason": null,
-        "pipeline_steps": [
-          {
-            "id": "guardrail",
-            "label": "Guardrail",
-            "status": "ok",
-            "detail": "No sensitive pattern matched"
-          },
-          {
-            "id": "router",
-            "label": "Semantic Intent Router",
-            "status": "ok",
-            "detail": "INTENT_POLICY (domain=POLICY, conf=1.00) \u2014 intent_policy domain=POLICY conf=1.00; scores={'PROFILE': 0.0, 'POLICY': 1.0, 'IT': 0.0, 'OOS': 0.0}; primary=POLICY; scope in=False ratio=0.50"
-          },
-          {
-            "id": "retrieve",
-            "label": "Chroma retrieval (embeddings + similarity)",
-            "status": "empty",
-            "detail": "Re-search failed after 2 attempt(s): The retrieved chunks discuss hardware requests and procedures for broken hardware and peripherals, but do not provide any information about accommodation requests. Therefore, they are not relevant to the question."
-          },
-          {
-            "id": "mcp_hr",
-            "label": "Employee tool (MCP-style)",
-            "status": "skipped",
-            "detail": "No employee profile context"
-          },
-          {
-            "id": "llm",
-            "label": "OpenAI chat \u2014 gpt-4o-mini",
-            "status": "ok",
-            "detail": "Embeddings: text-embedding-3-small; structured JSON answer"
-          }
-        ],
-        "use_rag": true,
-        "chat_model": "gpt-4o-mini",
-        "route": "POLICY",
-        "router_version": "v2.1",
-        "context_presence": {
-          "has_policy": true,
-          "has_profile": false,
-          "has_it": false
-        },
-        "clarification_triggered": false,
-        "employee_profile": null,
-        "tool_called": false,
-        "recovery_applied": false
-      },
-      "created_at": "2026-04-17T09:03:30.943787+00:00"
+      "created_at": "2026-04-20T13:43:11.376218+00:00"
     }
   ]
 }

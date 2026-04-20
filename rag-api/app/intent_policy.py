@@ -200,6 +200,15 @@ _LOAN_PERSONAL_SIGNALS = (
     "after how many months",
     "when can i",
     "when am i",
+    # Intent to use / learn about the employer services loan (profile-backed), not handbook-only policy text.
+    "i want",
+    "avail",
+    "get loan",
+    "get a loan",
+    "company loan",
+    "apply for",
+    "know about",
+    "tell me",
 )
 _LOAN_POLICY_SIGNALS = (
     "loan policy",

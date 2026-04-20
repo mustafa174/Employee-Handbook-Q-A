@@ -72,8 +72,12 @@ SENSITIVE_PATTERNS = re.compile(
     + "|".join(re.escape(t).replace(r"\ ", r"\s+") for t in SENSITIVE_TOPICS)
     + r"|harass(?:ment|ing|ed)?"
     + r"|harrass(?:ment|ing|ed)?"
+    + r"|harras(?:ment|ing|ed)?"
+    + r"|haras(?:ment|ing|ed)?"
     + r"|harassed"
     + r"|harrassed"
+    + r"|harassing"
+    + r"|harrasing"
     + r")\b",
     re.I,
 )
@@ -81,6 +85,7 @@ SENSITIVE_SEMANTIC_PATTERNS = (
     r"\bbull(?:y|ied|ying)\b",
     r"\babus(?:e|ed|ing)\b",
     r"\bunsafe\b",
+    r"\bbeat(?:en|ing|up)?\b",
     r"\bfired\b",
     r"\bterminated\b",
     r"\blaid\s*off\b",
@@ -95,9 +100,11 @@ SENSITIVE_SEMANTIC_PATTERNS = (
 HR_REPORT_PATTERNS = (
     r"\bharra?s{1,2}ment\b",
     r"\bharra?s{1,2}(?:ed|ing)?\b",
+    r"\bhara?s{1,2}(?:ed|ing)?\b",
     r"\bbull(?:y|ied|ying)\b",
     r"\babus(?:e|ed|ing)\b",
     r"\bunsafe\b",
+    r"\bbeat(?:en|ing|up)?\b",
     r"\b(?:treat(?:ing)?|treated|mistreat(?:ing|ed)?)\s+me\s+(?:very\s+)?bad(?:ly|le)?\b",
 )
 CRISIS_PATTERNS = re.compile(
@@ -137,7 +144,7 @@ class RagState(TypedDict, total=False):
     last_profile_field: str | None
     mixed_clarification_needed: bool
     is_mixed_intent: bool
-    route: str
+    route: str 
     normalized_question: str
     agent_action: dict
 
@@ -215,7 +222,7 @@ _PROFILE_BALANCE_TERMS = ("how many", "balance", "days do i have", "days left", 
 POLICY_CLAIM_PATTERN = re.compile(r"\b(must|required|days?)\b", re.I)
 POLICY_SCOPE_PATTERN = re.compile(r"\b(policy|allowed|eligible|approval|remote work)\b", re.I)
 _ROUTER_HARD_OOS_PATTERN = re.compile(
-    r"\b(mars|jupiter|saturn|uranus|neptune|pluto|planet|galaxy|solar system|astrophysics|astronomy|zodiac|horoscope|recipe|poem|lyrics|movie|bitcoin|crypto)\b",
+    r"\b(moon|mars|jupiter|saturn|uranus|neptune|pluto|planet|galaxy|solar system|astrophysics|astronomy|zodiac|horoscope|recipe|poem|lyrics|movie|bitcoin|crypto)\b",
     re.I,
 )
 MIXED_CLARIFICATION_PROMPT = (
@@ -264,22 +271,88 @@ def _sensitive_answer() -> str:
     return (
         "I have detected that this is a sensitive matter. For your protection and to ensure "
         "proper handling, I cannot provide policy details on this topic. Please contact the "
-        "HR Intake Team directly at hr-support@company.com or via the internal portal link below."
+        "HR Intake Team directly at hr-support@company.com or via the internal portal link below. "
+        "If you want, I can help prepare an HR report summary for you now."
     )
 
 
-def detect_sensitive(question: str) -> bool:
+def _normalize_sensitive_text(question: str) -> str:
+    """Normalize noisy spelling for sensitive-topic matching."""
     q = str(question or "")
+    # Collapse stretched letters (e.g., harrassssing -> harrassing)
+    return re.sub(r"(.)\1{2,}", r"\1\1", q)
+
+
+def _sensitive_match_variants(question: str) -> tuple[str, str]:
+    """Return typo-tolerant variants for sensitive regex matching."""
+    base = _normalize_sensitive_text(question)
+    # Strong fallback: collapse any repeated character run to one
+    # (e.g., harraasssing -> harasing) so misspellings still hit patterns.
+    dedup = re.sub(r"(.)\1+", r"\1", base)
+    return base, dedup
+
+
+def detect_sensitive(question: str) -> bool:
+    variants = _sensitive_match_variants(question)
     return bool(
-        SENSITIVE_PATTERNS.search(q)
-        or any(re.search(pattern, q, re.I) for pattern in SENSITIVE_SEMANTIC_PATTERNS)
+        any(SENSITIVE_PATTERNS.search(v) for v in variants)
+        or any(re.search(pattern, v, re.I) for pattern in SENSITIVE_SEMANTIC_PATTERNS for v in variants)
+    )
+
+
+def _incident_category_from_variants(variants: tuple[str, str]) -> str:
+    if any(re.search(r"\bbeat(?:en|ing|up)?\b", v, re.I) for v in variants):
+        return "physical assault"
+    if any(re.search(r"\b(sexual assault|violence)\b", v, re.I) for v in variants):
+        return "physical assault"
+    if any(re.search(r"\babus(?:e|ed|ing)\b", v, re.I) for v in variants):
+        return "abusive behavior"
+    if any(re.search(r"\bbull(?:y|ied|ying)\b", v, re.I) for v in variants):
+        return "workplace bullying"
+    if any(
+        re.search(r"\b(harass(?:ment|ed|ing)?|harrass(?:ment|ed|ing)?|harra?s{1,2}(?:ment|ed|ing)?)\b", v, re.I)
+        for v in variants
+    ):
+        return "workplace harassment"
+    if any(re.search(r"\bdiscriminat(?:e|ed|ion|ory)\b", v, re.I) for v in variants):
+        return "workplace discrimination"
+    if any(re.search(r"\b(wrongful termination|terminated|fired|laid\s*off|dismissed)\b", v, re.I) for v in variants):
+        return "wrongful termination concern"
+    if any(re.search(r"\b(lawsuit|legal action)\b", v, re.I) for v in variants):
+        return "legal escalation concern"
+    if any(re.search(r"\bunsafe\b", v, re.I) for v in variants):
+        return "unsafe workplace conduct"
+    return "workplace misconduct"
+
+
+def _reported_party_from_question(question: str) -> str:
+    q = question.lower()
+    if re.search(r"\bmanager\b", q):
+        return "the employee's manager"
+    if re.search(r"\bsupervisor\b", q):
+        return "the employee's supervisor"
+    if re.search(r"\bboss\b", q):
+        return "the employee's boss"
+    return "another workplace party"
+
+
+def _incident_report_description(question: str, variants: tuple[str, str]) -> str:
+    category = _incident_category_from_variants(variants)
+    party = _reported_party_from_question(question)
+    statement = " ".join(question.strip().split()) or "No additional statement provided."
+    return (
+        f"The employee is reporting possible {category} involving {party}. "
+        "This incident should be reviewed confidentially by HR with priority. "
+        f'Employee statement: "{statement}"'
     )
 
 
 def _build_harassment_agent_action(state: RagState) -> dict | None:
-    q = str(state.get("question", "") or "")
-    if not any(re.search(pattern, q, re.I) for pattern in HR_REPORT_PATTERNS):
+    q_raw = str(state.get("question", "") or "")
+    variants = _sensitive_match_variants(q_raw)
+    if not detect_sensitive(q_raw):
         return None
+    report_description = _incident_report_description(q_raw, variants)
     profile = state.get("employee_profile") or {}
     employee_name = ""
     if isinstance(profile, dict):
@@ -290,7 +363,7 @@ def _build_harassment_agent_action(state: RagState) -> dict | None:
         "payload": {
             "employee_id": employee_id or None,
             "employee_name": employee_name or None,
-            "message": q,
+            "message": report_description,
         },
     }
 
@@ -309,6 +382,8 @@ def _set_citations_once(state: RagState, citations: list[dict]) -> RagState:
 
 def normalize_query(question: str) -> str:
     q = (question or "").lower()
+    q = re.sub(r"\bleav(?:e)+\b", "leave", q)
+    q = re.sub(r"\bsick+\b", "sick", q)
     q = q.replace("laptap", "laptop")
     q = q.replace("lptop", "laptop")
     q = q.replace("labtop", "laptop")
@@ -472,6 +547,25 @@ def _is_broad_query(question: str) -> bool:
     )
 
 
+def _is_ambiguous_leave_policy_query(question: str) -> bool:
+    """Detect broad leave-policy asks that should request scope clarification."""
+    q = normalize_query(question).lower()
+    if not q:
+        return False
+    has_leave_policy = bool(re.search(r"\bleave(s)?\b", q)) and bool(
+        re.search(r"\b(policy|policies|rule|rules|guideline|guidelines)\b", q)
+    )
+    if not has_leave_policy:
+        return False
+    # Already scoped to a specific leave category.
+    if re.search(r"\b(pto|paid time off|sick|holiday|vacation|unpaid|maternity|paternity|bereavement)\b", q):
+        return False
+    # Questions that ask for "all" can receive a comprehensive answer instead of clarification.
+    if re.search(r"\b(all|complete|full|overall)\b", q):
+        return False
+    return True
+
+
 def _fallback_sub_questions(question: str) -> list[str]:
     parts = [p.strip() for p in re.split(r"\n+|(?<=[?])\s+", question) if p.strip()]
     out: list[str] = []
@@ -482,7 +576,7 @@ def _fallback_sub_questions(question: str) -> list[str]:
         expanded = [
             x.strip()
             for x in re.split(
-                r"\s+(?:and|also)\s+(?=(?:what|how|can|when|where|who|explain|tell)\b)",
+                r"\s+(?:and|also)\s+(?=(?:what|how|can|when|where|who|do|am|is|should|would|explain|tell)\b)",
                 p,
                 flags=re.I,
             )
@@ -519,7 +613,13 @@ def _is_multi_question_prompt(question: str) -> bool:
     lines = [ln.strip() for ln in question.splitlines() if ln.strip()]
     if len(lines) >= 2:
         return True
-    if bool(re.search(r"\b(?:also|and)\s+(?:explain|tell|what|how|can|when|where|who)\b", question, re.I)):
+    if bool(
+        re.search(
+            r"\b(?:also|and)\s+(?:explain|tell|what|how|can|when|where|who|do|am|is|should|would)\b",
+            question,
+            re.I,
+        )
+    ):
         return True
     return len(re.findall(r"\?", question)) >= 2
 
@@ -676,7 +776,7 @@ def _explicit_personal_data_request(question: str) -> bool:
             return False
     return bool(
         re.search(
-            r"\b(i have|do i have|how many .* do i (?:have|get)|remaining|left|balance|quota|qouta|my balance|my\s+(?:pto|leave|sick(?:\s+days?)?)|for me)\b",
+            r"\b(i have|do i have|how many .* do i (?:have|get)|remaining|left|balance|quota|qouta|my balance|my\s+(?:pto|leave|sick(?:\s+days?)?)|for me|what about\s+(?:my\s+)?(?:pto|sick|leave)(?:\s+days?)?)\b",
             q,
         )
     )
@@ -691,7 +791,10 @@ def _is_explicit_mixed_query(question: str) -> bool:
         )
     )
     has_explicit_policy_op = bool(
-        re.search(r"\b(policy|rule|carry over|rollover|advance notice|request|required|process)\b", q)
+        re.search(
+            r"\b(policy|rule|carry over|rollover|advance notice|request|required|process|medical certificate|certification|replacement|broken laptop)\b",
+            q,
+        )
     )
     if bool(re.search(r"\bhow many\b", q)) and bool(re.search(r"\b(leave|leaves|pto|sick)\b", q)):
         has_explicit_personal_ref = True
@@ -700,6 +803,19 @@ def _is_explicit_mixed_query(question: str) -> bool:
 
 def _is_personal_query(question: str) -> bool:
     q = normalize_query(question)
+    policy_days_followup = bool(
+        re.search(r"\bhow many\b", q)
+        and re.search(r"\bdays?\b", q)
+        and re.search(r"\b(advance|in advance|request|policy|rule|carry over|rollover)\b", q)
+        and not re.search(r"\b(do i have|remaining|left|balance|my)\b", q)
+    )
+    if policy_days_followup:
+        return False
+    short_personal_followup = bool(
+        re.search(r"\bwhat about\b", q)
+        and re.search(r"\b(pto|sick|leave)\b", q)
+        and not re.search(r"\b(policy|rule|process|request|advance|carry over|rollover)\b", q)
+    )
     return any(
         token in q
         for token in (
@@ -720,10 +836,37 @@ def _is_personal_query(question: str) -> bool:
             "employee id",
         )
     ) or bool(re.search(r"\bwhat do i .* have\b", q)) or bool(
-        re.search(r"\bhow many\b", q) and re.search(r"\b(leave|pto|days|sick)\b", q)
+        re.search(r"\bhow many\b", q) and re.search(r"\b(leave|pto|sick)\b", q)
     ) or bool(
         re.search(r"\b(type of leaves?|types of leaves?|what type of leave)\b", q)
-    )
+    ) or short_personal_followup
+
+
+def _rewrite_policy_followup_from_history(question: str, messages: list[AnyMessage]) -> str | None:
+    q = normalize_query(question).strip()
+    if not q:
+        return None
+    if not re.search(r"\b(it|that|this)\b", q):
+        return None
+    if not re.search(r"\b(rollover|carry over|advance notice|request|policy|rule)\b", q):
+        return None
+    topic: str | None = None
+    for msg in reversed(messages[:-1]):
+        text = normalize_query(str(msg.content or ""))
+        if "pto" in text or "paid time off" in text:
+            topic = "pto"
+            break
+        if "sick leave" in text or "sick" in text:
+            topic = "sick leave"
+            break
+        if "holiday" in text or "holidays" in text:
+            topic = "holidays"
+            break
+    if not topic:
+        return None
+    if topic == "pto" and re.search(r"\b(rollover|carry over)\b", q):
+        return "what is the pto carry over policy"
+    return re.sub(r"\b(it|that|this)\b", topic, q)
 
 
 def _is_personal_balance_question(q_norm: str) -> bool:
@@ -1337,7 +1480,7 @@ def _policy_answer_for_subquestion(
             return None, []
         c0 = good[0]
         section = str(c0.get("section_title") or "General")
-        snippet = _citation_snippet(c0)
+        snippet = _focused_subquestion_snippet(sub_q, c0)
         return f"{snippet} (Section: {section})", good[:1]
     return None, []
 
@@ -1360,6 +1503,42 @@ def _dedupe_lines(text: str) -> str:
         seen.add(ln)
         out.append(ln)
     return "\n".join(out)
+
+
+def _strip_redundant_policy_fallback(policy_part: str) -> str:
+    fallback = FALLBACKS["policy"].strip()
+    lines = [ln.strip() for ln in policy_part.splitlines() if ln.strip()]
+    if not lines:
+        return policy_part
+    non_fallback_lines = [ln for ln in lines if ln != fallback]
+    # If we have any concrete grounded line, drop the generic fallback line.
+    if non_fallback_lines and any(
+        ("section:" in ln.lower())
+        or ("jira service desk" in ln.lower())
+        or ("roll over" in ln.lower())
+        or ("carry over" in ln.lower())
+        or ("medical certification" in ln.lower())
+        for ln in non_fallback_lines
+    ):
+        return "\n".join(non_fallback_lines)
+    return "\n".join(lines)
+
+
+def _render_multi_question_display(question: str) -> str:
+    q = " ".join(str(question or "").strip().split())
+    if not q:
+        return "Question?"
+    # Capitalize first visible character.
+    q = q[0].upper() + q[1:] if len(q) > 1 else q.upper()
+    # Normalize common acronym casing for polished display.
+    q = re.sub(r"\bemployee id\b", "employee ID", q, flags=re.I)
+    q = re.sub(r"\bpto\b", "PTO", q, flags=re.I)
+    q = re.sub(r"\bhr\b", "HR", q, flags=re.I)
+    q = re.sub(r"\bit\b", "IT", q, flags=re.I)
+    q = re.sub(r"\bvpn\b", "VPN", q, flags=re.I)
+    if not q.endswith("?"):
+        q = f"{q}?"
+    return q
 
 
 def _crisis_fallback() -> str:
@@ -1506,6 +1685,57 @@ def _citation_snippet(citation: dict) -> str:
     if len(first) > 220:
         first = first[:220].rstrip() + "..."
     return first
+
+
+def _focused_subquestion_snippet(sub_q: str, citation: dict) -> str:
+    text = str(citation.get("text") or "").strip()
+    if not text:
+        return "No grounded excerpt available."
+    sentences = [s.strip() for s in re.split(r"(?<=[.!?])\s+", text) if s.strip()]
+    if not sentences:
+        return _citation_snippet(citation)
+    q_norm = normalize_query(sub_q).lower()
+    priority_terms: list[str] = []
+    if re.search(r"\b(rollover|carry over)\b", q_norm):
+        priority_terms.extend(["roll over", "carry over", "rollover"])
+    if re.search(r"\b(broken|replacement|laptop|device)\b", q_norm):
+        priority_terms.extend(["broken hardware", "submit a ticket", "jira service desk", "replacement"])
+    if re.search(r"\b(medical certificate|certification|sick)\b", q_norm):
+        priority_terms.extend(["medical certification", "fitness-for-duty", "3 consecutive workdays"])
+    keywords = [
+        t
+        for t in re.findall(r"[a-zA-Z][a-zA-Z0-9_-]{2,}", q_norm)
+        if t not in _GROUNDING_STOPWORDS
+    ]
+    best_sentence = sentences[0]
+    best_score = -1
+    for sentence in sentences:
+        s_lower = sentence.lower()
+        score = sum(1 for t in keywords if t in s_lower)
+        score += sum(3 for t in priority_terms if t in s_lower)
+        if score > best_score:
+            best_score = score
+            best_sentence = sentence
+    if len(best_sentence) > 220:
+        best_sentence = best_sentence[:220].rstrip() + "..."
+    return best_sentence
+
+
+def _rollover_answer_from_citations(citations: list[dict]) -> str | None:
+    for citation in citations:
+        text = str(citation.get("text") or "").strip()
+        if not text:
+            continue
+        m = re.search(
+            r"(unused\s+pto\s+may\s+roll\s+over\s+up\s+to\s+\d+\s+days[^.]*\.)",
+            text,
+            re.I,
+        )
+        if m:
+            return m.group(1).strip()
+        if re.search(r"\broll\s*over\b|\bcarry\s*over\b", text, re.I):
+            return _citation_snippet(citation)
+    return None
 
 
 
@@ -1786,7 +2016,7 @@ def router_node(state: RagState) -> RagState:
     if (
         execution_route not in {"personal", "mixed"}
         and state.get("employee_id")
-        and bool(re.search(r"\b(leave|pto)\b", q_norm))
+        and bool(re.search(r"\b(leave|leaves|pto|sick)\b", q_norm))
         and not is_policy_intent
         and _explicit_personal_data_request(q_norm)
     ):
@@ -2022,6 +2252,19 @@ def query_refiner_node(state: RagState) -> RagState:
         }
     normalized_q = normalize_query(q)
     q_lower = normalized_q.lower()
+    msgs = state.get("messages") or []
+    rewritten_followup = _rewrite_policy_followup_from_history(normalized_q, list(msgs))
+    if rewritten_followup:
+        retrieval_queries = [rewritten_followup]
+        if "pto" in rewritten_followup and re.search(r"\b(rollover|carry over)\b", rewritten_followup):
+            retrieval_queries.append("pto carry over policy")
+        return {
+            **state,
+            "normalized_question": normalized_q,
+            "retrieval_query": rewritten_followup,
+            "retrieval_queries": list(dict.fromkeys(retrieval_queries)),
+            "sub_questions": [rewritten_followup],
+        }
     if _is_explicit_mixed_query(normalized_q):
         split_questions = _fallback_sub_questions(normalized_q)[:MAX_SUB_QUESTIONS]
         if len(split_questions) < 2 and " and " in normalized_q.lower():
@@ -2094,7 +2337,6 @@ def query_refiner_node(state: RagState) -> RagState:
             "retrieval_queries": list(dict.fromkeys(retrieval_queries)),
             "sub_questions": (fallback_sq if len(fallback_sq) >= 2 else [normalized_q])[:MAX_SUB_QUESTIONS],
         }
-    msgs = state.get("messages") or []
     history_lines: list[str] = []
     # Exclude newest user query from history summary.
     for m in msgs[:-1]:
@@ -2215,7 +2457,10 @@ def node_retrieve(state: RagState) -> RagState:
     candidates: list[tuple[float, str, str, str]] = []
     seen_chunks: set[str] = set()
     for sub_q in sub_questions:
+        is_rollover_subq = bool(re.search(r"\b(rollover|carry over)\b", sub_q.lower()))
         local_queries = [normalize_policy_terms(sub_q)]
+        if is_rollover_subq:
+            local_queries.append("paid time off rollover policy")
         if "vpn" in sub_q.lower():
             local_queries.extend(
                 [
@@ -2224,7 +2469,7 @@ def node_retrieve(state: RagState) -> RagState:
                     "Accessing internal servers remotely",
                 ]
             )
-        if re.search(r"\b(sick leave|leave|pto|onboarding)\b", sub_q.lower()):
+        if re.search(r"\b(sick leave|leave|pto|onboarding)\b", sub_q.lower()) and not is_rollover_subq:
             local_queries.extend(
                 [
                     "contact person for leave requests",
@@ -2239,7 +2484,13 @@ def node_retrieve(state: RagState) -> RagState:
             if extra.lower() not in {x.lower() for x in local_queries}:
                 local_queries.append(extra)
         local_candidates: list[tuple[float, str, str, str]] = []
-        query_cap = MAX_LOCAL_QUERIES_VPN if "vpn" in sub_q.lower() else MAX_LOCAL_QUERIES_DEFAULT
+        query_cap = (
+            MAX_LOCAL_QUERIES_VPN
+            if "vpn" in sub_q.lower()
+            else 2
+            if is_rollover_subq
+            else MAX_LOCAL_QUERIES_DEFAULT
+        )
         for query in local_queries[:query_cap]:
             try:
                 docs = vs.similarity_search_with_score(query, k=k)
@@ -2731,7 +2982,15 @@ def node_generate(state: RagState) -> RagState:
             "citations": len(state.get("citations") or state.get("retrieval_citations") or []),
         },
     )
-    if route == "policy" and not citations:
+    if use_rag and route == "policy" and citations and re.search(r"\b(rollover|carry over)\b", q_norm):
+        rollover_line = _rollover_answer_from_citations(citations)
+        if rollover_line:
+            src = _build_source_line(citations)
+            answer = f"{rollover_line}\n\n{src}" if src else rollover_line
+            return {**state, "answer": answer}
+    sub_questions = list(state.get("sub_questions") or [])
+    has_multi_subquestions = len(sub_questions) >= 2
+    if route == "policy" and not citations and not has_multi_subquestions:
         trace(
             state,
             "ERROR",
@@ -2739,7 +2998,6 @@ def node_generate(state: RagState) -> RagState:
                 "code": "POLICY_GENERATE_WITHOUT_CITATIONS",
             },
         )
-    sub_questions = list(state.get("sub_questions") or [])
     sub_results = list(state.get("sub_results") or [])
     effective_sub_questions = list(sub_questions)
     if len(effective_sub_questions) < 2:
@@ -2766,12 +3024,12 @@ def node_generate(state: RagState) -> RagState:
     if route == "personal" and profile:
         tool_called = True
     # Deterministic input isolation: non-personal routes must not see profile context.
-    if use_rag and route not in {"personal", "mixed"}:
+    if use_rag and route not in {"personal", "mixed"} and len(effective_sub_questions) < 2:
         profile = {}
     if use_rag and intent_domain == "IT" and (profile or has_raw_profile_context):
         # IT route invariant: no profile context allowed.
         return {**state, "answer": _it_support_fallback(), "retrieval_citations": []}
-    if route == "policy" and not citations:
+    if route == "policy" and not citations and not has_multi_subquestions:
         trace(
             state,
             "ERROR",
@@ -2814,7 +3072,7 @@ def node_generate(state: RagState) -> RagState:
                 loaded_profile["sick_days"] = str(int(float(details["sick_balance"])))
             profile = _normalize_profile_fields(loaded_profile, None)
     # Route-context invariants to prevent silent cross-route regressions.
-    if use_rag and route == "policy" and intent_domain != "IT":
+    if use_rag and route == "policy" and intent_domain != "IT" and len(effective_sub_questions) < 2:
         assert not profile, "Policy route contaminated with profile"
     if use_rag and route == "personal" and state.get("employee_id"):
         assert profile, "Personal route missing profile"
@@ -2959,17 +3217,16 @@ def node_generate(state: RagState) -> RagState:
     if loan_composite and route != "mixed":
         return {**state, "answer": loan_composite, "messages": [AIMessage(content=loan_composite)]}
     if use_rag and len(effective_sub_questions) >= 2:
-        bullets: list[str] = []
-        mixed_profile_lines: list[str] = []
-        mixed_policy_lines: list[str] = []
+        success_items: list[str] = []
+        handbook_not_found_items: list[str] = []
+        out_of_scope_items: list[str] = []
         grounded_citations: list[dict] = []
         policy_cache: dict[str, tuple[str | None, list[dict]]] = {}
-        saw_personal_subroute = False
-        saw_policy_subroute = False
-        for sq in effective_sub_questions:
+        for idx, sq in enumerate(effective_sub_questions, start=1):
             sub_q = str(sq).strip()
             if not sub_q:
                 continue
+            display_q = _render_multi_question_display(sub_q)
             source = _classify_subquestion_source(sub_q)
             sub_route = route_after_router(
                 {
@@ -2981,31 +3238,7 @@ def node_generate(state: RagState) -> RagState:
                     "mixed_clarification_needed": False,
                 }
             )
-            if sub_route in {"personal", "mixed"}:
-                saw_personal_subroute = True
-            if sub_route in {"policy", "mixed"}:
-                saw_policy_subroute = True
-            cache_key = normalize_query(sub_q)
-            if cache_key in policy_cache:
-                policy_answer, policy_cites = policy_cache[cache_key]
-            else:
-                policy_answer, policy_cites = _policy_answer_for_subquestion(sub_q, sub_results)
-                policy_cache[cache_key] = (policy_answer, policy_cites)
-            if policy_answer:
-                grounded_citations.extend(policy_cites)
-                line = policy_answer.strip()
-                bullets.append(line)
-                mixed_policy_lines.append(line)
-                continue
-            if source == "OOD":
-                if route == "mixed":
-                    line = FALLBACKS["policy"]
-                    bullets.append(line)
-                    mixed_policy_lines.append(line)
-                else:
-                    bullets.append(f"- **{sub_q}**: {_general_scope_fallback()}")
-                continue
-            if source == "STATUS":
+            if source == "STATUS" or sub_route == "personal":
                 profile_answer, resolved_key = _resolve_profile_answer(
                     sub_q,
                     profile,
@@ -3022,57 +3255,49 @@ def node_generate(state: RagState) -> RagState:
                 if profile_answer:
                     if resolved_key:
                         last_resolved_key = resolved_key
-                    line = profile_answer.strip()
-                    bullets.append(line)
-                    mixed_profile_lines.append(line)
+                    success_items.append(f"{idx}. {display_q}\n{profile_answer.strip()}")
                 else:
-                    bullets.append(
-                        f"- **{sub_q}**: I see you're asking about your profile. "
-                        "Are you looking for your leave balance or your loan eligibility?"
+                    success_items.append(
+                        f"{idx}. {display_q}\n"
+                        "I see you're asking about your profile. Are you looking for your leave balance or your loan eligibility?"
                     )
                 continue
-            if source == "IT":
-                bullets.append(f"- **{sub_q}**: {_it_support_fallback()}")
-            elif "onboarding" in sub_q.lower():
-                bullets.append(f"- **{sub_q}**: {_onboarding_contact_fallback()}")
+            cache_key = normalize_query(sub_q)
+            if cache_key in policy_cache:
+                policy_answer, policy_cites = policy_cache[cache_key]
             else:
-                if route == "mixed":
-                    line = FALLBACKS["policy"]
-                    bullets.append(line)
-                    mixed_policy_lines.append(line)
-                else:
-                    bullets.append(f"- **{sub_q}**: {_general_scope_fallback()}")
-        if bullets:
-            effective_route = "mixed" if (saw_personal_subroute and saw_policy_subroute) else route
-            if effective_route == "mixed":
-                profile_part = "\n".join(mixed_profile_lines) or ""
-                policy_part = "\n".join(mixed_policy_lines) or ""
-                retrieval_failed = str(state.get("retrieval_verdict", "")).upper() == "FAILED"
-                if not profile_part and profile:
-                    profile_prompt = q_norm
-                    if re.search(r"\b(leave|leaves|pto|sick)\b", q_norm):
-                        profile_prompt = "what is my leave balance"
-                    elif "loan" in q_norm:
-                        profile_prompt = "am i eligible for loan"
-                    profile_fallback, _ = _resolve_profile_answer(
-                        profile_prompt,
-                        profile,
-                        last_resolved_key=last_resolved_key,
-                    )
-                    profile_part = profile_fallback or ""
-                if not policy_part and not retrieval_failed:
-                    if citations:
-                        section = str(citations[0].get("section_title") or "General")
-                        policy_part = f"{_citation_snippet(citations[0])} (Section: {section})"
-                    else:
-                        policy_part = FALLBACKS["policy"]
-                if not policy_part:
-                    policy_part = FALLBACKS["policy"]
-                if not profile_part:
-                    profile_part = FALLBACKS["personal"]
-                answer = _format_mixed_answer(_dedupe_lines(profile_part), _dedupe_lines(policy_part))
-            else:
-                answer = "\n".join(bullets)
+                policy_answer, policy_cites = _policy_answer_for_subquestion(sub_q, sub_results)
+                policy_cache[cache_key] = (policy_answer, policy_cites)
+            if policy_answer:
+                grounded_citations.extend(policy_cites)
+                success_items.append(f"{idx}. {display_q}\n{policy_answer.strip()}")
+                continue
+            is_hard_oos_subq = bool(_ROUTER_HARD_OOS_PATTERN.search(sub_q))
+            if source == "OOD" or is_hard_oos_subq:
+                out_of_scope_items.append(f"{idx}. {display_q}")
+                continue
+            if source in {"POLICY", "IT"} or sub_route in {"policy", "mixed"}:
+                handbook_not_found_items.append(f"{idx}. {display_q}")
+                continue
+            # Defensive fallback for anything unclassified.
+            out_of_scope_items.append(f"{idx}. {display_q}")
+        sections: list[str] = []
+        if success_items:
+            sections.append("\n\n".join(success_items))
+        if handbook_not_found_items:
+            sections.append(
+                "**Not Found in Handbook**\n\n"
+                + "\n".join(handbook_not_found_items)
+            )
+        if out_of_scope_items:
+            sections.append(
+                "**Outside Supported Scope**\n\n"
+                + "\n".join(out_of_scope_items)
+                + "\n\n"
+                + _general_scope_fallback()
+            )
+        if sections:
+            answer = "\n\n".join(sections)
             src = _build_source_line(grounded_citations)
             if src:
                 answer = f"{answer}\n\n{src}"
@@ -3217,6 +3442,13 @@ def node_generate(state: RagState) -> RagState:
                 "answer": profile_answer,
                 "last_profile_field": resolved_key or last_profile_field,
             }
+    if use_rag and route in {"policy", "mixed"} and _is_ambiguous_leave_policy_query(state.get("question", "")):
+        src = _build_source_line(citations)
+        answer = (
+            "Your request is broad. Do you want the policy for **PTO**, **sick leave**, or **holidays**? "
+            "I can also provide a combined summary of all leave types."
+        )
+        return {**state, "answer": f"{answer}\n\n{src}" if src else answer}
     if use_rag and route in {"policy", "mixed"} and _is_broad_query(state.get("question", "")):
         options = _build_multi_match_options(citations)
         if options:
