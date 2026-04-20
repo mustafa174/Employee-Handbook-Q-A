@@ -14,7 +14,7 @@ import "@xyflow/react/dist/style.css";
 import { memo, useMemo } from "react";
 
 type StageState = "idle" | "active" | "done";
-type RouteBucket = "POLICY" | "IT" | "OUT_OF_SCOPE";
+export type RouteBucket = "POLICY" | "IT" | "MIX" | "OUT_OF_SCOPE";
 
 type StageData = { label: string; state: StageState };
 
@@ -177,25 +177,34 @@ function buildNodes(
     {
       id: "policy",
       type: "ragStage",
-      position: { x: 640, y: 18 },
+      position: { x: 640, y: 0 },
       data: { label: "POLICY\nHandbook / Process", state: bucketState("POLICY") },
     },
     {
       id: "it",
       type: "ragStage",
-      position: { x: 640, y: 120 },
+      position: { x: 640, y: 86 },
       data: { label: "IT\nSupport & IT Policies", state: bucketState("IT") },
+    },
+    {
+      id: "mix",
+      type: "ragStage",
+      position: { x: 640, y: 172 },
+      data: {
+        label: "MIX\nHandbook + Employee Context",
+        state: bucketState("MIX"),
+      },
     },
     {
       id: "out_of_scope",
       type: "ragStage",
-      position: { x: 640, y: 222 },
+      position: { x: 640, y: 258 },
       data: { label: "OUT OF SCOPE\nFallback / Escalation", state: bucketState("OUT_OF_SCOPE") },
     },
     {
       id: "output",
       type: "llmOnly",
-      position: { x: 930, y: 120 },
+      position: { x: 930, y: 129 },
       data: { label: `Final Response\n${llmNodeLabel}`, state: s("output") },
     },
   ];
@@ -205,6 +214,7 @@ function buildEdges(isLoading: boolean, isDark: boolean): Edge[] {
   const stroke = isDark ? "#71717a" : "#94a3b8";
   const blueStroke = isDark ? "#38bdf8" : "#2563eb";
   const greenStroke = isDark ? "#4ade80" : "#16a34a";
+  const mixStroke = isDark ? "#e879f9" : "#a21caf";
   const amberStroke = isDark ? "#fbbf24" : "#d97706";
   const animated = isLoading;
   return [
@@ -212,9 +222,11 @@ function buildEdges(isLoading: boolean, isDark: boolean): Edge[] {
     { id: "e-g-r", source: "guardrail", target: "router", type: "smoothstep", animated, style: { stroke, strokeWidth: 2 } },
     { id: "e-r-p", source: "router", target: "policy", type: "smoothstep", animated, style: { stroke: blueStroke, strokeWidth: 2.4 } },
     { id: "e-r-i", source: "router", target: "it", type: "smoothstep", animated, style: { stroke: greenStroke, strokeWidth: 2.4 } },
+    { id: "e-r-m", source: "router", target: "mix", type: "smoothstep", animated, style: { stroke: mixStroke, strokeWidth: 2.4 } },
     { id: "e-r-o", source: "router", target: "out_of_scope", type: "smoothstep", animated, style: { stroke: amberStroke, strokeWidth: 2.2 } },
     { id: "e-p-out", source: "policy", target: "output", type: "smoothstep", animated, style: { stroke: blueStroke, strokeWidth: 2 } },
     { id: "e-i-out", source: "it", target: "output", type: "smoothstep", animated, style: { stroke: greenStroke, strokeWidth: 2 } },
+    { id: "e-m-out", source: "mix", target: "output", type: "smoothstep", animated, style: { stroke: mixStroke, strokeWidth: 2 } },
     { id: "e-o-out", source: "out_of_scope", target: "output", type: "smoothstep", animated, style: { stroke: amberStroke, strokeWidth: 2 } },
   ];
 }
@@ -254,13 +266,13 @@ function RAGPipelineFlow({
   const edges = useMemo(() => buildEdges(isLoading, isDark), [isLoading, isDark]);
 
   return (
-    <div className="h-[360px] w-full overflow-hidden rounded-2xl border border-zinc-200 bg-gradient-to-b from-white to-zinc-50 dark:border-zinc-800 dark:bg-zinc-950/50">
+    <div className="h-[420px] w-full overflow-hidden rounded-2xl border border-zinc-200 bg-gradient-to-b from-white to-zinc-50 dark:border-zinc-800 dark:bg-zinc-950/50">
       <ReactFlow
         nodes={nodes}
         edges={edges}
         nodeTypes={nodeTypesFull}
         fitView
-        fitViewOptions={{ padding: 0.14, maxZoom: 1.05, minZoom: 0.35 }}
+        fitViewOptions={{ padding: 0.12, maxZoom: 1.02, minZoom: 0.32 }}
         nodesDraggable={false}
         nodesConnectable={false}
         elementsSelectable={false}
@@ -294,6 +306,9 @@ export function RAGPipelineVisualizer(props: Readonly<InnerProps>) {
           </span>
           <span className="rounded-full border border-emerald-200 bg-emerald-50 px-2 py-1 dark:border-emerald-900 dark:bg-emerald-950/30">
             IT
+          </span>
+          <span className="rounded-full border border-fuchsia-200 bg-fuchsia-50 px-2 py-1 dark:border-fuchsia-900 dark:bg-fuchsia-950/30">
+            Mix
           </span>
           <span className="rounded-full border border-amber-200 bg-amber-50 px-2 py-1 dark:border-amber-900 dark:bg-amber-950/30">
             Out of Scope

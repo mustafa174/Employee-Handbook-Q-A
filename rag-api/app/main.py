@@ -337,7 +337,10 @@ def _sse_data(payload: dict) -> str:
     return f"data: {json.dumps(payload, ensure_ascii=False)}\n\n"
 
 
-def _flow_nodes_for_graph_node(graph_node: str) -> list[str]:
+def _flow_nodes_for_graph_node(graph_node: str, state: dict) -> list[str]:
+    """Map LangGraph node names to RAGPipelineVisualizer React Flow node ids (HandbookQA.tsx)."""
+    route = str(state.get("route") or "").lower()
+    domain = str(state.get("intent_domain") or "").upper()
     if graph_node == "query_refiner":
         return ["query"]
     if graph_node == "guardrail":
@@ -345,13 +348,20 @@ def _flow_nodes_for_graph_node(graph_node: str) -> list[str]:
     if graph_node == "router":
         return ["router"]
     if graph_node == "clarify":
-        return ["clarify", "output"]
+        # Visualizer has no "clarify" stage; treat as clarification / fallback path.
+        return ["out_of_scope", "output"]
     if graph_node in {"retrieve", "grade_documents"}:
-        return ["chroma"]
+        if route == "mixed":
+            return ["mix"]
+        if route == "policy" and domain == "IT":
+            return ["it"]
+        if route == "policy":
+            return ["policy"]
+        return ["policy"]
     if graph_node == "balance":
-        return ["mcp"]
+        return ["mix"]
     if graph_node == "generate":
-        return ["synthesis", "judge", "output"]
+        return ["output"]
     return []
 
 
@@ -551,7 +561,9 @@ async def ask_stream(body: AskRequest) -> StreamingResponse:
                 final_state = dict(initial)
                 async for update in graph.astream(initial, stream_mode="updates"):
                     for graph_node, node_delta in update.items():
-                        flow_nodes = _flow_nodes_for_graph_node(str(graph_node))
+                        if isinstance(node_delta, dict):
+                            final_state.update(node_delta)
+                        flow_nodes = _flow_nodes_for_graph_node(str(graph_node), final_state)
                         status = "ok"
                         if graph_node == "guardrail" and isinstance(node_delta, dict) and node_delta.get("escalate"):
                             status = "triggered"
@@ -562,8 +574,6 @@ async def ask_stream(body: AskRequest) -> StreamingResponse:
                             yield _sse_data(
                                 {"type": "node_end", "run_id": run_id, "node": node, "status": status}
                             )
-                        if isinstance(node_delta, dict):
-                            final_state.update(node_delta)
                 raw = build_ask_response_from_state(final_state, use_rag=body.use_rag)
             except Exception as e:
                 yield _sse_data({"type": "error", "run_id": run_id, "message": f"Ask failed: {e}"})
@@ -580,7 +590,23 @@ async def ask_stream(body: AskRequest) -> StreamingResponse:
         raw["cache_kb_signature"] = kb_signature
 
         if cache_hit:
-            for node_id in ("query", "output"):
+            raw_route = str(raw.get("route") or "").upper()
+            presence = raw.get("context_presence") if isinstance(raw.get("context_presence"), dict) else {}
+            has_it = bool(presence.get("has_it"))
+            bucket: str
+            if raw_route == "MIXED":
+                bucket = "mix"
+            elif raw_route in {"GENERAL", "SENSITIVE", "CLARIFY"}:
+                bucket = "out_of_scope"
+            elif has_it:
+                bucket = "it"
+            elif raw_route == "POLICY":
+                bucket = "policy"
+            elif raw_route == "PROFILE":
+                bucket = "mix"
+            else:
+                bucket = "policy"
+            for node_id in ("query", "guardrail", "router", bucket, "output"):
                 yield _sse_data({"type": "node_start", "run_id": run_id, "node": node_id})
                 await asyncio.sleep(0.01)
                 yield _sse_data({"type": "node_end", "run_id": run_id, "node": node_id, "status": "ok"})

@@ -10,7 +10,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { Bar, BarChart, CartesianGrid, Cell, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
 import { apiUrl } from "../apiBase";
 import { CachePanel } from "./CachePanel";
-import { RAGPipelineVisualizer } from "./RAGPipelineVisualizer";
+import { RAGPipelineVisualizer, type RouteBucket } from "./RAGPipelineVisualizer";
 import { useTheme } from "../theme";
 import { HarassmentReportModal } from "./HarassmentReportModal";
 
@@ -160,8 +160,6 @@ type RetrievalAttemptView = {
   reason?: string;
   citations: AskResponse["citations"];
 };
-type RouteBucket = "POLICY" | "IT" | "OUT_OF_SCOPE";
-
 const tokenize = (text: string): string[] => {
   const all = text.toLowerCase().match(/[\p{L}\p{N}']+/gu) ?? [];
   return all.filter((t) => t.length >= 2).slice(0, 12);
@@ -661,8 +659,11 @@ export const HandbookQA = ({
 
     if (raw.context_presence?.has_it) selected.add("IT");
     if (route === "GENERAL" || route === "SENSITIVE") selected.add("OUT_OF_SCOPE");
-    if (route === "POLICY" || route === "MIXED") selected.add("POLICY");
-    if (hasPolicySection) selected.add(raw.context_presence?.has_it ? "IT" : "POLICY");
+    if (route === "POLICY") selected.add("POLICY");
+    if (route === "MIXED") selected.add("MIX");
+    if (hasPolicySection && route !== "MIXED") {
+      selected.add(raw.context_presence?.has_it ? "IT" : "POLICY");
+    }
     if (hasOutOfScopeSection) selected.add("OUT_OF_SCOPE");
     if (selected.size === 0 && route !== "PROFILE") selected.add("POLICY");
     return [...selected];

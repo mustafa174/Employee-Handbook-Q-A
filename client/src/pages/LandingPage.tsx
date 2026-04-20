@@ -37,7 +37,14 @@ const LandingPage = () => {
               Security
             </a>
           </div>
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-3">
+            <button
+              type="button"
+              onClick={() => navigate("/document")}
+              className="rounded-full border border-white/50 bg-white/70 px-5 py-2.5 text-sm font-semibold text-[#334155] shadow-sm backdrop-blur-sm transition-all hover:bg-white"
+            >
+              Architecture
+            </button>
             <button
               type="button"
               onClick={() => navigate("/assistant")}

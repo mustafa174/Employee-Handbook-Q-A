@@ -8,6 +8,7 @@ import { SettingsPage } from "./pages/Settings";
 import { useChatHistory } from "./state/ChatHistoryContext";
 import { apiUrl } from "./apiBase";
 import { LandingPage } from "./pages/LandingPage";
+import { DocumentPage } from "./pages/DocumentPage";
 import { PersonalDocumentationPage } from "./pages/PersonalDocumentation";
 
 const EMPLOYEE_OPTIONS = [
@@ -66,12 +67,15 @@ const App = () => {
   const isSettings = location.pathname === "/settings";
   const isLanding = location.pathname === "/";
   const isDocumentation = location.pathname === "/personal-documentaion";
-  const isAssistantPage = !isLanding && !isSettings && !isDocumentation;
+  const isDocument = location.pathname === "/document";
+  const isAssistantPage = !isLanding && !isSettings && !isDocumentation && !isDocument;
   let pageTitle = "Employee Handbook Q&A System";
   if (isSettings) {
     pageTitle = "Settings";
   } else if (isDocumentation) {
     pageTitle = "Personal Documentation";
+  } else if (isDocument) {
+    pageTitle = "Architecture";
   }
   const selectedEmployeeName = useMemo(
     () => employeeOptions.find((row) => row.employee_id === selectedEmployeeId)?.name ?? "",
@@ -114,6 +118,18 @@ const App = () => {
                 ].join(" ")}
               >
                 Settings
+              </button>
+              <button
+                type="button"
+                onClick={() => navigate("/document")}
+                className={[
+                  "rounded-md px-3 py-1.5 text-xs font-medium transition-all duration-200",
+                  isDocument
+                    ? "bg-white text-zinc-900 shadow-sm dark:bg-zinc-700 dark:text-zinc-50"
+                    : "text-zinc-600 hover:text-zinc-900 dark:text-zinc-300 dark:hover:text-zinc-100",
+                ].join(" ")}
+              >
+                Architecture
               </button>
               <button
                 type="button"
@@ -180,6 +196,9 @@ const App = () => {
         </section>
         <section className={isDocumentation ? "block" : "hidden"}>
           <PersonalDocumentationPage />
+        </section>
+        <section className={isDocument ? "block" : "hidden"}>
+          <DocumentPage />
         </section>
       </main>
     </div>

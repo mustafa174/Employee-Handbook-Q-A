@@ -10,10 +10,20 @@ import uuid
 from pathlib import Path
 from typing import Annotated, TypedDict
 
+# --- LangChain (execution primitives; major roles in this module) ---
+# Conversation message types: RagState["messages"] and every LLM call builds
+# SystemMessage / HumanMessage / AIMessage lists (e.g. node_generate, query_refiner_node, grade_documents).
 from langchain_core.messages import AIMessage, AnyMessage, HumanMessage, SystemMessage
+
+# OpenAI chat wrapper: structured output + .invoke() across generation, retrieval grading,
+# query rewrite/refine, and other model-backed nodes.
 from langchain_openai import ChatOpenAI
+
+# --- LangGraph (orchestration; not LangChain but drives when LangChain runs) ---
 from langgraph.graph import END, StateGraph
 from langgraph.graph.message import add_messages
+
+# Structured schemas consumed by ChatOpenAI.with_structured_output(...) below and in nodes.
 from pydantic import BaseModel
 
 from app.config import OPENAI_CHAT_MODEL, OPENAI_EMBEDDING_MODEL
@@ -621,7 +631,10 @@ def _is_multi_question_prompt(question: str) -> bool:
         )
     ):
         return True
-    return len(re.findall(r"\?", question)) >= 2
+    if len(re.findall(r"\?", question)) >= 2:
+        return True
+    # One "?" can still introduce a second clause: "Request PTO? my laptop is broken"
+    return len(_fallback_sub_questions(question)) >= 2
 
 
 def _sub_question_grounded(sub_q: str, citation: dict) -> bool:

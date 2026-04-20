@@ -10,6 +10,8 @@ This document explains how the application answers handbook and employee-specifi
 
 For setup and usage commands, see [README.md](../README.md).
 
+**In-app overview:** the React client includes an **Architecture** page at route `/document` with a layered diagram and narrative aligned with this document.
+
 ## 1) System goals
 
 The architecture is optimized for these requirements:
@@ -44,6 +46,20 @@ LangGraph (rag_graph.py)
    +-- trace events for stream + debugging
 ```
 
+```mermaid
+flowchart TB
+  UI[React / Vite client]
+  API[FastAPI: semantic cache + response contract]
+  LG[LangGraph: refiner, guardrail, router, retrieve, grade, balance, generate]
+  DATA[Chroma vectors + employee MCP-style tools]
+  UI -->|HTTP / SSE| API
+  API --> LG
+  LG --> DATA
+  DATA --> LG
+  LG --> API
+  API -->|JSON or stream done| UI
+```
+
 Core data stores/services:
 
 - `rag-api/data/chroma`: policy retrieval vector store
@@ -52,30 +68,30 @@ Core data stores/services:
 
 ### Visual RAG logic flow
 
-![RAG logic flow screenshot](../../Users/mustafa.hameed/.cursor/projects/c-Projects-Ai-engr-course-Evaluation/assets/c__Users_mustafa.hameed_AppData_Roaming_Cursor_User_workspaceStorage_ccf9c6b7a0d26f24f4a251123972962b_images_image-e8904845-3b53-4821-9507-5895c46e3737.png)
+The assistant UI includes a **RAG logic flow** React Flow diagram (policy / IT / mix / out-of-scope buckets and final response) driven by stream events from `/api/ask/stream`. See `/document` for the full-stack architecture page.
 
-How to read this diagram:
+How to read the flow:
 
-1. **User Query -> Safety Guardrail (hard override)**
-   - Every question first passes safety/guardrail checks.
-   - Critical/sensitive patterns can hard-override normal routing behavior.
-2. **Intent Router (hard route lock)**
-   - The router determines whether the question is policy, personal, mixed, or clarify/general.
-   - After lock-in, downstream nodes follow that route-specific execution plan.
-3. **Policy branch: Chroma retrieval -> retrieval confidence check**
-   - Handbook chunks are retrieved from Chroma with citations.
-   - Retrieval quality/confidence is checked before answer composition.
-4. **Mixed branch: Personal + policy resolver**
-   - Personal context and policy evidence are merged for dual-intent questions.
-   - This branch supports prompts such as "my leave balance and leave rules."
-5. **Personal branch: Employee data only**
-   - Personal route uses employee/profile tools only.
-   - It intentionally bypasses policy retrieval when the ask is purely personal.
-6. **Clarification branch**
-   - Ambiguous requests are routed to clarification rather than forcing a risky answer.
-7. **Answer Builder -> Atomic Judge -> Verified response**
-   - Answer builder composes grounded output from the chosen branch.
-   - A final verification step checks response quality/safety before returning the final answer.
+1. **User query → Safety guardrail (hard override)**  
+   Every question passes `guardrail` in `rag_graph.py`. Sensitive patterns can short-circuit normal routing.
+
+2. **Intent router (route lock)**  
+   `router_node` plus `intent_policy.classify_query` choose among policy, personal, mixed, clarify, and general execution routes.
+
+3. **Policy branch: Chroma retrieval → grading**  
+   `retrieve` then `grade_documents`: embeddings + similarity search, optional re-search, relevance grading before generation.
+
+4. **Mixed branch**  
+   Handbook evidence plus employee profile or balance context when the route is mixed.
+
+5. **Personal branch**  
+   `balance` / profile resolution without handbook RAG when the ask is purely personal.
+
+6. **Clarify / general**  
+   Clarification responses or scoped general fallbacks when routing demands it.
+
+7. **Generation → response contract**  
+   `generate` composes the answer; `main.py` applies `_enforce_response_contract` (citations, profile leakage, policy-only invariants) before returning JSON or the stream `done` payload.
 
 Legend alignment to implementation:
 
